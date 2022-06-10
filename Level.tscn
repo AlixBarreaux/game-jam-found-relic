@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Hero.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 36.0
+
+[node name="Level" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -75, -82 )
+color = Color( 0.0784314, 0.0627451, 0.0627451, 1 )
+polygon = PoolVector2Array( -136, -48, 381, -16, 353, 236, -148, 213 )
+
+[node name="Creatures" type="Node" parent="."]
+
+[node name="Heroes" type="Node" parent="Creatures"]
+
+[node name="Hero" parent="Creatures/Heroes" instance=ExtResource( 2 )]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 105, 0 )
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )

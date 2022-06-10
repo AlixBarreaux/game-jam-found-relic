@@ -7,7 +7,6 @@ extends Node
 
 # ----------------- DECLARE VARIABLES -----------------
 
-
 onready var parent_node: KinematicBody2D = self.get_parent()
 
 
@@ -16,12 +15,12 @@ onready var parent_node: KinematicBody2D = self.get_parent()
 
 func _ready() -> void:
 	self.initialize_asserts()
+	self.initialize_signals()
+	self.initialize()
 	return
 
 
 func _physics_process(delta: float) -> void:
-#	get_all_inputs()
-	
 	parent_node.velocity = parent_node.move_and_slide(parent_node.velocity)
 	return
 
@@ -36,7 +35,39 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func initialize_asserts() -> void:
 	# The parent node must be a Hero! (Verified by name, change it if needed)
-	assert(parent_node.name == "Hero")
+	assert(parent_node is Hero)
+	return
+
+
+func initialize_signals() -> void:
+	Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched")
+	return
+
+
+func initialize() -> void:
+#	self.toggle_enabled()
+	return
+
+
+func on_controlled_hero_switched() -> void:
+#	self.toggle_enabled()
+	return
+
+
+#func toggle_enabled() -> void:
+#	if parent_node.is_controlled:
+#
+#	else:
+#		self.set_process_unhandled_input(true)
+#	return
+
+
+func set_enabled(enabled: bool) -> void:
+	if enabled:
+		self.set_process_unhandled_input(true)
+	else:
+		self.set_process_unhandled_input(false)
+		
 	return
 
 
