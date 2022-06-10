@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Hero",
+"language": "GDScript",
+"path": "res://hero.gd"
+} ]
+_global_script_class_icons={
+"Hero": ""
+}
+
 [application]
 
 config/name="Game-jam-found-relic"
+run/main_scene="res://Main.tscn"
 config/icon="res://Miscellaneous/icon.png"
 config/version="0.1"
 

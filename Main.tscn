@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://hero.gd" type="Script" id=1]
+[ext_resource path="res://Hero.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Creatures" type="Node" parent="World"]
+
+[node name="Heroes" type="Node" parent="World/Creatures"]
+
+[node name="Hero" parent="World/Creatures/Heroes" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
