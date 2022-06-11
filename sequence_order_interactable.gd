@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 func initialize_signals() -> void:
-	$InteractionReceiverArea2D.connect("interaction_received", self, "_receive_interaction")
+	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
 	self.plates_manager.connect("invalid_sequence_order_given", self, "reset")
 	return
 
