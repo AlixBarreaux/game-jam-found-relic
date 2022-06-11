@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ah_-_denis_brogniart.mp3-0bccc580c61dbe995d4bd27170aa181c.mp3str"
+
+[deps]
+
+source_file="res://ah_-_denis_brogniart.mp3"
+dest_files=[ "res://.import/ah_-_denis_brogniart.mp3-0bccc580c61dbe995d4bd27170aa181c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
