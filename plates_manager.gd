@@ -1,10 +1,10 @@
-class_name PlatesManager
+class_name SequenceOrderInteractablesManager
 extends Node2D
 
 
 # ----------------- DECLARE VARIABLES -----------------
 
-var last_plate_order_id: int = 0
+var last_interactable_order_id: int = 0
 
 signal invalid_sequence_order_given
 
@@ -20,48 +20,48 @@ func _ready() -> void:
 
 
 func initialize_asserts() -> void:
-#	printerr("At least 2 plates should be added to the PlateManager!")
+#	printerr("At least 2 interactables should be added to the interactableManager!")
 	assert(self.get_child_count() >= 2)
 	
-#	printerr("The children of this node should be plates only!")
-#	for plate in self.get_children():
-#		assert(plate is Plate)
+#	printerr("The children of this node should be interactables only!")
+#	for interactable in self.get_children():
+#		assert(interactable is interactable)
 
 
 func initialize_signals() -> void:
-	for plate in self.get_children():
-		plate.connect("plate_enabled", self, "on_plate_enabled")
+	for interactable in self.get_children():
+		interactable.connect("interactable_enabled", self, "on_interactable_enabled")
 	return
 
 
 func initialize() -> void:
-	var _plate_id_increment: int = 0
-	for plate in self.get_children():
-		_plate_id_increment += 1
-		plate.order_id = _plate_id_increment
+	var _interactable_id_increment: int = 0
+	for interactable in self.get_children():
+		_interactable_id_increment += 1
+		interactable.order_id = _interactable_id_increment
 		
-		print(self.name, " Generated plate order ID: ", plate.order_id)
+		print(self.name, " Generated interactable order ID: ", interactable.order_id)
 	return
 
 
-# Check if the plate order is right when a plate is enabled
-func on_plate_enabled(plate_order_id: int) -> void:
-	if plate_order_id == last_plate_order_id + 1:
+# Check if the interactable order is right when a interactable is enabled
+func on_interactable_enabled(interactable_order_id: int) -> void:
+	if interactable_order_id == last_interactable_order_id + 1:
 		print("Good sequence:")
-		print("Received plate ID: ", plate_order_id, " | Last plate ID: ", last_plate_order_id)
-		last_plate_order_id = plate_order_id
+		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
+		last_interactable_order_id = interactable_order_id
 		
-		if plate_order_id == self.get_child_count():
+		if interactable_order_id == self.get_child_count():
 			Events.emit_signal("level_completed")
 		
 	else:
 		print("Wrong sequence:")
-		print("Received plate ID: ", plate_order_id, " | Last plate ID: ", last_plate_order_id)
-		self.reset_all_plates()
+		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
+		self.reset_all_interactables()
 	return
 
 
-func reset_all_plates() -> void:
-	last_plate_order_id = 0
+func reset_all_interactables() -> void:
+	last_interactable_order_id = 0
 	self.emit_signal("invalid_sequence_order_given")
 	return

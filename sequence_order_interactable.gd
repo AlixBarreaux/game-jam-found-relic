@@ -14,7 +14,7 @@ onready var collision_shape_2d: CollisionShape2D = $InteractionReceiverArea2D/Co
 
 
 # Signals
-signal plate_enabled
+signal interactable_enabled
 
 
 # ----------------- RUN CODE -----------------
@@ -36,7 +36,7 @@ func initialize_signals() -> void:
 
 func _receive_interaction() -> void:
 	self.set_enabled(false)
-	self.emit_signal("plate_enabled", self.order_id)
+	self.emit_signal("interactable_enabled", self.order_id)
 	return
 
 

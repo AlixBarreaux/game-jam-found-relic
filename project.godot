@@ -29,11 +29,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://level.gd"
 }, {
-"base": "Node2D",
-"class": "PlatesManager",
-"language": "GDScript",
-"path": "res://plates_manager.gd"
-}, {
 "base": "Node",
 "class": "PlayerController",
 "language": "GDScript",
@@ -43,15 +38,20 @@ _global_script_classes=[ {
 "class": "SequenceOrderInteractable",
 "language": "GDScript",
 "path": "res://sequence_order_interactable.gd"
+}, {
+"base": "Node2D",
+"class": "SequenceOrderInteractablesManager",
+"language": "GDScript",
+"path": "res://plates_manager.gd"
 } ]
 _global_script_class_icons={
 "Hero": "",
 "InteractRaycast2D": "",
 "InteractionReceiver": "",
 "Level": "",
-"PlatesManager": "",
 "PlayerController": "",
-"SequenceOrderInteractable": ""
+"SequenceOrderInteractable": "",
+"SequenceOrderInteractablesManager": ""
 }
 
 [application]
