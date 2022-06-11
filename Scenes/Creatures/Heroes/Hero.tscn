@@ -128,7 +128,7 @@ shape = SubResource( 1 )
 current = true
 
 [node name="InteractRayCast2D" parent="." instance=ExtResource( 2 )]
-cast_to = Vector2( 0, 100 )
+cast_to = Vector2( 0, 80 )
 collision_mask = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
