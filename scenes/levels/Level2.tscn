@@ -22,3 +22,6 @@ position = Vector2( 287, 161 )
 
 [node name="NoteBlock5" parent="NoteBlocks" index="4" instance=ExtResource( 3 )]
 position = Vector2( 360, 161 )
+
+[editable path="NoteBlocks/NoteBlock"]
+[editable path="NoteBlocks/NoteBlock2"]
