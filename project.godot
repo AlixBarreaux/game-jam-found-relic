@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://hero.gd"
 }, {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://level.gd"
+}, {
 "base": "Area2D",
 "class": "Plate",
 "language": "GDScript",
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Hero": "",
+"Level": "",
 "Plate": "",
 "PlatesManager": "",
 "PlayerController": ""

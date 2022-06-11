@@ -6,6 +6,8 @@ extends Node2D
 
 var last_plate_order_id: int = 0
 
+signal invalid_sequence_order_given
+
 # ----------------- RUN CODE -----------------
 
 func _ready() -> void:
@@ -47,14 +49,15 @@ func on_plate_enabled(plate_order_id: int) -> void:
 		print("Good sequence:")
 		print("Received plate ID: ", plate_order_id, " | Last plate ID: ", last_plate_order_id)
 		last_plate_order_id = plate_order_id
+		
+		if plate_order_id == self.get_child_count():
+			Events.emit_signal("level_completed")
+		
 	else:
 		print("Wrong sequence:")
 		print("Received plate ID: ", plate_order_id, " | Last plate ID: ", last_plate_order_id)
 		self.reset_all_plates()
 	return
-
-
-signal invalid_sequence_order_given
 
 
 func reset_all_plates() -> void:

@@ -6,7 +6,7 @@
 
 [node name="Level1" instance=ExtResource( 3 )]
 
-[node name="Plates" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Plates" parent="." index="2" instance=ExtResource( 2 )]
 
 [node name="Plate" parent="Plates" index="0" instance=ExtResource( 1 )]
 position = Vector2( 32, 128 )

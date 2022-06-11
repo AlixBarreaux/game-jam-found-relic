@@ -11,6 +11,8 @@ extends Node
 
 # warning-ignore: unused_signal
 signal controlled_hero_switched
+# warning-ignore: unused_signal
+signal level_completed
 
 
 # ----------------- RUN CODE -----------------
