@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/interactables/NoteBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://duck_quack.ogg" type="AudioStream" id=4]
 [ext_resource path="res://ah_-_denis_brogniart.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Jukebox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Jukebox.tscn" type="PackedScene" id=6]
 
 [node name="Level2" instance=ExtResource( 1 )]
 
