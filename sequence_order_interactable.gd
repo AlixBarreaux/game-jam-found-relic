@@ -7,12 +7,10 @@ extends Node2D
 
 var order_id: int = 0
 
-# Node Paths
-export var collision_shape_2d_node_path: NodePath = ""
 
 # Node References
 onready var plates_manager: Node2D = self.get_parent()
-onready var collision_shape_2d: CollisionShape2D = self.get_node(collision_shape_2d_node_path)
+onready var collision_shape_2d: CollisionShape2D = $InteractionReceiverArea2D/CollisionShape2D
 
 
 # Signals
@@ -23,18 +21,11 @@ signal plate_enabled
 
 
 func _ready() -> void:
-	self.initialize_asserts()
 	self.initialize_signals()
 	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
-
-
-func initialize_asserts() -> void:
-	if collision_shape_2d_node_path == "":
-		printerr("The path to the collision shape / polygon 2D is missing!")
-	return
 
 
 func initialize_signals() -> void:

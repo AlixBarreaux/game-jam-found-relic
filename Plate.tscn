@@ -4,4 +4,8 @@
 
 [node name="Plate" instance=ExtResource( 1 )]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_interacted"]
+[node name="InteractionReceiverArea2D" parent="." index="1"]
+collision_mask = 3
+can_receive_interaction_from_raycast = false
+
+[connection signal="body_entered" from="InteractionReceiverArea2D" to="InteractionReceiverArea2D" method="_on_InteractionReceiverArea2D_body_entered"]

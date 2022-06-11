@@ -4,6 +4,7 @@
 
 [node name="InteractRayCast2D" type="RayCast2D"]
 enabled = true
+collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource( 1 )
