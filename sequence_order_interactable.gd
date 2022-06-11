@@ -10,6 +10,7 @@ var order_id: int = 0
 
 # Node References
 onready var plates_manager: Node2D = self.get_parent()
+onready var interaction_receiver_area_2d: Area2D = $InteractionReceiverArea2D
 onready var collision_shape_2d: CollisionShape2D = $InteractionReceiverArea2D/CollisionShape2D
 
 
