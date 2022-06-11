@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=1]
 [ext_resource path="res://hero.gd" type="Script" id=2]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://InteractRayCast2D.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -20,3 +21,6 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="InteractRayCast2D" parent="." instance=ExtResource( 4 )]
+collision_mask = 4

@@ -1,10 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Plate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SequenceOrderInteractable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlatesManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Level.tscn" type="PackedScene" id=3]
 
 [node name="Level1" instance=ExtResource( 3 )]
+
+[node name="Hero" parent="Creatures/Heroes" index="0"]
+position = Vector2( 42, 54 )
 
 [node name="Plates" parent="." index="2" instance=ExtResource( 2 )]
 

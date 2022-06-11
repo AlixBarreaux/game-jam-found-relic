@@ -14,15 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://hero.gd"
 }, {
+"base": "RayCast2D",
+"class": "InteractRaycast2D",
+"language": "GDScript",
+"path": "res://interact_raycast_2d.gd"
+}, {
+"base": "Area2D",
+"class": "InteractionReceiver",
+"language": "GDScript",
+"path": "res://interaction_receiver_area2d.gd"
+}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
 "path": "res://level.gd"
-}, {
-"base": "Area2D",
-"class": "Plate",
-"language": "GDScript",
-"path": "res://plate.gd"
 }, {
 "base": "Node2D",
 "class": "PlatesManager",
@@ -33,13 +38,20 @@ _global_script_classes=[ {
 "class": "PlayerController",
 "language": "GDScript",
 "path": "res://player_controller.gd"
+}, {
+"base": "Node2D",
+"class": "SequenceOrderInteractable",
+"language": "GDScript",
+"path": "res://sequence_order_interactable.gd"
 } ]
 _global_script_class_icons={
 "Hero": "",
+"InteractRaycast2D": "",
+"InteractionReceiver": "",
 "Level": "",
-"Plate": "",
 "PlatesManager": "",
-"PlayerController": ""
+"PlayerController": "",
+"SequenceOrderInteractable": ""
 }
 
 [application]
@@ -93,10 +105,19 @@ move_down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 
 [layer_names]
 
 2d_physics/layer_1="heroes"
+2d_physics/layer_2="heroes_interaction_raycasts"
+2d_physics/layer_3="interactables"
 
 [physics]
 

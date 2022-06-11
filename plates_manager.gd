@@ -20,12 +20,12 @@ func _ready() -> void:
 
 
 func initialize_asserts() -> void:
-	printerr("At least 2 plates should be added to the PlateManager!")
+#	printerr("At least 2 plates should be added to the PlateManager!")
 	assert(self.get_child_count() >= 2)
 	
-	printerr("The children of this node should be plates only!")
-	for plate in self.get_children():
-		assert(plate is Plate)
+#	printerr("The children of this node should be plates only!")
+#	for plate in self.get_children():
+#		assert(plate is Plate)
 
 
 func initialize_signals() -> void:
