@@ -13,10 +13,10 @@
 [node name="Hero" parent="Creatures/Heroes" index="0"]
 position = Vector2( 42, 54 )
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="5"]
+[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
 parameters/playback = SubResource( 1 )
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="5"]
+[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )
 
 [node name="Plates" parent="." index="2" instance=ExtResource( 3 )]

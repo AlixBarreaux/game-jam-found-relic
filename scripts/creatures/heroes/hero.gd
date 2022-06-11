@@ -4,6 +4,7 @@ extends KinematicBody2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
+export var is_controlled: bool = true
 
 export var speed: float = 250.0
 

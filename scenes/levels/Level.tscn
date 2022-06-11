@@ -20,16 +20,16 @@ polygon = PoolVector2Array( -136, -48, 381, -16, 353, 236, -148, 213 )
 [node name="Heroes" type="Node" parent="Creatures"]
 
 [node name="Hero" parent="Creatures/Heroes" instance=ExtResource( 2 )]
+position = Vector2( 45, 44 )
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="5"]
+[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
 parameters/playback = SubResource( 1 )
 
 [node name="Hero2" parent="Creatures/Heroes" instance=ExtResource( 2 )]
-
-[node name="PlayerController" parent="Creatures/Heroes/Hero2" index="2"]
+position = Vector2( 256, 102 )
 is_controlled = false
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="5"]
+[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )
 
 [editable path="Creatures/Heroes/Hero"]
