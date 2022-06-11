@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func initialize_asserts() -> void:
 	if collision_shape_2d_node_path == "":
-		printerr("The path to the collision shape 2D is missing!")
+		printerr("The path to the collision shape / polygon 2D is missing!")
 	return
 
 
@@ -61,15 +61,3 @@ func set_enabled(enabled: bool) -> void:
 		collision_shape_2d.set_deferred("disabled", true)
 		
 	return
-
-
-func _on_Area2D_body_entered(body: Node) -> void:
-	print("Raycast _on_Area2D_body_entered")
-
-
-func _on_Area2D_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
-	print("Raycast _on_Area2D_body_shape_entered")
-
-
-func _on_Area2D_area_entered(area: Area2D) -> void:
-	print("Raycast _on_Area2D_area_entered")
