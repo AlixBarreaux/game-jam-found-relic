@@ -7,6 +7,9 @@ extends Node
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
+export var is_controlled: bool = true
+
 onready var parent_node: KinematicBody2D = self.get_parent()
 
 
@@ -21,12 +24,16 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not is_controlled:
+		return
+	
 	parent_node.velocity = parent_node.move_and_slide(parent_node.velocity)
 	return
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	self.get_all_inputs()
+func _unhandled_input(_event: InputEvent) -> void:
+	if self.is_controlled:
+		self.get_all_inputs()
 	return
 
 
@@ -45,33 +52,17 @@ func initialize_signals() -> void:
 
 
 func initialize() -> void:
-#	self.toggle_enabled()
+	self.toggle_enabled()
 	return
 
 
 func on_controlled_hero_switched() -> void:
-#	self.toggle_enabled()
-	return
-
-
-#func toggle_enabled() -> void:
-#	if parent_node.is_controlled:
-#
-#	else:
-#		self.set_process_unhandled_input(true)
-#	return
-
-
-func set_enabled(enabled: bool) -> void:
-	if enabled:
-		self.set_process_unhandled_input(true)
-	else:
-		self.set_process_unhandled_input(false)
-		
+	self.toggle_enabled()
 	return
 
 
 func get_all_inputs() -> void:
+	get_switch_characters_input()
 	get_movement_input()
 	return
 
@@ -82,12 +73,25 @@ func get_movement_input() -> void:
 
 	if Input.get_action_strength("move_left"):
 		parent_node.direction.x = -1
-	if Input.is_action_pressed("move_right"):
+	if Input.get_action_strength("move_right"):
 		parent_node.direction.x = 1
-	if Input.is_action_pressed("move_up"):
+	if Input.get_action_strength("move_up"):
 		parent_node.direction.y = -1
-	if Input.is_action_pressed("move_down"):
+	if Input.get_action_strength("move_down"):
 		parent_node.direction.y = 1
 
 	parent_node.velocity = parent_node.direction.normalized() * parent_node.speed
+	return
+
+
+func get_switch_characters_input() -> void:
+	if Input.is_action_just_pressed("switch_characters"):
+		Events.emit_signal("controlled_hero_switched")
+	return
+
+
+func toggle_enabled() -> void:
+	self.is_controlled = !self.is_controlled
+	self.set_process_unhandled_input(is_controlled)
+	print("Toggle enabled result: ", self.is_processing_unhandled_input())
 	return
