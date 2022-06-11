@@ -15,14 +15,15 @@ func _ready() -> void:
 	self.initialize()
 	return
 
+
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
 func initialize_asserts() -> void:
-	# At least 2 plates should be added to the PlateManager!
+	printerr("At least 2 plates should be added to the PlateManager!")
 	assert(self.get_child_count() >= 2)
 	
-	# The children of this node should be plates only!
+	printerr("The children of this node should be plates only!")
 	for plate in self.get_children():
 		assert(plate is Plate)
 
