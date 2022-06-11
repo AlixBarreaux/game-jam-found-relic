@@ -4,14 +4,18 @@ extends Camera2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
 onready var hero: KinematicBody2D = self.get_parent()
+
 
 # ----------------- RUN CODE -----------------
 
+
 func _ready() -> void:
+	self.initialize_signals()
 	current = hero.is_controlled
-	print(current)
 	return
+
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
@@ -22,6 +26,5 @@ func initialize_signals() -> void:
 
 
 func on_controlled_hero_switched() -> void:
-	clear_current()
-	current = hero.is_controlled
+	current = !hero.is_controlled
 	return
