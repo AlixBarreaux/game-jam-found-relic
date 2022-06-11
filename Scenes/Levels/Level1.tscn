@@ -12,15 +12,15 @@ position = Vector2( 42, 54 )
 [node name="Plates" parent="." index="2" instance=ExtResource( 2 )]
 
 [node name="Plate" parent="Plates" index="0" instance=ExtResource( 1 )]
-position = Vector2( 126, 115 )
+position = Vector2( 49, 166 )
 
 [node name="Plate2" parent="Plates" index="1" instance=ExtResource( 1 )]
-position = Vector2( 200, 115 )
+position = Vector2( 120, 166 )
 
 [node name="Plate3" parent="Plates" index="2" instance=ExtResource( 1 )]
-position = Vector2( 275, 115 )
+position = Vector2( 189, 166 )
 
 [node name="Plate4" parent="Plates" index="3" instance=ExtResource( 1 )]
-position = Vector2( 350, 115 )
+position = Vector2( 260, 166 )
 
 [editable path="Plates"]
