@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interactables/NoteBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://duck_quack.ogg" type="AudioStream" id=4]
+[ext_resource path="res://ah_-_denis_brogniart.ogg" type="AudioStream" id=5]
 
 [node name="Level2" instance=ExtResource( 1 )]
 
@@ -11,8 +13,14 @@
 [node name="NoteBlock" parent="NoteBlocks" index="0" instance=ExtResource( 3 )]
 position = Vector2( 49, 161 )
 
+[node name="NoteBlockAudioStreamPlayer2D" parent="NoteBlocks/NoteBlock" index="3"]
+stream = ExtResource( 5 )
+
 [node name="NoteBlock2" parent="NoteBlocks" index="1" instance=ExtResource( 3 )]
 position = Vector2( 125, 161 )
+
+[node name="NoteBlockAudioStreamPlayer2D" parent="NoteBlocks/NoteBlock2" index="3"]
+stream = ExtResource( 4 )
 
 [node name="NoteBlock3" parent="NoteBlocks" index="2" instance=ExtResource( 3 )]
 position = Vector2( 207, 161 )

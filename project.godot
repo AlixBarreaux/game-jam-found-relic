@@ -80,6 +80,13 @@ window/size/height=720
 
 version=""
 
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
+
 [input]
 
 move_left={

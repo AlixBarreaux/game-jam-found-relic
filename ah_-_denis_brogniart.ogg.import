@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ah_-_denis_brogniart.ogg-bf507fc7b4716f1b2701c9609a5c76af.oggstr"
+
+[deps]
+
+source_file="res://ah_-_denis_brogniart.ogg"
+dest_files=[ "res://.import/ah_-_denis_brogniart.ogg-bf507fc7b4716f1b2701c9609a5c76af.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
