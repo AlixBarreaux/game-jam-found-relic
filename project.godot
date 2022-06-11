@@ -9,25 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "Reference",
 "class": "Hero",
 "language": "GDScript",
-"path": "res://Scripts/Creatures/Heroes/hero.gd"
+"path": "res://scripts/creatures/heroes/hero.gd"
 }, {
 "base": "RayCast2D",
 "class": "InteractRaycast2D",
 "language": "GDScript",
-"path": "res://Scripts/interact_raycast_2d.gd"
+"path": "res://scripts/interact_raycast_2d.gd"
 }, {
 "base": "Area2D",
 "class": "InteractionReceiver",
 "language": "GDScript",
-"path": "res://Scripts/interaction_receiver_area2d.gd"
+"path": "res://scripts/interaction_receiver_area2d.gd"
 }, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
-"path": "res://Scripts/level.gd"
+"path": "res://scripts/level.gd"
 }, {
 "base": "AudioStreamPlayer2D",
 "class": "NoteBlockAudioStreamPlayer2D",
@@ -37,17 +37,17 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "PlayerController",
 "language": "GDScript",
-"path": "res://Scripts/player_controller.gd"
+"path": "res://scripts/player_controller.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderInteractable",
 "language": "GDScript",
-"path": "res://sequence_order_interactable.gd"
+"path": "res://scripts/interactables/sequence_order_interactable.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderInteractablesManager",
 "language": "GDScript",
-"path": "res://Scripts/plates_manager.gd"
+"path": "res://scripts/plates_manager.gd"
 } ]
 _global_script_class_icons={
 "Hero": "",
@@ -63,13 +63,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Game-jam-found-relic"
-run/main_scene="res://Scenes/Levels/Level2.tscn"
-config/icon="res://Miscellaneous/icon.png"
+run/main_scene="res://scenes/levels/Level1.tscn"
+config/icon="res://miscellaneous/icon.png"
 config/version="0.1"
 
 [autoload]
 
-Events="*res://Autoloads/events.gd"
+Events="*res://autoloads/events.gd"
 
 [display]
 
@@ -134,4 +134,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://Resources/Environments/default_env.tres"
+environment/default_environment="res://resources/environments/default_env.tres"
