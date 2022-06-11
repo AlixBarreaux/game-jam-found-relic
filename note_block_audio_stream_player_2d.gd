@@ -13,5 +13,5 @@ extends AudioStreamPlayer2D
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
-func _on_NoteBlock_interactable_enabled() -> void:
+func _on_NoteBlock_interactable_enabled(_order_id: int) -> void:
 	self.play()

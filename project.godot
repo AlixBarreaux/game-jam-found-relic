@@ -12,22 +12,22 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Hero",
 "language": "GDScript",
-"path": "res://hero.gd"
+"path": "res://Scripts/Creatures/Heroes/hero.gd"
 }, {
 "base": "RayCast2D",
 "class": "InteractRaycast2D",
 "language": "GDScript",
-"path": "res://interact_raycast_2d.gd"
+"path": "res://Scripts/interact_raycast_2d.gd"
 }, {
 "base": "Area2D",
 "class": "InteractionReceiver",
 "language": "GDScript",
-"path": "res://interaction_receiver_area2d.gd"
+"path": "res://Scripts/interaction_receiver_area2d.gd"
 }, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
-"path": "res://level.gd"
+"path": "res://Scripts/level.gd"
 }, {
 "base": "AudioStreamPlayer2D",
 "class": "NoteBlockAudioStreamPlayer2D",
@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "PlayerController",
 "language": "GDScript",
-"path": "res://player_controller.gd"
+"path": "res://Scripts/player_controller.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderInteractable",
@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SequenceOrderInteractablesManager",
 "language": "GDScript",
-"path": "res://plates_manager.gd"
+"path": "res://Scripts/plates_manager.gd"
 } ]
 _global_script_class_icons={
 "Hero": "",
