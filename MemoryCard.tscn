@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/interaction_receiver_area2d.gd" type="Script" id=1]
 [ext_resource path="res://memory_card.gd" type="Script" id=2]
+[ext_resource path="res://miscellaneous/icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 32, 32 )
@@ -9,17 +10,72 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "ShowHeads"
 
 [sub_resource type="Animation" id=2]
 resource_name = "ShowInvalidCombination"
+length = 0.24
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.03, 0.09, 0.15, 0.21, 0.24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -25, 0 ), Vector2( 25, 0 ), Vector2( -25, 0 ), Vector2( 25, 0 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "ShowTails"
 
 [sub_resource type="Animation" id=7]
 resource_name = "ShowValidCombination"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "ShowHeads"
@@ -33,15 +89,18 @@ animation = "ShowTails"
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "ShowValidCombination"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
 [sub_resource type="AnimationNodeStateMachine" id=5]
 states/ShowHeads/node = SubResource( 8 )
-states/ShowHeads/position = Vector2( 375, 84 )
+states/ShowHeads/position = Vector2( 724, 69 )
 states/ShowInvalidCombination/node = SubResource( 9 )
-states/ShowInvalidCombination/position = Vector2( 659, 151 )
+states/ShowInvalidCombination/position = Vector2( 420, 151 )
 states/ShowTails/node = SubResource( 10 )
-states/ShowTails/position = Vector2( 375, 151 )
+states/ShowTails/position = Vector2( 724, 151 )
 states/ShowValidCombination/node = SubResource( 11 )
-states/ShowValidCombination/position = Vector2( 659, 84 )
+states/ShowValidCombination/position = Vector2( 420, 69 )
+transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 13 ) ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=6]
 
@@ -51,10 +110,14 @@ script = ExtResource( 2 )
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="HeadsSprite" type="Sprite" parent="Sprites"]
+texture = ExtResource( 3 )
 
 [node name="TailsSprite" type="Sprite" parent="Sprites"]
+self_modulate = Color( 0.027451, 0.933333, 0, 1 )
+texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -62,6 +125,7 @@ self_modulate = Color( 0.447059, 0, 0.74902, 1 )
 shape = SubResource( 12 )
 
 [node name="InteractionReceiverArea2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
@@ -70,6 +134,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 14 )
 anims/ShowHeads = SubResource( 3 )
 anims/ShowInvalidCombination = SubResource( 2 )
 anims/ShowTails = SubResource( 4 )
@@ -78,4 +143,5 @@ anims/ShowValidCombination = SubResource( 7 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 6 )

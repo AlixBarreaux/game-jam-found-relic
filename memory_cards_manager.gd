@@ -58,6 +58,9 @@ func on_interactable_enabled(card_node: Node) -> void:
 			print("Cards are matching!")
 		else:
 			print("Cards are not matching!")
+			# RESET BOTH CARDS
+#			card_node.reset()
+#			first_node_reference.reset()
 	
 	first_check = !first_check
 		

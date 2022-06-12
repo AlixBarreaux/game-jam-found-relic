@@ -5,7 +5,7 @@ extends Node2D
 # ----------------- DECLARE VARIABLES -----------------
 
 
-#var id: int = 0
+var id: int = 0
 
 
 # Node References
