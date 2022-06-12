@@ -38,9 +38,9 @@ func initialize() -> void:
 	var _interactable_id_increment: int = 0
 	for interactable in self.get_children():
 		_interactable_id_increment += 1
-		interactable.order_id = _interactable_id_increment
+		interactable.id = _interactable_id_increment
 		
-		print(self.name, " Generated interactable order ID: ", interactable.order_id)
+		print(self.name, " Generated interactable order ID: ", interactable.id)
 	return
 
 

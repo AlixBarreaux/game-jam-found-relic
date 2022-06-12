@@ -44,6 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/level.gd"
 }, {
+"base": "Node2D",
+"class": "MemoryCard",
+"language": "GDScript",
+"path": "res://memory_card.gd"
+}, {
+"base": "Node2D",
+"class": "MemoryCardsManager",
+"language": "GDScript",
+"path": "res://memory_cards_manager.gd"
+}, {
 "base": "AudioStreamPlayer2D",
 "class": "NoteBlockAudioStreamPlayer2D",
 "language": "GDScript",
@@ -87,6 +97,8 @@ _global_script_class_icons={
 "InteractionReceiver": "",
 "JukeBox": "",
 "Level": "",
+"MemoryCard": "",
+"MemoryCardsManager": "",
 "NoteBlockAudioStreamPlayer2D": "",
 "PlayerController": "",
 "QuitToDesktopButton": "",
