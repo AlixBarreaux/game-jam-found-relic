@@ -196,9 +196,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.95, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "emit_signal_life_cycle_finished"
+}, {
 "args": [  ],
 "method": "queue_free"
 } ]
@@ -303,7 +306,7 @@ states/Start/node = SubResource( 16 )
 states/Start/position = Vector2( 584, -12 )
 transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "Idle", SubResource( 44 ), "Idle", "ShowValidCombination", SubResource( 45 ), "Idle", "ShowHeads", SubResource( 46 ), "Idle", "ShowInvalidCombination", SubResource( 47 ), "Idle", "ShowTails", SubResource( 48 ), "ShowTails", "Idle", SubResource( 49 ), "ShowHeads", "Idle", SubResource( 50 ), "ShowValidCombination", "Idle", SubResource( 51 ) ]
 start_node = "Start"
-graph_offset = Vector2( -67, -90 )
+graph_offset = Vector2( -55, -6 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 

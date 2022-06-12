@@ -33,6 +33,7 @@ func initialize_signals() -> void:
 	for card_group_node in self.get_children():
 		for memory_card in card_group_node.get_children():
 			memory_card.connect("interactable_enabled", self, "on_interactable_enabled")
+			memory_card.connect("life_cycle_finished", self, "on_card_life_cycle_finished")
 	return
 
 
@@ -82,7 +83,29 @@ func on_interactable_enabled(card_node: Node) -> void:
 	return
 
 
-var last_card = null
+# MAKE IT CHECK ONLY ONCE. ADD A BOOLEAN?
+
+var is_lone_card_present: bool = true
+
+func on_card_life_cycle_finished() -> void:
+	var _victory_counter: int = 0 # If there is no card left or the lone one
+	var _nodes_counter: int = 0
+	
+	if is_lone_card_present:
+		_victory_counter = 1
+	
+	for card_group_node in self.get_children():
+#		print("card_group_node loop", card_group_node)
+		for memory_card in card_group_node.get_children():
+			print("memory_card loop", memory_card)
+#			_nodes_counter += 1
+#
+#			print("_nodes_counter: ", _nodes_counter)
+#			if _nodes_counter <= _victory_counter:
+#				return
+#			Events.emit_signal("level_completed")
+	print("\n")
+	return
 
 # First time card is null. Must be reset to null as well.
 
@@ -105,10 +128,10 @@ var last_card = null
 #	return
 
 
-func reset_all_interactables() -> void:
-#	last_interactable_order_id = 0
-	self.emit_signal("invalid_sequence_order_given")
-	return
+#func reset_all_interactables() -> void:
+##	last_interactable_order_id = 0
+#	self.emit_signal("invalid_sequence_order_given")
+#	return
 
 
 

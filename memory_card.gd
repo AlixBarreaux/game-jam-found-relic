@@ -67,6 +67,13 @@ func set_enabled(enabled: bool) -> void:
 	return
 
 
+signal life_cycle_finished
+
 func finish_life_cycle() -> void:
 	animation_tree_node_sm_playback.travel("ShowValidCombination")
+	return
+
+# Special function used as method track for AnimationPlayer: "ShowValidCombination"
+func emit_signal_life_cycle_finished() -> void:
+	emit_signal("life_cycle_finished")
 	return
