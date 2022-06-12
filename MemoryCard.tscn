@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/interaction_receiver_area2d.gd" type="Script" id=1]
 [ext_resource path="res://memory_card.gd" type="Script" id=2]
@@ -9,6 +9,9 @@ extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "Idle"
 
 [sub_resource type="Animation" id=14]
 length = 0.001
@@ -229,6 +232,9 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "Idle"
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "ShowHeads"
 
@@ -248,15 +254,31 @@ animation = "Start"
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=5]
+states/Idle/node = SubResource( 43 )
+states/Idle/position = Vector2( 584, 69 )
 states/ShowHeads/node = SubResource( 8 )
 states/ShowHeads/position = Vector2( 862, 69 )
 states/ShowInvalidCombination/node = SubResource( 19 )
@@ -267,9 +289,9 @@ states/ShowValidCombination/node = SubResource( 11 )
 states/ShowValidCombination/position = Vector2( 304, 69 )
 states/Start/node = SubResource( 16 )
 states/Start/position = Vector2( 584, -12 )
-transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "ShowInvalidCombination", SubResource( 21 ), "Start", "ShowTails", SubResource( 22 ), "Start", "ShowHeads", SubResource( 23 ), "Start", "ShowValidCombination", SubResource( 24 ) ]
+transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "Idle", SubResource( 44 ), "Idle", "ShowValidCombination", SubResource( 45 ), "Idle", "ShowHeads", SubResource( 46 ), "Idle", "ShowInvalidCombination", SubResource( 47 ), "Idle", "ShowTails", SubResource( 48 ), "ShowTails", "Idle", SubResource( 49 ), "ShowHeads", "Idle", SubResource( 50 ), "ShowValidCombination", "Idle", SubResource( 51 ) ]
 start_node = "Start"
-graph_offset = Vector2( -30, -43 )
+graph_offset = Vector2( -67, -90 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
@@ -279,10 +301,10 @@ script = ExtResource( 2 )
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="HeadsSprite" type="Sprite" parent="Sprites"]
-visible = false
 texture = ExtResource( 3 )
 
 [node name="TailsSprite" type="Sprite" parent="Sprites"]
+visible = false
 self_modulate = Color( 0.027451, 0.933333, 0, 1 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 3 )
@@ -305,6 +327,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 25 )
 anims/RESET = SubResource( 14 )
 anims/ShowHeads = SubResource( 3 )
 anims/ShowInvalidCombination = SubResource( 2 )
@@ -315,4 +338,5 @@ anims/Start = SubResource( 15 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 18 )
