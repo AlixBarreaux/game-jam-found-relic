@@ -44,7 +44,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/level.gd"
 }, {
-"base": "Reference",
+"base": "AudioStreamPlayer2D",
 "class": "NoteBlockAudioStreamPlayer2D",
 "language": "GDScript",
 "path": "res://scripts/note_block_audio_stream_player_2d.gd"
@@ -102,6 +102,10 @@ config/name="Game-jam-found-relic"
 run/main_scene="res://scenes/levels/Level1.tscn"
 config/icon="res://miscellaneous/icon.png"
 config/version="0.1"
+
+[audio]
+
+default_bus_layout="res://resources/audio-bus-layouts/default_bus_layout.tres"
 
 [autoload]
 
