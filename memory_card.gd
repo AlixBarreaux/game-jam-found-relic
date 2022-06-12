@@ -25,14 +25,9 @@ onready var animation_tree_node_sm_playback = animation_tree.get("parameters/pla
 
 func _ready() -> void:
 	self.initialize_signals()
-	
-	animation_tree.active = true
+	self.initialize()
 	return
 
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("move_left"):
-		animation_tree_node_sm_playback.travel("ShowInvalidCombination")
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
@@ -40,6 +35,11 @@ func _input(event: InputEvent) -> void:
 func initialize_signals() -> void:
 	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
 #	self.parent_manager.connect("invalid_sequence_order_given", self, "reset")
+	return
+
+
+func initialize() -> void:
+	animation_tree.active = true
 	return
 
 
