@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/interaction_receiver_area2d.gd" type="Script" id=1]
 [ext_resource path="res://memory_card.gd" type="Script" id=2]
@@ -24,9 +24,83 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/HeadsSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprites/TailsSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "ShowHeads"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( -1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites/HeadsSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/TailsSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "ShowInvalidCombination"
@@ -44,9 +118,59 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -25, 0 ), Vector2( 25, 0 ), Vector2( -25, 0 ), Vector2( 25, 0 ), Vector2( 0, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "ShowTails"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( -1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites/HeadsSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/TailsSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "ShowValidCombination"
@@ -77,10 +201,38 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "Start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "ShowHeads"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "ShowInvalidCombination"
 
 [sub_resource type="AnimationNodeAnimation" id=10]
@@ -89,20 +241,37 @@ animation = "ShowTails"
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "ShowValidCombination"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
 [sub_resource type="AnimationNodeStateMachine" id=5]
 states/ShowHeads/node = SubResource( 8 )
-states/ShowHeads/position = Vector2( 724, 69 )
-states/ShowInvalidCombination/node = SubResource( 9 )
-states/ShowInvalidCombination/position = Vector2( 420, 151 )
+states/ShowHeads/position = Vector2( 862, 69 )
+states/ShowInvalidCombination/node = SubResource( 19 )
+states/ShowInvalidCombination/position = Vector2( 304, 151 )
 states/ShowTails/node = SubResource( 10 )
-states/ShowTails/position = Vector2( 724, 151 )
+states/ShowTails/position = Vector2( 862, 151 )
 states/ShowValidCombination/node = SubResource( 11 )
-states/ShowValidCombination/position = Vector2( 420, 69 )
-transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 13 ) ]
+states/ShowValidCombination/position = Vector2( 304, 69 )
+states/Start/node = SubResource( 16 )
+states/Start/position = Vector2( 584, -12 )
+transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "ShowInvalidCombination", SubResource( 21 ), "Start", "ShowTails", SubResource( 22 ), "Start", "ShowHeads", SubResource( 23 ), "Start", "ShowValidCombination", SubResource( 24 ) ]
+start_node = "Start"
+graph_offset = Vector2( -30, -43 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
 [node name="MemoryCard" type="Node2D"]
 script = ExtResource( 2 )
@@ -110,10 +279,12 @@ script = ExtResource( 2 )
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="HeadsSprite" type="Sprite" parent="Sprites"]
+visible = false
 texture = ExtResource( 3 )
 
 [node name="TailsSprite" type="Sprite" parent="Sprites"]
 self_modulate = Color( 0.027451, 0.933333, 0, 1 )
+scale = Vector2( -1, 1 )
 texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -139,9 +310,9 @@ anims/ShowHeads = SubResource( 3 )
 anims/ShowInvalidCombination = SubResource( 2 )
 anims/ShowTails = SubResource( 4 )
 anims/ShowValidCombination = SubResource( 7 )
+anims/Start = SubResource( 15 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 6 )
+parameters/playback = SubResource( 18 )

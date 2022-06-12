@@ -20,11 +20,19 @@ signal interactable_enabled
 
 # ----------------- RUN CODE -----------------
 
+onready var animation_tree: AnimationTree = $AnimationTree
+onready var animation_tree_node_sm_playback = animation_tree.get("parameters/playback")
 
 func _ready() -> void:
 	self.initialize_signals()
+	
+	animation_tree.active = true
 	return
 
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("move_left"):
+		animation_tree_node_sm_playback.travel("ShowInvalidCombination")
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
