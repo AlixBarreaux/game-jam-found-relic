@@ -45,12 +45,16 @@ func initialize() -> void:
 
 func _receive_interaction() -> void:
 	self.set_enabled(false)
+	animation_tree_node_sm_playback.travel("ShowHeads")
+	
 	self.emit_signal("interactable_enabled", self)
+	
 	return
 
 
 func reset() -> void:
 	print(self.name + ": reset() !")
+	animation_tree_node_sm_playback.travel("ShowInvalidCombination")
 	set_enabled(true)
 
 
@@ -60,4 +64,9 @@ func set_enabled(enabled: bool) -> void:
 	else:
 		collision_shape_2d.set_deferred("disabled", true)
 		
+	return
+
+
+func finish_life_cycle() -> void:
+	animation_tree_node_sm_playback.travel("ShowValidCombination")
 	return
