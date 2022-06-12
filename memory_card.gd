@@ -5,7 +5,7 @@ extends Node2D
 # ----------------- DECLARE VARIABLES -----------------
 
 
-var id: int = 0
+#var id: int = 0
 
 
 # Node References
@@ -37,7 +37,7 @@ func initialize_signals() -> void:
 
 func _receive_interaction() -> void:
 	self.set_enabled(false)
-	self.emit_signal("interactable_enabled", self.id)
+	self.emit_signal("interactable_enabled", self)
 	return
 
 
