@@ -15,5 +15,7 @@ extends RayCast2D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if get_collider() != null and get_collider().can_receive_interaction_from_raycast:
-			get_collider()._receive_interaction()
+		# I'm sorry about this bad node reference but... Game Jam.
+		if self.get_parent().is_controlled:
+			if get_collider() != null and get_collider().can_receive_interaction_from_raycast:
+				get_collider()._receive_interaction()
