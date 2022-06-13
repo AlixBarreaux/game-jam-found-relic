@@ -23,6 +23,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 360.0 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "call_event_singleton_signal_next_scene_load_requested"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -158,8 +172,7 @@ script = ExtResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.330064 )
-rotation = 6.28319
+self_modulate = Color( 1, 1, 1, 0.624833 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -182,6 +195,5 @@ anims/Idle = SubResource( 2 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 15 )
 parameters/Move/blend_position = Vector2( 0, 0 )

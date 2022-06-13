@@ -23,7 +23,7 @@ polygon = PoolVector2Array( -136, -48, 381, -16, 353, 236, -148, 213 )
 position = Vector2( 28, 16 )
 
 [node name="Sprite" parent="Creatures/Heroes/Hero" index="1"]
-self_modulate = Color( 1, 1, 1, 0.355918 )
+self_modulate = Color( 1, 1, 1, 0.482676 )
 
 [node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
 parameters/playback = SubResource( 1 )
@@ -33,10 +33,16 @@ position = Vector2( 222, 42 )
 is_controlled = false
 
 [node name="Sprite" parent="Creatures/Heroes/Hero2" index="1"]
-self_modulate = Color( 1, 1, 1, 0.355918 )
+self_modulate = Color( 1, 1, 1, 0.482676 )
 
 [node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )
+
+[node name="LevelLoadingTransitionTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="LevelLoadingTransitionTimer" to="." method="_on_LevelLoadingTransitionTimer_timeout"]
 
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]

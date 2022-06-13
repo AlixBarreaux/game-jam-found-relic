@@ -12,9 +12,16 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="Level2" instance=ExtResource( 1 )]
+next_level_to_load_path = "res://scenes/levels/Level3.tscn"
+
+[node name="Sprite" parent="Creatures/Heroes/Hero" index="1"]
+self_modulate = Color( 1, 1, 1, 0.28901 )
 
 [node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
 parameters/playback = SubResource( 1 )
+
+[node name="Sprite" parent="Creatures/Heroes/Hero2" index="1"]
+self_modulate = Color( 1, 1, 1, 0.28901 )
 
 [node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )

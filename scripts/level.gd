@@ -4,7 +4,11 @@ extends Node2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
 export var next_level_to_load_path: String = ""
+
+onready var level_loading_transition_timer: Timer = $LevelLoadingTransitionTimer
+
 
 # ----------------- RUN CODE -----------------
 
@@ -30,5 +34,9 @@ func initialize_signals() -> void:
 
 func on_next_scene_load_requested() -> void:
 	print(self.name, ": Scene load requested!")
-	get_tree().change_scene(self.next_level_to_load_path)
+	level_loading_transition_timer.start()
 	return
+
+
+func _on_LevelLoadingTransitionTimer_timeout() -> void:
+	get_tree().change_scene(self.next_level_to_load_path)

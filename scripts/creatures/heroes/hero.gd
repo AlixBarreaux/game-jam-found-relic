@@ -49,6 +49,11 @@ func initialize() -> void:
 
 func on_level_completed() -> void:
 	print(self.name, ": Level completed!")
-	animation_tree_node_sm_playback.travel("CelebrateVictoryMove")
-#	$AnimationPlayer.play("CelebrateVictory")
+#	animation_tree_node_sm_playback.travel("CelebrateVictory")
+	$AnimationPlayer.play("CelebrateVictory")
+	return
+
+
+func call_event_singleton_signal_next_scene_load_requested() -> void:
+	Events.emit_signal("next_scene_load_requested")
 	return
