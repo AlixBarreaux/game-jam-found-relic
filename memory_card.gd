@@ -16,12 +16,15 @@ onready var collision_shape_2d: CollisionShape2D = $InteractionReceiverArea2D/Co
 
 # Signals
 signal interactable_enabled
+signal life_cycle_finished
 
 
 # ----------------- RUN CODE -----------------
 
+
 onready var animation_tree: AnimationTree = $AnimationTree
 onready var animation_tree_node_sm_playback = animation_tree.get("parameters/playback")
+
 
 func _ready() -> void:
 	self.initialize_signals()
@@ -46,14 +49,14 @@ func initialize() -> void:
 func _receive_interaction() -> void:
 	self.set_enabled(false)
 	animation_tree_node_sm_playback.travel("ShowHeads")
-	
-	
 	return
 
 
+# Special function used as method track for AnimationPlayer: "ShowHeads"
 func emit_signal_interactable_enabled() -> void:
 	self.emit_signal("interactable_enabled", self)
 	return
+
 
 func reset() -> void:
 	print(self.name + ": reset() !")
@@ -70,11 +73,10 @@ func set_enabled(enabled: bool) -> void:
 	return
 
 
-signal life_cycle_finished
-
 func finish_life_cycle() -> void:
 	animation_tree_node_sm_playback.travel("ShowValidCombination")
 	return
+
 
 # Special function used as method track for AnimationPlayer: "ShowValidCombination"
 func emit_signal_life_cycle_finished() -> void:
