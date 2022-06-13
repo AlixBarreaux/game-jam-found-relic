@@ -6,7 +6,7 @@ extends Node2D
 
 #var last_interactable_order_id: int = 0
 
-signal invalid_sequence_order_given
+#signal invalid_sequence_order_given
 
 # ----------------- RUN CODE -----------------
 
@@ -85,25 +85,32 @@ func on_interactable_enabled(card_node: Node) -> void:
 
 # MAKE IT CHECK ONLY ONCE. ADD A BOOLEAN?
 
-var is_lone_card_present: bool = true
+export var is_lone_card_present: bool = true
+var cards_per_group_count: int = 2
+
+var is_win_check_already_done: bool = false
 
 func on_card_life_cycle_finished() -> void:
-	var _victory_counter: int = 0 # If there is no card left or the lone one
+	var _victory_counter: int = self.cards_per_group_count # If there is no card left or the lone one
 	var _nodes_counter: int = 0
 	
 	if is_lone_card_present:
-		_victory_counter = 1
+		_victory_counter += 1
 	
 	for card_group_node in self.get_children():
 #		print("card_group_node loop", card_group_node)
 		for memory_card in card_group_node.get_children():
-			print("memory_card loop", memory_card)
-#			_nodes_counter += 1
+			print("memory_card loop: ", memory_card.name)
+			_nodes_counter += 1
 #
 #			print("_nodes_counter: ", _nodes_counter)
-#			if _nodes_counter <= _victory_counter:
-#				return
-#			Events.emit_signal("level_completed")
+	
+	if not is_win_check_already_done:
+		if _nodes_counter <= _victory_counter:
+			printerr("_nodes_counter <= _victory_counter: So we won!", _nodes_counter)
+			is_win_check_already_done = true
+
+#		Events.emit_signal("level_completed")
 	print("\n")
 	return
 

@@ -37,7 +37,6 @@ func _ready() -> void:
 
 func initialize_signals() -> void:
 	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
-#	self.parent_manager.connect("invalid_sequence_order_given", self, "reset")
 	return
 
 

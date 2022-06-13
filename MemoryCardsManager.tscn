@@ -4,3 +4,4 @@
 
 [node name="MemoryCardsManager" type="Node2D"]
 script = ExtResource( 1 )
+is_lone_card_present = false
