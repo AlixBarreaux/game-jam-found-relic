@@ -47,10 +47,13 @@ func _receive_interaction() -> void:
 	self.set_enabled(false)
 	animation_tree_node_sm_playback.travel("ShowHeads")
 	
-	self.emit_signal("interactable_enabled", self)
 	
 	return
 
+
+func emit_signal_interactable_enabled() -> void:
+	self.emit_signal("interactable_enabled", self)
+	return
 
 func reset() -> void:
 	print(self.name + ": reset() !")
