@@ -47,11 +47,18 @@ func initialize_asserts() -> void:
 
 func initialize_signals() -> void:
 	Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched")
+	Events.connect("level_completed", self, "on_level_completed")
 	return
 
 
 func on_controlled_hero_switched() -> void:
 	self.toggle_enabled()
+	return
+
+
+func on_level_completed() -> void:
+	print(self.name, ": Level completed, disabling!")
+	self.set_enabled(false)
 	return
 
 
@@ -81,6 +88,12 @@ func get_movement_input() -> void:
 func get_switch_characters_input() -> void:
 	if Input.is_action_just_pressed("switch_characters"):
 		Events.emit_signal("controlled_hero_switched")
+	return
+
+
+func set_enabled(enabled: bool) -> void:
+	hero.is_controlled = enabled
+	self.set_process_unhandled_input(enabled)
 	return
 
 

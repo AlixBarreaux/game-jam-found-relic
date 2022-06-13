@@ -4,12 +4,13 @@ extends Node2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
-
+export var next_level_to_load_path: String = ""
 
 # ----------------- RUN CODE -----------------
 
 
 func _ready() -> void:
+	self.initialize_asserts()
 	self.initialize_signals()
 	return
 
@@ -17,11 +18,17 @@ func _ready() -> void:
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
+func initialize_asserts() -> void:
+	if next_level_to_load_path == "":
+		printerr(self.name + " next_level_to_load_path is not set in the inspector!")
+
+
 func initialize_signals() -> void:
-	Events.connect("level_completed", self, "on_level_completed")
+	Events.connect("next_scene_load_requested", self, "on_next_scene_load_requested")
 	return
 
 
-func on_level_completed() -> void:
-	print("Level completed!")
+func on_next_scene_load_requested() -> void:
+	print(self.name, ": Scene load requested!")
+	get_tree().change_scene(self.next_level_to_load_path)
 	return

@@ -18,6 +18,12 @@ onready var animation_tree_node_sm_playback = animation_tree.get("parameters/pla
 # ----------------- RUN CODE -----------------
 
 
+func _ready() -> void:
+	self.initialize_signals()
+	self.initialize()
+	return
+
+
 func _physics_process(delta: float) -> void:
 	if not self.velocity == Vector2(0.0, 0.0):
 		# Set the animation Tree to play Animation Move with the velocity
@@ -30,3 +36,19 @@ func _physics_process(delta: float) -> void:
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
+
+func initialize_signals() -> void:
+	Events.connect("level_completed", self, "on_level_completed")
+	return
+
+
+func initialize() -> void:
+	animation_tree.active = true
+	return
+
+
+func on_level_completed() -> void:
+	print(self.name, ": Level completed!")
+	animation_tree_node_sm_playback.travel("CelebrateVictoryMove")
+#	$AnimationPlayer.play("CelebrateVictory")
+	return
