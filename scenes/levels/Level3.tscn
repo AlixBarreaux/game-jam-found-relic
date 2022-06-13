@@ -17,6 +17,7 @@ parameters/playback = SubResource( 1 )
 parameters/playback = SubResource( 2 )
 
 [node name="MemoryCardsManager" parent="." index="2" instance=ExtResource( 3 )]
+is_lone_card_present = true
 
 [node name="Group1" type="Node2D" parent="MemoryCardsManager" index="0"]
 
@@ -45,7 +46,7 @@ position = Vector2( 174, 438 )
 [node name="Group4" type="Node2D" parent="MemoryCardsManager" index="3"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group4" index="0" instance=ExtResource( 2 )]
-position = Vector2( 414, 309 )
+position = Vector2( 389, 300 )
 
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]

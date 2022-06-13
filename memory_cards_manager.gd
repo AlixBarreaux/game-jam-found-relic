@@ -83,8 +83,6 @@ func on_interactable_enabled(card_node: Node) -> void:
 	return
 
 
-# MAKE IT CHECK ONLY ONCE. ADD A BOOLEAN?
-
 export var is_lone_card_present: bool = true
 var cards_per_group_count: int = 2
 
@@ -100,18 +98,14 @@ func on_card_life_cycle_finished() -> void:
 	for card_group_node in self.get_children():
 #		print("card_group_node loop", card_group_node)
 		for memory_card in card_group_node.get_children():
-			print("memory_card loop: ", memory_card.name)
 			_nodes_counter += 1
 #
 #			print("_nodes_counter: ", _nodes_counter)
 	
 	if not is_win_check_already_done:
 		if _nodes_counter <= _victory_counter:
-			printerr("_nodes_counter <= _victory_counter: So we won!", _nodes_counter)
 			is_win_check_already_done = true
-
-#		Events.emit_signal("level_completed")
-	print("\n")
+			Events.emit_signal("level_completed")
 	return
 
 # First time card is null. Must be reset to null as well.
