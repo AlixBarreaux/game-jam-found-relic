@@ -13,7 +13,7 @@ extends RayCast2D
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
 		# I'm sorry about this bad node reference but... Game Jam.
 		if self.get_parent().is_controlled:

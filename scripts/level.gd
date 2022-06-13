@@ -45,4 +45,7 @@ func on_next_scene_load_requested() -> void:
 
 
 func _on_LevelLoadingTransitionTimer_timeout() -> void:
-	get_tree().change_scene(self.next_level_to_load_path)
+	var _scene_loading_error: int = get_tree().change_scene(self.next_level_to_load_path)
+
+	if _scene_loading_error != OK:
+		printerr("(!) ERROR:" + self.name + ": The scene could not be loaded!")

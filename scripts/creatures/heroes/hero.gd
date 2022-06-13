@@ -24,7 +24,7 @@ func _ready() -> void:
 	return
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not self.velocity == Vector2(0.0, 0.0):
 		# Set the animation Tree to play Animation Move with the velocity
 		self.animation_tree.set("parameters/Move/blend_position", self.velocity)

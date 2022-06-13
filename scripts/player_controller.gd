@@ -22,7 +22,7 @@ func _ready() -> void:
 	return
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not hero.is_controlled:
 		return
 	
