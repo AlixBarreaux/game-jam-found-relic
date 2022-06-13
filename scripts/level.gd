@@ -32,8 +32,14 @@ func initialize_signals() -> void:
 	return
 
 
+# Avoid triggering the method twice since both characters call it
+var is_scene_load_requested_already_asked: bool = false
+
 func on_next_scene_load_requested() -> void:
 	print(self.name, ": Scene load requested!")
+	if is_scene_load_requested_already_asked:
+		return
+	is_scene_load_requested_already_asked = true
 	level_loading_transition_timer.start()
 	return
 
