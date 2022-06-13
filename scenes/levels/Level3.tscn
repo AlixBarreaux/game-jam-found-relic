@@ -29,31 +29,71 @@ is_lone_card_present = true
 [node name="Group1" type="Node2D" parent="MemoryCardsManager" index="0"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group1" index="0" instance=ExtResource( 2 )]
-position = Vector2( 53, 211 )
+position = Vector2( -200, 617 )
 
 [node name="MemoryCard2" parent="MemoryCardsManager/Group1" index="1" instance=ExtResource( 2 )]
-position = Vector2( 157, 217 )
+position = Vector2( -96, 623 )
 
 [node name="Group2" type="Node2D" parent="MemoryCardsManager" index="1"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group2" index="0" instance=ExtResource( 2 )]
-position = Vector2( 60, 323 )
+position = Vector2( -193, 729 )
 
 [node name="MemoryCard2" parent="MemoryCardsManager/Group2" index="1" instance=ExtResource( 2 )]
-position = Vector2( 166, 313 )
+position = Vector2( -87, 719 )
 
 [node name="Group3" type="Node2D" parent="MemoryCardsManager" index="2"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group3" index="0" instance=ExtResource( 2 )]
-position = Vector2( 66, 440 )
+position = Vector2( -187, 846 )
 
 [node name="MemoryCard2" parent="MemoryCardsManager/Group3" index="1" instance=ExtResource( 2 )]
-position = Vector2( 174, 438 )
+position = Vector2( -79, 844 )
 
 [node name="Group4" type="Node2D" parent="MemoryCardsManager" index="3"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group4" index="0" instance=ExtResource( 2 )]
-position = Vector2( 389, 300 )
+position = Vector2( -186, 943 )
+
+[node name="MemoryCard2" parent="MemoryCardsManager/Group4" index="1" instance=ExtResource( 2 )]
+position = Vector2( -86, 944 )
+
+[node name="Group5" type="Node2D" parent="MemoryCardsManager" index="4"]
+
+[node name="MemoryCard" parent="MemoryCardsManager/Group5" index="0" instance=ExtResource( 2 )]
+position = Vector2( 72, 640 )
+
+[node name="MemoryCard2" parent="MemoryCardsManager/Group5" index="1" instance=ExtResource( 2 )]
+position = Vector2( 163, 630 )
+
+[node name="Group6" type="Node2D" parent="MemoryCardsManager" index="5"]
+
+[node name="MemoryCard" parent="MemoryCardsManager/Group6" index="0" instance=ExtResource( 2 )]
+position = Vector2( 67, 725 )
+
+[node name="MemoryCard2" parent="MemoryCardsManager/Group6" index="1" instance=ExtResource( 2 )]
+position = Vector2( 167, 721 )
+
+[node name="Group7" type="Node2D" parent="MemoryCardsManager" index="6"]
+
+[node name="MemoryCard" parent="MemoryCardsManager/Group7" index="0" instance=ExtResource( 2 )]
+position = Vector2( 64, 818 )
+
+[node name="MemoryCard2" parent="MemoryCardsManager/Group7" index="1" instance=ExtResource( 2 )]
+position = Vector2( 158, 816 )
+
+[node name="Group8" type="Node2D" parent="MemoryCardsManager" index="7"]
+
+[node name="MemoryCard" parent="MemoryCardsManager/Group8" index="0" instance=ExtResource( 2 )]
+position = Vector2( 64, 910 )
+
+[node name="MemoryCard2" parent="MemoryCardsManager/Group8" index="1" instance=ExtResource( 2 )]
+position = Vector2( 158, 904 )
+
+[node name="Group9" type="Node2D" parent="MemoryCardsManager" index="8"]
+
+[node name="MemoryCard" parent="MemoryCardsManager/Group9" index="0" instance=ExtResource( 2 )]
+position = Vector2( 400, 621 )
 
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]

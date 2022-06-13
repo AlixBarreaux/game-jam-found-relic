@@ -25,6 +25,7 @@ func _ready() -> void:
 func initialize_asserts() -> void:
 	if next_level_to_load_path == "":
 		printerr(self.name + " next_level_to_load_path is not set in the inspector!")
+	return
 
 
 func initialize_signals() -> void:
@@ -49,3 +50,4 @@ func _on_LevelLoadingTransitionTimer_timeout() -> void:
 
 	if _scene_loading_error != OK:
 		printerr("(!) ERROR:" + self.name + ": The scene could not be loaded!")
+	return
