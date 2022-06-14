@@ -51,17 +51,11 @@ next_level_to_load_path = "res://scenes/gui/MainMenu.tscn"
 [node name="Hero" parent="Creatures/Heroes" index="0"]
 position = Vector2( 134, 52 )
 
-[node name="Sprite" parent="Creatures/Heroes/Hero" index="1"]
-self_modulate = Color( 1, 1, 1, 0.444368 )
-
 [node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
 parameters/playback = SubResource( 1 )
 
 [node name="Hero2" parent="Creatures/Heroes" index="1"]
 position = Vector2( 397, 71 )
-
-[node name="Sprite" parent="Creatures/Heroes/Hero2" index="1"]
-self_modulate = Color( 1, 1, 1, 0.444368 )
 
 [node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )
