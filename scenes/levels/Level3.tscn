@@ -97,7 +97,6 @@ position = Vector2( 144, 387 )
 texture = ExtResource( 5 )
 
 [node name="AnimationTree" parent="MemoryCardsManager/Group2/MemoryCard2" index="4"]
-active = false
 parameters/playback = SubResource( 6 )
 
 [node name="Group3" type="Node2D" parent="MemoryCardsManager" index="2"]

@@ -152,7 +152,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Move Down"
-length = 0.5
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("InteractRayCast2D:rotation_degrees")
@@ -173,10 +173,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
+"values": [ 6, 7, 8, 9 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:flip_h")
@@ -275,7 +275,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "Move Up"
-length = 0.5
+length = 0.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("InteractRayCast2D:rotation_degrees")
@@ -296,10 +296,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 1, 2, 3, 4 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:flip_h")
@@ -399,11 +399,10 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = 6.28319
 texture = ExtResource( 4 )
 hframes = 5
 vframes = 3
-frame = 5
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -428,7 +427,6 @@ anims/CelebrateVictory = SubResource( 16 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 15 )
 parameters/Idle/blend_position = Vector2( 0.0633907, 0.413793 )
 parameters/Move/blend_position = Vector2( 0, 0 )
