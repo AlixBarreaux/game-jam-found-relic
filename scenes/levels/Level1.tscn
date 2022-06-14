@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://duck_quack.ogg" type="AudioStream" id=4]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -32,9 +31,6 @@ parameters/playback = SubResource( 2 )
 [node name="Plate" parent="Plates" index="0" instance=ExtResource( 2 )]
 position = Vector2( 49, 166 )
 
-[node name="NoteBlockAudioStreamPlayer2D" parent="Plates/Plate" index="2"]
-stream = ExtResource( 4 )
-
 [node name="Plate2" parent="Plates" index="1" instance=ExtResource( 2 )]
 position = Vector2( 120, 166 )
 
@@ -47,4 +43,3 @@ position = Vector2( 260, 166 )
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]
 [editable path="Plates"]
-[editable path="Plates/Plate"]

@@ -1,41 +1,18 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/interaction_receiver_area2d.gd" type="Script" id=1]
 [ext_resource path="res://scripts/memory_card.gd" type="Script" id=2]
 [ext_resource path="res://miscellaneous/icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/card_back.tres" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 32, 32 )
+extents = Vector2( 55.5, 75.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 55.5, 75.5 )
 
 [sub_resource type="Animation" id=25]
 resource_name = "Idle"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprites/HeadsSprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprites/TailsSprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=14]
 length = 0.001
@@ -142,6 +119,18 @@ tracks/3/keys = {
 "method": "emit_signal_interactable_enabled"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprites/HeadsSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.13 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "ShowInvalidCombination"
@@ -244,6 +233,18 @@ tracks/1/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/HeadsSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "Start"
@@ -344,7 +345,7 @@ states/Start/node = SubResource( 16 )
 states/Start/position = Vector2( 584, -12 )
 transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "Idle", SubResource( 44 ), "Idle", "ShowValidCombination", SubResource( 45 ), "Idle", "ShowHeads", SubResource( 46 ), "Idle", "ShowInvalidCombination", SubResource( 47 ), "Idle", "ShowTails", SubResource( 48 ), "ShowTails", "Idle", SubResource( 49 ), "ShowHeads", "Idle", SubResource( 50 ), "ShowValidCombination", "Idle", SubResource( 51 ) ]
 start_node = "Start"
-graph_offset = Vector2( -80, -47 )
+graph_offset = Vector2( -121, -47 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
@@ -358,9 +359,8 @@ texture = ExtResource( 3 )
 
 [node name="TailsSprite" type="Sprite" parent="Sprites"]
 visible = false
-self_modulate = Color( 0.027451, 0.933333, 0, 1 )
 scale = Vector2( -1, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -371,6 +371,7 @@ self_modulate = Color( 0.447059, 0, 0.74902, 1 )
 shape = SubResource( 12 )
 
 [node name="InteractionReceiverArea2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
@@ -390,4 +391,5 @@ anims/Start = SubResource( 15 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 18 )
