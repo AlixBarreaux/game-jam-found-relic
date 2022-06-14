@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scripts/interaction_receiver_area2d.gd" type="Script" id=1]
 [ext_resource path="res://scripts/memory_card.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/card_1.tres" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/card_back.tres" type="Texture" id=4]
+[ext_resource path="res://resources/atlas-textures/cards/card_1.tres" type="Texture" id=3]
+[ext_resource path="res://resources/atlas-textures/cards/card_back.tres" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 55.5, 75.5 )
