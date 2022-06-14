@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/PlayerController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/InteractRayCast2D.tscn" type="PackedScene" id=2]
@@ -38,9 +38,117 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idle"
+[sub_resource type="Animation" id=20]
+resource_name = "Idle Down"
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle Left"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Idle Right"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "Idle Up"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Move Down"
@@ -209,8 +317,30 @@ tracks/2/keys = {
 [sub_resource type="AnimationNodeAnimation" id=17]
 animation = "CelebrateVictory"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "Idle"
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Idle Down"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "Idle Up"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Idle Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=27]
+blend_point_0/node = SubResource( 23 )
+blend_point_0/pos = Vector2( 0, 1.1 )
+blend_point_1/node = SubResource( 24 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 25 )
+blend_point_2/pos = Vector2( -1.1, 0 )
+blend_point_3/node = SubResource( 26 )
+blend_point_3/pos = Vector2( 1.1, 0 )
+min_space = Vector2( -20, -1 )
+max_space = Vector2( 20, 1 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Move Down"
@@ -237,22 +367,24 @@ min_space = Vector2( -20, -1 )
 max_space = Vector2( 20, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
 
 [sub_resource type="AnimationNodeStateMachine" id=14]
 states/CelebrateVictory/node = SubResource( 17 )
 states/CelebrateVictory/position = Vector2( 435, 197 )
-states/Idle/node = SubResource( 7 )
-states/Idle/position = Vector2( 330, 70 )
+states/Idle/node = SubResource( 27 )
+states/Idle/position = Vector2( 332, 70 )
 states/Move/node = SubResource( 12 )
 states/Move/position = Vector2( 516, 70 )
-transitions = [ "Idle", "Move", SubResource( 13 ), "Idle", "CelebrateVictory", SubResource( 18 ), "Move", "CelebrateVictory", SubResource( 19 ) ]
+transitions = [ "Move", "CelebrateVictory", SubResource( 19 ), "Idle", "CelebrateVictory", SubResource( 28 ), "Idle", "Move", SubResource( 29 ), "Move", "Idle", SubResource( 30 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -168, 10 )
+graph_offset = Vector2( -156, 24 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
@@ -267,10 +399,11 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 6.28319
 texture = ExtResource( 4 )
 hframes = 5
 vframes = 3
-frame = 9
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -283,7 +416,10 @@ collision_mask = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CelebrateVictory = SubResource( 16 )
-anims/Idle = SubResource( 2 )
+"anims/Idle Down" = SubResource( 20 )
+"anims/Idle Left" = SubResource( 2 )
+"anims/Idle Right" = SubResource( 21 )
+"anims/Idle Up" = SubResource( 22 )
 "anims/Move Down" = SubResource( 3 )
 "anims/Move Left" = SubResource( 4 )
 "anims/Move Right" = SubResource( 5 )
@@ -292,5 +428,7 @@ anims/Idle = SubResource( 2 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 14 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 15 )
-parameters/Move/blend_position = Vector2( 0.15848, 0.922414 )
+parameters/Idle/blend_position = Vector2( 0.0633907, 0.413793 )
+parameters/Move/blend_position = Vector2( 0, 0 )

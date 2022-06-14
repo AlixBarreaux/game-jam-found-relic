@@ -21,15 +21,26 @@ onready var animation_tree_node_sm_playback = animation_tree.get("parameters/pla
 func _ready() -> void:
 	self.initialize_signals()
 	self.initialize()
+	
+	
+	self.animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
+	self.animation_tree_node_sm_playback.travel("Idle")
 	return
 
 
+# Used to set the Idle blend position with the AnimationTree
+var last_velocity: Vector2 = Vector2(0.0, 0.0)
+
 func _physics_process(_delta: float) -> void:
+	
 	if not self.velocity == Vector2(0.0, 0.0):
 		# Set the animation Tree to play Animation Move with the velocity
 		self.animation_tree.set("parameters/Move/blend_position", self.velocity)
 		self.animation_tree_node_sm_playback.travel("Move")
+		
+		self.last_velocity = self.velocity
 	else:
+		self.animation_tree.set("parameters/Idle/blend_position", self.last_velocity)
 		self.animation_tree_node_sm_playback.travel("Idle")
 	return
 
