@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sound/music/let_testin_loop_good.ogg" type="AudioStream" id=7]
 [ext_resource path="res://test_playlist.gd" type="Script" id=8]
 [ext_resource path="res://plates_manager.gd" type="Script" id=9]
+[ext_resource path="res://assets/sound/sound-effects/fail.ogg" type="AudioStream" id=10]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -70,6 +71,9 @@ stream = ExtResource( 6 )
 
 [node name="WinTrack" parent="AudioManager/Playlist" index="5" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
+
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
+stream = ExtResource( 10 )
 
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]

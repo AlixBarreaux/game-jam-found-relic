@@ -34,7 +34,7 @@ func initialize_signals() -> void:
 	return
 
 
-func play_next_track() -> void:
+func on_good_interaction_sent() -> void:
 	# Mute current track
 	self.get_child(current_playing_track_index).set_muted(true)
 	
@@ -44,7 +44,7 @@ func play_next_track() -> void:
 	return
 
 
-func play_first_track() -> void:
+func on_wrong_interaction_sent() -> void:
 	# Mute last played track
 	self.get_child(current_playing_track_index).set_muted(true)
 	
