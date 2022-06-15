@@ -17,6 +17,10 @@ signal level_completed
 signal next_scene_load_requested
 
 
+# warning-ignore: unused_signal
+signal next_track_in_playlist_requested
+
+
 # ----------------- RUN CODE -----------------
 
 

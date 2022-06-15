@@ -405,7 +405,7 @@ states/Start/node = SubResource( 16 )
 states/Start/position = Vector2( 584, -12 )
 transitions = [ "ShowInvalidCombination", "ShowTails", SubResource( 20 ), "Start", "Idle", SubResource( 44 ), "Idle", "ShowValidCombination", SubResource( 45 ), "Idle", "ShowHeads", SubResource( 46 ), "Idle", "ShowInvalidCombination", SubResource( 47 ), "Idle", "ShowTails", SubResource( 48 ), "ShowTails", "Idle", SubResource( 49 ), "ShowHeads", "Idle", SubResource( 50 ), "ShowValidCombination", "Idle", SubResource( 51 ) ]
 start_node = "Start"
-graph_offset = Vector2( -121, -47 )
+graph_offset = Vector2( -68, -87 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
