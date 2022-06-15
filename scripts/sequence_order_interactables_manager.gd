@@ -45,6 +45,7 @@ func initialize() -> void:
 
 
 # Check if the interactable order is right when a interactable is enabled
+# Overriden in its extended classes
 func on_interactable_enabled(interactable_order_id: int) -> void:
 	if interactable_order_id == last_interactable_order_id + 1:
 		print("Good sequence:")

@@ -38,8 +38,8 @@ func initialize_signals() -> void:
 func _receive_interaction() -> void:
 	self.set_enabled(false)
 	self.emit_signal("interactable_enabled", self.id)
-	return
 
+	return
 
 func reset() -> void:
 	print(self.name + ": reset() !")
