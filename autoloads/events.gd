@@ -18,11 +18,9 @@ signal next_scene_load_requested
 
 
 # warning-ignore: unused_signal
-signal next_track_in_playlist_requested
+signal good_interaction_sent
 # warning-ignore: unused_signal
-signal first_track_in_playlist_requested
-
-
+signal wrong_interaction_sent
 
 
 # ----------------- RUN CODE -----------------

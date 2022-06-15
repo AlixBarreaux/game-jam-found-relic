@@ -20,8 +20,8 @@ func on_interactable_enabled(interactable_order_id: int) -> void:
 		last_interactable_order_id = interactable_order_id
 		
 		# WHAT CHANGES FROM BASE CLASS IS HERE:
-		print(self.name, ": Sending signal next_track_in_playlist_requested !")
-		Events.emit_signal("next_track_in_playlist_requested")
+		print(self.name, ": Sending signal good_interaction_sent !")
+		Events.emit_signal("good_interaction_sent")
 		
 		if interactable_order_id == self.get_child_count():
 			Events.emit_signal("level_completed")
@@ -31,5 +31,6 @@ func on_interactable_enabled(interactable_order_id: int) -> void:
 		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
 		self.reset_all_interactables()
 		
-		Events.emit_signal("first_track_in_playlist_requested")
+		print(self.name, ": Sending signal wrong_interaction_sent !")
+		Events.emit_signal("wrong_interaction_sent")
 	return
