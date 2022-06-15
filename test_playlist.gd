@@ -4,6 +4,9 @@ extends Node
 
 # ----------------- DECLARE VARIABLES -----------------
 
+export var good_sound: AudioStream = null
+export var bad_sound: AudioStream = null
+
 var current_playing_track_index: int = 0
 
 # ----------------- RUN CODE -----------------
@@ -12,8 +15,6 @@ func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
 	
-#	yield(get_tree().create_timer(1.0), "timeout")
-#	play_next_track()
 	return
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -33,6 +34,7 @@ func initialize_asserts() -> void:
 
 func initialize_signals() -> void:
 	Events.connect("next_track_in_playlist_requested", self, "play_next_track")
+	Events.connect("first_track_in_playlist_requested", self, "play_first_track")
 	return
 
 
@@ -43,5 +45,15 @@ func play_next_track() -> void:
 	current_playing_track_index += 1
 	# Unmute next track
 	# HANDLE WHEN THERE IS NO NEXT TRACK TO PLAY !!!!!!!!!!!!!!!
+	self.get_child(current_playing_track_index).set_muted(false)
+	return
+
+
+func play_first_track() -> void:
+	# Mute last played track
+	self.get_child(current_playing_track_index).set_muted(true)
+	
+	current_playing_track_index = 0
+	
 	self.get_child(current_playing_track_index).set_muted(false)
 	return

@@ -30,4 +30,6 @@ func on_interactable_enabled(interactable_order_id: int) -> void:
 		print("Wrong sequence:")
 		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
 		self.reset_all_interactables()
+		
+		Events.emit_signal("first_track_in_playlist_requested")
 	return
