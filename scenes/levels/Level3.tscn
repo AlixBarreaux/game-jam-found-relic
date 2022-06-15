@@ -58,6 +58,9 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 [node name="Hero2" parent="Creatures/Heroes" index="1"]
 position = Vector2( 397, 71 )
 
+[node name="Sprite" parent="Creatures/Heroes/Hero2" index="1"]
+frame = 5
+
 [node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
 parameters/playback = SubResource( 2 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
