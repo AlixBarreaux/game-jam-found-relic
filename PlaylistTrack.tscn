@@ -1,10 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://plate_track.gd" type="Script" id=1]
-[ext_resource path="res://assets/sound/music/let_testin_loop_bad.ogg" type="AudioStream" id=2]
 
 [node name="Plate1Track1" type="AudioStreamPlayer"]
-stream = ExtResource( 2 )
-autoplay = true
 bus = "Music"
 script = ExtResource( 1 )

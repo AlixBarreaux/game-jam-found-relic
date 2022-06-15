@@ -12,8 +12,8 @@ func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
 	
-	yield(get_tree().create_timer(1.0), "timeout")
-	play_next_track()
+#	yield(get_tree().create_timer(1.0), "timeout")
+#	play_next_track()
 	return
 
 # ----------------- DECLARE FUNCTIONS -----------------
