@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/gui/game_title_label.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui/SceneLoaderButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,42 @@
 [ext_resource path="res://scenes/gui/QuitToDesktopButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/VersionLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sound/music/main_theme.ogg" type="AudioStream" id=6]
+
+[sub_resource type="GDScript" id=4]
+script/source = "class_name SceneLoaderButton
+extends Button
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var scene_to_load_path: String = \"\"
+
+
+# ----------------- RUN CODE -----------------
+
+
+func _ready() -> void:
+	initialize_asserts()
+	return
+
+
+# ----------------- DECLARE FUNCTIONS -----------------
+
+
+func initialize_asserts() -> void:
+	if scene_to_load_path == \"\":
+		printerr(\"scene_to_load_path is empty! Please add a correct one.\")
+	return
+
+
+func _on_pressed() -> void:
+	var _scene_loading_error: int = get_tree().change_scene(self.scene_to_load_path)
+
+	if _scene_loading_error != OK:
+		printerr(\"(!) ERROR:\" + self.name + \": The scene could not be loaded!\")
+	return
+"
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -43,15 +79,16 @@ custom_constants/separation = 50
 alignment = 1
 
 [node name="PlayButton" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 18.0
-margin_bottom = 32.0
+margin_top = 13.0
+margin_bottom = 37.0
 text = "Play"
-scene_to_load_path = "res://scenes/levels/Level1.tscn"
+script = SubResource( 4 )
 
 [node name="QuitToDesktopButton" parent="Panel/VBoxContainer" instance=ExtResource( 4 )]
-margin_top = 82.0
-margin_bottom = 132.0
+margin_top = 87.0
+margin_bottom = 137.0
 rect_min_size = Vector2( 0, 50 )
+text = "Quit to Dekstop"
 
 [node name="VersionLabel" parent="." instance=ExtResource( 5 )]
 
