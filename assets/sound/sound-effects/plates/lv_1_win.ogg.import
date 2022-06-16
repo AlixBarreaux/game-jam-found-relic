@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lv_1_win.ogg-6162d6c84feb0412d0e4676dafa0a4a9.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sound-effects/plates/lv_1_win.ogg"
+dest_files=[ "res://.import/lv_1_win.ogg-6162d6c84feb0412d0e4676dafa0a4a9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

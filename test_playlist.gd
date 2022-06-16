@@ -37,11 +37,16 @@ func initialize_signals() -> void:
 
 func on_good_interaction_sent() -> void:
 	# Mute current track
-	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
+#	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
+	general_tracks_list.get_child(current_playing_track_index).stop()
 	
 	current_playing_track_index += 1
 	# Unmute next track
-	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
+#	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
+
+	general_tracks_list.get_child(current_playing_track_index).play()
+	if current_playing_track_index == general_tracks_list.get_child_count() -1:
+		$Ambient/AmbientTrack.stop()
 	return
 
 
@@ -49,7 +54,8 @@ onready var wrong_track: AudioStreamPlayer = $WrongTrack
 
 func on_wrong_interaction_sent() -> void:
 	# Mute last played track
-	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
+#	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
+	general_tracks_list.get_child(current_playing_track_index).stop()
 	
 	current_playing_track_index = 0
 	
@@ -60,10 +66,10 @@ func on_wrong_interaction_sent() -> void:
 	return
 
 
-func _on_WrongTrack_finished() -> void:
+#func _on_WrongTrack_finished() -> void:
 	# Reset all tracks
-	for track in general_tracks_list.get_children():
-		track.seek(0.0)
+#	for track in general_tracks_list.get_children():
+#		track.seek(0.0)
 	
 	
 #	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
