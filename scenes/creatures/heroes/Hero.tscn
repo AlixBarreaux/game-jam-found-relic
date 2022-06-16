@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/creatures/heroes/hero_camera.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 21, 34 )
 
 [sub_resource type="Animation" id=16]
 resource_name = "CelebrateVictory"
@@ -403,7 +403,11 @@ vframes = 3
 frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 50 )
 shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="PlayerController" parent="." instance=ExtResource( 1 )]
 

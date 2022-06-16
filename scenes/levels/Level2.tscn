@@ -1,54 +1,37 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interactables/NoteBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sound/sound-effects/duck_quack.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/sound/sound-effects/ah_-_denis_brogniart.ogg" type="AudioStream" id=5]
-[ext_resource path="res://scenes/Jukebox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://note_blocks_manager.gd" type="Script" id=7]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
-
 [node name="Level2" instance=ExtResource( 1 )]
-next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
-parameters/playback = SubResource( 1 )
-
-[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
-parameters/playback = SubResource( 2 )
-
-[node name="NoteBlocksManager" parent="." index="2" instance=ExtResource( 2 )]
+[node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
 script = ExtResource( 7 )
 
-[node name="NoteBlock" parent="NoteBlocksManager" index="0" instance=ExtResource( 3 )]
-position = Vector2( 49, 161 )
+[node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
+position = Vector2( -158, 161 )
 
-[node name="NoteBlockAudioStreamPlayer2D" parent="NoteBlocksManager/NoteBlock" index="3"]
+[node name="NoteBlockAudioStreamPlayer2D" parent="YSort/NoteBlocksManager/NoteBlock" index="2"]
 stream = ExtResource( 5 )
 
-[node name="NoteBlock2" parent="NoteBlocksManager" index="1" instance=ExtResource( 3 )]
-position = Vector2( 125, 161 )
+[node name="NoteBlock2" parent="YSort/NoteBlocksManager" index="1" instance=ExtResource( 3 )]
+position = Vector2( 8, 161 )
 
-[node name="NoteBlockAudioStreamPlayer2D" parent="NoteBlocksManager/NoteBlock2" index="3"]
+[node name="NoteBlockAudioStreamPlayer2D" parent="YSort/NoteBlocksManager/NoteBlock2" index="2"]
 stream = ExtResource( 4 )
 
-[node name="NoteBlock3" parent="NoteBlocksManager" index="2" instance=ExtResource( 3 )]
+[node name="NoteBlock3" parent="YSort/NoteBlocksManager" index="2" instance=ExtResource( 3 )]
 position = Vector2( 207, 161 )
 
-[node name="NoteBlock4" parent="NoteBlocksManager" index="3" instance=ExtResource( 3 )]
+[node name="NoteBlock4" parent="YSort/NoteBlocksManager" index="3" instance=ExtResource( 3 )]
 position = Vector2( 287, 161 )
 
-[node name="NoteBlock5" parent="NoteBlocksManager" index="4" instance=ExtResource( 3 )]
+[node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
 position = Vector2( 360, 161 )
 
-[node name="Jukebox" parent="." index="3" instance=ExtResource( 6 )]
-position = Vector2( 565, 2 )
-
-[editable path="Creatures/Heroes/Hero"]
-[editable path="Creatures/Heroes/Hero2"]
-[editable path="NoteBlocksManager/NoteBlock"]
-[editable path="NoteBlocksManager/NoteBlock2"]
+[editable path="YSort/NoteBlocksManager/NoteBlock"]
+[editable path="YSort/NoteBlocksManager/NoteBlock2"]

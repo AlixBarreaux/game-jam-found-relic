@@ -10,5 +10,8 @@
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )
 
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 0, 52 )
+
 [node name="AnimationTree" parent="." index="6"]
 parameters/playback = SubResource( 1 )

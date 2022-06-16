@@ -12,18 +12,16 @@ position = Vector2( -75, -82 )
 color = Color( 0.0784314, 0.0627451, 0.0627451, 1 )
 polygon = PoolVector2Array( -136, -48, 381, -16, 353, 236, -148, 213 )
 
-[node name="Creatures" type="Node" parent="."]
-
-[node name="Heroes" type="Node" parent="Creatures"]
-
-[node name="HeroMan" parent="Creatures/Heroes" instance=ExtResource( 3 )]
-
-[node name="HeroWoman" parent="Creatures/Heroes" instance=ExtResource( 2 )]
-position = Vector2( 146, -5 )
-is_controlled = false
-
 [node name="LevelLoadingTransitionTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="HeroMan" parent="YSort" instance=ExtResource( 3 )]
+
+[node name="HeroWoman" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 146, -5 )
+is_controlled = false
 
 [connection signal="timeout" from="LevelLoadingTransitionTimer" to="." method="_on_LevelLoadingTransitionTimer_timeout"]
