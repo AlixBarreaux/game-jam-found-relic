@@ -15,12 +15,13 @@ func _ready() -> void:
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
+onready var general_tracks_list: Node = $GeneralTracks
 
 func initialize_asserts() -> void:
 	var _first_track_count: int = 0
 	var _max_first_track_count: int = 1
 	
-	for track in self.get_children():
+	for track in general_tracks_list.get_children():
 		if track.first_track_to_play_on_start:
 			_first_track_count +=1
 	if _first_track_count != _max_first_track_count:
@@ -36,19 +37,34 @@ func initialize_signals() -> void:
 
 func on_good_interaction_sent() -> void:
 	# Mute current track
-	self.get_child(current_playing_track_index).set_muted(true)
+	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
 	
 	current_playing_track_index += 1
 	# Unmute next track
-	self.get_child(current_playing_track_index).set_muted(false)
+	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
 	return
 
 
+onready var wrong_track: AudioStreamPlayer = $WrongTrack
+
 func on_wrong_interaction_sent() -> void:
 	# Mute last played track
-	self.get_child(current_playing_track_index).set_muted(true)
+	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
 	
 	current_playing_track_index = 0
 	
-	self.get_child(current_playing_track_index).set_muted(false)
+#	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
+
+	wrong_track.play()
+	
+	return
+
+
+func _on_WrongTrack_finished() -> void:
+	# Reset all tracks
+	for track in general_tracks_list.get_children():
+		track.seek(0.0)
+	
+	
+#	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
 	return

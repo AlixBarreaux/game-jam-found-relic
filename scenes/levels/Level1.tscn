@@ -53,27 +53,31 @@ position = Vector2( 260, 166 )
 [node name="Playlist" type="Node" parent="AudioManager" index="0"]
 script = ExtResource( 8 )
 
-[node name="StartTrack" parent="AudioManager/Playlist" index="0" instance=ExtResource( 4 )]
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager/Playlist" index="0"]
+stream = ExtResource( 10 )
+
+[node name="GeneralTracks" type="Node" parent="AudioManager/Playlist" index="1"]
+
+[node name="StartTrack" parent="AudioManager/Playlist/GeneralTracks" index="0" instance=ExtResource( 4 )]
 stream = ExtResource( 5 )
 first_track_to_play_on_start = true
 
-[node name="Plate1Track1" parent="AudioManager/Playlist" index="1" instance=ExtResource( 4 )]
+[node name="Plate1Track1" parent="AudioManager/Playlist/GeneralTracks" index="1" instance=ExtResource( 4 )]
 stream = ExtResource( 7 )
 
-[node name="Plate1Track2" parent="AudioManager/Playlist" index="2" instance=ExtResource( 4 )]
+[node name="Plate1Track2" parent="AudioManager/Playlist/GeneralTracks" index="2" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 
-[node name="Plate1Track3" parent="AudioManager/Playlist" index="3" instance=ExtResource( 4 )]
+[node name="Plate1Track3" parent="AudioManager/Playlist/GeneralTracks" index="3" instance=ExtResource( 4 )]
 stream = ExtResource( 7 )
 
-[node name="Plate1Track4" parent="AudioManager/Playlist" index="4" instance=ExtResource( 4 )]
+[node name="Plate1Track4" parent="AudioManager/Playlist/GeneralTracks" index="4" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 
-[node name="WinTrack" parent="AudioManager/Playlist" index="5" instance=ExtResource( 4 )]
+[node name="WinTrack" parent="AudioManager/Playlist/GeneralTracks" index="5" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 
-[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
-stream = ExtResource( 10 )
+[connection signal="finished" from="AudioManager/Playlist/WrongTrack" to="AudioManager/Playlist" method="_on_WrongTrack_finished"]
 
 [editable path="Creatures/Heroes/Hero"]
 [editable path="Creatures/Heroes/Hero2"]

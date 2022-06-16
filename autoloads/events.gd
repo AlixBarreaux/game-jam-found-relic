@@ -22,6 +22,9 @@ signal good_interaction_sent
 # warning-ignore: unused_signal
 signal wrong_interaction_sent
 
+# warning-ignore: unused_signal
+signal wrong_interaction_track_finished
+
 
 # ----------------- RUN CODE -----------------
 
