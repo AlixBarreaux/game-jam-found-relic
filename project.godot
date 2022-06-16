@@ -103,6 +103,11 @@ _global_script_classes=[ {
 "class": "VersionLabel",
 "language": "GDScript",
 "path": "res://scripts/gui/version_label.gd"
+}, {
+"base": "PlateTrack",
+"class": "WinTrack",
+"language": "GDScript",
+"path": "res://win_tracks.gd"
 } ]
 _global_script_class_icons={
 "GameTitleLabel": "",
@@ -123,7 +128,8 @@ _global_script_class_icons={
 "SceneLoaderButton": "",
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",
-"VersionLabel": ""
+"VersionLabel": "",
+"WinTrack": ""
 }
 
 [application]

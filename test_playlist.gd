@@ -4,18 +4,26 @@ extends Node
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
 var current_playing_track_index: int = 0
 
+# Node References
+onready var ambient_track: AudioStreamPlayer = $Ambient/AmbientTrack
+onready var general_tracks_list: Node = $GeneralTracks
+onready var wrong_track: AudioStreamPlayer = $WrongTrack
+
+
 # ----------------- RUN CODE -----------------
+
 
 func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
 	return
 
+
 # ----------------- DECLARE FUNCTIONS -----------------
 
-onready var general_tracks_list: Node = $GeneralTracks
 
 func initialize_asserts() -> void:
 	var _first_track_count: int = 0
@@ -46,11 +54,9 @@ func on_good_interaction_sent() -> void:
 
 	general_tracks_list.get_child(current_playing_track_index).play()
 	if current_playing_track_index == general_tracks_list.get_child_count() -1:
-		$Ambient/AmbientTrack.stop()
+		ambient_track.stop()
 	return
 
-
-onready var wrong_track: AudioStreamPlayer = $WrongTrack
 
 func on_wrong_interaction_sent() -> void:
 	# Mute last played track

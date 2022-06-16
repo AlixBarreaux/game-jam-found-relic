@@ -17,6 +17,9 @@
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
+[node name="LevelLoadingTransitionTimer" parent="." index="1"]
+wait_time = 5.0
+
 [node name="PlatesManager" parent="YSort" index="2" instance=ExtResource( 3 )]
 script = ExtResource( 9 )
 
@@ -71,7 +74,5 @@ bus = "SFX"
 [node name="WinTrack" parent="AudioManager/Playlist/GeneralTracks" index="4" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 bus = "SFX"
-
-[connection signal="finished" from="AudioManager/Playlist/WrongTrack" to="AudioManager/Playlist" method="_on_WrongTrack_finished"]
 
 [editable path="YSort/PlatesManager"]
