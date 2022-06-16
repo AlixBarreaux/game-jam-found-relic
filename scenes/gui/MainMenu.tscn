@@ -83,6 +83,7 @@ margin_top = 13.0
 margin_bottom = 37.0
 text = "Play"
 script = SubResource( 4 )
+scene_to_load_path = "res://scenes/levels/Level1.tscn"
 
 [node name="QuitToDesktopButton" parent="Panel/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 87.0
