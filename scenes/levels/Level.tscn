@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
-[ext_resource path="res://scenes/creatures/heroes/Hero.tscn" type="PackedScene" id=2]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+[ext_resource path="res://scenes/creatures/heroes/HeroWoman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/creatures/heroes/HeroMan.tscn" type="PackedScene" id=3]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,24 +16,14 @@ polygon = PoolVector2Array( -136, -48, 381, -16, 353, 236, -148, 213 )
 
 [node name="Heroes" type="Node" parent="Creatures"]
 
-[node name="Hero" parent="Creatures/Heroes" instance=ExtResource( 2 )]
-position = Vector2( 28, 16 )
+[node name="HeroMan" parent="Creatures/Heroes" instance=ExtResource( 3 )]
 
-[node name="AnimationTree" parent="Creatures/Heroes/Hero" index="6"]
-parameters/playback = SubResource( 1 )
-
-[node name="Hero2" parent="Creatures/Heroes" instance=ExtResource( 2 )]
-position = Vector2( 222, 42 )
+[node name="HeroWoman" parent="Creatures/Heroes" instance=ExtResource( 2 )]
+position = Vector2( 146, -5 )
 is_controlled = false
-
-[node name="AnimationTree" parent="Creatures/Heroes/Hero2" index="6"]
-parameters/playback = SubResource( 2 )
 
 [node name="LevelLoadingTransitionTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="LevelLoadingTransitionTimer" to="." method="_on_LevelLoadingTransitionTimer_timeout"]
-
-[editable path="Creatures/Heroes/Hero"]
-[editable path="Creatures/Heroes/Hero2"]
