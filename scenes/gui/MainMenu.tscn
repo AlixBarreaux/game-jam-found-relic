@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/gui/game_title_label.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui/SceneLoaderButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://scenes/gui/QuitToDesktopButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/VersionLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sound/music/main_theme.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sprites/Font.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Pc.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Glass.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/light.png" type="Texture" id=10]
+[ext_resource path="res://main_menu.gd" type="Script" id=11]
 
 [sub_resource type="GDScript" id=4]
 script/source = "class_name SceneLoaderButton
@@ -43,34 +48,61 @@ func _on_pressed() -> void:
 	return
 "
 
+[sub_resource type="Animation" id=5]
+resource_name = "Blink"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.45, 1.0 ]
+}
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
+script = ExtResource( 11 )
+first_button_to_focus_node_path = NodePath("Background/Screen/VBoxContainer/PlayButton")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 7 )
 
-[node name="GameTitle" type="Label" parent="Panel"]
+[node name="Screen" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+
+[node name="GameTitle" type="Label" parent="Background/Screen"]
 anchor_right = 1.0
-margin_top = 34.0
-margin_bottom = 48.0
+margin_left = 502.0
+margin_top = 227.0
+margin_right = -502.0
+margin_bottom = 251.0
 text = "Game Title"
 align = 1
 valign = 1
 autowrap = true
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Screen"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -194.0
-margin_top = -75.0
+margin_top = -119.0
 margin_right = 194.0
-margin_bottom = 75.0
+margin_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -78,21 +110,68 @@ size_flags_vertical = 3
 custom_constants/separation = 50
 alignment = 1
 
-[node name="PlayButton" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 13.0
-margin_bottom = 37.0
+[node name="PlayButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 2 )]
+margin_bottom = 53.0
+focus_neighbour_left = NodePath("../QuitToDesktopButton")
+focus_neighbour_top = NodePath("../QuitToDesktopButton")
+focus_neighbour_right = NodePath("../QuitToDesktopButton")
+focus_neighbour_bottom = NodePath("../QuitToDesktopButton")
 text = "Play"
 script = SubResource( 4 )
 scene_to_load_path = "res://scenes/levels/Level1.tscn"
 
-[node name="QuitToDesktopButton" parent="Panel/VBoxContainer" instance=ExtResource( 4 )]
-margin_top = 87.0
-margin_bottom = 137.0
+[node name="QuitToDesktopButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 103.0
+margin_bottom = 156.0
 rect_min_size = Vector2( 0, 50 )
+focus_neighbour_left = NodePath("../PlayButton")
+focus_neighbour_top = NodePath("../PlayButton")
+focus_neighbour_right = NodePath("../PlayButton")
+focus_neighbour_bottom = NodePath("../PlayButton")
 text = "Quit to Dekstop"
 
-[node name="VersionLabel" parent="." instance=ExtResource( 5 )]
+[node name="VersionLabel" parent="Background/Screen" instance=ExtResource( 5 )]
+margin_left = 521.0
+margin_top = -295.0
+margin_right = -521.0
+margin_bottom = -271.0
+
+[node name="WineGlass" type="TextureRect" parent="Background"]
+margin_left = 1572.0
+margin_top = 655.0
+margin_right = 1823.0
+margin_bottom = 1101.0
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1215.0
+margin_top = 381.0
+margin_right = 1492.0
+margin_bottom = 419.0
+text = "Find your beloved one"
+align = 1
+valign = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 1414, 1052 )
+scale = Vector2( 0.198242, 0.198242 )
+texture = ExtResource( 10 )
+color = Color( 0.211765, 0.662745, 0.215686, 1 )
+energy = 1.00656
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Blink"
+anims/Blink = SubResource( 5 )
+
+[node name="QuitToDesktopButton" parent="." instance=ExtResource( 4 )]
+margin_left = 1441.0
+margin_top = 155.0
+margin_right = 1491.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 0, 15 )
+rect_scale = Vector2( 0.25, 0.25 )
+text = ""

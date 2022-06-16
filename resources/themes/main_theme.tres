@@ -3,12 +3,14 @@
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=2]
+size = 35
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 25
 font_data = ExtResource( 1 )
 
 [resource]
