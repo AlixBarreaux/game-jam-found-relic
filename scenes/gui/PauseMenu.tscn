@@ -44,7 +44,7 @@ autowrap = true
 
 [node name="QuitToMainMenuTextureButton" parent="." instance=ExtResource( 4 )]
 
-[node name="Label" type="Label" parent="."]
+[node name="BackToMenuLabel" type="Label" parent="."]
 margin_left = 512.0
 margin_top = 782.0
 margin_right = 709.0
@@ -68,7 +68,7 @@ texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 3 )
 texture_focused = ExtResource( 3 )
 
-[node name="Label2" type="Label" parent="."]
+[node name="ResumeLabel" type="Label" parent="."]
 margin_left = 1133.0
 margin_top = 782.0
 margin_right = 1414.0

@@ -28,6 +28,17 @@ func _unhandled_key_input(_event: InputEventKey) -> void:
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
+func _initialize_asserts() -> void:
+	assert(self.first_button_to_focus_node_path != null)
+	return
+
+
+func _initialize() -> void:
+	self.hide()
+	self.first_button_to_focus.grab_focus()
+	return
+
+
 func set_paused(paused: bool) -> void:
 	get_tree().paused = paused
 	self.visible = paused
@@ -44,16 +55,6 @@ func toggle_paused() -> void:
 		set_paused(true)
 	else:
 		set_paused(false)
-	return
-
-func _initialize_asserts() -> void:
-	assert(self.first_button_to_focus_node_path != null)
-	return
-
-
-func _initialize() -> void:
-	self.hide()
-	self.first_button_to_focus.grab_focus()
 	return
 
 
