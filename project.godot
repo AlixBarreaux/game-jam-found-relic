@@ -45,11 +45,6 @@ _global_script_classes=[ {
 "path": "res://scripts/interaction_receiver_area2d.gd"
 }, {
 "base": "Node2D",
-"class": "JukeBox",
-"language": "GDScript",
-"path": "res://scripts/Jukebox.gd"
-}, {
-"base": "Node2D",
 "class": "Level",
 "language": "GDScript",
 "path": "res://scripts/level.gd"
@@ -142,7 +137,6 @@ _global_script_class_icons={
 "InteractRaycast2D": "",
 "InteractableSoundPlayer": "",
 "InteractionReceiver": "",
-"JukeBox": "",
 "Level": "",
 "MainMenu": "",
 "MemoryCard": "",
