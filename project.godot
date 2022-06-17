@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/level.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "MainMenu",
 "language": "GDScript",
 "path": "res://scripts/gui/main_menu.gd"
@@ -169,7 +169,7 @@ default_bus_layout="res://resources/audio-bus-layouts/default_bus_layout.tres"
 
 [autoload]
 
-Events="*res://autoloads/events.gd"
+Events="*res://autoloads/scripts/events.gd"
 
 [display]
 
