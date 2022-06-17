@@ -5,7 +5,7 @@
 [node name="SceneLoaderButton" type="Button"]
 margin_right = 388.0
 margin_bottom = 20.0
-text = "Quit to Desktop"
+text = "Scene Loader Button"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""

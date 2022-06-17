@@ -12,7 +12,6 @@ extends Button
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
-
 func _on_QuitToDesktopButton_pressed() -> void:
 	get_tree().quit()
 	return

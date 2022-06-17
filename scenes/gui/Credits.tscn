@@ -1,0 +1,248 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/sprites/light.png" type="Texture" id=2]
+[ext_resource path="res://scenes/gui/BrowserLinkButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/Glass.png" type="Texture" id=4]
+[ext_resource path="res://scenes/gui/SceneLoaderButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sound/music/main_theme.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sprites/Pc.png" type="Texture" id=8]
+[ext_resource path="res://credits_menu.gd" type="Script" id=9]
+[ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=10]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Blink"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.00322, 1.45, 1.00322 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.980392, 0.356863, 0.356863, 1 )
+
+[node name="CreditsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 10 )
+script = ExtResource( 9 )
+first_button_to_focus_node_path = NodePath("BackButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Screen" type="TextureRect" parent="Panel"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 8 )
+
+[node name="GameTitle" type="Label" parent="Panel/Screen"]
+anchor_right = 1.0
+margin_left = 502.0
+margin_top = 210.0
+margin_right = -502.0
+margin_bottom = 293.0
+custom_fonts/font = SubResource( 1 )
+text = "Credits"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SceneLoaderButton" parent="Panel" instance=ExtResource( 5 )]
+margin_left = 1441.0
+margin_top = 155.0
+margin_right = 1491.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.25, 0.25 )
+text = ""
+scene_to_load_path = "res://scenes/gui/MainMenu.tscn"
+
+[node name="WineGlasses" type="Control" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="WineGlass" type="TextureRect" parent="Panel/WineGlasses"]
+margin_left = 1572.0
+margin_top = 655.0
+margin_right = 1823.0
+margin_bottom = 1101.0
+texture = ExtResource( 4 )
+
+[node name="WineGlass2" type="TextureRect" parent="Panel/WineGlasses"]
+margin_left = 1426.0
+margin_top = 730.0
+margin_right = 1677.0
+margin_bottom = 1176.0
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+root_node = NodePath("../..")
+autoplay = "Blink"
+anims/Blink = SubResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="Panel"]
+position = Vector2( 1414, 1052 )
+scale = Vector2( 0.198242, 0.198242 )
+texture = ExtResource( 2 )
+color = Color( 0.980392, 0.356863, 0.356863, 1 )
+energy = 1.00322
+
+[node name="Music" type="AudioStreamPlayer" parent="Panel"]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="LightPanel" type="Panel" parent="."]
+margin_left = 1397.0
+margin_top = 1046.0
+margin_right = 1422.0
+margin_bottom = 1062.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -321.0
+margin_top = -197.0
+margin_right = 327.0
+margin_bottom = 152.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 636.0
+margin_bottom = 512.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 636.0
+margin_bottom = 38.0
+text = "-----------------------------------------------------"
+align = 1
+valign = 1
+
+[node name="LeadDeveloper" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 636.0
+margin_bottom = 168.0
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/LeadDeveloper"]
+margin_right = 636.0
+margin_bottom = 38.0
+text = "Lead Developer / Programmer"
+align = 1
+valign = 1
+
+[node name="VboxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/LeadDeveloper"]
+margin_top = 42.0
+margin_right = 636.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/LeadDeveloper/VboxContainer" instance=ExtResource( 3 )]
+margin_left = 247.0
+margin_right = 389.0
+text = "CTN Phaco"
+url = "https://ctn-phaco.itch.io/"
+
+[node name="SoundDesigners" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 218.0
+margin_right = 636.0
+margin_bottom = 382.0
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+margin_right = 636.0
+margin_bottom = 38.0
+text = "Sound Effects / Music:"
+align = 1
+valign = 1
+
+[node name="SavePoint" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+margin_top = 42.0
+margin_right = 636.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/SavePoint" instance=ExtResource( 3 )]
+margin_left = 246.0
+margin_right = 390.0
+text = "Save Point"
+url = "https://ctn-phaco.itch.io/"
+
+[node name="Gesuardo" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+margin_top = 84.0
+margin_right = 636.0
+margin_bottom = 122.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/Gesuardo" instance=ExtResource( 3 )]
+margin_left = 258.0
+margin_right = 378.0
+text = "Gesuardo"
+url = "https://ctn-phaco.itch.io/"
+
+[node name="Hellsnake" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+margin_top = 126.0
+margin_right = 636.0
+margin_bottom = 164.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/Hellsnake" instance=ExtResource( 3 )]
+margin_right = 376.0
+text = "Hellsnake"
+url = "https://ctn-phaco.itch.io/"
+
+[node name="Graphist" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 432.0
+margin_right = 636.0
+margin_bottom = 512.0
+
+[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/Graphist"]
+margin_right = 636.0
+margin_bottom = 38.0
+text = "Graphist:"
+align = 1
+valign = 1
+
+[node name="VboxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Graphist"]
+margin_top = 42.0
+margin_right = 636.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/Graphist/VboxContainer" instance=ExtResource( 3 )]
+margin_left = 238.0
+margin_right = 398.0
+text = "Ibtissam Aqil"
+url = "https://www.artstation.com/aqil_ib"
+
+[node name="BackButton" parent="." instance=ExtResource( 5 )]
+margin_left = 766.0
+margin_top = 760.0
+margin_right = 1154.0
+margin_bottom = 813.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+text = "Back to Main Menu"
+scene_to_load_path = "res://scenes/gui/MainMenu.tscn"
