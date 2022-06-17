@@ -17,24 +17,6 @@
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="LevelLoadingTransitionTimer" parent="." index="1"]
-wait_time = 5.0
-
-[node name="PlatesManager" parent="YSort" index="2" instance=ExtResource( 3 )]
-script = ExtResource( 9 )
-
-[node name="Plate" parent="YSort/PlatesManager" index="0" instance=ExtResource( 2 )]
-position = Vector2( 49, 166 )
-
-[node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
-position = Vector2( 120, 166 )
-
-[node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( 189, 166 )
-
-[node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
-position = Vector2( 260, 166 )
-
 [node name="AudioManager" type="Node" parent="." index="3"]
 
 [node name="Playlist" type="Node" parent="AudioManager" index="0"]
@@ -74,5 +56,23 @@ bus = "SFX"
 [node name="WinTrack" parent="AudioManager/Playlist/GeneralTracks" index="4" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 bus = "SFX"
+
+[node name="LevelLoadingTransitionTimer" parent="." index="5"]
+wait_time = 5.0
+
+[node name="PlatesManager" parent="YSort" index="2" instance=ExtResource( 3 )]
+script = ExtResource( 9 )
+
+[node name="Plate" parent="YSort/PlatesManager" index="0" instance=ExtResource( 2 )]
+position = Vector2( 49, 166 )
+
+[node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
+position = Vector2( 120, 166 )
+
+[node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
+position = Vector2( 189, 166 )
+
+[node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
+position = Vector2( 260, 166 )
 
 [editable path="YSort/PlatesManager"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/sprites/light.png" type="Texture" id=2]
 [ext_resource path="res://scenes/gui/BrowserLinkButton.tscn" type="PackedScene" id=3]
@@ -14,7 +14,7 @@
 bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 55
+size = 45
 font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=4]
@@ -36,6 +36,10 @@ tracks/0/keys = {
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.980392, 0.356863, 0.356863, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 6 )
 
 [node name="CreditsMenu" type="Control"]
 anchor_right = 1.0
@@ -134,6 +138,7 @@ custom_constants/separation = 50
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+self_modulate = Color( 0, 0, 0.0666667, 1 )
 margin_right = 636.0
 margin_bottom = 38.0
 text = "-----------------------------------------------------"
@@ -148,6 +153,7 @@ margin_bottom = 168.0
 [node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/LeadDeveloper"]
 margin_right = 636.0
 margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Lead Developer / Programmer"
 align = 1
 valign = 1
@@ -244,5 +250,6 @@ focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
+custom_fonts/font = SubResource( 7 )
 text = "Back to Main Menu"
 scene_to_load_path = "res://scenes/gui/MainMenu.tscn"
