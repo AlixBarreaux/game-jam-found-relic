@@ -4,6 +4,7 @@ extends Control
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
 # Node Paths
 export (NodePath) var first_button_to_focus_node_path = null
 
@@ -11,6 +12,7 @@ onready var first_button_to_focus: TextureButton = get_node(first_button_to_focu
 
 
 # ----------------- RUN CODE -----------------
+
 
 func _ready() -> void:
 	self._initialize_asserts()
@@ -20,7 +22,6 @@ func _ready() -> void:
 
 func _unhandled_key_input(_event: InputEventKey) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
-#		toggle_paused()
 		self.visible = !visible
 	return
 
