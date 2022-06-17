@@ -198,7 +198,7 @@ alignment = 1
 margin_left = 258.0
 margin_right = 378.0
 text = "Gesuardo"
-url = "https://ctn-phaco.itch.io/"
+url = "https://gesuardo.weebly.com/"
 
 [node name="Hellsnake" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
 margin_top = 126.0
