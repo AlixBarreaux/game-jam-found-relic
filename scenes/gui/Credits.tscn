@@ -61,9 +61,9 @@ texture = ExtResource( 8 )
 [node name="GameTitle" type="Label" parent="Panel/Screen"]
 anchor_right = 1.0
 margin_left = 502.0
-margin_top = 210.0
+margin_top = 192.0
 margin_right = -502.0
-margin_bottom = 293.0
+margin_bottom = 275.0
 custom_fonts/font = SubResource( 1 )
 text = "Credits"
 align = 1
@@ -120,132 +120,126 @@ margin_right = 1422.0
 margin_bottom = 1062.0
 custom_styles/panel = SubResource( 6 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -321.0
-margin_top = -197.0
-margin_right = 327.0
-margin_bottom = 152.0
-scroll_horizontal_enabled = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 636.0
-margin_bottom = 512.0
-custom_constants/separation = 50
+margin_left = -318.0
+margin_top = -231.0
+margin_right = 318.0
+margin_bottom = 173.0
+custom_constants/separation = 40
 alignment = 1
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-self_modulate = Color( 0, 0, 0.0666667, 1 )
+[node name="LeadDeveloper" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 636.0
+margin_bottom = 80.0
+
+[node name="RoleLabel" type="Label" parent="VBoxContainer/LeadDeveloper"]
 margin_right = 636.0
 margin_bottom = 38.0
-text = "-----------------------------------------------------"
-align = 1
-valign = 1
-
-[node name="LeadDeveloper" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 88.0
-margin_right = 636.0
-margin_bottom = 168.0
-
-[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/LeadDeveloper"]
-margin_right = 636.0
-margin_bottom = 38.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
 text = "Lead Developer / Programmer"
 align = 1
 valign = 1
 
-[node name="VboxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/LeadDeveloper"]
+[node name="VboxContainer" type="HBoxContainer" parent="VBoxContainer/LeadDeveloper"]
 margin_top = 42.0
 margin_right = 636.0
 margin_bottom = 80.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/LeadDeveloper/VboxContainer" instance=ExtResource( 3 )]
+[node name="BrowserLinkButton" parent="VBoxContainer/LeadDeveloper/VboxContainer" instance=ExtResource( 3 )]
 margin_left = 247.0
 margin_right = 389.0
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "CTN Phaco"
 url = "https://ctn-phaco.itch.io/"
 
-[node name="SoundDesigners" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 218.0
+[node name="SoundDesigners" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 120.0
 margin_right = 636.0
-margin_bottom = 382.0
+margin_bottom = 284.0
 
-[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+[node name="RoleLabel" type="Label" parent="VBoxContainer/SoundDesigners"]
 margin_right = 636.0
 margin_bottom = 38.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Sound Effects / Music:"
 align = 1
 valign = 1
 
-[node name="SavePoint" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+[node name="SavePoint" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 42.0
 margin_right = 636.0
 margin_bottom = 80.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/SavePoint" instance=ExtResource( 3 )]
+[node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/SavePoint" instance=ExtResource( 3 )]
 margin_left = 246.0
 margin_right = 390.0
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Save Point"
 url = "https://ctn-phaco.itch.io/"
 
-[node name="Gesuardo" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+[node name="Gesuardo" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 84.0
 margin_right = 636.0
 margin_bottom = 122.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/Gesuardo" instance=ExtResource( 3 )]
+[node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/Gesuardo" instance=ExtResource( 3 )]
 margin_left = 258.0
 margin_right = 378.0
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Gesuardo"
 url = "https://gesuardo.weebly.com/"
 
-[node name="Hellsnake" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/SoundDesigners"]
+[node name="Hellsnake" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 126.0
 margin_right = 636.0
 margin_bottom = 164.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/SoundDesigners/Hellsnake" instance=ExtResource( 3 )]
+[node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/Hellsnake" instance=ExtResource( 3 )]
 margin_right = 376.0
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Hellsnake"
 url = "https://ctn-phaco.itch.io/"
 
-[node name="Graphist" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 432.0
+[node name="Graphist" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 324.0
 margin_right = 636.0
-margin_bottom = 512.0
+margin_bottom = 404.0
 
-[node name="RoleLabel" type="Label" parent="ScrollContainer/VBoxContainer/Graphist"]
+[node name="RoleLabel" type="Label" parent="VBoxContainer/Graphist"]
 margin_right = 636.0
 margin_bottom = 38.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
 text = "Graphist:"
 align = 1
 valign = 1
 
-[node name="VboxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Graphist"]
+[node name="VboxContainer" type="HBoxContainer" parent="VBoxContainer/Graphist"]
 margin_top = 42.0
 margin_right = 636.0
 margin_bottom = 80.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="ScrollContainer/VBoxContainer/Graphist/VboxContainer" instance=ExtResource( 3 )]
+[node name="BrowserLinkButton" parent="VBoxContainer/Graphist/VboxContainer" instance=ExtResource( 3 )]
 margin_left = 238.0
 margin_right = 398.0
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Ibtissam Aqil"
 url = "https://www.artstation.com/aqil_ib"
 
 [node name="BackButton" parent="." instance=ExtResource( 5 )]
 margin_left = 766.0
-margin_top = 760.0
+margin_top = 772.0
 margin_right = 1154.0
-margin_bottom = 813.0
+margin_bottom = 825.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath(".")
