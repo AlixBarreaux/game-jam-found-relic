@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/sprites/play_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/bitmap.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/play_icon_enabled.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/power_button.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/play_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/power_button_enabled.png" type="Texture" id=6]
+[ext_resource path="res://pause_menu.gd" type="Script" id=7]
+[ext_resource path="res://scripts/gui/scene_loader_button.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
@@ -12,13 +16,16 @@ bg_color = Color( 1, 1, 1, 1 )
 size = 55
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 7 )
+first_button_to_focus_node_path = NodePath("QuitToMainMenuTextureButton")
 
 [node name="Panel3" type="Panel" parent="."]
 self_modulate = Color( 0, 0, 0, 0.658824 )
@@ -36,54 +43,56 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 451.0
-margin_top = 440.0
-margin_right = 672.0
-margin_bottom = 690.0
+[node name="QuitToMainMenuTextureButton" type="TextureButton" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 500.0
+margin_top = -140.0
+margin_right = 721.0
+margin_bottom = 110.0
+focus_neighbour_left = NodePath("../ResumeTextureButton")
+focus_neighbour_top = NodePath("../ResumeTextureButton")
+focus_neighbour_right = NodePath("../ResumeTextureButton")
+focus_neighbour_bottom = NodePath("../ResumeTextureButton")
 texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+script = ExtResource( 8 )
+scene_to_load_path = "res://scenes/gui/MainMenu.tscn"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 478.0
-margin_top = 764.0
-margin_right = 556.0
-margin_bottom = 802.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 512.0
+margin_top = 782.0
+margin_right = 709.0
+margin_bottom = 887.0
+custom_fonts/font = SubResource( 5 )
 text = "Menu"
 align = 1
 valign = 1
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 1248.0
-margin_top = 459.0
-margin_right = 1459.0
-margin_bottom = 670.0
-texture_normal = ExtResource( 3 )
+[node name="ResumeTextureButton" type="TextureButton" parent="."]
+margin_left = 1175.0
+margin_top = 400.0
+margin_right = 1386.0
+margin_bottom = 611.0
+rect_pivot_offset = Vector2( 52, 72 )
+focus_neighbour_left = NodePath("../QuitToMainMenuTextureButton")
+focus_neighbour_top = NodePath("../QuitToMainMenuTextureButton")
+focus_neighbour_right = NodePath("../QuitToMainMenuTextureButton")
+focus_neighbour_bottom = NodePath("../QuitToMainMenuTextureButton")
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 1238.0
+margin_left = 1133.0
 margin_top = 782.0
-margin_right = 1339.0
-margin_bottom = 820.0
-rect_scale = Vector2( 2, 2 )
+margin_right = 1414.0
+margin_bottom = 887.0
+custom_fonts/font = SubResource( 5 )
 text = "Resume"
 align = 1
 valign = 1
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-margin_left = 832.0
-margin_top = 358.0
-margin_right = 926.0
-margin_bottom = 638.0
-rect_pivot_offset = Vector2( 1885, 460 )
-custom_styles/panel = SubResource( 3 )
-
-[node name="Panel2" type="Panel" parent="."]
-visible = false
-margin_left = 1007.0
-margin_top = 358.0
-margin_right = 1101.0
-margin_bottom = 638.0
-rect_pivot_offset = Vector2( 1885, 460 )
-custom_styles/panel = SubResource( 3 )
+[connection signal="pressed" from="QuitToMainMenuTextureButton" to="QuitToMainMenuTextureButton" method="_on_pressed"]
+[connection signal="pressed" from="ResumeTextureButton" to="." method="_on_ResumeTextureButton_pressed"]

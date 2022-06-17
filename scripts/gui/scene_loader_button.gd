@@ -1,5 +1,5 @@
 class_name SceneLoaderButton
-extends Button
+extends Control
 
 
 # ----------------- DECLARE VARIABLES -----------------
