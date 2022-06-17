@@ -43,7 +43,7 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
 [node name="Level3" instance=ExtResource( 1 )]
-next_level_to_load_path = "res://scenes/gui/MainMenu.tscn"
+next_level_to_load_path = "res://scenes/gui/Credits.tscn"
 
 [node name="MemoryCardsManager" parent="." index="2" instance=ExtResource( 3 )]
 is_lone_card_present = true
