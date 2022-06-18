@@ -178,11 +178,11 @@ margin_bottom = 80.0
 alignment = 1
 
 [node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/SavePoint" instance=ExtResource( 3 )]
-margin_left = 246.0
-margin_right = 390.0
+margin_left = 185.0
+margin_right = 450.0
 custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
-text = "Save Point"
-url = "https://ctn-phaco.itch.io/"
+text = "Point de Sauvegarde"
+url = "https://linktr.ee/Point_de_Sauvegarde"
 
 [node name="Gesuardo" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 84.0
