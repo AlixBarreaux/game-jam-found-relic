@@ -124,10 +124,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/sequence_order_interactables_manager.gd"
 }, {
+"base": "Area2D",
+"class": "SpaceBarTutorialArea2D",
+"language": "GDScript",
+"path": "res://space_bar_tutorial_area_2d.gd"
+}, {
 "base": "Reference",
 "class": "SplashScreen",
 "language": "GDScript",
 "path": "res://scripts/gui/splash_screen.gd"
+}, {
+"base": "Sprite",
+"class": "TutorialSpaceBarSprite",
+"language": "GDScript",
+"path": "res://tutorial_space_bar_sprite.gd"
 }, {
 "base": "Label",
 "class": "VersionLabel",
@@ -158,7 +168,9 @@ _global_script_class_icons={
 "SceneLoaderButton": "",
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",
+"SpaceBarTutorialArea2D": "",
 "SplashScreen": "",
+"TutorialSpaceBarSprite": "",
 "VersionLabel": ""
 }
 
@@ -258,6 +270,7 @@ pause_menu={
 2d_physics/layer_1="heroes"
 2d_physics/layer_2="heroes_interaction_raycasts"
 2d_physics/layer_3="interactables"
+2d_physics/layer_4="environment"
 
 [physics]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
 [ext_resource path="res://miscellaneous/icon.png" type="Texture" id=16]
+[ext_resource path="res://SpaceBarTutorialArea2D.tscn" type="PackedScene" id=17]
+[ext_resource path="res://TutorialSpaceBarSprite.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 242, 1200 )
@@ -71,10 +73,16 @@ extents = Vector2( 264, 135.499 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 160.499, 379.742 )
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="Node2D" type="Node2D" parent="." index="0"]
+[node name="SpaceBarTutorialArea2D" parent="." index="0" instance=ExtResource( 17 )]
+position = Vector2( 421, -1000 )
+collision_layer = 0
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
 position = Vector2( -1156, -2126 )
 scale = Vector2( 2, 2 )
 
@@ -107,6 +115,7 @@ visible = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
 position = Vector2( 0, -50 )
@@ -153,6 +162,7 @@ shape = SubResource( 12 )
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="1"]
 position = Vector2( 2221, 780 )
 scale = Vector2( -1, 1 )
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="0"]
 position = Vector2( 0, -50 )
@@ -211,7 +221,7 @@ position = Vector2( 1044.74, -2592.5 )
 rotation = 1.57079
 shape = SubResource( 18 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="5"]
+[node name="LevelLoadingTransitionTimer" parent="." index="6"]
 wait_time = 5.0
 
 [node name="PlatesManager" parent="YSort" index="0" instance=ExtResource( 3 )]
@@ -266,11 +276,17 @@ self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 position = Vector2( 498, 435 )
 speed = 330.0
 
+[node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
+position = Vector2( 0, -150 )
+
+[node name="AnimationTree" parent="YSort/HeroMan" index="7"]
+parameters/playback = SubResource( 22 )
+
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1886, 440 )
 speed = 330.0
 
-[node name="AudioManager" type="Node" parent="." index="7"]
+[node name="AudioManager" type="Node" parent="." index="8"]
 script = ExtResource( 8 )
 
 [node name="Ambient" type="Node" parent="AudioManager" index="0"]
@@ -316,6 +332,9 @@ bus = "SFX"
 stream = ExtResource( 6 )
 bus = "SFX"
 
+[connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
+
+[editable path="SpaceBarTutorialArea2D"]
 [editable path="YSort/PlatesManager"]
 [editable path="YSort/PlatesManager/Plate"]
 [editable path="YSort/PlatesManager/Plate2"]
@@ -323,3 +342,4 @@ bus = "SFX"
 [editable path="YSort/PlatesManager/Plate4"]
 [editable path="YSort/PlatesManager/Plate5"]
 [editable path="YSort/PlatesManager/Plate6"]
+[editable path="YSort/HeroMan"]
