@@ -325,7 +325,7 @@ __meta__ = {
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -184, 624 )
+position = Vector2( -245, 650 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
