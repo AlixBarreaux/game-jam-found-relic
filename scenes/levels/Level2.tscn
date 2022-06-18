@@ -128,6 +128,7 @@ self_modulate = Color( 0, 0.247059, 0.160784, 1 )
 position = Vector2( -9, 402 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="0"]
+collision_layer = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="0"]
 position = Vector2( 963, 577.5 )
@@ -185,6 +186,7 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="1"]
 position = Vector2( -373, 628 )
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
 position = Vector2( 602, -858.5 )
@@ -295,7 +297,7 @@ __meta__ = {
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -255, 611 )
+position = Vector2( -1119, -413 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
