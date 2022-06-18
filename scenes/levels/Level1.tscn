@@ -80,9 +80,6 @@ extents = Vector2( 160.499, 379.742 )
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="Polygons2D" parent="." index="0"]
-modulate = Color( 0, 0, 0, 1 )
-
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
 position = Vector2( 1094, 353 )
 color = Color( 0, 0, 0, 1 )
