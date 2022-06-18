@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -16,32 +16,146 @@
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 242, 1200 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 97, 516 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 102, 607 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 240, 607 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 240, 1100.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 127, 279 )
+
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
+position = Vector2( -320, 400 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
+position = Vector2( 0, -50 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
+position = Vector2( 564, -731 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
+position = Vector2( 566, -1860 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="3"]
+position = Vector2( -1288, -1860 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
+position = Vector2( -853, -1016 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
+position = Vector2( -400, -2705 )
+rotation = 1.57079
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
+position = Vector2( 367, -87 )
+rotation = 1.57079
+shape = SubResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="1"]
+position = Vector2( 2488, 400 )
+scale = Vector2( -1, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="0"]
+position = Vector2( 0, -50 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="1"]
+position = Vector2( 581, -731 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
+position = Vector2( 583, -1860 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
+position = Vector2( -1288, -1860 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
+position = Vector2( -853, -1016 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="5"]
+position = Vector2( -247.5, -2705 )
+rotation = 1.57079
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="6"]
+position = Vector2( 367, -87 )
+rotation = 1.57079
+shape = SubResource( 6 )
 
 [node name="LevelLoadingTransitionTimer" parent="." index="4"]
 wait_time = 5.0
 
-[node name="PlatesManager" parent="YSort" index="2" instance=ExtResource( 3 )]
+[node name="PlatesManager" parent="YSort" index="0" instance=ExtResource( 3 )]
 script = ExtResource( 9 )
 
 [node name="Plate" parent="YSort/PlatesManager" index="0" instance=ExtResource( 2 )]
-position = Vector2( 49, 166 )
+position = Vector2( 39, -776 )
+
+[node name="CollisionShape2D" parent="YSort/PlatesManager/Plate/InteractionReceiverArea2D" index="0"]
+position = Vector2( 0, 0 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate/Sprites" index="0"]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
-position = Vector2( 270, 166 )
+position = Vector2( -967, -1063 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate2/Sprites" index="0"]
+self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( 508, 166 )
+position = Vector2( -211, -1800 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate3/Sprites" index="0"]
+self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
-position = Vector2( 768, 166 )
+position = Vector2( 3085, -1175 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate4/Sprites" index="0"]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 
 [node name="Plate5" parent="YSort/PlatesManager" index="4" instance=ExtResource( 2 )]
-position = Vector2( 1019, 166 )
+position = Vector2( 2953, -1787 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate5/Sprites" index="0"]
+self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate6" parent="YSort/PlatesManager" index="5" instance=ExtResource( 2 )]
-position = Vector2( 1276, 166 )
+position = Vector2( 2133, -1256 )
+
+[node name="Sprite" parent="YSort/PlatesManager/Plate6/Sprites" index="0"]
+self_modulate = Color( 1, 0.913725, 0, 1 )
+
+[node name="HeroMan" parent="YSort" index="1"]
+position = Vector2( 45, -575 )
+
+[node name="HeroWoman" parent="YSort" index="2"]
+position = Vector2( 2119, -66 )
 
 [node name="AudioManager" type="Node" parent="." index="6"]
 script = ExtResource( 8 )
@@ -90,3 +204,9 @@ stream = ExtResource( 6 )
 bus = "SFX"
 
 [editable path="YSort/PlatesManager"]
+[editable path="YSort/PlatesManager/Plate"]
+[editable path="YSort/PlatesManager/Plate2"]
+[editable path="YSort/PlatesManager/Plate3"]
+[editable path="YSort/PlatesManager/Plate4"]
+[editable path="YSort/PlatesManager/Plate5"]
+[editable path="YSort/PlatesManager/Plate6"]
