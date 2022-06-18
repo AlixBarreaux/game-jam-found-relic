@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -28,7 +28,16 @@ extents = Vector2( 97, 1391.5 )
 extents = Vector2( 97, 476 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 98, 1164 )
+extents = Vector2( 98, 757.5 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 117.499, 1076.25 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 98, 680.25 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 643.75, 116 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 225, 1050.5 )
@@ -49,7 +58,7 @@ extents = Vector2( 773.5, 1097.5 )
 extents = Vector2( 97, 1169.75 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 97, 1084.5 )
+extents = Vector2( 97, 464.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 97, 448.375 )
@@ -65,6 +74,9 @@ extents = Vector2( 97, 593 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 97, 1117 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 97, 442.25 )
 
 [node name="Level2" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
@@ -98,11 +110,11 @@ position = Vector2( 1663.5, 107.5 )
 texture = ExtResource( 17 )
 
 [node name="Icon7" type="Sprite" parent="Node2D" index="6"]
-position = Vector2( 993.5, -154.5 )
+position = Vector2( 1479, -392 )
 texture = ExtResource( 17 )
 
 [node name="Icon8" type="Sprite" parent="Node2D" index="7"]
-position = Vector2( 995, -296.5 )
+position = Vector2( 1480.5, -541 )
 texture = ExtResource( 17 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
@@ -137,9 +149,33 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
-position = Vector2( 2261, -2036 )
+position = Vector2( 2667.5, -2036 )
 rotation = 1.57079
 shape = SubResource( 17 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
+position = Vector2( 1035.75, -3301.5 )
+rotation = 1.57079
+shape = SubResource( 20 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="5"]
+position = Vector2( 2030, -2719.75 )
+rotation = 3.14159
+shape = SubResource( 21 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="6"]
+position = Vector2( 850, -2540 )
+rotation = 1.57079
+shape = SubResource( 22 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -192,7 +228,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
-position = Vector2( 236, -3628.5 )
+position = Vector2( 236, -3008.5 )
 shape = SubResource( 8 )
 __meta__ = {
 "_editor_description_": ""
@@ -237,15 +273,22 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="12"]
+position = Vector2( 236, -4271.25 )
+shape = SubResource( 19 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -57, -304 )
+position = Vector2( -134, -3067 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 683, -199 )
+position = Vector2( 1338, -2417 )
 speed = 330.0
 
 [node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
@@ -289,13 +332,13 @@ position = Vector2( -872, 5 )
 self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="NoteBlock7" parent="YSort/NoteBlocksManager" index="6" instance=ExtResource( 3 )]
-position = Vector2( 726, 181 )
+position = Vector2( -210, -2802 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock7/Sprites" index="0"]
 self_modulate = Color( 1, 0.305882, 0, 1 )
 
 [node name="NoteBlock8" parent="YSort/NoteBlocksManager" index="7" instance=ExtResource( 3 )]
-position = Vector2( 1956, -318 )
+position = Vector2( 213, -2802 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock8/Sprites" index="0"]
 self_modulate = Color( 1, 0.47451, 0.992157, 1 )
