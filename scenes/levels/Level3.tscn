@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/atlas-textures/cards/card_7.tres" type="Texture" id=10]
 [ext_resource path="res://resources/atlas-textures/cards/card_8.tres" type="Texture" id=11]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_fail.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sound/levels/level-3/lvl_3_win.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_6.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3.ogg" type="AudioStream" id=15]
 [ext_resource path="res://GoodTrack.tscn" type="PackedScene" id=16]
@@ -207,7 +208,7 @@ texture = ExtResource( 11 )
 parameters/playback = SubResource( 17 )
 
 [node name="LevelLoadingTransitionTimer" parent="." index="5"]
-wait_time = 2.5
+wait_time = 8.0
 
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 17 )
@@ -258,9 +259,8 @@ bus = "SFX"
 is_looped = true
 
 [node name="WinTrack" parent="AudioManager/GeneralTracks" index="7" instance=ExtResource( 16 )]
-stream = ExtResource( 15 )
+stream = ExtResource( 13 )
 bus = "SFX"
-is_looped = true
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
