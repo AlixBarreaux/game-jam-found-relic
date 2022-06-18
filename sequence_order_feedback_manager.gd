@@ -20,6 +20,7 @@ func _ready() -> void:
 func initialize_signals() -> void:
 	Events.connect("good_interaction_sent", self, "on_good_interaction_sent")
 	Events.connect("wrong_interaction_sent", self, "on_wrong_interaction_sent")
+	Events.connect("level_completed", self, "on_level_completed")
 	return
 
 
@@ -38,4 +39,9 @@ func on_good_interaction_sent() -> void:
 func on_wrong_interaction_sent() -> void:
 	get_tree().call_group("sequence_order_feedback_node", "disable")
 	current_enabled_nodes_index = 0
+	return
+
+
+func on_level_completed() -> void:
+	get_tree().call_group("sequence_order_feedback_node", "on_win")
 	return

@@ -21,3 +21,8 @@ func enable() -> void:
 func disable() -> void:
 	animation_player.play("Disable")
 	return
+
+
+func on_win() -> void:
+	animation_player.play("Win")
+	return
