@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/level_1_percussion.ogg-718f7d481934e6b1ab36e6f3344b5d3e.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/levels/level-1/level_1_percussion.ogg"
+dest_files=[ "res://.import/level_1_percussion.ogg-718f7d481934e6b1ab36e6f3344b5d3e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

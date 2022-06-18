@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lv_1_plate_3.ogg-4029a9331df249d488b930ac177e79ff.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/levels/level-1/lv_1_plate_3.ogg"
+dest_files=[ "res://.import/lv_1_plate_3.ogg-4029a9331df249d488b930ac177e79ff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
