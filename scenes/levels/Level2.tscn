@@ -89,8 +89,55 @@ next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 [node name="SequenceOrderSpirtesFeedback" parent="." index="0" instance=ExtResource( 17 )]
 
 [node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderSpirtesFeedback/Lines2D" index="0" instance=ExtResource( 18 )]
+position = Vector2( -167.5, -288.5 )
+
+[node name="SequenceOrderFeedbackLine2D2" parent="SequenceOrderSpirtesFeedback/Lines2D" index="1" instance=ExtResource( 18 )]
+position = Vector2( -167.5, -399.5 )
+
+[node name="SequenceOrderFeedbackLine2D3" parent="SequenceOrderSpirtesFeedback/Lines2D" index="2" instance=ExtResource( 18 )]
+position = Vector2( -169.5, -499 )
+points = PoolVector2Array( 0, 0, 801, -102.5 )
+
+[node name="SequenceOrderFeedbackLine2D4" parent="SequenceOrderSpirtesFeedback/Lines2D" index="3" instance=ExtResource( 18 )]
+position = Vector2( 632.5, -613 )
+
+[node name="SequenceOrderFeedbackLine2D5" parent="SequenceOrderSpirtesFeedback/Lines2D" index="4" instance=ExtResource( 18 )]
+position = Vector2( 634.5, -730.5 )
+
+[node name="SequenceOrderFeedbackLine2D6" parent="SequenceOrderSpirtesFeedback/Lines2D" index="5" instance=ExtResource( 18 )]
+position = Vector2( 640, -834 )
+points = PoolVector2Array( 0, 0, -211.5, -432 )
+
+[node name="SequenceOrderFeedbackLine2D7" parent="SequenceOrderSpirtesFeedback/Lines2D" index="6" instance=ExtResource( 18 )]
+position = Vector2( 426, -1268.5 )
+points = PoolVector2Array( 0, 0, 2.5, -266.5 )
+
+[node name="SequenceOrderFeedbackLine2D8" parent="SequenceOrderSpirtesFeedback/Lines2D" index="7" instance=ExtResource( 18 )]
+position = Vector2( 431, -1548 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
+position = Vector2( -171, -292.5 )
+
+[node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
+position = Vector2( -167.5, -399 )
+
+[node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
+position = Vector2( -168.5, -499.5 )
+
+[node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
+position = Vector2( 631, -602 )
+
+[node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
+position = Vector2( 634.5, -716.5 )
+
+[node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
+position = Vector2( 634.5, -830.5 )
+
+[node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
+position = Vector2( 427.5, -1268.5 )
+
+[node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
+position = Vector2( 428, -1539.5 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
@@ -269,11 +316,11 @@ __meta__ = {
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -1119, -413 )
+position = Vector2( -435, -249 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 559, 611 )
+position = Vector2( 2091, -394 )
 speed = 330.0
 
 [node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]

@@ -1,4 +1,4 @@
-class_name SequenceOrderSpritesFeedback
+class_name SequenceOrderSpritesFeedbackManager
 extends Node2D
 
 

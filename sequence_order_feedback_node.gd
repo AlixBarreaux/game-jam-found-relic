@@ -1,4 +1,4 @@
-class_name SequenceOrderFeedbackSprite
+class_name SequenceOrderFeedbackNode
 extends Node2D
 
 

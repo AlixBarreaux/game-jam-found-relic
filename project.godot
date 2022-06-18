@@ -120,7 +120,7 @@ _global_script_classes=[ {
 "path": "res://scripts/gui/scene_loader_button.gd"
 }, {
 "base": "Node2D",
-"class": "SequenceOrderFeedbackSprite",
+"class": "SequenceOrderFeedbackNode",
 "language": "GDScript",
 "path": "res://sequence_order_feedback_node.gd"
 }, {
@@ -135,9 +135,9 @@ _global_script_classes=[ {
 "path": "res://scripts/sequence_order_interactables_manager.gd"
 }, {
 "base": "Node2D",
-"class": "SequenceOrderSpritesFeedback",
+"class": "SequenceOrderSpritesFeedbackManager",
 "language": "GDScript",
-"path": "res://sequence_order_sprites_feedback.gd"
+"path": "res://sequence_order_feedback_manager.gd"
 }, {
 "base": "Area2D",
 "class": "SpaceBarTutorialArea2D",
@@ -182,10 +182,10 @@ _global_script_class_icons={
 "QuitToDesktopButton": "",
 "QuitToMainMenuTextureButton": "",
 "SceneLoaderButton": "",
-"SequenceOrderFeedbackSprite": "",
+"SequenceOrderFeedbackNode": "",
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",
-"SequenceOrderSpritesFeedback": "",
+"SequenceOrderSpritesFeedbackManager": "",
 "SpaceBarTutorialArea2D": "",
 "SplashScreen": "",
 "TutorialSpaceBarSprite": "",
