@@ -87,6 +87,7 @@ anims/Press = SubResource( 4 )
 anims/Unpress = SubResource( 5 )
 
 [node name="NoteBlockTutorialArea2D" type="Area2D" parent="." groups=["note_block_switch_characters_tutorial"]]
+visible = false
 position = Vector2( 0, -59 )
 collision_layer = 0
 script = ExtResource( 6 )
