@@ -11,6 +11,8 @@ export var speed: float = 330.0
 var direction: Vector2 = Vector2(0.0, 0.0)
 var velocity: Vector2 = Vector2(0.0, 0.0)
 
+
+onready var animation_player = $AnimationPlayer
 onready var animation_tree: AnimationTree = $AnimationTree
 onready var animation_tree_node_sm_playback = animation_tree.get("parameters/playback")
 
@@ -61,7 +63,7 @@ func initialize() -> void:
 func on_level_completed() -> void:
 	print(self.name, ": Level completed!")
 #	animation_tree_node_sm_playback.travel("CelebrateVictory")
-	$AnimationPlayer.play("CelebrateVictory")
+	animation_player.play("CelebrateVictory")
 	return
 
 
