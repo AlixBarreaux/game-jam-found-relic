@@ -119,15 +119,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gui/scene_loader_button.gd"
 }, {
-"base": "Line2D",
-"class": "SequenceOrderFeedbackLine2D",
-"language": "GDScript",
-"path": "res://sequence_order_feedback_line_2d.gd"
-}, {
-"base": "Sprite",
+"base": "Node2D",
 "class": "SequenceOrderFeedbackSprite",
 "language": "GDScript",
-"path": "res://sequence_order_feedback_sprite.gd"
+"path": "res://sequence_order_feedback_node.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderInteractable",
@@ -187,7 +182,6 @@ _global_script_class_icons={
 "QuitToDesktopButton": "",
 "QuitToMainMenuTextureButton": "",
 "SceneLoaderButton": "",
-"SequenceOrderFeedbackLine2D": "",
 "SequenceOrderFeedbackSprite": "",
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",

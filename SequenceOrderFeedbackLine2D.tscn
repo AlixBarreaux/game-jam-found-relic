@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://sequence_order_feedback_line_2d.gd" type="Script" id=1]
+[ext_resource path="res://sequence_order_feedback_node.gd" type="Script" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Disable"
@@ -46,13 +46,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "Win"
 
-[node name="SequenceOrderFeedbackLine2D" type="Line2D"]
+[node name="SequenceOrderFeedbackLine2D" type="Line2D" groups=["sequence_order_feedback_node"]]
+self_modulate = Color( 1, 1, 1, 0.352941 )
 points = PoolVector2Array( 0, 0, 0, -100 )
 script = ExtResource( 1 )
 

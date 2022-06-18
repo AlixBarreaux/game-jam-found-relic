@@ -1,5 +1,5 @@
-class_name SequenceOrderFeedbackLine2D
-extends Line2D
+class_name SequenceOrderFeedbackSprite
+extends Node2D
 
 
 # ----------------- DECLARE VARIABLES -----------------

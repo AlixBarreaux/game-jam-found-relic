@@ -36,5 +36,6 @@ func on_good_interaction_sent() -> void:
 
 
 func on_wrong_interaction_sent() -> void:
-	sprites.get_child(current_enabled_nodes_index).disable()
+	get_tree().call_group("sequence_order_feedback_node", "disable")
+	current_enabled_nodes_index = 0
 	return

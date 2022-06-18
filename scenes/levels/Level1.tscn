@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://assets/sound/levels/level-1/level_1_percussion.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
-[ext_resource path="res://miscellaneous/icon.png" type="Texture" id=16]
 [ext_resource path="res://SpaceBarTutorialArea2D.tscn" type="PackedScene" id=17]
 [ext_resource path="res://TutorialSpaceBarSprite.tscn" type="PackedScene" id=18]
 [ext_resource path="res://sequence_order_sprites_feedback.gd" type="Script" id=19]
@@ -90,21 +89,21 @@ collision_layer = 0
 position = Vector2( 1131, 395 )
 script = ExtResource( 19 )
 
-[node name="Line2D" parent="SequenceOrderSpritesFeedback/Lines2D" index="0" instance=ExtResource( 22 )]
+[node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderSpritesFeedback/Lines2D" index="0" instance=ExtResource( 22 )]
 
-[node name="Line2D2" type="Line2D" parent="SequenceOrderSpritesFeedback/Lines2D" index="1"]
-position = Vector2( 0, -96 )
-points = PoolVector2Array( 0, 0, 0, -100 )
+[node name="SequenceOrderFeedbackLine2D2" parent="SequenceOrderSpritesFeedback/Lines2D" index="1" instance=ExtResource( 22 )]
+position = Vector2( 0, -139.5 )
 
-[node name="Sprite" parent="SequenceOrderSpritesFeedback/Sprites" index="0" instance=ExtResource( 21 )]
+[node name="SequenceOrderFeedbackLine2D3" parent="SequenceOrderSpritesFeedback/Lines2D" index="2" instance=ExtResource( 22 )]
+position = Vector2( 0, -257 )
 
-[node name="Sprite2" type="Sprite" parent="SequenceOrderSpritesFeedback/Sprites" index="1"]
-position = Vector2( 0, -95 )
-texture = ExtResource( 16 )
+[node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpritesFeedback/Sprites" index="0" instance=ExtResource( 21 )]
 
-[node name="Sprite3" type="Sprite" parent="SequenceOrderSpritesFeedback/Sprites" index="2"]
-position = Vector2( 0, -196.5 )
-texture = ExtResource( 16 )
+[node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpritesFeedback/Sprites" index="1" instance=ExtResource( 21 )]
+position = Vector2( 0, -127 )
+
+[node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpritesFeedback/Sprites" index="2" instance=ExtResource( 21 )]
+position = Vector2( 0, -251 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
@@ -279,7 +278,7 @@ position = Vector2( 0, -150 )
 parameters/playback = SubResource( 22 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
-position = Vector2( 1886, 440 )
+position = Vector2( 2540, -766 )
 speed = 330.0
 
 [node name="AudioManager" type="Node" parent="." index="8"]
