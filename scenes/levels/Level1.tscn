@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -15,12 +15,13 @@
 [ext_resource path="res://assets/sound/levels/level-1/level_1_percussion.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
+[ext_resource path="res://miscellaneous/icon.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 242, 1200 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 97, 516 )
+extents = Vector2( 97, 721.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 102, 607 )
@@ -37,15 +38,47 @@ extents = Vector2( 127, 279 )
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
+[node name="Node2D" type="Node2D" parent="." index="0"]
+
+[node name="Icon" type="Sprite" parent="Node2D" index="0"]
+position = Vector2( 1169, 84 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 16 )
+
+[node name="Icon2" type="Sprite" parent="Node2D" index="1"]
+position = Vector2( 1169, 236 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 16 )
+
+[node name="Icon3" type="Sprite" parent="Node2D" index="2"]
+position = Vector2( 1169, 420 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 16 )
+
+[node name="Icon4" type="Sprite" parent="Node2D" index="3"]
+position = Vector2( 1169, 585 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 16 )
+
+[node name="Icon5" type="Sprite" parent="Node2D" index="4"]
+position = Vector2( 1169, 756 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 16 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
-position = Vector2( -320, 400 )
+position = Vector2( 137, 400 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
 position = Vector2( 0, -50 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
-position = Vector2( 564, -731 )
+position = Vector2( 564, -525.5 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
@@ -67,12 +100,12 @@ rotation = 1.57079
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
-position = Vector2( 367, -87 )
+position = Vector2( 367, 313 )
 rotation = 1.57079
 shape = SubResource( 6 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="1"]
-position = Vector2( 2488, 400 )
+position = Vector2( 2221, 780 )
 scale = Vector2( -1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="0"]
@@ -106,14 +139,14 @@ position = Vector2( 367, -87 )
 rotation = 1.57079
 shape = SubResource( 6 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="4"]
+[node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 5.0
 
 [node name="PlatesManager" parent="YSort" index="0" instance=ExtResource( 3 )]
 script = ExtResource( 9 )
 
 [node name="Plate" parent="YSort/PlatesManager" index="0" instance=ExtResource( 2 )]
-position = Vector2( 39, -776 )
+position = Vector2( 496, -219 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate/Sprites" index="0"]
 self_modulate = Color( 0.862745, 0, 0, 1 )
@@ -122,13 +155,13 @@ self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 0, 0 )
 
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
-position = Vector2( -967, -1063 )
+position = Vector2( 2145, -949 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate2/Sprites" index="0"]
 self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( -211, -1800 )
+position = Vector2( 2317, -1715 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate3/Sprites" index="0"]
 self_modulate = Color( 1, 0.913725, 0, 1 )
@@ -146,18 +179,18 @@ position = Vector2( 2953, -1787 )
 self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate6" parent="YSort/PlatesManager" index="5" instance=ExtResource( 2 )]
-position = Vector2( 2133, -1256 )
+position = Vector2( -174, -1229 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate6/Sprites" index="0"]
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 45, -575 )
+position = Vector2( 559, 412 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
-position = Vector2( 2119, -66 )
+position = Vector2( 1783, 412 )
 
-[node name="AudioManager" type="Node" parent="." index="6"]
+[node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 8 )
 
 [node name="Ambient" type="Node" parent="AudioManager" index="0"]
