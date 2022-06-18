@@ -195,7 +195,7 @@ margin_left = 258.0
 margin_right = 378.0
 custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Gesuardo"
-url = "https://gesuardo.weebly.com/"
+url = "https://soundcloud.com/gesuardo"
 
 [node name="MathieuFret" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 126.0
