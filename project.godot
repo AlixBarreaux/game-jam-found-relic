@@ -9,20 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "Reference",
 "class": "AudioManagerLevel1",
 "language": "GDScript",
-"path": "res://audio_manager_level_1.gd"
+"path": "res://scripts/audio-managers/audio_manager_level_1.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "AudioManagerLevel2",
 "language": "GDScript",
-"path": "res://audio_manager_level_2.gd"
+"path": "res://scripts/audio-managers/audio_manager_level_2.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "AudioManagerLevel3",
 "language": "GDScript",
-"path": "res://audio_manager_level_3.gd"
+"path": "res://scripts/audio-managers/audio_manager_level_3.gd"
 }, {
 "base": "Reference",
 "class": "BrowserLinkButton",
