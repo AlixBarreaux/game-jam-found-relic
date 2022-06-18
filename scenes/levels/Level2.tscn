@@ -1199,15 +1199,7 @@ __meta__ = {
 [node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 9.0
 
-[node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -245, 650 )
-speed = 330.0
-
-[node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 675, 650 )
-speed = 330.0
-
-[node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
+[node name="NoteBlocksManager" parent="YSort" index="0" instance=ExtResource( 2 )]
 position = Vector2( 881, 0 )
 script = ExtResource( 7 )
 
@@ -1258,6 +1250,14 @@ position = Vector2( 213, -2802 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock8/Sprites" index="0"]
 self_modulate = Color( 1, 0.47451, 0.992157, 1 )
+
+[node name="HeroMan" parent="YSort" index="1"]
+position = Vector2( -245, 650 )
+speed = 330.0
+
+[node name="HeroWoman" parent="YSort" index="2"]
+position = Vector2( 2325, -373 )
+speed = 330.0
 
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 5 )
