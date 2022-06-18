@@ -1038,7 +1038,7 @@ position = Vector2( 800, -2217 )
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 498, -736 )
+position = Vector2( 498, 1336 )
 speed = 330.0
 
 [node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
