@@ -393,6 +393,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 400.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource( 5 )

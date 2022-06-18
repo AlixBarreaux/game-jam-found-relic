@@ -210,6 +210,12 @@ parameters/playback = SubResource( 17 )
 [node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 8.0
 
+[node name="HeroMan" parent="YSort" index="0"]
+speed = 330.0
+
+[node name="HeroWoman" parent="YSort" index="1"]
+speed = 330.0
+
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 17 )
 

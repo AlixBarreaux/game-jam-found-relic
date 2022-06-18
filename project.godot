@@ -165,7 +165,7 @@ _global_script_class_icons={
 [application]
 
 config/name="O Key Cupid"
-run/main_scene="res://scenes/levels/Level2.tscn"
+run/main_scene="res://scenes/levels/Level1.tscn"
 config/icon="res://miscellaneous/icon.png"
 config/version="0.1"
 
