@@ -74,3 +74,11 @@ func on_wrong_interaction_sent() -> void:
 	wrong_track.play()
 	
 	return
+
+
+func _on_WrongTrack_finished() -> void:
+	for track in general_tracks_list.get_children():
+		if track.is_playing():
+			return
+	general_tracks_list.get_child(0).play()
+	return

@@ -96,5 +96,7 @@ stream = ExtResource( 10 )
 bus = "SFX"
 is_looped = true
 
+[connection signal="finished" from="Playlist/WrongTrack" to="Playlist" method="_on_WrongTrack_finished"]
+
 [editable path="YSort/NoteBlocksManager/NoteBlock"]
 [editable path="YSort/NoteBlocksManager/NoteBlock2"]
