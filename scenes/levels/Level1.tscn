@@ -29,19 +29,19 @@ script = ExtResource( 9 )
 position = Vector2( 49, 166 )
 
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
-position = Vector2( 120, 166 )
+position = Vector2( 270, 166 )
 
 [node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( 189, 166 )
+position = Vector2( 508, 166 )
 
 [node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
-position = Vector2( 260, 166 )
+position = Vector2( 768, 166 )
 
 [node name="Plate5" parent="YSort/PlatesManager" index="4" instance=ExtResource( 2 )]
-position = Vector2( 338, 166 )
+position = Vector2( 1019, 166 )
 
 [node name="Plate6" parent="YSort/PlatesManager" index="5" instance=ExtResource( 2 )]
-position = Vector2( 419, 166 )
+position = Vector2( 1276, 166 )
 
 [node name="AudioManager" type="Node" parent="." index="6"]
 script = ExtResource( 8 )

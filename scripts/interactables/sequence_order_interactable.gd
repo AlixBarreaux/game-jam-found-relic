@@ -12,6 +12,7 @@ var id: int = 0
 onready var parent_manager: Node2D = self.get_parent()
 onready var interaction_receiver_area_2d: Area2D = $InteractionReceiverArea2D
 onready var collision_shape_2d: CollisionShape2D = $InteractionReceiverArea2D/CollisionShape2D
+onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Signals
@@ -36,6 +37,7 @@ func initialize_signals() -> void:
 
 
 func _receive_interaction() -> void:
+	animation_player.play("Press")
 	self.set_enabled(false)
 	self.emit_signal("interactable_enabled", self.id)
 
@@ -43,6 +45,7 @@ func _receive_interaction() -> void:
 
 func reset() -> void:
 	print(self.name + ": reset() !")
+	animation_player.play("Unpress")
 	set_enabled(true)
 
 

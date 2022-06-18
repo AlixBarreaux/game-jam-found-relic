@@ -79,11 +79,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/memory_cards_manager.gd"
 }, {
-"base": "AudioStreamPlayer2D",
-"class": "NoteBlockAudioStreamPlayer2D",
-"language": "GDScript",
-"path": "res://scripts/note_block_audio_stream_player_2d.gd"
-}, {
 "base": "SequenceOrderInteractablesManager",
 "class": "NoteBlocksManager",
 "language": "GDScript",
@@ -154,7 +149,6 @@ _global_script_class_icons={
 "MainMenu": "",
 "MemoryCard": "",
 "MemoryCardsManager": "",
-"NoteBlockAudioStreamPlayer2D": "",
 "NoteBlocksManager": "",
 "PauseMenu": "",
 "PlatesManager": "",
