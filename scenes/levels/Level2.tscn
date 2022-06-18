@@ -69,26 +69,32 @@ stream = ExtResource( 12 )
 autoplay = true
 bus = "SFX"
 first_track_to_play_on_start = true
+is_looped = true
 
 [node name="Plate1Track1" parent="Playlist/GeneralTracks" index="1" instance=ExtResource( 13 )]
 stream = ExtResource( 6 )
 bus = "SFX"
+is_looped = true
 
 [node name="Plate1Track2" parent="Playlist/GeneralTracks" index="2" instance=ExtResource( 13 )]
 stream = ExtResource( 11 )
 bus = "SFX"
+is_looped = true
 
 [node name="Plate1Track3" parent="Playlist/GeneralTracks" index="3" instance=ExtResource( 13 )]
 stream = ExtResource( 9 )
 bus = "SFX"
+is_looped = true
 
 [node name="Plate1Track4" parent="Playlist/GeneralTracks" index="4" instance=ExtResource( 13 )]
 stream = ExtResource( 8 )
 bus = "SFX"
+is_looped = true
 
 [node name="WinTrack" parent="Playlist/GeneralTracks" index="5" instance=ExtResource( 13 )]
 stream = ExtResource( 10 )
 bus = "SFX"
+is_looped = true
 
 [editable path="YSort/NoteBlocksManager/NoteBlock"]
 [editable path="YSort/NoteBlocksManager/NoteBlock2"]
