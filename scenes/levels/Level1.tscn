@@ -627,7 +627,7 @@ tracks/2/keys = {
 extents = Vector2( 242, 1200 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 97, 1284.5 )
+extents = Vector2( 97, 1728 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 240, 1148.5 )
@@ -722,7 +722,7 @@ color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -4640, -5717, 5684, -5669, 5741, 1707, 894, 1677, 894, -811, 2186, -823, 2182, -2035, 1054, -2043, 1038, -2785, -473, -2804, -486, -3507, -2002, -3499, -2002, -2815, -1070, -2817, -1063, -2500, -2002, -2495, -2006, -1768, -1546, -1768, -1550, -1444, -2003, -1448, -2004, -1207, -721, -1207, -718, 1666, -4676, 1646 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( 325, 2030, 2026, 2027, 2053, 581, 1747, 581, 1735, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1434, 606, -1433, 608, 588, 331, 588 )
+polygon = PoolVector2Array( 351, 2026, 2026, 2027, 2053, 581, 1747, 581, 1735, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1434, 606, -1433, 614, 1470, 360, 1471 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 polygon = PoolVector2Array( 2352, -1037, 2367, -1351, 2687, -1329, 2680, -1037 )
@@ -752,6 +752,7 @@ position = Vector2( 0, -577.5 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderFeedbackManager/Sprites" index="0" instance=ExtResource( 21 )]
 self_modulate = Color( 0.862745, 0, 0, 0.352941 )
+position = Vector2( -58.5, 0 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite" index="0"]
@@ -763,7 +764,7 @@ anims/Win = SubResource( 26 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderFeedbackManager/Sprites" index="1" instance=ExtResource( 21 )]
 self_modulate = Color( 0.862745, 0, 0, 0.352941 )
-position = Vector2( 0, -127 )
+position = Vector2( -25.5, -127 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite2" index="0"]
@@ -775,7 +776,7 @@ anims/Win = SubResource( 50 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderFeedbackManager/Sprites" index="2" instance=ExtResource( 21 )]
 self_modulate = Color( 1, 0.913725, 0, 0.352941 )
-position = Vector2( 0, -251 )
+position = Vector2( 5.5, -251 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite3" index="0"]
@@ -787,7 +788,7 @@ anims/Win = SubResource( 34 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderFeedbackManager/Sprites" index="3" instance=ExtResource( 21 )]
 self_modulate = Color( 1, 0.913725, 0, 0.352941 )
-position = Vector2( 0, -360 )
+position = Vector2( 36.5, -360 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite4" index="0"]
@@ -799,7 +800,7 @@ anims/Win = SubResource( 62 )
 
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderFeedbackManager/Sprites" index="4" instance=ExtResource( 21 )]
 self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
-position = Vector2( 0, -467 )
+position = Vector2( 72.5, -467 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite5" index="0"]
@@ -811,7 +812,7 @@ anims/Win = SubResource( 42 )
 
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderFeedbackManager/Sprites" index="5" instance=ExtResource( 21 )]
 self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
-position = Vector2( 0, -573.5 )
+position = Vector2( 99.5, -573.5 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite6" index="0"]
@@ -837,7 +838,7 @@ position = Vector2( -4, -60 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
-position = Vector2( 564, -1088.5 )
+position = Vector2( 564, -645 )
 shape = SubResource( 20 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
@@ -855,7 +856,7 @@ rotation = 1.57079
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
-position = Vector2( 367, 313 )
+position = Vector2( 367, 1200 )
 rotation = 1.57079
 shape = SubResource( 6 )
 
@@ -1034,7 +1035,7 @@ position = Vector2( 800, -2217 )
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 498, 435 )
+position = Vector2( 498, 1299 )
 speed = 330.0
 
 [node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
@@ -1050,7 +1051,7 @@ speed = 330.0
 [node name="TutorialAnimatedSprites" type="Node2D" parent="." index="9"]
 
 [node name="TutorialControllerAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="0"]
-position = Vector2( 265, 485 )
+position = Vector2( 265, 1319 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="0"]
 texture = ExtResource( 16 )
@@ -1060,7 +1061,7 @@ autoplay = "Start"
 anims/Start = SubResource( 63 )
 
 [node name="TutorialKeyboardArrowsAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="1"]
-position = Vector2( 761, 485 )
+position = Vector2( 761, 1319 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="0"]
 texture = ExtResource( 19 )
