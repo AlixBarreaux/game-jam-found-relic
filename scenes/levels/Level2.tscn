@@ -52,7 +52,7 @@ extents = Vector2( 162, 237 )
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 
 [node name="Node2D" type="Node2D" parent="." index="0"]
-position = Vector2( -1156, -2039 )
+position = Vector2( -1563, -1946 )
 scale = Vector2( 2, 2 )
 
 [node name="Icon" type="Sprite" parent="Node2D" index="0"]
@@ -83,7 +83,7 @@ self_modulate = Color( 0, 0.247059, 0.160784, 1 )
 position = Vector2( -9, 402 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
-position = Vector2( -373, 192 )
+position = Vector2( -373, 628 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
 position = Vector2( 0, -50 )
@@ -135,11 +135,11 @@ shape = SubResource( 10 )
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-is_controlled = false
+position = Vector2( 0, 673 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
-is_controlled = true
+position = Vector2( 401, 440 )
 speed = 330.0
 
 [node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
@@ -148,26 +148,50 @@ script = ExtResource( 7 )
 [node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
 position = Vector2( 3, 274 )
 
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
+self_modulate = Color( 0, 0.807843, 0.0117647, 1 )
+
 [node name="NoteBlock2" parent="YSort/NoteBlocksManager" index="1" instance=ExtResource( 3 )]
 position = Vector2( 119, 274 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock2/Sprites" index="0"]
+self_modulate = Color( 0.411765, 0, 0.666667, 1 )
 
 [node name="NoteBlock3" parent="YSort/NoteBlocksManager" index="2" instance=ExtResource( 3 )]
 position = Vector2( 254, 274 )
 
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock3/Sprites" index="0"]
+self_modulate = Color( 0, 0.14902, 0.741176, 1 )
+
 [node name="NoteBlock4" parent="YSort/NoteBlocksManager" index="3" instance=ExtResource( 3 )]
 position = Vector2( 393, 274 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock4/Sprites" index="0"]
+self_modulate = Color( 1, 0.72549, 0, 1 )
 
 [node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
 position = Vector2( 512, 274 )
 
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock5/Sprites" index="0"]
+modulate = Color( 0, 1, 0.976471, 1 )
+
 [node name="NoteBlock6" parent="YSort/NoteBlocksManager" index="5" instance=ExtResource( 3 )]
 position = Vector2( 643, 274 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock6/Sprites" index="0"]
+self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="NoteBlock7" parent="YSort/NoteBlocksManager" index="6" instance=ExtResource( 3 )]
 position = Vector2( 804, 274 )
 
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock7/Sprites" index="0"]
+self_modulate = Color( 1, 0.305882, 0, 1 )
+
 [node name="NoteBlock8" parent="YSort/NoteBlocksManager" index="7" instance=ExtResource( 3 )]
 position = Vector2( 937, 274 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock8/Sprites" index="0"]
+self_modulate = Color( 1, 0.47451, 0.992157, 1 )
 
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 5 )
@@ -231,3 +255,9 @@ is_looped = true
 
 [editable path="YSort/NoteBlocksManager/NoteBlock"]
 [editable path="YSort/NoteBlocksManager/NoteBlock2"]
+[editable path="YSort/NoteBlocksManager/NoteBlock3"]
+[editable path="YSort/NoteBlocksManager/NoteBlock4"]
+[editable path="YSort/NoteBlocksManager/NoteBlock5"]
+[editable path="YSort/NoteBlocksManager/NoteBlock6"]
+[editable path="YSort/NoteBlocksManager/NoteBlock7"]
+[editable path="YSort/NoteBlocksManager/NoteBlock8"]
