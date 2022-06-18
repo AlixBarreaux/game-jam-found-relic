@@ -5,7 +5,7 @@ extends Area2D
 # ----------------- DECLARE VARIABLES -----------------
 
 
-onready var tutorial_sprite: Sprite = $TutorialSprite
+onready var tutorial_sprite: Node2D = $TutorialSprite
 
 
 # ----------------- RUN CODE -----------------

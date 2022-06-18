@@ -1204,7 +1204,7 @@ position = Vector2( -245, 650 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 664, 650 )
+position = Vector2( 675, 650 )
 speed = 330.0
 
 [node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
