@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/MemoryCardsManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_ambient.ogg" type="AudioStream" id=4]
 [ext_resource path="res://resources/atlas-textures/cards/card_2.tres" type="Texture" id=5]
 [ext_resource path="res://resources/atlas-textures/cards/card_3.tres" type="Texture" id=6]
 [ext_resource path="res://resources/atlas-textures/cards/card_4.tres" type="Texture" id=7]
@@ -10,6 +11,14 @@
 [ext_resource path="res://resources/atlas-textures/cards/card_6.tres" type="Texture" id=9]
 [ext_resource path="res://resources/atlas-textures/cards/card_7.tres" type="Texture" id=10]
 [ext_resource path="res://resources/atlas-textures/cards/card_8.tres" type="Texture" id=11]
+[ext_resource path="res://assets/sound/sound-effects/fail.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_4.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_1.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_2.ogg" type="AudioStream" id=15]
+[ext_resource path="res://GoodTrack.tscn" type="PackedScene" id=16]
+[ext_resource path="res://audio_manager_level_3.gd" type="Script" id=17]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_3.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_win.ogg" type="AudioStream" id=19]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -191,6 +200,51 @@ texture = ExtResource( 11 )
 
 [node name="AnimationTree" parent="MemoryCardsManager/Group8/MemoryCard" index="4"]
 parameters/playback = SubResource( 17 )
+
+[node name="AudioManager" type="Node" parent="." index="7"]
+script = ExtResource( 17 )
+
+[node name="Ambient" type="Node" parent="AudioManager" index="0"]
+
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="GeneralTracks" type="Node" parent="AudioManager" index="2"]
+
+[node name="StartAmbientTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 16 )]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "SFX"
+first_track_to_play_on_start = true
+is_looped = true
+
+[node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 16 )]
+stream = ExtResource( 14 )
+bus = "SFX"
+is_looped = true
+
+[node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 16 )]
+stream = ExtResource( 15 )
+bus = "SFX"
+is_looped = true
+
+[node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 16 )]
+stream = ExtResource( 18 )
+bus = "SFX"
+is_looped = true
+
+[node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 16 )]
+stream = ExtResource( 13 )
+bus = "SFX"
+is_looped = true
+
+[node name="WinTrack" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 16 )]
+stream = ExtResource( 19 )
+bus = "SFX"
+is_looped = true
+
+[connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
 [editable path="MemoryCardsManager"]
 [editable path="MemoryCardsManager/Group1/MemoryCard"]

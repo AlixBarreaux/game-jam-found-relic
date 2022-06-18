@@ -57,10 +57,12 @@ func on_interactable_enabled(card_node: Node) -> void:
 		
 		if first_node_reference.get_parent() == card_node.get_parent():
 			print("Cards are matching!")
+			Events.emit_signal("good_interaction_sent")
 			card_node.finish_life_cycle()
 			first_node_reference.finish_life_cycle()
 		else:
 			print("Cards are not matching!")
+			Events.emit_signal("wrong_interaction_sent")
 			
 			# RESET BOTH CARDS
 			card_node.reset()
