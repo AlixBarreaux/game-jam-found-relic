@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="SequenceOrderSpirtesFeedback" type="Node2D"]
+scale = Vector2( 2, 2 )
+
+[node name="Lines2D" type="Node2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="."]
