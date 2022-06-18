@@ -26,3 +26,7 @@ func disable() -> void:
 func on_win() -> void:
 	animation_player.play("Win")
 	return
+
+
+func get_self_modulate():
+	pass

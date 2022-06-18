@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -19,6 +19,806 @@
 [ext_resource path="res://SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=17]
 [ext_resource path="res://SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
+
+[sub_resource type="Animation" id=24]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.807843, 0.0117647, 1 ), Color( 0, 0.807843, 0.0117647, 0.352941 ), Color( 0, 0.807843, 0.0117647, 1 ), Color( 0, 0.807843, 0.0117647, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.807843, 0.0117647, 0.352941 ), Color( 0, 0.807843, 0.0117647, 1 ), Color( 0, 0.807843, 0.0117647, 0.352941 ), Color( 0, 0.807843, 0.0117647, 1 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.807843, 0.0117647, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.807843, 0.0117647, 1 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "Disable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "Enable"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "Spawn"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.352941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "Win"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 30.0, -30.0, 30.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0, 0, 1 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 97, 441.5 )
@@ -132,28 +932,93 @@ points = PoolVector2Array( 0, 0, 2.5, -266.5 )
 position = Vector2( 431, -1548 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( -171, -292.5 )
+rotation = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 24 )
+anims/Enable = SubResource( 25 )
+anims/Spawn = SubResource( 26 )
+anims/Win = SubResource( 27 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( -167.5, -399 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite2" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 28 )
+anims/Enable = SubResource( 29 )
+anims/Spawn = SubResource( 30 )
+anims/Win = SubResource( 31 )
+
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( -168.5, -499.5 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite3" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 32 )
+anims/Enable = SubResource( 33 )
+anims/Spawn = SubResource( 34 )
+anims/Win = SubResource( 35 )
+
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 631, -602 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite4" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 36 )
+anims/Enable = SubResource( 37 )
+anims/Spawn = SubResource( 38 )
+anims/Win = SubResource( 39 )
+
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 634.5, -716.5 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite5" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 40 )
+anims/Enable = SubResource( 41 )
+anims/Spawn = SubResource( 42 )
+anims/Win = SubResource( 43 )
+
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 634.5, -830.5 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite6" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 44 )
+anims/Enable = SubResource( 45 )
+anims/Spawn = SubResource( 46 )
+anims/Win = SubResource( 47 )
+
 [node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 427.5, -1268.5 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite7" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 48 )
+anims/Enable = SubResource( 49 )
+anims/Spawn = SubResource( 50 )
+anims/Win = SubResource( 51 )
+
 [node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
+self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 428, -1539.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite8" index="0"]
+autoplay = "Spawn"
+anims/Disable = SubResource( 52 )
+anims/Enable = SubResource( 53 )
+anims/Spawn = SubResource( 54 )
+anims/Win = SubResource( 55 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
@@ -445,6 +1310,7 @@ is_looped = true
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
 [editable path="SequenceOrderSpirtesFeedback"]
+[editable path="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite"]
 [editable path="YSort/NoteBlocksManager/NoteBlock"]
 [editable path="YSort/NoteBlocksManager/NoteBlock2"]
 [editable path="YSort/NoteBlocksManager/NoteBlock3"]
