@@ -53,50 +53,50 @@ position = Vector2( 287, 161 )
 [node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
 position = Vector2( 360, 161 )
 
-[node name="Playlist" type="Node" parent="." index="6"]
+[node name="AudioManager" type="Node" parent="." index="6"]
 script = ExtResource( 5 )
 
-[node name="Ambient" type="Node" parent="Playlist" index="0"]
+[node name="Ambient" type="Node" parent="AudioManager" index="0"]
 
-[node name="WrongTrack" type="AudioStreamPlayer" parent="Playlist" index="1"]
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
 stream = ExtResource( 4 )
 bus = "SFX"
 
-[node name="GeneralTracks" type="Node" parent="Playlist" index="2"]
+[node name="GeneralTracks" type="Node" parent="AudioManager" index="2"]
 
-[node name="StartAmbientTrack" parent="Playlist/GeneralTracks" index="0" instance=ExtResource( 13 )]
+[node name="StartAmbientTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 13 )]
 stream = ExtResource( 12 )
 autoplay = true
 bus = "SFX"
 first_track_to_play_on_start = true
 is_looped = true
 
-[node name="Plate1Track1" parent="Playlist/GeneralTracks" index="1" instance=ExtResource( 13 )]
+[node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 13 )]
 stream = ExtResource( 6 )
 bus = "SFX"
 is_looped = true
 
-[node name="Plate1Track2" parent="Playlist/GeneralTracks" index="2" instance=ExtResource( 13 )]
+[node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 13 )]
 stream = ExtResource( 11 )
 bus = "SFX"
 is_looped = true
 
-[node name="Plate1Track3" parent="Playlist/GeneralTracks" index="3" instance=ExtResource( 13 )]
+[node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 13 )]
 stream = ExtResource( 9 )
 bus = "SFX"
 is_looped = true
 
-[node name="Plate1Track4" parent="Playlist/GeneralTracks" index="4" instance=ExtResource( 13 )]
+[node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 13 )]
 stream = ExtResource( 8 )
 bus = "SFX"
 is_looped = true
 
-[node name="WinTrack" parent="Playlist/GeneralTracks" index="5" instance=ExtResource( 13 )]
+[node name="WinTrack" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 13 )]
 stream = ExtResource( 10 )
 bus = "SFX"
 is_looped = true
 
-[connection signal="finished" from="Playlist/WrongTrack" to="Playlist" method="_on_WrongTrack_finished"]
+[connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
 [editable path="YSort/NoteBlocksManager/NoteBlock"]
 [editable path="YSort/NoteBlocksManager/NoteBlock2"]

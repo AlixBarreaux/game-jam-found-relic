@@ -17,45 +17,7 @@
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="Playlist" type="Node" parent="." index="3"]
-script = ExtResource( 8 )
-
-[node name="Ambient" type="Node" parent="Playlist" index="0"]
-
-[node name="AmbientTrack" type="AudioStreamPlayer" parent="Playlist/Ambient" index="0"]
-stream = ExtResource( 13 )
-volume_db = -5.549
-autoplay = true
-bus = "Music"
-
-[node name="WrongTrack" type="AudioStreamPlayer" parent="Playlist" index="1"]
-stream = ExtResource( 7 )
-bus = "SFX"
-
-[node name="GeneralTracks" type="Node" parent="Playlist" index="2"]
-
-[node name="StartTrack" parent="Playlist/GeneralTracks" index="0" instance=ExtResource( 4 )]
-stream = ExtResource( 5 )
-bus = "SFX"
-first_track_to_play_on_start = true
-
-[node name="Plate1Track1" parent="Playlist/GeneralTracks" index="1" instance=ExtResource( 4 )]
-stream = ExtResource( 11 )
-bus = "SFX"
-
-[node name="Plate1Track2" parent="Playlist/GeneralTracks" index="2" instance=ExtResource( 4 )]
-stream = ExtResource( 10 )
-bus = "SFX"
-
-[node name="Plate1Track3" parent="Playlist/GeneralTracks" index="3" instance=ExtResource( 4 )]
-stream = ExtResource( 12 )
-bus = "SFX"
-
-[node name="WinTrack" parent="Playlist/GeneralTracks" index="4" instance=ExtResource( 4 )]
-stream = ExtResource( 6 )
-bus = "SFX"
-
-[node name="LevelLoadingTransitionTimer" parent="." index="5"]
+[node name="LevelLoadingTransitionTimer" parent="." index="4"]
 wait_time = 5.0
 
 [node name="PlatesManager" parent="YSort" index="2" instance=ExtResource( 3 )]
@@ -72,5 +34,43 @@ position = Vector2( 189, 166 )
 
 [node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
 position = Vector2( 260, 166 )
+
+[node name="AudioManager" type="Node" parent="." index="6"]
+script = ExtResource( 8 )
+
+[node name="Ambient" type="Node" parent="AudioManager" index="0"]
+
+[node name="AmbientTrack" type="AudioStreamPlayer" parent="AudioManager/Ambient" index="0"]
+stream = ExtResource( 13 )
+volume_db = -5.549
+autoplay = true
+bus = "Music"
+
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="GeneralTracks" type="Node" parent="AudioManager" index="2"]
+
+[node name="StartTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 4 )]
+stream = ExtResource( 5 )
+bus = "SFX"
+first_track_to_play_on_start = true
+
+[node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 4 )]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 4 )]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 4 )]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="WinTrack" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 4 )]
+stream = ExtResource( 6 )
+bus = "SFX"
 
 [editable path="YSort/PlatesManager"]

@@ -133,11 +133,6 @@ _global_script_classes=[ {
 "class": "VersionLabel",
 "language": "GDScript",
 "path": "res://scripts/gui/version_label.gd"
-}, {
-"base": "PlateTrack",
-"class": "WinTrack",
-"language": "GDScript",
-"path": "res://win_tracks.gd"
 } ]
 _global_script_class_icons={
 "AudioManagerLevel1": "",
@@ -164,8 +159,7 @@ _global_script_class_icons={
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",
 "SplashScreen": "",
-"VersionLabel": "",
-"WinTrack": ""
+"VersionLabel": ""
 }
 
 [application]
