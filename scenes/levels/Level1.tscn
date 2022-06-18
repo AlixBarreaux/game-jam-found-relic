@@ -25,7 +25,7 @@
 extents = Vector2( 242, 1200 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 97, 1286 )
+extents = Vector2( 97, 1284.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 240, 1148.5 )
@@ -49,7 +49,7 @@ extents = Vector2( 162, 343 )
 extents = Vector2( 162, 237 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 97, 1363.25 )
+extents = Vector2( 97, 1371.75 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 181.5, 607 )
@@ -80,8 +80,22 @@ extents = Vector2( 160.499, 379.742 )
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="SequenceOrderFeedbackManager" parent="." index="0" instance=ExtResource( 20 )]
-position = Vector2( 1131, 395 )
+[node name="Polygons2D" parent="." index="0"]
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
+position = Vector2( 1094, 353 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -4640, -5717, 5684, -5669, 5741, 1707, 894, 1677, 894, -811, 2186, -823, 2182, -2035, 1054, -2043, 1038, -2785, -473, -2804, -486, -3507, -2002, -3499, -2002, -2815, -1070, -2817, -1063, -2500, -2002, -2495, -2006, -1768, -1546, -1768, -1550, -1444, -2003, -1448, -2004, -1207, -721, -1207, -718, 1666, -4676, 1646 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
+polygon = PoolVector2Array( 325, 2030, 2026, 2027, 2053, 581, 1747, 581, 1735, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1434, 606, -1433, 608, 588, 331, 588 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
+polygon = PoolVector2Array( 2352, -1037, 2367, -1351, 2687, -1329, 2680, -1037 )
+
+[node name="SequenceOrderFeedbackManager" parent="." index="1" instance=ExtResource( 20 )]
+position = Vector2( 1131, -243 )
 
 [node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderFeedbackManager/Lines2D" index="0" instance=ExtResource( 22 )]
 
@@ -117,7 +131,7 @@ position = Vector2( 0, -467 )
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderFeedbackManager/Sprites" index="5" instance=ExtResource( 21 )]
 position = Vector2( 0, -573.5 )
 
-[node name="SpaceBarTutorialArea2D" parent="." index="1" instance=ExtResource( 17 )]
+[node name="SpaceBarTutorialArea2D" parent="." index="2" instance=ExtResource( 17 )]
 position = Vector2( 421, -1000 )
 collision_layer = 0
 
@@ -129,11 +143,11 @@ position = Vector2( 137, 400 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
-position = Vector2( 0, -50 )
+position = Vector2( -4, -60 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
-position = Vector2( 564, -1090 )
+position = Vector2( 564, -1088.5 )
 shape = SubResource( 20 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
@@ -161,7 +175,7 @@ rotation = 1.57079
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="7"]
-position = Vector2( 118, -1995 )
+position = Vector2( 125, -1995 )
 rotation = 1.57079
 shape = SubResource( 11 )
 
@@ -180,7 +194,7 @@ position = Vector2( 0, -50 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="1"]
-position = Vector2( 581, -1372.75 )
+position = Vector2( 581, -1381.25 )
 shape = SubResource( 19 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
@@ -234,6 +248,52 @@ shape = SubResource( 18 )
 
 [node name="LevelLoadingTransitionTimer" parent="." index="6"]
 wait_time = 5.0
+
+[node name="AudioManager" type="Node" parent="." index="7"]
+script = ExtResource( 8 )
+
+[node name="Ambient" type="Node" parent="AudioManager" index="0"]
+
+[node name="AmbientTrack" type="AudioStreamPlayer" parent="AudioManager/Ambient" index="0"]
+stream = ExtResource( 13 )
+volume_db = -5.549
+autoplay = true
+bus = "Music"
+
+[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="GeneralTracks" type="Node" parent="AudioManager" index="2"]
+
+[node name="StartTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 4 )]
+stream = ExtResource( 5 )
+bus = "SFX"
+first_track_to_play_on_start = true
+
+[node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 4 )]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 4 )]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 4 )]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 4 )]
+stream = ExtResource( 14 )
+bus = "SFX"
+
+[node name="Plate1Track5" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 4 )]
+stream = ExtResource( 15 )
+bus = "SFX"
+
+[node name="WinTrack" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 4 )]
+stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="PlatesManager" parent="YSort" index="0" instance=ExtResource( 3 )]
 script = ExtResource( 9 )
@@ -296,52 +356,6 @@ parameters/playback = SubResource( 22 )
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 2540, -766 )
 speed = 330.0
-
-[node name="AudioManager" type="Node" parent="." index="8"]
-script = ExtResource( 8 )
-
-[node name="Ambient" type="Node" parent="AudioManager" index="0"]
-
-[node name="AmbientTrack" type="AudioStreamPlayer" parent="AudioManager/Ambient" index="0"]
-stream = ExtResource( 13 )
-volume_db = -5.549
-autoplay = true
-bus = "Music"
-
-[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager" index="1"]
-stream = ExtResource( 7 )
-bus = "SFX"
-
-[node name="GeneralTracks" type="Node" parent="AudioManager" index="2"]
-
-[node name="StartTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 4 )]
-stream = ExtResource( 5 )
-bus = "SFX"
-first_track_to_play_on_start = true
-
-[node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 4 )]
-stream = ExtResource( 11 )
-bus = "SFX"
-
-[node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 4 )]
-stream = ExtResource( 10 )
-bus = "SFX"
-
-[node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 4 )]
-stream = ExtResource( 12 )
-bus = "SFX"
-
-[node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 4 )]
-stream = ExtResource( 14 )
-bus = "SFX"
-
-[node name="Plate1Track5" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 4 )]
-stream = ExtResource( 15 )
-bus = "SFX"
-
-[node name="WinTrack" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 4 )]
-stream = ExtResource( 6 )
-bus = "SFX"
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
