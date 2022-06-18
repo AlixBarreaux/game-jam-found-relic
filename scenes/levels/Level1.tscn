@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/sprites/keyboard_gamepad_keys/spacebar_key.png" type="Texture" id=23]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -624,7 +625,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 242, 1200 )
+extents = Vector2( 242, 1198 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 97, 1728 )
@@ -633,7 +634,7 @@ extents = Vector2( 97, 1728 )
 extents = Vector2( 240, 1148.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 240, 607 )
+extents = Vector2( 240, 641.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 240, 1100.5 )
@@ -834,7 +835,7 @@ position = Vector2( 137, 400 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
-position = Vector2( -4, -60 )
+position = Vector2( -4, -58 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
@@ -846,7 +847,7 @@ position = Vector2( -1288, -2401.5 )
 shape = SubResource( 9 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="3"]
-position = Vector2( -853, -1016 )
+position = Vector2( -887.5, -1016 )
 rotation = 1.57079
 shape = SubResource( 4 )
 
@@ -1040,6 +1041,7 @@ speed = 330.0
 
 [node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
 position = Vector2( 0, -150 )
+texture = ExtResource( 23 )
 
 [node name="AnimationTree" parent="YSort/HeroMan" index="7"]
 parameters/playback = SubResource( 22 )
