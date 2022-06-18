@@ -565,7 +565,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 0.862745, 0, 0, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -971,7 +971,7 @@ anims/Spawn = SubResource( 34 )
 anims/Win = SubResource( 35 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
-self_modulate = Color( 1, 0.72549, 0, 0.352941 )
+self_modulate = Color( 1, 0.72549, 0, 1 )
 position = Vector2( 631, -602 )
 rotation = 0.0
 
