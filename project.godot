@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Node",
 "class": "AudioManagerLevel1",
 "language": "GDScript",
 "path": "res://scripts/audio-managers/audio_manager_level_1.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "AudioManagerLevel2",
 "language": "GDScript",
 "path": "res://scripts/audio-managers/audio_manager_level_2.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "AudioManagerLevel3",
 "language": "GDScript",
 "path": "res://scripts/audio-managers/audio_manager_level_3.gd"

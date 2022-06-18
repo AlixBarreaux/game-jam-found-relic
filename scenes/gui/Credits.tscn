@@ -197,17 +197,17 @@ custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
 text = "Gesuardo"
 url = "https://gesuardo.weebly.com/"
 
-[node name="Hellsnake" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
+[node name="MathieuFret" type="HBoxContainer" parent="VBoxContainer/SoundDesigners"]
 margin_top = 126.0
 margin_right = 636.0
 margin_bottom = 164.0
 alignment = 1
 
-[node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/Hellsnake" instance=ExtResource( 3 )]
-margin_right = 376.0
+[node name="BrowserLinkButton" parent="VBoxContainer/SoundDesigners/MathieuFret" instance=ExtResource( 3 )]
+margin_left = 233.0
 custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
-text = "Hellsnake"
-url = "https://ctn-phaco.itch.io/"
+text = "Mathieu Fret"
+url = "https://itch.io/profile/hellsnake-sfx"
 
 [node name="Graphist" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 324.0
