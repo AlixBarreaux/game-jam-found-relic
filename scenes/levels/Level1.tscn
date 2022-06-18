@@ -259,7 +259,7 @@ self_modulate = Color( 1, 0.913725, 1, 1 )
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="Plate5" parent="YSort/PlatesManager" index="4" instance=ExtResource( 2 )]
-position = Vector2( 1680, -2198 )
+position = Vector2( 1442, -2198 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate5/Sprites" index="0"]
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
