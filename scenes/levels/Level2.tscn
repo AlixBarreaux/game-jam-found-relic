@@ -28,7 +28,7 @@ extents = Vector2( 97, 1391.5 )
 extents = Vector2( 97, 476 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 98, 1553.62 )
+extents = Vector2( 98, 1164 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 225, 1050.5 )
@@ -49,7 +49,7 @@ extents = Vector2( 773.5, 1097.5 )
 extents = Vector2( 97, 1169.75 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 97, 1187.88 )
+extents = Vector2( 97, 1084.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 97, 448.375 )
@@ -137,7 +137,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
-position = Vector2( 1871.38, -2036 )
+position = Vector2( 2261, -2036 )
 rotation = 1.57079
 shape = SubResource( 17 )
 __meta__ = {
@@ -192,7 +192,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
-position = Vector2( 236, -3525.12 )
+position = Vector2( 236, -3628.5 )
 shape = SubResource( 8 )
 __meta__ = {
 "_editor_description_": ""

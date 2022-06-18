@@ -57,27 +57,31 @@ extents = Vector2( 162, 166 )
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
 [node name="Node2D" type="Node2D" parent="." index="0"]
-position = Vector2( -1156, -2039 )
+position = Vector2( -1156, -2126 )
 scale = Vector2( 2, 2 )
 
 [node name="Icon" type="Sprite" parent="Node2D" index="0"]
-position = Vector2( 1169, 84 )
+position = Vector2( 1169, 336.5 )
 texture = ExtResource( 16 )
 
 [node name="Icon2" type="Sprite" parent="Node2D" index="1"]
-position = Vector2( 1169, 236 )
+position = Vector2( 1169, 438 )
 texture = ExtResource( 16 )
 
 [node name="Icon3" type="Sprite" parent="Node2D" index="2"]
-position = Vector2( 1169, 420 )
+position = Vector2( 1169, 537.5 )
 texture = ExtResource( 16 )
 
 [node name="Icon4" type="Sprite" parent="Node2D" index="3"]
-position = Vector2( 1169, 585 )
+position = Vector2( 1169, 645.5 )
 texture = ExtResource( 16 )
 
 [node name="Icon5" type="Sprite" parent="Node2D" index="4"]
 position = Vector2( 1169, 756 )
+texture = ExtResource( 16 )
+
+[node name="Icon6" type="Sprite" parent="Node2D" index="5"]
+position = Vector2( 1169, 857 )
 texture = ExtResource( 16 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
