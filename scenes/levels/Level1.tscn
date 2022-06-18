@@ -351,7 +351,7 @@ position = Vector2( 0, -150 )
 parameters/playback = SubResource( 22 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
-position = Vector2( 2540, -766 )
+position = Vector2( 1866, 435 )
 speed = 330.0
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]

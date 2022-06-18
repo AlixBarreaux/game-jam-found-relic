@@ -87,16 +87,73 @@ extents = Vector2( 189.25, 410 )
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
-polygon = PoolVector2Array( 3, 825, 26, 1014, -699, 1006, -699, 274, -1530, 251, -1499, -3196, -1265, -3166, -1227, -3807, -34, -3838, -27, -3415, 751, -3422, 728, -3188, -238, -3173, -223, -3588, -1039, -3566, -1024, -2962, -1318, -2969, -1303, 74, -487, 88, -487, 814 )
+polygon = PoolVector2Array( 3, 825, 36, 2202, -4076, 2138, -4228, -5932, 769, -5853, 751, -3422, 728, -3188, -238, -3173, -223, -3588, -1039, -3566, -1024, -2962, -1318, -2969, -1303, 74, -487, 88, -487, 814 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( -744, -403, -729, -1943, -208, -1928, -231, -2872, -27, -2857, -19, -2305, 743, -2305, 751, -3204, 977, -3204, 1000, -1943, 1446, -1928, 1461, -365, 479, -362, 449, 808, 849, 816, 864, -33, 2910, -52, 2918, -1933, 1944, -1940, 1951, -3171, 736, -3201, 728, -3428, 2095, -3405, 2148, -2152, 3129, -2129, 3122, 144, 1091, 151, 1053, 1020, 3, 1027, -4, -392 )
+polygon = PoolVector2Array( -744, -403, -729, -1943, -208, -1928, -231, -2872, -27, -2857, -19, -2305, 743, -2305, 751, -3204, 977, -3204, 1000, -1943, 1446, -1928, 1461, -365, 479, -362, 449, 808, 849, 816, 864, -33, 2910, -52, 2918, -1933, 1944, -1940, 1951, -3171, 736, -3201, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, -4, -392 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 polygon = PoolVector2Array( 1929, -1283, 1944, -709, 2571, -694, 2571, -1261 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Panel" parent="CanvasLayer2" index="0"]
+visible = true
+self_modulate = Color( 0, 0.247059, 0.160784, 1 )
+
+[node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
+
+[node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderSpirtesFeedback/Lines2D" index="0" instance=ExtResource( 18 )]
+position = Vector2( -167.5, -288.5 )
+
+[node name="SequenceOrderFeedbackLine2D2" parent="SequenceOrderSpirtesFeedback/Lines2D" index="1" instance=ExtResource( 18 )]
+position = Vector2( -167.5, -399.5 )
+
+[node name="SequenceOrderFeedbackLine2D3" parent="SequenceOrderSpirtesFeedback/Lines2D" index="2" instance=ExtResource( 18 )]
+position = Vector2( -169.5, -499 )
+points = PoolVector2Array( 0, 0, 801, -102.5 )
+
+[node name="SequenceOrderFeedbackLine2D4" parent="SequenceOrderSpirtesFeedback/Lines2D" index="3" instance=ExtResource( 18 )]
+position = Vector2( 632.5, -613 )
+
+[node name="SequenceOrderFeedbackLine2D5" parent="SequenceOrderSpirtesFeedback/Lines2D" index="4" instance=ExtResource( 18 )]
+position = Vector2( 634.5, -730.5 )
+
+[node name="SequenceOrderFeedbackLine2D6" parent="SequenceOrderSpirtesFeedback/Lines2D" index="5" instance=ExtResource( 18 )]
+position = Vector2( 640, -834 )
+points = PoolVector2Array( 0, 0, -211.5, -432 )
+
+[node name="SequenceOrderFeedbackLine2D7" parent="SequenceOrderSpirtesFeedback/Lines2D" index="6" instance=ExtResource( 18 )]
+position = Vector2( 426, -1268.5 )
+points = PoolVector2Array( 0, 0, 2.5, -266.5 )
+
+[node name="SequenceOrderFeedbackLine2D8" parent="SequenceOrderSpirtesFeedback/Lines2D" index="7" instance=ExtResource( 18 )]
+position = Vector2( 431, -1548 )
+
+[node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
+position = Vector2( -171, -292.5 )
+
+[node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
+position = Vector2( -167.5, -399 )
+
+[node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
+position = Vector2( -168.5, -499.5 )
+
+[node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
+position = Vector2( 631, -602 )
+
+[node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
+position = Vector2( 634.5, -716.5 )
+
+[node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
+position = Vector2( 634.5, -830.5 )
+
+[node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
+position = Vector2( 427.5, -1268.5 )
+
+[node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
+position = Vector2( 428, -1539.5 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
@@ -264,72 +321,15 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
-
-[node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderSpirtesFeedback/Lines2D" index="0" instance=ExtResource( 18 )]
-position = Vector2( -167.5, -288.5 )
-
-[node name="SequenceOrderFeedbackLine2D2" parent="SequenceOrderSpirtesFeedback/Lines2D" index="1" instance=ExtResource( 18 )]
-position = Vector2( -167.5, -399.5 )
-
-[node name="SequenceOrderFeedbackLine2D3" parent="SequenceOrderSpirtesFeedback/Lines2D" index="2" instance=ExtResource( 18 )]
-position = Vector2( -169.5, -499 )
-points = PoolVector2Array( 0, 0, 801, -102.5 )
-
-[node name="SequenceOrderFeedbackLine2D4" parent="SequenceOrderSpirtesFeedback/Lines2D" index="3" instance=ExtResource( 18 )]
-position = Vector2( 632.5, -613 )
-
-[node name="SequenceOrderFeedbackLine2D5" parent="SequenceOrderSpirtesFeedback/Lines2D" index="4" instance=ExtResource( 18 )]
-position = Vector2( 634.5, -730.5 )
-
-[node name="SequenceOrderFeedbackLine2D6" parent="SequenceOrderSpirtesFeedback/Lines2D" index="5" instance=ExtResource( 18 )]
-position = Vector2( 640, -834 )
-points = PoolVector2Array( 0, 0, -211.5, -432 )
-
-[node name="SequenceOrderFeedbackLine2D7" parent="SequenceOrderSpirtesFeedback/Lines2D" index="6" instance=ExtResource( 18 )]
-position = Vector2( 426, -1268.5 )
-points = PoolVector2Array( 0, 0, 2.5, -266.5 )
-
-[node name="SequenceOrderFeedbackLine2D8" parent="SequenceOrderSpirtesFeedback/Lines2D" index="7" instance=ExtResource( 18 )]
-position = Vector2( 431, -1548 )
-
-[node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
-position = Vector2( -171, -292.5 )
-
-[node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
-position = Vector2( -167.5, -399 )
-
-[node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
-position = Vector2( -168.5, -499.5 )
-
-[node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
-position = Vector2( 631, -602 )
-
-[node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
-position = Vector2( 634.5, -716.5 )
-
-[node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
-position = Vector2( 634.5, -830.5 )
-
-[node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
-position = Vector2( 427.5, -1268.5 )
-
-[node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
-position = Vector2( 428, -1539.5 )
-
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
-self_modulate = Color( 0, 0.247059, 0.160784, 1 )
-
 [node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -435, -249 )
+position = Vector2( -184, 624 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 2091, -394 )
+position = Vector2( 664, 650 )
 speed = 330.0
 
 [node name="NoteBlocksManager" parent="YSort" index="2" instance=ExtResource( 2 )]
