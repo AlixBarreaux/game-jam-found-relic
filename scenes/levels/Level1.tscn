@@ -115,11 +115,11 @@ script = ExtResource( 9 )
 [node name="Plate" parent="YSort/PlatesManager" index="0" instance=ExtResource( 2 )]
 position = Vector2( 39, -776 )
 
-[node name="CollisionShape2D" parent="YSort/PlatesManager/Plate/InteractionReceiverArea2D" index="0"]
-position = Vector2( 0, 0 )
-
 [node name="Sprite" parent="YSort/PlatesManager/Plate/Sprites" index="0"]
 self_modulate = Color( 0.862745, 0, 0, 1 )
+
+[node name="CollisionShape2D" parent="YSort/PlatesManager/Plate/InteractionReceiverArea2D" index="0"]
+position = Vector2( 0, 0 )
 
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
 position = Vector2( -967, -1063 )
