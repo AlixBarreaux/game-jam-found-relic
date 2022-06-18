@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -23,8 +23,11 @@ extents = Vector2( 242, 1200 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 97, 721.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 102, 607 )
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 102, 1155 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 240, 1148.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 240, 607 )
@@ -35,40 +38,41 @@ extents = Vector2( 240, 1100.5 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 127, 279 )
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 162, 166 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 102, 607 )
+
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
 [node name="Node2D" type="Node2D" parent="." index="0"]
+position = Vector2( -1156, -2039 )
+scale = Vector2( 2, 2 )
 
 [node name="Icon" type="Sprite" parent="Node2D" index="0"]
 position = Vector2( 1169, 84 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
 texture = ExtResource( 16 )
 
 [node name="Icon2" type="Sprite" parent="Node2D" index="1"]
 position = Vector2( 1169, 236 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
 texture = ExtResource( 16 )
 
 [node name="Icon3" type="Sprite" parent="Node2D" index="2"]
 position = Vector2( 1169, 420 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
 texture = ExtResource( 16 )
 
 [node name="Icon4" type="Sprite" parent="Node2D" index="3"]
 position = Vector2( 1169, 585 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
 texture = ExtResource( 16 )
 
 [node name="Icon5" type="Sprite" parent="Node2D" index="4"]
 position = Vector2( 1169, 756 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
 texture = ExtResource( 16 )
+
+[node name="Panel" parent="CanvasLayer2" index="0"]
+visible = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
@@ -82,12 +86,12 @@ position = Vector2( 564, -525.5 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
-position = Vector2( 566, -1860 )
-shape = SubResource( 3 )
+position = Vector2( 566, -2408 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="3"]
-position = Vector2( -1288, -1860 )
-shape = SubResource( 4 )
+position = Vector2( -1288, -2401.5 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
 position = Vector2( -853, -1016 )
@@ -95,7 +99,7 @@ rotation = 1.57079
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
-position = Vector2( -400, -2705 )
+position = Vector2( -400, -3797 )
 rotation = 1.57079
 shape = SubResource( 5 )
 
@@ -103,6 +107,11 @@ shape = SubResource( 5 )
 position = Vector2( 367, 313 )
 rotation = 1.57079
 shape = SubResource( 6 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="7"]
+position = Vector2( -313, -2377 )
+rotation = 1.57079
+shape = SubResource( 7 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="1"]
 position = Vector2( 2221, 780 )
@@ -155,37 +164,37 @@ self_modulate = Color( 0.862745, 0, 0, 1 )
 position = Vector2( 0, 0 )
 
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
-position = Vector2( 2145, -949 )
+position = Vector2( 1952, -841 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate2/Sprites" index="0"]
 self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( 2317, -1715 )
+position = Vector2( 2742, -1572 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate3/Sprites" index="0"]
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
-position = Vector2( 3085, -1175 )
+position = Vector2( 2758, -898 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate4/Sprites" index="0"]
 self_modulate = Color( 0.862745, 0, 0, 1 )
 
 [node name="Plate5" parent="YSort/PlatesManager" index="4" instance=ExtResource( 2 )]
-position = Vector2( 2953, -1787 )
+position = Vector2( -385, -2631 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate5/Sprites" index="0"]
 self_modulate = Color( 0, 0.329412, 0.592157, 1 )
 
 [node name="Plate6" parent="YSort/PlatesManager" index="5" instance=ExtResource( 2 )]
-position = Vector2( -174, -1229 )
+position = Vector2( 247, -1697 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate6/Sprites" index="0"]
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 559, 412 )
+position = Vector2( 489, -915 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1783, 412 )
