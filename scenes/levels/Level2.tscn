@@ -904,6 +904,9 @@ self_modulate = Color( 0, 0.247059, 0.160784, 1 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
 
+[node name="Lines2D" parent="SequenceOrderSpirtesFeedback" index="0"]
+visible = false
+
 [node name="SequenceOrderFeedbackLine2D" parent="SequenceOrderSpirtesFeedback/Lines2D" index="0" instance=ExtResource( 18 )]
 position = Vector2( -167.5, -288.5 )
 
