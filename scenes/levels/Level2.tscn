@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -16,18 +16,122 @@
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_6.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_7.ogg" type="AudioStream" id=16]
+[ext_resource path="res://miscellaneous/icon.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 242, 1200 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 97, 721.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 102, 1155 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 240, 1148.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 240, 607 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 240, 1100.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 127, 279 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 162, 166 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 162, 343 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 162, 237 )
 
 [node name="Level2" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
+
+[node name="Node2D" type="Node2D" parent="." index="0"]
+position = Vector2( -1156, -2039 )
+scale = Vector2( 2, 2 )
+
+[node name="Icon" type="Sprite" parent="Node2D" index="0"]
+position = Vector2( 1169, 84 )
+texture = ExtResource( 17 )
+
+[node name="Icon2" type="Sprite" parent="Node2D" index="1"]
+position = Vector2( 1169, 236 )
+texture = ExtResource( 17 )
+
+[node name="Icon3" type="Sprite" parent="Node2D" index="2"]
+position = Vector2( 1169, 420 )
+texture = ExtResource( 17 )
+
+[node name="Icon4" type="Sprite" parent="Node2D" index="3"]
+position = Vector2( 1169, 585 )
+texture = ExtResource( 17 )
+
+[node name="Icon5" type="Sprite" parent="Node2D" index="4"]
+position = Vector2( 1169, 756 )
+texture = ExtResource( 17 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
 self_modulate = Color( 0, 0.247059, 0.160784, 1 )
 
-[node name="Polygon2D" parent="." index="2"]
+[node name="Polygon2D" parent="." index="3"]
 position = Vector2( -9, 402 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="4"]
+[node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
+position = Vector2( -373, 192 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
+position = Vector2( 0, -50 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
+position = Vector2( 564, -525.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]
+position = Vector2( 566, -2408 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="3"]
+position = Vector2( -1288, -2401.5 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
+position = Vector2( -853, -1016 )
+rotation = 1.57079
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
+position = Vector2( -400, -3797 )
+rotation = 1.57079
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
+position = Vector2( 367, 313 )
+rotation = 1.57079
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="7"]
+position = Vector2( -259, -2709 )
+rotation = 1.57079
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="8"]
+position = Vector2( 118, -1995 )
+rotation = 1.57079
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="9"]
+position = Vector2( -827, -1656 )
+rotation = 1.57079
+shape = SubResource( 10 )
+
+[node name="LevelLoadingTransitionTimer" parent="." index="5"]
 wait_time = 9.0
 
 [node name="HeroMan" parent="YSort" index="0"]
@@ -65,7 +169,7 @@ position = Vector2( 804, 274 )
 [node name="NoteBlock8" parent="YSort/NoteBlocksManager" index="7" instance=ExtResource( 3 )]
 position = Vector2( 937, 274 )
 
-[node name="AudioManager" type="Node" parent="." index="6"]
+[node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 5 )
 
 [node name="Ambient" type="Node" parent="AudioManager" index="0"]
