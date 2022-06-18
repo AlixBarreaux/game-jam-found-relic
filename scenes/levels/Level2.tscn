@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interactables/NoteBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/sound/music/level_1_percussion.ogg" type="AudioStream" id=4]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_fail.ogg" type="AudioStream" id=5]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_plate_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sound/sound-effects/fail.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio_manager_level_2.gd" type="Script" id=5]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_1.ogg" type="AudioStream" id=6]
 [ext_resource path="res://note_blocks_manager.gd" type="Script" id=7]
-[ext_resource path="res://test_playlist.gd" type="Script" id=8]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_plate_4.ogg" type="AudioStream" id=9]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_plate_2.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_win.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/sound/sound-effects/plates/lv_1_plate_3.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_win.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_2.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound/sound-effects/note-blocks/lvl2_ambient.ogg" type="AudioStream" id=12]
 [ext_resource path="res://GoodTrack.tscn" type="PackedScene" id=13]
 
 [node name="Level2" instance=ExtResource( 1 )]
@@ -44,44 +43,37 @@ position = Vector2( 287, 161 )
 [node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
 position = Vector2( 360, 161 )
 
-[node name="AudioManager" type="Node" parent="." index="6"]
+[node name="Playlist" type="Node" parent="." index="6"]
+script = ExtResource( 5 )
 
-[node name="Playlist" type="Node" parent="AudioManager" index="0"]
-script = ExtResource( 8 )
+[node name="Ambient" type="Node" parent="Playlist" index="0"]
 
-[node name="Ambient" type="Node" parent="AudioManager/Playlist" index="0"]
-
-[node name="AmbientTrack" type="AudioStreamPlayer" parent="AudioManager/Playlist/Ambient" index="0"]
+[node name="WrongTrack" type="AudioStreamPlayer" parent="Playlist" index="1"]
 stream = ExtResource( 4 )
-volume_db = -5.549
-autoplay = true
-bus = "Music"
-
-[node name="WrongTrack" type="AudioStreamPlayer" parent="AudioManager/Playlist" index="1"]
-stream = ExtResource( 5 )
 bus = "SFX"
 
-[node name="GeneralTracks" type="Node" parent="AudioManager/Playlist" index="2"]
+[node name="GeneralTracks" type="Node" parent="Playlist" index="2"]
 
-[node name="StartTrack" parent="AudioManager/Playlist/GeneralTracks" index="0" instance=ExtResource( 13 )]
-stream = ExtResource( 6 )
+[node name="StartAmbientTrack" parent="Playlist/GeneralTracks" index="0" instance=ExtResource( 13 )]
+stream = ExtResource( 12 )
+autoplay = true
 bus = "SFX"
 first_track_to_play_on_start = true
 
-[node name="Plate1Track1" parent="AudioManager/Playlist/GeneralTracks" index="1" instance=ExtResource( 13 )]
-stream = ExtResource( 10 )
+[node name="Plate1Track1" parent="Playlist/GeneralTracks" index="1" instance=ExtResource( 13 )]
+stream = ExtResource( 6 )
 bus = "SFX"
 
-[node name="Plate1Track2" parent="AudioManager/Playlist/GeneralTracks" index="2" instance=ExtResource( 13 )]
-stream = ExtResource( 12 )
+[node name="Plate1Track2" parent="Playlist/GeneralTracks" index="2" instance=ExtResource( 13 )]
+stream = ExtResource( 11 )
 bus = "SFX"
 
-[node name="Plate1Track3" parent="AudioManager/Playlist/GeneralTracks" index="3" instance=ExtResource( 13 )]
+[node name="Plate1Track3" parent="Playlist/GeneralTracks" index="3" instance=ExtResource( 13 )]
 stream = ExtResource( 9 )
 bus = "SFX"
 
-[node name="WinTrack" parent="AudioManager/Playlist/GeneralTracks" index="4" instance=ExtResource( 13 )]
-stream = ExtResource( 11 )
+[node name="WinTrack" parent="Playlist/GeneralTracks" index="4" instance=ExtResource( 13 )]
+stream = ExtResource( 10 )
 bus = "SFX"
 
 [editable path="YSort/NoteBlocksManager/NoteBlock"]

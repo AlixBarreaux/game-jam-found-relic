@@ -6,15 +6,19 @@ extends AudioStreamPlayer
 
 export var first_track_to_play_on_start: bool = false
 
+export var is_looped: bool = false
+
 # ----------------- RUN CODE -----------------
 
 func _ready() -> void:
 	self.initialize_asserts()
+	
+	
 
 #	if not first_track_to_play_on_start:
 #		self.set_muted(true)
 	
-#	self.stream.set_loop(true)
+	self.stream.set_loop(is_looped)
 #	self.play()
 	
 	return

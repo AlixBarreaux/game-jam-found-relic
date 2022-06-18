@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lvl2_2.ogg-f494faaafcc0b9eaec41d98705dde48b.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/sound-effects/note-blocks/lvl2_2.ogg"
+dest_files=[ "res://.import/lvl2_2.ogg-f494faaafcc0b9eaec41d98705dde48b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

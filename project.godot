@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "AudioManagerLevel1",
+"language": "GDScript",
+"path": "res://audio_manager_level_1.gd"
+}, {
+"base": "Node",
+"class": "AudioManagerLevel2",
+"language": "GDScript",
+"path": "res://audio_manager_level_2.gd"
+}, {
 "base": "Reference",
 "class": "BrowserLinkButton",
 "language": "GDScript",
@@ -130,6 +140,8 @@ _global_script_classes=[ {
 "path": "res://win_tracks.gd"
 } ]
 _global_script_class_icons={
+"AudioManagerLevel1": "",
+"AudioManagerLevel2": "",
 "BrowserLinkButton": "",
 "GameTitleLabel": "",
 "Hero": "",
@@ -175,6 +187,8 @@ Events="*res://autoloads/scripts/events.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

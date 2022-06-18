@@ -1,6 +1,9 @@
 class_name Level
 extends Node2D
 
+# Please note this script was copy pasted in level 1 and 2 because I didn't have
+# time to make a fancy OOP pattern. It NEEDS to be refactored 100%. Like...
+# Really. It needs to.
 
 # ----------------- DECLARE VARIABLES -----------------
 
