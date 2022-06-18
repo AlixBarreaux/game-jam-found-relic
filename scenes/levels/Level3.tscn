@@ -57,6 +57,7 @@ next_level_to_load_path = "res://scenes/gui/Credits.tscn"
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
+self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
 
 [node name="MemoryCardsManager" parent="." index="2" instance=ExtResource( 3 )]
 is_lone_card_present = true

@@ -170,7 +170,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Game-jam-found-relic"
+config/name="O Key Cupid"
 run/main_scene="res://scenes/levels/Level2.tscn"
 config/icon="res://miscellaneous/icon.png"
 config/version="0.1"
