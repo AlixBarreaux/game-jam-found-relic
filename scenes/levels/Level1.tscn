@@ -81,11 +81,7 @@ extents = Vector2( 160.499, 379.742 )
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="SpaceBarTutorialArea2D" parent="." index="0" instance=ExtResource( 17 )]
-position = Vector2( 421, -1000 )
-collision_layer = 0
-
-[node name="SequenceOrderSpritesFeedback" parent="." index="1" instance=ExtResource( 20 )]
+[node name="SequenceOrderSpritesFeedback" parent="." index="0" instance=ExtResource( 20 )]
 position = Vector2( 1131, 395 )
 script = ExtResource( 19 )
 
@@ -104,6 +100,10 @@ position = Vector2( 0, -127 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpritesFeedback/Sprites" index="2" instance=ExtResource( 21 )]
 position = Vector2( 0, -251 )
+
+[node name="SpaceBarTutorialArea2D" parent="." index="1" instance=ExtResource( 17 )]
+position = Vector2( 421, -1000 )
+collision_layer = 0
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
@@ -329,8 +329,8 @@ bus = "SFX"
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
-[editable path="SpaceBarTutorialArea2D"]
 [editable path="SequenceOrderSpritesFeedback"]
+[editable path="SpaceBarTutorialArea2D"]
 [editable path="YSort/PlatesManager"]
 [editable path="YSort/PlatesManager/Plate"]
 [editable path="YSort/PlatesManager/Plate2"]
