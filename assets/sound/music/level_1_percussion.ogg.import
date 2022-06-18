@@ -11,5 +11,5 @@ dest_files=[ "res://.import/level_1_percussion.ogg-4a6848f89baa1e1cec474d6d6fa17
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
