@@ -723,7 +723,7 @@ anims/Spawn = SubResource( 25 )
 anims/Win = SubResource( 26 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderFeedbackManager/Sprites" index="1" instance=ExtResource( 21 )]
-self_modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 0.862745, 0, 0, 0.352941 )
 position = Vector2( 0, -127 )
 rotation = 0.0
 
@@ -735,7 +735,7 @@ anims/Spawn = SubResource( 49 )
 anims/Win = SubResource( 50 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderFeedbackManager/Sprites" index="2" instance=ExtResource( 21 )]
-self_modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 1, 0.913725, 0, 0.352941 )
 position = Vector2( 0, -251 )
 rotation = 0.0
 
@@ -747,7 +747,7 @@ anims/Spawn = SubResource( 33 )
 anims/Win = SubResource( 34 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderFeedbackManager/Sprites" index="3" instance=ExtResource( 21 )]
-self_modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 1, 0.913725, 0, 0.352941 )
 position = Vector2( 0, -360 )
 rotation = 0.0
 
@@ -759,7 +759,7 @@ anims/Spawn = SubResource( 61 )
 anims/Win = SubResource( 62 )
 
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderFeedbackManager/Sprites" index="4" instance=ExtResource( 21 )]
-self_modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
 position = Vector2( 0, -467 )
 rotation = 0.0
 
@@ -771,7 +771,7 @@ anims/Spawn = SubResource( 41 )
 anims/Win = SubResource( 42 )
 
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderFeedbackManager/Sprites" index="5" instance=ExtResource( 21 )]
-self_modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
 position = Vector2( 0, -573.5 )
 rotation = 0.0
 

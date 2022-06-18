@@ -133,7 +133,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 0.411765, 0, 0.666667, 1 ), Color( 0.411765, 0, 0.666667, 0.352941 ), Color( 0.411765, 0, 0.666667, 1 ), Color( 0.411765, 0, 0.666667, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -149,7 +149,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0.411765, 0, 0.666667, 0.352941 ), Color( 0.411765, 0, 0.666667, 1 ), Color( 0.411765, 0, 0.666667, 0.352941 ), Color( 0.411765, 0, 0.666667, 1 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -165,7 +165,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 0.411765, 0, 0.666667, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -217,7 +217,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0.411765, 0, 0.666667, 1 ) ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -233,7 +233,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 0, 0.14902, 0.741176, 1 ), Color( 0, 0.14902, 0.741176, 0.352941 ), Color( 0, 0.14902, 0.741176, 1 ), Color( 0, 0.14902, 0.741176, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -249,7 +249,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0, 0.14902, 0.741176, 0.352941 ), Color( 0, 0.14902, 0.741176, 1 ), Color( 0, 0.14902, 0.741176, 0.352941 ), Color( 0, 0.14902, 0.741176, 1 ) ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -265,7 +265,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 0, 0.14902, 0.741176, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -317,7 +317,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0, 0.14902, 0.741176, 1 ) ]
 }
 
 [sub_resource type="Animation" id=36]
@@ -333,7 +333,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 1, 0.72549, 0, 1 ), Color( 1, 0.72549, 0, 0.352941 ), Color( 1, 0.72549, 0, 1 ), Color( 1, 0.72549, 0, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -349,7 +349,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.72549, 0, 0.352941 ), Color( 1, 0.72549, 0, 1 ), Color( 1, 0.72549, 0, 0.352941 ), Color( 1, 0.72549, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -365,7 +365,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 1, 0.72549, 0, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -417,7 +417,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.72549, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -433,7 +433,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 0, 1, 0.976471, 1 ), Color( 0, 1, 0.976471, 0.352941 ), Color( 0, 1, 0.976471, 1 ), Color( 0, 1, 0.976471, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=41]
@@ -449,7 +449,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0, 1, 0.976471, 0.352941 ), Color( 0, 1, 0.976471, 1 ), Color( 0, 1, 0.976471, 0.352941 ), Color( 0, 1, 0.976471, 1 ) ]
 }
 
 [sub_resource type="Animation" id=42]
@@ -465,7 +465,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 0, 1, 0.976471, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -517,7 +517,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 0, 1, 0.976471, 1 ) ]
 }
 
 [sub_resource type="Animation" id=44]
@@ -633,7 +633,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 1, 0.305882, 0, 1 ), Color( 1, 0.305882, 0, 0.352941 ), Color( 1, 0.305882, 0, 1 ), Color( 1, 0.305882, 0, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=49]
@@ -649,7 +649,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.305882, 0, 0.352941 ), Color( 1, 0.305882, 0, 1 ), Color( 1, 0.305882, 0, 0.352941 ), Color( 1, 0.305882, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=50]
@@ -665,7 +665,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 1, 0.305882, 0, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -717,7 +717,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.305882, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -733,7 +733,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ) ]
+"values": [ Color( 1, 0.47451, 0.992157, 1 ), Color( 1, 0.47451, 0.992157, 0.352941 ), Color( 1, 0.47451, 0.992157, 1 ), Color( 1, 0.47451, 0.992157, 0.352941 ) ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -749,7 +749,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ), Color( 0.862745, 0, 0, 0.352941 ), Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.47451, 0.992157, 0.352941 ), Color( 1, 0.47451, 0.992157, 1 ), Color( 1, 0.47451, 0.992157, 0.352941 ), Color( 1, 0.47451, 0.992157, 1 ) ]
 }
 
 [sub_resource type="Animation" id=54]
@@ -765,7 +765,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.352941 ) ]
+"values": [ Color( 1, 0.47451, 0.992157, 0.352941 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:scale")
@@ -817,7 +817,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.862745, 0, 0, 1 ) ]
+"values": [ Color( 1, 0.47451, 0.992157, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -932,7 +932,7 @@ points = PoolVector2Array( 0, 0, 2.5, -266.5 )
 position = Vector2( 431, -1548 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 0, 0.807843, 0.0117647, 0.352941 )
 position = Vector2( -171, -292.5 )
 rotation = 0.0
 
@@ -944,8 +944,9 @@ anims/Spawn = SubResource( 26 )
 anims/Win = SubResource( 27 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 0.411765, 0, 0.666667, 0.352941 )
 position = Vector2( -167.5, -399 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite2" index="0"]
 autoplay = "Spawn"
@@ -955,8 +956,9 @@ anims/Spawn = SubResource( 30 )
 anims/Win = SubResource( 31 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 0, 0.14902, 0.741176, 0.352941 )
 position = Vector2( -168.5, -499.5 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite3" index="0"]
 autoplay = "Spawn"
@@ -966,8 +968,9 @@ anims/Spawn = SubResource( 34 )
 anims/Win = SubResource( 35 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 1, 0.72549, 0, 0.352941 )
 position = Vector2( 631, -602 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite4" index="0"]
 autoplay = "Spawn"
@@ -977,8 +980,9 @@ anims/Spawn = SubResource( 38 )
 anims/Win = SubResource( 39 )
 
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 0, 1, 0.976471, 0.352941 )
 position = Vector2( 634.5, -716.5 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite5" index="0"]
 autoplay = "Spawn"
@@ -988,8 +992,9 @@ anims/Spawn = SubResource( 42 )
 anims/Win = SubResource( 43 )
 
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 1, 1, 1, 0.352941 )
 position = Vector2( 634.5, -830.5 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite6" index="0"]
 autoplay = "Spawn"
@@ -999,8 +1004,9 @@ anims/Spawn = SubResource( 46 )
 anims/Win = SubResource( 47 )
 
 [node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 1, 0.305882, 0, 0.352941 )
 position = Vector2( 427.5, -1268.5 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite7" index="0"]
 autoplay = "Spawn"
@@ -1010,8 +1016,9 @@ anims/Spawn = SubResource( 50 )
 anims/Win = SubResource( 51 )
 
 [node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
-self_modulate = Color( 0.862745, 0, 0, 1 )
+self_modulate = Color( 1, 0.47451, 0.992157, 0.352941 )
 position = Vector2( 428, -1539.5 )
+rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite8" index="0"]
 autoplay = "Spawn"
