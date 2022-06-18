@@ -15,10 +15,10 @@
 [ext_resource path="res://assets/sound/levels/level-1/level_1_percussion.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
-[ext_resource path="res://assets/sprites/keyboard_gamepad_keys/Stick1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/keyboard_gamepad_keys/left_stick.png" type="Texture" id=16]
 [ext_resource path="res://SpaceBarTutorialArea2D.tscn" type="PackedScene" id=17]
 [ext_resource path="res://TutorialSpaceBarSprite.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/sprites/keyboard_gamepad_keys/ArrowSpriteSheet.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/keyboard_gamepad_keys/keyboard_arrows_spritesheet.png" type="Texture" id=19]
 [ext_resource path="res://SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=20]
 [ext_resource path="res://SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=22]
@@ -1050,7 +1050,7 @@ speed = 330.0
 [node name="TutorialAnimatedSprites" type="Node2D" parent="." index="9"]
 
 [node name="TutorialControllerAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="0"]
-position = Vector2( 1107, 250 )
+position = Vector2( 265, 485 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="0"]
 texture = ExtResource( 16 )
@@ -1060,7 +1060,7 @@ autoplay = "Start"
 anims/Start = SubResource( 63 )
 
 [node name="TutorialKeyboardArrowsAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="1"]
-position = Vector2( 1107, 454 )
+position = Vector2( 761, 485 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="0"]
 texture = ExtResource( 19 )

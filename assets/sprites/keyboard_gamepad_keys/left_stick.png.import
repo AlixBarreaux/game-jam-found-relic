@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stick1.png-5ebc05dc1177ef2ba6c2aee5a57e050f.stex"
+path="res://.import/left_stick.png-3b48b8e80779be5f5d88f4b225d3dca0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/keyboard_gamepad_keys/Stick1.png"
-dest_files=[ "res://.import/Stick1.png-5ebc05dc1177ef2ba6c2aee5a57e050f.stex" ]
+source_file="res://assets/sprites/keyboard_gamepad_keys/left_stick.png"
+dest_files=[ "res://.import/left_stick.png-3b48b8e80779be5f5d88f4b225d3dca0.stex" ]
 
 [params]
 
