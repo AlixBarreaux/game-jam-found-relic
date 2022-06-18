@@ -53,7 +53,7 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=17]
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 86, 1282 )
+extents = Vector2( 91.5, 1284 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 86, 1331 )
@@ -65,10 +65,10 @@ extents = Vector2( 233.5, 458.125 )
 next_level_to_load_path = "res://scenes/gui/Credits.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
-polygon = PoolVector2Array( 869, 1202, -216, 1208, -216, 965, 700, 969, 695, 507, -213, 507, -213, -1369, 2111, -1363, 2115, 506, 1229, 506, 1229, 970, 2121, 967, 2117, 1203, 1040, 1204, 1039, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )
+polygon = PoolVector2Array( 870, 1202, -214, 1202, -214, 971, 700, 971, 700, 504, -214, 504, -213, -1361, 2115, -1362, 2113, 504, 1227, 504, 1227, 971, 2113, 971, 2114, 1202, 1042, 1202, 1039, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( 853, 2283, 871, -1454, 1051, -1442, 1057, 2283 )
+polygon = PoolVector2Array( 863, 2284, 871, -1454, 1051, -1442, 1053, 2284 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
@@ -230,7 +230,7 @@ position = Vector2( -300, -77 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
-position = Vector2( 956, -75 )
+position = Vector2( 958.5, -77 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="2"]

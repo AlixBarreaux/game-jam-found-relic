@@ -637,7 +637,7 @@ extents = Vector2( 240, 1148.5 )
 extents = Vector2( 240, 641.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 240, 1100.5 )
+extents = Vector2( 240, 1114.25 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 127, 279 )
@@ -649,7 +649,7 @@ extents = Vector2( 162, 483.5 )
 extents = Vector2( 162, 343 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 162, 237 )
+extents = Vector2( 164.5, 239 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 97, 1371.75 )
@@ -719,11 +719,12 @@ next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
 position = Vector2( 1094, 353 )
+rotation = 0.00221612
 color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -4640, -5717, 5684, -5669, 5741, 1707, 894, 1677, 894, -811, 2186, -823, 2182, -2035, 1054, -2043, 1038, -2785, -473, -2804, -486, -3507, -2002, -3499, -2002, -2815, -1070, -2817, -1063, -2500, -2002, -2495, -2006, -1768, -1546, -1768, -1550, -1444, -2003, -1448, -2004, -1207, -721, -1207, -718, 1666, -4676, 1646 )
+polygon = PoolVector2Array( -4640, -5717, 5684, -5669, 5741, 1707, 894, 1677, 894, -828, 2186, -828, 2179.48, -2043.83, 1054, -2043, 1038, -2785, -487, -2782, -487, -3505, -2005, -3504, -2005, -2824, -1050, -2824, -1050, -2500, -2005, -2500, -2005, -1771, -1547, -1771, -1547, -1447, -2007.21, -1447.56, -2006.67, -1204.56, -721.678, -1207.4, -716.317, 1662.59, -4676, 1646 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( 351, 2026, 2026, 2027, 2053, 581, 1747, 581, 1735, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1434, 606, -1433, 614, 1470, 360, 1471 )
+polygon = PoolVector2Array( 369, 2014, 1990, 2010, 1990, 566, 1738, 566, 1738, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1433, 606, -1433, 604, 1473, 370, 1473 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 polygon = PoolVector2Array( 2352, -1037, 2367, -1351, 2687, -1329, 2680, -1037 )
@@ -852,7 +853,7 @@ rotation = 1.57079
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
-position = Vector2( -400, -3797 )
+position = Vector2( -413.75, -3791 )
 rotation = 1.57079
 shape = SubResource( 5 )
 
@@ -872,7 +873,7 @@ rotation = 1.57079
 shape = SubResource( 11 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="8"]
-position = Vector2( -827, -1656 )
+position = Vector2( -825, -1658.5 )
 rotation = 1.57079
 shape = SubResource( 12 )
 
@@ -882,7 +883,7 @@ scale = Vector2( -1, 1 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="0"]
-position = Vector2( 0, -50 )
+position = Vector2( 0, -55 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="1"]
@@ -890,16 +891,16 @@ position = Vector2( 581, -1381.25 )
 shape = SubResource( 19 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
-position = Vector2( -1229.5, -1860 )
+position = Vector2( -1236, -1860 )
 shape = SubResource( 21 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
-position = Vector2( -853, -1016 )
+position = Vector2( -853, -1013 )
 rotation = 1.57079
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
-position = Vector2( -670.5, -2705 )
+position = Vector2( -663.999, -2708 )
 rotation = 1.57079
 shape = SubResource( 13 )
 
@@ -920,12 +921,12 @@ scale = Vector2( 1, -1 )
 shape = SubResource( 14 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="8"]
-position = Vector2( 744.504, -3445.98 )
+position = Vector2( 750.008, -3449 )
 rotation = 1.57079
 shape = SubResource( 15 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="9"]
-position = Vector2( -141, -3318 )
+position = Vector2( -153, -3318 )
 shape = SubResource( 16 )
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="10"]
