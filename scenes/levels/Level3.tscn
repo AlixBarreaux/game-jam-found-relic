@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_win.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_6.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3.ogg" type="AudioStream" id=15]
-[ext_resource path="res://GoodTrack.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/GoodTrack.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/audio-managers/audio_manager_level_3.gd" type="Script" id=17]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_2.ogg" type="AudioStream" id=18]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_3.ogg" type="AudioStream" id=19]
@@ -284,6 +284,7 @@ bus = "SFX"
 
 [node name="StartAmbientTrack" parent="AudioManager/GeneralTracks" index="0" instance=ExtResource( 16 )]
 stream = ExtResource( 15 )
+volume_db = 1.5
 autoplay = true
 bus = "SFX"
 first_track_to_play_on_start = true
@@ -291,36 +292,43 @@ is_looped = true
 
 [node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 16 )]
 stream = ExtResource( 20 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 16 )]
 stream = ExtResource( 18 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 16 )]
 stream = ExtResource( 19 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 16 )]
 stream = ExtResource( 4 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track5" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 16 )]
 stream = ExtResource( 21 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track6" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 16 )]
 stream = ExtResource( 14 )
+volume_db = 1.5
 bus = "SFX"
 is_looped = true
 
 [node name="WinTrack" parent="AudioManager/GeneralTracks" index="7" instance=ExtResource( 16 )]
 stream = ExtResource( 13 )
+volume_db = 1.5
 bus = "SFX"
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]

@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "AudioStreamPlayer",
 "class": "InteractableSoundPlayer",
 "language": "GDScript",
-"path": "res://interactable_sound_player.gd"
+"path": "res://scripts/interactable_sound_player.gd"
 }, {
 "base": "Area2D",
 "class": "InteractionReceiver",
@@ -82,12 +82,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "NoteBlockTutorialArea2D",
 "language": "GDScript",
-"path": "res://note_block_tutorial_area_2d.gd"
+"path": "res://scripts/note_block_tutorial_area_2d.gd"
 }, {
 "base": "SequenceOrderInteractablesManager",
 "class": "NoteBlocksManager",
 "language": "GDScript",
-"path": "res://note_blocks_manager.gd"
+"path": "res://scripts/note_blocks_manager.gd"
 }, {
 "base": "Control",
 "class": "PauseMenu",
@@ -97,7 +97,7 @@ _global_script_classes=[ {
 "base": "SequenceOrderInteractablesManager",
 "class": "PlatesManager",
 "language": "GDScript",
-"path": "res://plates_manager.gd"
+"path": "res://scripts/plates_manager.gd"
 }, {
 "base": "Node",
 "class": "PlayerController",
@@ -122,7 +122,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SequenceOrderFeedbackNode",
 "language": "GDScript",
-"path": "res://sequence_order_feedback_node.gd"
+"path": "res://scripts/sequence_order_feedback_node.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderInteractable",
@@ -137,12 +137,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SequenceOrderSpritesFeedbackManager",
 "language": "GDScript",
-"path": "res://sequence_order_feedback_manager.gd"
+"path": "res://scripts/sequence_order_feedback_manager.gd"
 }, {
 "base": "Area2D",
 "class": "SpaceBarTutorialArea2D",
 "language": "GDScript",
-"path": "res://space_bar_tutorial_area_2d.gd"
+"path": "res://scripts/space_bar_tutorial_area_2d.gd"
 }, {
 "base": "Reference",
 "class": "SplashScreen",
@@ -152,7 +152,7 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "TutorialSpaceBarSprite",
 "language": "GDScript",
-"path": "res://tutorial_space_bar_sprite.gd"
+"path": "res://scripts/tutorial_space_bar_sprite.gd"
 }, {
 "base": "Label",
 "class": "VersionLabel",
