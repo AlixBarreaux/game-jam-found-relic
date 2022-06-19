@@ -1,4 +1,4 @@
-class_name IntroMenu
+class_name CinematicMenu
 extends Control
 
 
