@@ -138,7 +138,7 @@ focus_neighbour_right = NodePath("../CreditsButton")
 focus_neighbour_bottom = NodePath("../CreditsButton")
 text = "Play"
 script = SubResource( 4 )
-scene_to_load_path = "res://scenes/levels/Level1.tscn"
+scene_to_load_path = "res://scenes/gui/IntroMenu.tscn"
 
 [node name="CreditsButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 103.0
@@ -149,7 +149,7 @@ focus_neighbour_right = NodePath("../QuitToDesktopButton")
 focus_neighbour_bottom = NodePath("../QuitToDesktopButton")
 text = "Credits"
 script = SubResource( 4 )
-scene_to_load_path = "res://scenes/gui/Credits.tscn"
+scene_to_load_path = "res://scenes/gui/CreditsMenu.tscn"
 
 [node name="QuitToDesktopButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 206.0

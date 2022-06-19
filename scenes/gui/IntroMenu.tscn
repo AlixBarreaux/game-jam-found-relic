@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://intro_menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="IntroMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+scene_to_load_path = "res://scenes/levels/Level1.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -213.0
+margin_bottom = -153.0
+custom_fonts/font = SubResource( 1 )
+text = "Press any key to continue"
+align = 1
+valign = 1

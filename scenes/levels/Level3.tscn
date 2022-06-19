@@ -65,7 +65,7 @@ extents = Vector2( 86, 1331 )
 extents = Vector2( 233.5, 458.125 )
 
 [node name="Level3" instance=ExtResource( 1 )]
-next_level_to_load_path = "res://scenes/gui/Credits.tscn"
+next_level_to_load_path = "res://scenes/gui/EndMenu.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
 polygon = PoolVector2Array( 870, 1202, -214, 1202, -214, 971, 700, 971, 700, 504, -214, 504, -213, -1361, 2115, -1362, 2113, 504, 1227, 504, 1227, 971, 2113, 971, 2114, 1202, 1042, 1202, 1039, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )

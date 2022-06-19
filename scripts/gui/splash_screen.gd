@@ -23,8 +23,8 @@ func initialize_asserts() -> void:
 	return
 
 
-func _unhandled_key_input(event: InputEventKey) -> void:
-	if event:
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey or InputEventJoypadButton:
 		self.load_next_scene()
 	return
 
