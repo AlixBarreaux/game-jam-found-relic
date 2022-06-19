@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/light.png" type="Texture" id=2]
 [ext_resource path="res://scenes/gui/BrowserLinkButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/Glass.png" type="Texture" id=4]
 [ext_resource path="res://scenes/gui/SceneLoaderButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/sound/menus/main_theme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/sprites/Pc.png" type="Texture" id=8]
 [ext_resource path="res://scripts/gui/credits_menu.gd" type="Script" id=9]
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=10]
@@ -108,11 +107,6 @@ scale = Vector2( 0.198242, 0.198242 )
 texture = ExtResource( 2 )
 color = Color( 0.980392, 0.356863, 0.356863, 1 )
 energy = 1.00322
-
-[node name="Music" type="AudioStreamPlayer" parent="Panel"]
-stream = ExtResource( 7 )
-autoplay = true
-bus = "Music"
 
 [node name="LightPanel" type="Panel" parent="."]
 margin_left = 1397.0

@@ -15,6 +15,7 @@ extends SceneLoaderButton
 
 func _on_pressed() -> void:
 	get_tree().paused = false
+	MenusMusic.play()
 	var _scene_loading_error: int = get_tree().change_scene(self.scene_to_load_path)
 
 	if _scene_loading_error != OK:

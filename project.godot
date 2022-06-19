@@ -109,7 +109,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gui/quit_to_desktop_button.gd"
 }, {
-"base": "Reference",
+"base": "SceneLoaderButton",
 "class": "QuitToMainMenuTextureButton",
 "language": "GDScript",
 "path": "res://scripts/gui/pause_menu_quit_to_main_menu_texture_button.gd"
@@ -209,6 +209,7 @@ default_bus_layout="res://resources/audio-bus-layouts/default_bus_layout.tres"
 
 Events="*res://autoloads/scripts/events.gd"
 Settings="*res://autoloads/scripts/settings.gd"
+MenusMusic="*res://autoloads/scenes/MenusMusic.tscn"
 
 [display]
 

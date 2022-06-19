@@ -28,3 +28,13 @@ func _initialize_asserts() -> void:
 
 func _initialize() -> void:
 	self.first_button_to_focus.grab_focus()
+	
+	if not MenusMusic.has_been_played_at_least_once:
+		MenusMusic.play()
+		MenusMusic.has_been_played_at_least_once = true
+	return
+
+
+func _on_PlayButton_pressed() -> void:
+	MenusMusic.stop()
+	return
