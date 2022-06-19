@@ -141,7 +141,7 @@ margin_bottom = 80.0
 margin_right = 636.0
 margin_bottom = 38.0
 custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
-text = "Lead Developer / Programmer"
+text = "Lead Developer / Programmer:"
 align = 1
 valign = 1
 

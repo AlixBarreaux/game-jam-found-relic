@@ -1256,7 +1256,7 @@ position = Vector2( -245, 650 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="2"]
-position = Vector2( 2325, -373 )
+position = Vector2( 671, 650 )
 speed = 330.0
 
 [node name="AudioManager" type="Node" parent="." index="7"]

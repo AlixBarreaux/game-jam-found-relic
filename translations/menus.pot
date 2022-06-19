@@ -16,10 +16,10 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
-msgid "Graphist"
+msgid "Graphist:"
 msgstr ""
 
-msgid "Lead Developer / Programmer"
+msgid "Lead Developer / Programmer:"
 msgstr ""
 
 msgid "Made with"
@@ -34,13 +34,13 @@ msgstr ""
 msgid "Play"
 msgstr ""
 
-msgid "Quit to Desktop"
+msgid "Quit to Dekstop"
 msgstr ""
 
 msgid "Resume"
 msgstr ""
 
-msgid "Sound Effects / Music"
+msgid "Sound Effects / Music:"
 msgstr ""
 
 msgid "Version"
