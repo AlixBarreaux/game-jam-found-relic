@@ -22,7 +22,6 @@
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/sprites/Petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scripts/creatures/heroes/hero.gd" type="Script" id=23]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -830,8 +829,14 @@ extents = Vector2( 97, 441.5 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 97, 1127 )
 
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 329, 214 )
+
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 329, 306 )
+
+[sub_resource type="RectangleShape2D" id=57]
+extents = Vector2( 329, 239 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 98, 599 )
@@ -846,7 +851,7 @@ extents = Vector2( 98, 680.25 )
 extents = Vector2( 643.75, 116 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 225, 624.5 )
+extents = Vector2( 225, 1378.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 97, 378.5 )
@@ -856,9 +861,6 @@ extents = Vector2( 97, 514.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 97, 366.5 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 773.5, 1097.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 97, 1169.75 )
@@ -885,7 +887,7 @@ extents = Vector2( 97, 969.5 )
 extents = Vector2( 97, 214.75 )
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 189.25, 410 )
+extents = Vector2( 197.625, 410 )
 
 [node name="Level2" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
@@ -894,10 +896,25 @@ next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 polygon = PoolVector2Array( 4, 820, -3, 2199, -4076, 2138, -4228, -5932, 769, -5853, 736, -3184, -234, -3185, -234, -3611, -1038, -3612, -1039, -2994, -1318, -2992, -1317, 72, -486, 72, -487, 819 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( -757, -388, -757, -1935, -234, -1935, -234, -2845, -40, -2845, -39, -2314, 737, -2312, 735, -3185, 966, -3187, 967, -1935, 1438, -1935, 1437, -388, 455, -387, 454, 820, 866, 820, 866, -44, 2923, -44, 2922, -1937, 1933, -1939, 1932, -3184, 735, -3185, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, 3, 819, 4, -388 )
+polygon = PoolVector2Array( -234, -1916, -234, -2845, -40, -2845, -39, -2314, 737, -2312, 735, -3216, 967, -3206, 967, -1917, 454, -1917, 455, -387, 454, 820, 866, 820, 866, -44, 2923, -44, 2922, -1937, 1933, -1939, 1932, -3184, 735, -3185, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, 3, 819, 4, -388, 2, -1917 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
+position = Vector2( -1089, 219 )
 polygon = PoolVector2Array( 1920, -1290, 1918, -679, 2576, -680, 2575, -1289 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Polygon2D5" type="Polygon2D" parent="Polygons2D" index="3"]
+position = Vector2( -3241, -448 )
+polygon = PoolVector2Array( 1922, -1154, 1918, -679, 2576, -680, 2578, -1154 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygons2D" index="4"]
+position = Vector2( 75, -181 )
+polygon = PoolVector2Array( 1920, -1290, 1923, -864, 2578, -861, 2575, -1289 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -906,76 +923,92 @@ __meta__ = {
 position = Vector2( 1617, -2423 )
 texture = ExtResource( 21 )
 
-[node name="CandleMelted" parent="Decorations" index="1" instance=ExtResource( 20 )]
-position = Vector2( 971, -286 )
-
-[node name="Candle" parent="Decorations" index="2" instance=ExtResource( 22 )]
-position = Vector2( -96, 247 )
-
-[node name="Candle2" parent="Decorations" index="3" instance=ExtResource( 22 )]
-position = Vector2( -1129, -349 )
-
-[node name="Petals2" type="Sprite" parent="Decorations" index="4"]
-position = Vector2( 2283, -306 )
+[node name="Petals7" type="Sprite" parent="Decorations" index="1"]
+position = Vector2( 1617, -2423 )
 texture = ExtResource( 21 )
 
-[node name="Candle3" parent="Decorations" index="5" instance=ExtResource( 22 )]
-position = Vector2( 2242, -1402 )
+[node name="CandleMelted" parent="Decorations" index="2" instance=ExtResource( 20 )]
+position = Vector2( 971, -286 )
 
-[node name="Candle4" parent="Decorations" index="6" instance=ExtResource( 22 )]
+[node name="Candle" parent="Decorations" index="3" instance=ExtResource( 22 )]
+position = Vector2( -96, 247 )
+
+[node name="Candle2" parent="Decorations" index="4" instance=ExtResource( 22 )]
+position = Vector2( -1129, -349 )
+
+[node name="Petals2" type="Sprite" parent="Decorations" index="5"]
+position = Vector2( 2283, -722 )
+texture = ExtResource( 21 )
+
+[node name="Candle3" parent="Decorations" index="6" instance=ExtResource( 22 )]
+position = Vector2( 1762, -1126 )
+
+[node name="Candle4" parent="Decorations" index="7" instance=ExtResource( 22 )]
 position = Vector2( 1600, -3006 )
 
-[node name="CandleMelted2" parent="Decorations" index="7" instance=ExtResource( 20 )]
+[node name="CandleMelted2" parent="Decorations" index="8" instance=ExtResource( 20 )]
 position = Vector2( 1305, -2207 )
 
-[node name="Candle5" parent="Decorations" index="8" instance=ExtResource( 22 )]
+[node name="Candle5" parent="Decorations" index="9" instance=ExtResource( 22 )]
 position = Vector2( 1868, -450 )
 
-[node name="CandleMelted3" parent="Decorations" index="9" instance=ExtResource( 20 )]
+[node name="Candle6" parent="Decorations" index="10" instance=ExtResource( 22 )]
+position = Vector2( 2658, -1796 )
+
+[node name="CandleMelted3" parent="Decorations" index="11" instance=ExtResource( 20 )]
 position = Vector2( 2748, -208 )
 
-[node name="CandleMelted7" parent="Decorations" index="10" instance=ExtResource( 20 )]
+[node name="CandleMelted7" parent="Decorations" index="12" instance=ExtResource( 20 )]
 position = Vector2( 2862, -1167 )
 
-[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 20 )]
-position = Vector2( 1847, -1708 )
+[node name="CandleMelted4" parent="Decorations" index="13" instance=ExtResource( 20 )]
+position = Vector2( 1709, -1765 )
 
-[node name="Petals3" type="Sprite" parent="Decorations" index="12"]
+[node name="CandleMelted10" parent="Decorations" index="14" instance=ExtResource( 20 )]
+position = Vector2( 847, -1360 )
+
+[node name="Petals3" type="Sprite" parent="Decorations" index="15"]
 position = Vector2( 1870.21, -3057.82 )
 rotation = -6.28318
 texture = ExtResource( 21 )
 offset = Vector2( -2726.21, 866.844 )
 
-[node name="Petals6" type="Sprite" parent="Decorations" index="13"]
+[node name="Petals6" type="Sprite" parent="Decorations" index="16"]
 position = Vector2( 2134, -4232 )
 rotation = -6.28318
 texture = ExtResource( 21 )
 offset = Vector2( -2726.21, 866.844 )
 
-[node name="CandleMelted5" parent="Decorations" index="14" instance=ExtResource( 20 )]
-position = Vector2( -1160, -2609 )
+[node name="CandleMelted5" parent="Decorations" index="17" instance=ExtResource( 20 )]
+position = Vector2( -1101, -2769 )
 
-[node name="CandleMelted8" parent="Decorations" index="15" instance=ExtResource( 20 )]
+[node name="CandleMelted12" parent="Decorations" index="18" instance=ExtResource( 20 )]
+position = Vector2( -919, -3415 )
+
+[node name="CandleMelted8" parent="Decorations" index="19" instance=ExtResource( 20 )]
 position = Vector2( 8, -3092 )
 
-[node name="CandleMelted9" parent="Decorations" index="16" instance=ExtResource( 20 )]
+[node name="CandleMelted9" parent="Decorations" index="20" instance=ExtResource( 20 )]
 position = Vector2( 399, -2425 )
 
-[node name="Candle7" parent="Decorations" index="17" instance=ExtResource( 22 )]
-position = Vector2( -907, -1361 )
+[node name="CandleMelted11" parent="Decorations" index="21" instance=ExtResource( 20 )]
+position = Vector2( -178, -1379 )
 
-[node name="Candle8" parent="Decorations" index="18" instance=ExtResource( 22 )]
-position = Vector2( -311, -2221 )
+[node name="Candle7" parent="Decorations" index="22" instance=ExtResource( 22 )]
+position = Vector2( -555, -731 )
 
-[node name="Petals4" type="Sprite" parent="Decorations" index="19"]
-position = Vector2( 2110, -1633 )
+[node name="Candle8" parent="Decorations" index="23" instance=ExtResource( 22 )]
+position = Vector2( -941, -1906 )
+
+[node name="Petals4" type="Sprite" parent="Decorations" index="24"]
+position = Vector2( 911, -1489 )
 texture = ExtResource( 21 )
 
-[node name="Petals5" type="Sprite" parent="Decorations" index="20"]
+[node name="Petals5" type="Sprite" parent="Decorations" index="25"]
 position = Vector2( 389, -2600 )
 texture = ExtResource( 21 )
 
-[node name="CandleMelted6" parent="Decorations" index="21" instance=ExtResource( 20 )]
+[node name="CandleMelted6" parent="Decorations" index="26" instance=ExtResource( 20 )]
 position = Vector2( 632, 266 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
@@ -1012,7 +1045,7 @@ position = Vector2( 431, -1548 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderSpirtesFeedback/Sprites" index="0" instance=ExtResource( 19 )]
 self_modulate = Color( 0, 0.807843, 0.0117647, 0.352941 )
-position = Vector2( -171, -292.5 )
+position = Vector2( 109, -129 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite" index="0"]
@@ -1024,7 +1057,7 @@ anims/Win = SubResource( 27 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderSpirtesFeedback/Sprites" index="1" instance=ExtResource( 19 )]
 self_modulate = Color( 0.411765, 0, 0.666667, 0.352941 )
-position = Vector2( -167.5, -399 )
+position = Vector2( 112.5, -235.5 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite2" index="0"]
@@ -1036,7 +1069,7 @@ anims/Win = SubResource( 31 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderSpirtesFeedback/Sprites" index="2" instance=ExtResource( 19 )]
 self_modulate = Color( 0, 0.14902, 0.741176, 0.352941 )
-position = Vector2( -168.5, -499.5 )
+position = Vector2( 111.5, -336 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite3" index="0"]
@@ -1048,7 +1081,7 @@ anims/Win = SubResource( 35 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderSpirtesFeedback/Sprites" index="3" instance=ExtResource( 19 )]
 self_modulate = Color( 1, 0.72549, 0, 1 )
-position = Vector2( 631, -602 )
+position = Vector2( 116, -438.5 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite4" index="0"]
@@ -1060,7 +1093,7 @@ anims/Win = SubResource( 39 )
 
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderSpirtesFeedback/Sprites" index="4" instance=ExtResource( 19 )]
 self_modulate = Color( 0, 1, 0.976471, 0.352941 )
-position = Vector2( 634.5, -716.5 )
+position = Vector2( 119.5, -553 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite5" index="0"]
@@ -1072,7 +1105,7 @@ anims/Win = SubResource( 43 )
 
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderSpirtesFeedback/Sprites" index="5" instance=ExtResource( 19 )]
 self_modulate = Color( 1, 1, 1, 0.352941 )
-position = Vector2( 634.5, -830.5 )
+position = Vector2( 119.5, -667 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite6" index="0"]
@@ -1084,7 +1117,7 @@ anims/Win = SubResource( 47 )
 
 [node name="SequenceOrderFeedbackSprite7" parent="SequenceOrderSpirtesFeedback/Sprites" index="6" instance=ExtResource( 19 )]
 self_modulate = Color( 1, 0.305882, 0, 0.352941 )
-position = Vector2( 427.5, -1268.5 )
+position = Vector2( 128.5, -785 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite7" index="0"]
@@ -1096,7 +1129,7 @@ anims/Win = SubResource( 51 )
 
 [node name="SequenceOrderFeedbackSprite8" parent="SequenceOrderSpirtesFeedback/Sprites" index="7" instance=ExtResource( 19 )]
 self_modulate = Color( 1, 0.47451, 0.992157, 0.352941 )
-position = Vector2( 428, -1539.5 )
+position = Vector2( 129, -914 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite8" index="0"]
@@ -1129,13 +1162,27 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
-position = Vector2( 2246, -985 )
+position = Vector2( 2326, -1257 )
+shape = SubResource( 56 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
+position = Vector2( 1157, -766 )
 shape = SubResource( 16 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
+position = Vector2( -989, -1364 )
+shape = SubResource( 57 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="5"]
 position = Vector2( 2532, -2036 )
 rotation = 1.57079
 shape = SubResource( 17 )
@@ -1143,7 +1190,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="6"]
 position = Vector2( 1035.75, -3301.5 )
 rotation = 1.57079
 shape = SubResource( 20 )
@@ -1151,7 +1198,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="5"]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="7"]
 position = Vector2( 2030, -2719.75 )
 rotation = 3.14159
 shape = SubResource( 21 )
@@ -1159,8 +1206,8 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="6"]
-position = Vector2( 850, -2540 )
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="8"]
+position = Vector2( 850, -2560 )
 rotation = 1.57079
 shape = SubResource( 22 )
 __meta__ = {
@@ -1172,7 +1219,7 @@ position = Vector2( -373, 628 )
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
-position = Vector2( 602, -432.5 )
+position = Vector2( 602, -1186.5 )
 shape = SubResource( 4 )
 __meta__ = {
 "_editor_description_": ""
@@ -1200,29 +1247,21 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
-position = Vector2( 713.499, -1789.5 )
-rotation = 1.57079
-shape = SubResource( 6 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="4"]
 position = Vector2( -1043, -2451.25 )
 shape = SubResource( 7 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="5"]
 position = Vector2( 236, -3008.5 )
 shape = SubResource( 8 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="7"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
 position = Vector2( -896.5, -3718 )
 rotation = 1.57079
 shape = SubResource( 9 )
@@ -1230,7 +1269,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="8"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="7"]
 position = Vector2( -763, -4026.31 )
 rotation = 3.14159
 shape = SubResource( 10 )
@@ -1238,7 +1277,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="9"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="8"]
 position = Vector2( -269, -4337 )
 rotation = -1.5708
 shape = SubResource( 11 )
@@ -1246,7 +1285,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="10"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="9"]
 position = Vector2( 557.5, 289 )
 rotation = 1.57079
 shape = SubResource( 12 )
@@ -1254,22 +1293,22 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="11"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="10"]
 position = Vector2( 3393, -1597.5 )
 shape = SubResource( 18 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="12"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="11"]
 position = Vector2( 236, -4026.75 )
 shape = SubResource( 19 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="13"]
-position = Vector2( 712, -2753 )
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="12"]
+position = Vector2( 712, -2743.38 )
 rotation = 1.57079
 shape = SubResource( 23 )
 __meta__ = {
@@ -1352,7 +1391,7 @@ position = Vector2( 881, 0 )
 script = ExtResource( 7 )
 
 [node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1596, -295 )
+position = Vector2( -1062, -189 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
 self_modulate = Color( 0, 0.807843, 0.0117647, 1 )
@@ -1364,7 +1403,7 @@ position = Vector2( -1537, -2324 )
 self_modulate = Color( 0.411765, 0, 0.666667, 1 )
 
 [node name="NoteBlock3" parent="YSort/NoteBlocksManager" index="2" instance=ExtResource( 3 )]
-position = Vector2( 1546, -1699 )
+position = Vector2( 1645, -451 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock3/Sprites" index="0"]
 self_modulate = Color( 0, 0.14902, 0.741176, 1 )
@@ -1376,13 +1415,13 @@ position = Vector2( -1527, -3325 )
 self_modulate = Color( 1, 0.72549, 0, 1 )
 
 [node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
-position = Vector2( 919, -977 )
+position = Vector2( 255, -1377 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock5/Sprites" index="0"]
 modulate = Color( 0, 1, 0.976471, 1 )
 
 [node name="NoteBlock6" parent="YSort/NoteBlocksManager" index="5" instance=ExtResource( 3 )]
-position = Vector2( -2020, -632 )
+position = Vector2( -1839, -800 )
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock6/Sprites" index="0"]
 self_modulate = Color( 1, 0, 0, 1 )
@@ -1401,12 +1440,10 @@ self_modulate = Color( 1, 0.47451, 0.992157, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( -245, 650 )
-script = ExtResource( 23 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 671, 650 )
-script = ExtResource( 23 )
 speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]

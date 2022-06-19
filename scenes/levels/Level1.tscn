@@ -1048,10 +1048,10 @@ wait_time = 5.0
 position = Vector2( 265, 1319 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="0"]
+visible = false
 texture = ExtResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="1"]
-autoplay = "Start"
 anims/Start = SubResource( 63 )
 
 [node name="TutorialKeyboardArrowsAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="1"]
@@ -1120,10 +1120,10 @@ position = Vector2( 498, 1336 )
 position = Vector2( 0, -150 )
 
 [node name="KeyKeyboard" parent="YSort/HeroMan/TutorialSpaceBarSprite" index="0"]
-position = Vector2( -72, 0 )
 texture = ExtResource( 23 )
 
 [node name="KeyGamepad" parent="YSort/HeroMan/TutorialSpaceBarSprite" index="1"]
+visible = false
 position = Vector2( 72, 0 )
 texture = ExtResource( 24 )
 

@@ -101,10 +101,11 @@ shape = SubResource( 6 )
 position = Vector2( 0, -121 )
 
 [node name="TutorialSprite" type="Sprite" parent="NoteBlockTutorialArea2D/TutorialSprite"]
-position = Vector2( -74, 0 )
+position = Vector2( 2, 0 )
 texture = ExtResource( 1 )
 
 [node name="TutorialSprite2" type="Sprite" parent="NoteBlockTutorialArea2D/TutorialSprite"]
+visible = false
 position = Vector2( 58, 0 )
 texture = ExtResource( 7 )
 
