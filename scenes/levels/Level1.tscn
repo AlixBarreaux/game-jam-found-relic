@@ -682,8 +682,6 @@ extents = Vector2( 264, 135.499 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 160.499, 379.742 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
-
 [sub_resource type="Animation" id=63]
 resource_name = "Start"
 length = 4.0
@@ -718,6 +716,8 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
@@ -733,58 +733,7 @@ polygon = PoolVector2Array( 369, 2014, 1990, 2010, 1990, 566, 1738, 566, 1738, -
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 polygon = PoolVector2Array( 2352, -1037, 2367, -1351, 2687, -1329, 2680, -1037 )
 
-[node name="Decorations" type="Node2D" parent="." index="1"]
-
-[node name="Petals" type="Sprite" parent="Decorations" index="0"]
-position = Vector2( -12, -1188 )
-texture = ExtResource( 25 )
-
-[node name="CandleMelted" parent="Decorations" index="1" instance=ExtResource( 26 )]
-position = Vector2( -743, -973 )
-
-[node name="Candle" parent="Decorations" index="2" instance=ExtResource( 27 )]
-position = Vector2( -617, -1701 )
-
-[node name="Candle2" parent="Decorations" index="3" instance=ExtResource( 27 )]
-position = Vector2( 396, -2879 )
-
-[node name="Petals2" type="Sprite" parent="Decorations" index="4"]
-position = Vector2( 2933, -1441 )
-texture = ExtResource( 25 )
-
-[node name="Candle3" parent="Decorations" index="5" instance=ExtResource( 27 )]
-position = Vector2( 1000, -2226 )
-
-[node name="Candle4" parent="Decorations" index="6" instance=ExtResource( 27 )]
-position = Vector2( 1337, -2226 )
-
-[node name="CandleMelted2" parent="Decorations" index="7" instance=ExtResource( 26 )]
-position = Vector2( 550, 534 )
-
-[node name="Candle5" parent="Decorations" index="8" instance=ExtResource( 27 )]
-position = Vector2( 1762, 48 )
-
-[node name="CandleMelted3" parent="Decorations" index="9" instance=ExtResource( 26 )]
-position = Vector2( 3020, -669 )
-
-[node name="Candle6" parent="Decorations" index="10" instance=ExtResource( 27 )]
-position = Vector2( 2803, -1586 )
-
-[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 26 )]
-position = Vector2( 2036, -2357 )
-
-[node name="Petals3" type="Sprite" parent="Decorations" index="12"]
-position = Vector2( -274, -2659 )
-rotation = -6.28318
-texture = ExtResource( 25 )
-
-[node name="CandleMelted5" parent="Decorations" index="13" instance=ExtResource( 26 )]
-position = Vector2( 456, -1967 )
-
-[node name="Candle7" parent="Decorations" index="14" instance=ExtResource( 27 )]
-position = Vector2( 2099, -1262 )
-
-[node name="SequenceOrderFeedbackManager" parent="." index="2" instance=ExtResource( 20 )]
+[node name="SequenceOrderFeedbackManager" parent="." index="1" instance=ExtResource( 20 )]
 position = Vector2( 1131, -243 )
 
 [node name="Lines2D" parent="SequenceOrderFeedbackManager" index="0"]
@@ -879,9 +828,58 @@ anims/Enable = SubResource( 56 )
 anims/Spawn = SubResource( 57 )
 anims/Win = SubResource( 58 )
 
-[node name="SpaceBarTutorialArea2D" parent="." index="3" instance=ExtResource( 17 )]
+[node name="SpaceBarTutorialArea2D" parent="." index="2" instance=ExtResource( 17 )]
 position = Vector2( 421, -1000 )
 collision_layer = 0
+
+[node name="Petals" type="Sprite" parent="Decorations" index="0"]
+position = Vector2( -12, -1188 )
+texture = ExtResource( 25 )
+
+[node name="CandleMelted" parent="Decorations" index="1" instance=ExtResource( 26 )]
+position = Vector2( -743, -973 )
+
+[node name="Candle" parent="Decorations" index="2" instance=ExtResource( 27 )]
+position = Vector2( -617, -1701 )
+
+[node name="Candle2" parent="Decorations" index="3" instance=ExtResource( 27 )]
+position = Vector2( 396, -2879 )
+
+[node name="Petals2" type="Sprite" parent="Decorations" index="4"]
+position = Vector2( 2933, -1441 )
+texture = ExtResource( 25 )
+
+[node name="Candle3" parent="Decorations" index="5" instance=ExtResource( 27 )]
+position = Vector2( 1000, -2226 )
+
+[node name="Candle4" parent="Decorations" index="6" instance=ExtResource( 27 )]
+position = Vector2( 1337, -2226 )
+
+[node name="CandleMelted2" parent="Decorations" index="7" instance=ExtResource( 26 )]
+position = Vector2( 550, 534 )
+
+[node name="Candle5" parent="Decorations" index="8" instance=ExtResource( 27 )]
+position = Vector2( 1762, 48 )
+
+[node name="CandleMelted3" parent="Decorations" index="9" instance=ExtResource( 26 )]
+position = Vector2( 3020, -669 )
+
+[node name="Candle6" parent="Decorations" index="10" instance=ExtResource( 27 )]
+position = Vector2( 2803, -1586 )
+
+[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 26 )]
+position = Vector2( 2036, -2357 )
+
+[node name="Petals3" type="Sprite" parent="Decorations" index="12"]
+position = Vector2( -274, -2659 )
+rotation = -6.28318
+texture = ExtResource( 25 )
+
+[node name="CandleMelted5" parent="Decorations" index="13" instance=ExtResource( 26 )]
+position = Vector2( 456, -1967 )
+
+[node name="Candle7" parent="Decorations" index="14" instance=ExtResource( 27 )]
+position = Vector2( 2099, -1262 )
 
 [node name="Panel" parent="CanvasLayer2" index="0"]
 visible = true
@@ -994,10 +992,7 @@ position = Vector2( 1044.74, -2592.5 )
 rotation = 1.57079
 shape = SubResource( 18 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="7"]
-wait_time = 5.0
-
-[node name="AudioManager" type="Node" parent="." index="8"]
+[node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 8 )
 
 [node name="Ambient" type="Node" parent="AudioManager" index="0"]
@@ -1043,6 +1038,32 @@ bus = "SFX"
 [node name="WinTrack" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 4 )]
 stream = ExtResource( 6 )
 bus = "SFX"
+
+[node name="LevelLoadingTransitionTimer" parent="." index="8"]
+wait_time = 5.0
+
+[node name="TutorialAnimatedSprites" type="Node2D" parent="." index="9"]
+
+[node name="TutorialControllerAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="0"]
+position = Vector2( 265, 1319 )
+
+[node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="0"]
+texture = ExtResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="1"]
+autoplay = "Start"
+anims/Start = SubResource( 63 )
+
+[node name="TutorialKeyboardArrowsAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="1"]
+position = Vector2( 761, 1319 )
+
+[node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="0"]
+texture = ExtResource( 19 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="1"]
+autoplay = "Start"
+anims/Start = SubResource( 64 )
 
 [node name="PlatesManager" parent="YSort" index="0" instance=ExtResource( 3 )]
 script = ExtResource( 9 )
@@ -1113,29 +1134,6 @@ parameters/playback = SubResource( 22 )
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )
 speed = 330.0
-
-[node name="TutorialAnimatedSprites" type="Node2D" parent="." index="10"]
-
-[node name="TutorialControllerAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="0"]
-position = Vector2( 265, 1319 )
-
-[node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="0"]
-texture = ExtResource( 16 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialAnimatedSprites/TutorialControllerAnimatedSprite" index="1"]
-autoplay = "Start"
-anims/Start = SubResource( 63 )
-
-[node name="TutorialKeyboardArrowsAnimatedSprite" type="Node2D" parent="TutorialAnimatedSprites" index="1"]
-position = Vector2( 761, 1319 )
-
-[node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="0"]
-texture = ExtResource( 19 )
-hframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="1"]
-autoplay = "Start"
-anims/Start = SubResource( 64 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

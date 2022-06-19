@@ -14,6 +14,8 @@ script = ExtResource( 1 )
 [node name="Polygons2D" type="Node2D" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 
+[node name="Decorations" type="Node2D" parent="."]
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://scenes/SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sprites/Petals.png" type="Texture" id=21]
+[ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -898,9 +901,81 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
-self_modulate = Color( 0, 0.247059, 0.160784, 1 )
+[node name="Petals" type="Sprite" parent="Decorations" index="0"]
+position = Vector2( 1617, -2423 )
+texture = ExtResource( 21 )
+
+[node name="CandleMelted" parent="Decorations" index="1" instance=ExtResource( 20 )]
+position = Vector2( 971, -286 )
+
+[node name="Candle" parent="Decorations" index="2" instance=ExtResource( 22 )]
+position = Vector2( -96, 247 )
+
+[node name="Candle2" parent="Decorations" index="3" instance=ExtResource( 22 )]
+position = Vector2( -1129, -349 )
+
+[node name="Petals2" type="Sprite" parent="Decorations" index="4"]
+position = Vector2( 2283, -306 )
+texture = ExtResource( 21 )
+
+[node name="Candle3" parent="Decorations" index="5" instance=ExtResource( 22 )]
+position = Vector2( 2242, -1402 )
+
+[node name="Candle4" parent="Decorations" index="6" instance=ExtResource( 22 )]
+position = Vector2( 1600, -3006 )
+
+[node name="CandleMelted2" parent="Decorations" index="7" instance=ExtResource( 20 )]
+position = Vector2( 1305, -2207 )
+
+[node name="Candle5" parent="Decorations" index="8" instance=ExtResource( 22 )]
+position = Vector2( 1868, -450 )
+
+[node name="CandleMelted3" parent="Decorations" index="9" instance=ExtResource( 20 )]
+position = Vector2( 2748, -208 )
+
+[node name="CandleMelted7" parent="Decorations" index="10" instance=ExtResource( 20 )]
+position = Vector2( 2862, -1167 )
+
+[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 20 )]
+position = Vector2( 1847, -1708 )
+
+[node name="Petals3" type="Sprite" parent="Decorations" index="12"]
+position = Vector2( 1870.21, -3057.82 )
+rotation = -6.28318
+texture = ExtResource( 21 )
+offset = Vector2( -2726.21, 866.844 )
+
+[node name="Petals6" type="Sprite" parent="Decorations" index="13"]
+position = Vector2( 2134, -4232 )
+rotation = -6.28318
+texture = ExtResource( 21 )
+offset = Vector2( -2726.21, 866.844 )
+
+[node name="CandleMelted5" parent="Decorations" index="14" instance=ExtResource( 20 )]
+position = Vector2( -1160, -2609 )
+
+[node name="CandleMelted8" parent="Decorations" index="15" instance=ExtResource( 20 )]
+position = Vector2( 8, -3092 )
+
+[node name="CandleMelted9" parent="Decorations" index="16" instance=ExtResource( 20 )]
+position = Vector2( 399, -2425 )
+
+[node name="Candle7" parent="Decorations" index="17" instance=ExtResource( 22 )]
+position = Vector2( -907, -1361 )
+
+[node name="Candle8" parent="Decorations" index="18" instance=ExtResource( 22 )]
+position = Vector2( -311, -2221 )
+
+[node name="Petals4" type="Sprite" parent="Decorations" index="19"]
+position = Vector2( 2110, -1633 )
+texture = ExtResource( 21 )
+
+[node name="Petals5" type="Sprite" parent="Decorations" index="20"]
+position = Vector2( 389, -2600 )
+texture = ExtResource( 21 )
+
+[node name="CandleMelted6" parent="Decorations" index="21" instance=ExtResource( 20 )]
+position = Vector2( 632, 266 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
 
@@ -1029,6 +1104,10 @@ anims/Disable = SubResource( 52 )
 anims/Enable = SubResource( 53 )
 anims/Spawn = SubResource( 54 )
 anims/Win = SubResource( 55 )
+
+[node name="Panel" parent="CanvasLayer2" index="0"]
+visible = true
+self_modulate = Color( 0, 0.247059, 0.160784, 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
@@ -1196,68 +1275,8 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="LevelLoadingTransitionTimer" parent="." index="5"]
+[node name="LevelLoadingTransitionTimer" parent="." index="6"]
 wait_time = 9.0
-
-[node name="NoteBlocksManager" parent="YSort" index="0" instance=ExtResource( 2 )]
-position = Vector2( 881, 0 )
-script = ExtResource( 7 )
-
-[node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1596, -295 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
-self_modulate = Color( 0, 0.807843, 0.0117647, 1 )
-
-[node name="NoteBlock2" parent="YSort/NoteBlocksManager" index="1" instance=ExtResource( 3 )]
-position = Vector2( -1537, -2324 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock2/Sprites" index="0"]
-self_modulate = Color( 0.411765, 0, 0.666667, 1 )
-
-[node name="NoteBlock3" parent="YSort/NoteBlocksManager" index="2" instance=ExtResource( 3 )]
-position = Vector2( 1546, -1699 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock3/Sprites" index="0"]
-self_modulate = Color( 0, 0.14902, 0.741176, 1 )
-
-[node name="NoteBlock4" parent="YSort/NoteBlocksManager" index="3" instance=ExtResource( 3 )]
-position = Vector2( -1527, -3325 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock4/Sprites" index="0"]
-self_modulate = Color( 1, 0.72549, 0, 1 )
-
-[node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
-position = Vector2( 919, -977 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock5/Sprites" index="0"]
-modulate = Color( 0, 1, 0.976471, 1 )
-
-[node name="NoteBlock6" parent="YSort/NoteBlocksManager" index="5" instance=ExtResource( 3 )]
-position = Vector2( -2020, -632 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock6/Sprites" index="0"]
-self_modulate = Color( 1, 0, 0, 1 )
-
-[node name="NoteBlock7" parent="YSort/NoteBlocksManager" index="6" instance=ExtResource( 3 )]
-position = Vector2( -267, -2802 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock7/Sprites" index="0"]
-self_modulate = Color( 1, 0.305882, 0, 1 )
-
-[node name="NoteBlock8" parent="YSort/NoteBlocksManager" index="7" instance=ExtResource( 3 )]
-position = Vector2( 213, -2802 )
-
-[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock8/Sprites" index="0"]
-self_modulate = Color( 1, 0.47451, 0.992157, 1 )
-
-[node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( -245, 650 )
-speed = 330.0
-
-[node name="HeroWoman" parent="YSort" index="2"]
-position = Vector2( 671, 650 )
-speed = 330.0
 
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 5 )
@@ -1326,6 +1345,66 @@ stream = ExtResource( 10 )
 volume_db = -4.0
 bus = "SFX"
 is_looped = true
+
+[node name="NoteBlocksManager" parent="YSort" index="0" instance=ExtResource( 2 )]
+position = Vector2( 881, 0 )
+script = ExtResource( 7 )
+
+[node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1596, -295 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
+self_modulate = Color( 0, 0.807843, 0.0117647, 1 )
+
+[node name="NoteBlock2" parent="YSort/NoteBlocksManager" index="1" instance=ExtResource( 3 )]
+position = Vector2( -1537, -2324 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock2/Sprites" index="0"]
+self_modulate = Color( 0.411765, 0, 0.666667, 1 )
+
+[node name="NoteBlock3" parent="YSort/NoteBlocksManager" index="2" instance=ExtResource( 3 )]
+position = Vector2( 1546, -1699 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock3/Sprites" index="0"]
+self_modulate = Color( 0, 0.14902, 0.741176, 1 )
+
+[node name="NoteBlock4" parent="YSort/NoteBlocksManager" index="3" instance=ExtResource( 3 )]
+position = Vector2( -1527, -3325 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock4/Sprites" index="0"]
+self_modulate = Color( 1, 0.72549, 0, 1 )
+
+[node name="NoteBlock5" parent="YSort/NoteBlocksManager" index="4" instance=ExtResource( 3 )]
+position = Vector2( 919, -977 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock5/Sprites" index="0"]
+modulate = Color( 0, 1, 0.976471, 1 )
+
+[node name="NoteBlock6" parent="YSort/NoteBlocksManager" index="5" instance=ExtResource( 3 )]
+position = Vector2( -2020, -632 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock6/Sprites" index="0"]
+self_modulate = Color( 1, 0, 0, 1 )
+
+[node name="NoteBlock7" parent="YSort/NoteBlocksManager" index="6" instance=ExtResource( 3 )]
+position = Vector2( -267, -2802 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock7/Sprites" index="0"]
+self_modulate = Color( 1, 0.305882, 0, 1 )
+
+[node name="NoteBlock8" parent="YSort/NoteBlocksManager" index="7" instance=ExtResource( 3 )]
+position = Vector2( 213, -2802 )
+
+[node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock8/Sprites" index="0"]
+self_modulate = Color( 1, 0.47451, 0.992157, 1 )
+
+[node name="HeroMan" parent="YSort" index="1"]
+position = Vector2( -245, 650 )
+speed = 330.0
+
+[node name="HeroWoman" parent="YSort" index="2"]
+position = Vector2( 671, 650 )
+speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
