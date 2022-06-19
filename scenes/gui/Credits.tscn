@@ -112,6 +112,7 @@ energy = 1.00322
 [node name="Music" type="AudioStreamPlayer" parent="Panel"]
 stream = ExtResource( 7 )
 autoplay = true
+bus = "Music"
 
 [node name="LightPanel" type="Panel" parent="."]
 margin_left = 1397.0

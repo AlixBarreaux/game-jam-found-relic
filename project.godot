@@ -195,7 +195,7 @@ _global_script_class_icons={
 [application]
 
 config/name="O Key Cupid"
-run/main_scene="res://scenes/gui/MainMenu.tscn"
+run/main_scene="res://scenes/gui/SplashScreen.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"
