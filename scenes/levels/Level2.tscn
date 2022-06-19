@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/sprites/Petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scripts/creatures/heroes/hero.gd" type="Script" id=23]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -1400,10 +1401,12 @@ self_modulate = Color( 1, 0.47451, 0.992157, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( -245, 650 )
+script = ExtResource( 23 )
 speed = 330.0
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 671, 650 )
+script = ExtResource( 23 )
 speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
