@@ -7,11 +7,16 @@ extends Control
 export var scene_to_load_path: String = ""
 export var is_end_scene: bool = false
 
+onready var animation_tree: AnimationTree = $AnimationTree
+
+
 # ----------------- RUN CODE -----------------
 
 
 func _ready() -> void:
 	self.initialize_asserts()
+	
+	animation_tree.active = true
 	return
 
 
