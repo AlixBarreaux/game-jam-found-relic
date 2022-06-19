@@ -16,6 +16,8 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		return
 	if event is InputEventKey or InputEventJoypadButton:
 		
 		if is_end_scene:

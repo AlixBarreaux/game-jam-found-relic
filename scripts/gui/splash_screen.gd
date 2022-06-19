@@ -24,6 +24,8 @@ func initialize_asserts() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		return
 	if event is InputEventKey or InputEventJoypadButton:
 		self.load_next_scene()
 	return

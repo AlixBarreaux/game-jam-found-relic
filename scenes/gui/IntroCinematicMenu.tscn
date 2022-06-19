@@ -1,12 +1,118 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://cinematic_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sprites/end_cinematic_menu_texture.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/intro_cinematic_menu_texture.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 60
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Blink"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.639216, 0.639216, 0.639216, 1 ), Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GirlTextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GuyTextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndMessageLabel:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 728.5, -451.5 ), Vector2( 728.5, 423.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Blink"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=12]
+states/Blink/node = SubResource( 5 )
+states/Blink/position = Vector2( 647, 77 )
+states/Start/node = SubResource( 6 )
+states/Start/position = Vector2( 491, 77 )
+transitions = [ "Start", "Blink", SubResource( 7 ) ]
+start_node = "Start"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="IntroMenu" type="Control"]
 anchor_right = 1.0
@@ -15,17 +121,63 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 scene_to_load_path = "res://scenes/levels/Level1.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="GirlTextureRect" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 150.0
+margin_top = -460.0
+margin_right = 707.0
+margin_bottom = 317.0
+texture = ExtResource( 5 )
+
+[node name="GuyTextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -707.0
+margin_top = -460.0
+margin_right = -150.0
+margin_bottom = 317.0
+texture = ExtResource( 4 )
+
+[node name="EndMessageLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -231.5
+margin_top = -116.5
+margin_right = 231.5
+margin_bottom = 66.5018
+custom_fonts/font = SubResource( 9 )
+text = "That's a 
+Match!"
+align = 1
+valign = 1
 
 [node name="Label" type="Label" parent="."]
+self_modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -213.0
-margin_bottom = -153.0
-custom_fonts/font = SubResource( 1 )
+margin_top = -165.0
+margin_bottom = -75.0
+custom_fonts/font = SubResource( 9 )
 text = "Press any key to continue"
 align = 1
 valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blink = SubResource( 10 )
+anims/Start = SubResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 12 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 13 )
