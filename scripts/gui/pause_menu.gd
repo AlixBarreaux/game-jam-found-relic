@@ -20,7 +20,7 @@ func _ready() -> void:
 	return
 
 
-func _unhandled_key_input(_event: InputEventKey) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
 		self.visible = !visible
 	return
