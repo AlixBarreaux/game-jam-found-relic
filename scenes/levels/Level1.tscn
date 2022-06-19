@@ -999,7 +999,6 @@ script = ExtResource( 8 )
 
 [node name="AmbientTrack" type="AudioStreamPlayer" parent="AudioManager/Ambient" index="0"]
 stream = ExtResource( 13 )
-volume_db = -5.549
 autoplay = true
 bus = "Music"
 
