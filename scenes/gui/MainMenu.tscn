@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/gui/GameTitle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gui/SceneLoaderButton.tscn" type="PackedScene" id=2]
@@ -6,12 +6,29 @@
 [ext_resource path="res://scenes/gui/QuitToDesktopButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/VersionLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sound/menus/main_theme.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/sprites/Font.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/Pc.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/Glass.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/light.png" type="Texture" id=10]
 [ext_resource path="res://scripts/gui/main_menu.gd" type="Script" id=11]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/sprites/background_spritesheet.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Flicker"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
 
 [sub_resource type="GDScript" id=4]
 script/source = "class_name SceneLoaderButton
@@ -77,14 +94,23 @@ theme = ExtResource( 3 )
 script = ExtResource( 11 )
 first_button_to_focus_node_path = NodePath("Background/Screen/VBoxContainer/PlayButton")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 13 )
+hframes = 5
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Background"]
+root_node = NodePath("../..")
+autoplay = "Flicker"
+anims/Flicker = SubResource( 8 )
 
 [node name="Screen" type="TextureRect" parent="Background"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 texture = ExtResource( 8 )
 
 [node name="GameTitle" parent="Background/Screen" instance=ExtResource( 1 )]
