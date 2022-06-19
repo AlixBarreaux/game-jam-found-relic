@@ -10,5 +10,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Back to Main Menu"
+msgstr ""
+
+msgid "Credits"
+msgstr ""
+
+msgid "Graphist"
+msgstr ""
+
+msgid "Lead Developer / Programmer"
+msgstr ""
+
+msgid "Made with"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
 msgid "Play"
+msgstr ""
+
+msgid "Quit to Desktop"
+msgstr ""
+
+msgid "Resume"
+msgstr ""
+
+msgid "Sound Effects / Music"
+msgstr ""
+
+msgid "Version"
 msgstr ""

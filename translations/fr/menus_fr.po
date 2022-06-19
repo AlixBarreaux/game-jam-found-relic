@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ki Squad Studio\n"
 "POT-Creation-Date: 2022-10-22 11:00+0200\n"
-"PO-Revision-Date: 2022-06-10 14:14+0200\n"
+"PO-Revision-Date: 2022-06-19 03:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ki Squad Studio <none@none.com>\n"
 "Language: fr\n"
@@ -12,8 +12,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+msgid "Back to Main Menu"
+msgstr "Retour au Menu Principal"
+
+msgid "Credits"
+msgstr "Crédits"
+
+msgid "Graphist"
+msgstr "Graphiste"
+
+msgid "Lead Developer / Programmer"
+msgstr "Lead Développeur / Programmeur"
+
+msgid "Made with"
+msgstr "Créé avec"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Pause"
+msgstr "Pause"
+
 msgid "Play"
 msgstr "Jouer"
+
+msgid "Quit to Desktop"
+msgstr "Retour vers le Bureau"
+
+msgid "Resume"
+msgstr "Continuer"
+
+msgid "Sound Effects / Music"
+msgstr "Effets Sonores / Musique"
+
+msgid "Version"
+msgstr "Version"
 
 #~ msgid "play"
 #~ msgstr "Jouer"

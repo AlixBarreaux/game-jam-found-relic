@@ -208,6 +208,7 @@ default_bus_layout="res://resources/audio-bus-layouts/default_bus_layout.tres"
 [autoload]
 
 Events="*res://autoloads/scripts/events.gd"
+Settings="*res://autoloads/scripts/settings.gd"
 
 [display]
 

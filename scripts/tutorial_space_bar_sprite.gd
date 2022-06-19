@@ -36,8 +36,8 @@ func _ready() -> void:
 #	return
 
 
-func _unhandled_key_input(event: InputEventKey) -> void:
-	if Input.is_action_just_pressed("switch_characters"):
+func _unhandled_key_input(_event: InputEventKey) -> void:
+	if Input.get_action_strength("switch_characters"):
 		self.queue_free()
 	return
 
