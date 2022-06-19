@@ -1115,7 +1115,6 @@ self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( 498, 1336 )
-speed = 330.0
 
 [node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
 position = Vector2( 0, -150 )
@@ -1133,7 +1132,6 @@ parameters/playback = SubResource( 22 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )
-speed = 330.0
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

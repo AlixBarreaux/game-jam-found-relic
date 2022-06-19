@@ -138,7 +138,7 @@ focus_neighbour_right = NodePath("../CreditsButton")
 focus_neighbour_bottom = NodePath("../CreditsButton")
 text = "Play"
 script = SubResource( 4 )
-scene_to_load_path = "res://scenes/gui/IntroMenu.tscn"
+scene_to_load_path = "res://scenes/gui/IntroCinematicMenu.tscn"
 
 [node name="CreditsButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 103.0
