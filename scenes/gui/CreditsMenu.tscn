@@ -256,7 +256,7 @@ margin_top = 705.0
 margin_right = 1278.0
 margin_bottom = 743.0
 custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
-text = "License: MIT"
+text = "License: Creative Commons Zero (CC0)"
 align = 1
 valign = 1
 

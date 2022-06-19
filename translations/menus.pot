@@ -34,6 +34,9 @@ msgstr ""
 msgid "Play"
 msgstr ""
 
+msgid "Press any key to\nstart the match!"
+msgstr ""
+
 msgid "Press any key to continue"
 msgstr ""
 
@@ -44,6 +47,9 @@ msgid "Resume"
 msgstr ""
 
 msgid "Sound Effects / Music:"
+msgstr ""
+
+msgid "That's a \nMatch!"
 msgstr ""
 
 msgid "Version"
