@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_3.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_1.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_5.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/sprites/Petals.png" type="Texture" id=22]
+[ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -70,9 +73,60 @@ polygon = PoolVector2Array( 870, 1202, -214, 1202, -214, 971, 700, 971, 700, 504
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
 polygon = PoolVector2Array( 863, 2284, 871, -1454, 1051, -1442, 1053, 2284 )
 
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
-self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
+[node name="Petals" type="Sprite" parent="Decorations" index="0"]
+position = Vector2( 377, -1164 )
+texture = ExtResource( 22 )
+
+[node name="Petals2" type="Sprite" parent="Decorations" index="1"]
+position = Vector2( 1568, -491 )
+texture = ExtResource( 22 )
+
+[node name="Petals3" type="Sprite" parent="Decorations" index="2"]
+position = Vector2( 357, -124 )
+texture = ExtResource( 22 )
+
+[node name="Petals4" type="Sprite" parent="Decorations" index="3"]
+position = Vector2( 1582, 1071 )
+texture = ExtResource( 22 )
+
+[node name="CandleMelted2" parent="Decorations" index="4" instance=ExtResource( 24 )]
+position = Vector2( 1809, 1147 )
+
+[node name="CandleMelted3" parent="Decorations" index="5" instance=ExtResource( 24 )]
+position = Vector2( 453, 1140 )
+
+[node name="CandleMelted4" parent="Decorations" index="6" instance=ExtResource( 24 )]
+position = Vector2( 1183, 642 )
+
+[node name="CandleMelted5" parent="Decorations" index="7" instance=ExtResource( 24 )]
+position = Vector2( 675, -95 )
+
+[node name="CandleMelted6" parent="Decorations" index="8" instance=ExtResource( 24 )]
+position = Vector2( 722, -1097 )
+
+[node name="CandleMelted7" parent="Decorations" index="9" instance=ExtResource( 24 )]
+position = Vector2( 1277, -1221 )
+
+[node name="CandleMelted8" parent="Decorations" index="10" instance=ExtResource( 24 )]
+position = Vector2( 1903, -1164 )
+
+[node name="CandleMelted9" parent="Decorations" index="11" instance=ExtResource( 24 )]
+position = Vector2( 1822, 320 )
+
+[node name="Candle" parent="Decorations" index="12" instance=ExtResource( 23 )]
+position = Vector2( -96, 247 )
+
+[node name="Candle2" parent="Decorations" index="13" instance=ExtResource( 23 )]
+position = Vector2( 422, -554 )
+
+[node name="Candle3" parent="Decorations" index="14" instance=ExtResource( 23 )]
+position = Vector2( 1428, -214 )
+
+[node name="Candle4" parent="Decorations" index="15" instance=ExtResource( 23 )]
+position = Vector2( 1674, -843 )
+
+[node name="Candle5" parent="Decorations" index="16" instance=ExtResource( 23 )]
+position = Vector2( -58, -1274 )
 
 [node name="MemoryCardsManager" parent="." index="2" instance=ExtResource( 3 )]
 is_lone_card_present = true
@@ -222,6 +276,10 @@ texture = ExtResource( 11 )
 [node name="AnimationTree" parent="MemoryCardsManager/Group8/MemoryCard" index="4"]
 parameters/playback = SubResource( 17 )
 
+[node name="Panel" parent="CanvasLayer2" index="0"]
+visible = true
+self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
 
@@ -260,16 +318,8 @@ position = Vector2( 1685, 737.5 )
 rotation = 1.57079
 shape = SubResource( 21 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="5"]
+[node name="LevelLoadingTransitionTimer" parent="." index="6"]
 wait_time = 8.0
-
-[node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -103, 1074 )
-speed = 330.0
-
-[node name="HeroWoman" parent="YSort" index="1"]
-position = Vector2( 1975, 1074 )
-speed = 330.0
 
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 17 )
@@ -330,6 +380,14 @@ is_looped = true
 stream = ExtResource( 13 )
 volume_db = 1.5
 bus = "SFX"
+
+[node name="HeroMan" parent="YSort" index="0"]
+position = Vector2( -103, 1074 )
+speed = 330.0
+
+[node name="HeroWoman" parent="YSort" index="1"]
+position = Vector2( 1975, 1074 )
+speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
