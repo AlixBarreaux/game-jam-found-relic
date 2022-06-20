@@ -29,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gui/browser_link_button.gd"
 }, {
-"base": "Control",
+"base": "Reference",
 "class": "CinematicMenu",
 "language": "GDScript",
-"path": "res://cinematic_menu.gd"
+"path": "res://scripts/cinematic_menu.gd"
 }, {
 "base": "Label",
 "class": "GameTitleLabel",
