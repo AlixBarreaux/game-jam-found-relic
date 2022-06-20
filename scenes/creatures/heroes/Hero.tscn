@@ -383,7 +383,7 @@ states/Move/node = SubResource( 12 )
 states/Move/position = Vector2( 516, 70 )
 transitions = [ "Move", "CelebrateVictory", SubResource( 19 ), "Idle", "CelebrateVictory", SubResource( 28 ), "Idle", "Move", SubResource( 29 ), "Move", "Idle", SubResource( 30 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -156, 24 )
+graph_offset = Vector2( -140, 32 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
@@ -400,7 +400,7 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 hframes = 5
 vframes = 3
-frame = 8
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 50 )

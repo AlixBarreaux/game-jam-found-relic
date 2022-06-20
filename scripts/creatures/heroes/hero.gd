@@ -35,6 +35,11 @@ var last_velocity: Vector2 = Vector2(0.0, 0.0)
 
 func _physics_process(_delta: float) -> void:
 	
+	if not is_controlled:
+		self.animation_tree.set("parameters/Idle/blend_position", self.last_velocity)
+		self.animation_tree_node_sm_playback.travel("Idle")
+		return
+	
 	if not self.velocity == Vector2(0.0, 0.0):
 		# Set the animation Tree to play Animation Move with the velocity
 		self.animation_tree.set("parameters/Move/blend_position", self.velocity)

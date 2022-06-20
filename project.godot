@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gui/browser_link_button.gd"
 }, {
-"base": "Reference",
+"base": "Control",
 "class": "CinematicMenu",
 "language": "GDScript",
 "path": "res://scripts/cinematic_menu.gd"
