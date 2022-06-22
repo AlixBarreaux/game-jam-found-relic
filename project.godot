@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/audio-managers/audio_manager_level_3.gd"
 }, {
-"base": "Reference",
+"base": "LinkButton",
 "class": "BrowserLinkButton",
 "language": "GDScript",
 "path": "res://scripts/gui/browser_link_button.gd"
@@ -33,6 +33,11 @@ _global_script_classes=[ {
 "class": "CinematicMenu",
 "language": "GDScript",
 "path": "res://scripts/cinematic_menu.gd"
+}, {
+"base": "HBoxContainer",
+"class": "FullScreenController",
+"language": "GDScript",
+"path": "res://scripts/gui/fullscreen_controller.gd"
 }, {
 "base": "Label",
 "class": "GameTitleLabel",
@@ -163,6 +168,11 @@ _global_script_classes=[ {
 "class": "VersionLabel",
 "language": "GDScript",
 "path": "res://scripts/gui/version_label.gd"
+}, {
+"base": "Control",
+"class": "VolumeController",
+"language": "GDScript",
+"path": "res://scripts/gui/volume_controller.gd"
 } ]
 _global_script_class_icons={
 "AudioManagerLevel1": "",
@@ -170,6 +180,7 @@ _global_script_class_icons={
 "AudioManagerLevel3": "",
 "BrowserLinkButton": "",
 "CinematicMenu": "",
+"FullScreenController": "",
 "GameTitleLabel": "",
 "Hero": "",
 "HeroCamera": "",
@@ -195,7 +206,8 @@ _global_script_class_icons={
 "SpaceBarTutorialArea2D": "",
 "SplashScreen": "",
 "TutorialSpaceBarSprite": "",
-"VersionLabel": ""
+"VersionLabel": "",
+"VolumeController": ""
 }
 
 [application]

@@ -57,7 +57,7 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 4 )
 
-[node name="GameTitle" type="Label" parent="Panel/Screen"]
+[node name="Title" type="Label" parent="Panel/Screen"]
 anchor_right = 1.0
 margin_left = 502.0
 margin_top = 185.0
