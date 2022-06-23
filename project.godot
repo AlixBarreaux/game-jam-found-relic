@@ -217,7 +217,7 @@ run/main_scene="res://scenes/gui/SplashScreen.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"
-config/version="0.1"
+config/version="0.2.0"
 
 [audio]
 
