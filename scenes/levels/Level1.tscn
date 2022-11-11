@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -716,6 +716,9 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
+[sub_resource type="RectangleShape2D" id=65]
+extents = Vector2( 65, 17.5 )
+
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [node name="Level1" instance=ExtResource( 1 )]
@@ -1112,8 +1115,11 @@ position = Vector2( 800, -2217 )
 [node name="Sprite" parent="YSort/PlatesManager/Plate6/Sprites" index="0"]
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 
+[node name="CollisionShape2D" parent="YSort/PlatesManager/Plate6/InteractionReceiverArea2D" index="0"]
+shape = SubResource( 65 )
+
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 498, 1336 )
+position = Vector2( 633, -2251 )
 
 [node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
 position = Vector2( 0, -150 )

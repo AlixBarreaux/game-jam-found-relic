@@ -129,6 +129,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/gui/scene_loader_button.gd"
 }, {
+"base": "Control",
+"class": "ScreenMenu",
+"language": "GDScript",
+"path": "res://screen_menu.gd"
+}, {
 "base": "Node2D",
 "class": "SequenceOrderFeedbackNode",
 "language": "GDScript",
@@ -199,6 +204,7 @@ _global_script_class_icons={
 "QuitToDesktopButton": "",
 "QuitToMainMenuTextureButton": "",
 "SceneLoaderButton": "",
+"ScreenMenu": "",
 "SequenceOrderFeedbackNode": "",
 "SequenceOrderInteractable": "",
 "SequenceOrderInteractablesManager": "",

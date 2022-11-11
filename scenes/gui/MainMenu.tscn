@@ -168,7 +168,7 @@ focus_next = NodePath("../QuitToDesktopButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Credits"
 script = SubResource( 4 )
-scene_to_load_path = "res://scenes/gui/CreditsMenu.tscn"
+scene_to_load_path = "res://scenes/gui/screen-menus/ScreenMenuCredits.tscn"
 
 [node name="QuitToDesktopButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 309.0
