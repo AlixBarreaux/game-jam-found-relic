@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/audio-managers/audio_manager_level_3.gd"
 }, {
-"base": "Reference",
+"base": "LinkButton",
 "class": "BrowserLinkButton",
 "language": "GDScript",
 "path": "res://scripts/gui/browser_link_button.gd"
