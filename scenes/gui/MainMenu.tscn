@@ -155,7 +155,7 @@ focus_next = NodePath("../CreditsButton")
 focus_previous = NodePath("../PlayButton")
 text = "Options"
 script = SubResource( 4 )
-scene_to_load_path = "res://scenes/gui/OptionsMenu.tscn"
+scene_to_load_path = "res://scenes/gui/screen-menus/ScreenMenuOptions.tscn"
 
 [node name="CreditsButton" parent="Background/Screen/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 206.0

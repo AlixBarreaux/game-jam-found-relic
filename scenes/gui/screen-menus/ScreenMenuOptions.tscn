@@ -3,3 +3,7 @@
 [ext_resource path="res://scenes/gui/screen-menus/ScreenMenu.tscn" type="PackedScene" id=1]
 
 [node name="ScreenMenuOptions" instance=ExtResource( 1 )]
+first_button_to_focus_node_path = NodePath("BackButton")
+
+[node name="Title" parent="Panel/Screen" index="0"]
+text = "Options"
