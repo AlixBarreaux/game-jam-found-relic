@@ -205,6 +205,7 @@ autoplay = "Blink"
 anims/Blink = SubResource( 5 )
 
 [node name="QuitToDesktopButton" parent="." instance=ExtResource( 4 )]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 1441.0
 margin_top = 155.0
 margin_right = 1491.0
