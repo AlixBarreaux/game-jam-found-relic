@@ -132,7 +132,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "ScreenMenu",
 "language": "GDScript",
-"path": "res://screen_menu.gd"
+"path": "res://scripts/gui/screen_menu.gd"
 }, {
 "base": "Node2D",
 "class": "SequenceOrderFeedbackNode",
