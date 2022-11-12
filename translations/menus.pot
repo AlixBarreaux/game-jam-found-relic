@@ -37,6 +37,9 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+msgid "Options"
+msgstr ""
+
 msgid "Pause"
 msgstr ""
 

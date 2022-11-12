@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ki Squad Studio\n"
 "POT-Creation-Date: 2022-10-22 11:00+0200\n"
-"PO-Revision-Date: 2022-11-12 03:05+0100\n"
+"PO-Revision-Date: 2022-11-12 03:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: Ki Squad Studio <none@none.com>\n"
 "Language: fr\n"
@@ -38,6 +38,9 @@ msgstr "Musique"
 
 msgid "Menu"
 msgstr "Menu"
+
+msgid "Options"
+msgstr "Options"
 
 msgid "Pause"
 msgstr "Pause"
