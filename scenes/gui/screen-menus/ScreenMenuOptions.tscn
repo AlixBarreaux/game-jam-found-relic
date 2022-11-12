@@ -22,20 +22,26 @@ size_flags_vertical = 3
 custom_constants/separation = 50
 alignment = 1
 
-[node name="FullscreenController2" parent="Control/ScrollContainer/VBoxContainer" index="0" instance=ExtResource( 3 )]
+[node name="FullscreenController" parent="Control/ScrollContainer/VBoxContainer" index="0" instance=ExtResource( 3 )]
 margin_top = 74.0
 margin_right = 884.0
 margin_bottom = 127.0
 custom_constants/separation = 135
 
-[node name="Label" parent="Control/ScrollContainer/VBoxContainer/FullscreenController2" index="0"]
+[node name="Label" parent="Control/ScrollContainer/VBoxContainer/FullscreenController" index="0"]
 margin_top = 7.0
 margin_right = 124.0
 margin_bottom = 45.0
 
-[node name="CheckButton" parent="Control/ScrollContainer/VBoxContainer/FullscreenController2" index="1"]
+[node name="CheckButton" parent="Control/ScrollContainer/VBoxContainer/FullscreenController" index="1"]
 margin_left = 259.0
 margin_right = 323.0
+focus_neighbour_left = NodePath("../../../../../BackButton")
+focus_neighbour_top = NodePath("../../../../../BackButton")
+focus_neighbour_right = NodePath("../../HBoxContainer/VBoxContainerRight/VolumeControllerMaster")
+focus_neighbour_bottom = NodePath("../../HBoxContainer/VBoxContainerRight/VolumeControllerMaster")
+focus_next = NodePath("../../HBoxContainer/VBoxContainerRight/VolumeControllerMaster")
+focus_previous = NodePath("../../../../../BackButton")
 
 [node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer" index="1"]
 margin_top = 177.0
@@ -47,18 +53,18 @@ text = "Volume"
 align = 1
 valign = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" index="2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" index="2"]
 margin_top = 265.0
 margin_right = 884.0
 margin_bottom = 387.0
 custom_constants/separation = 75
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2" index="0"]
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer" index="0"]
 margin_right = 192.0
 margin_bottom = 122.0
 size_flags_vertical = 3
 
-[node name="LabelMaster" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="0"]
+[node name="LabelMaster" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" index="0"]
 margin_right = 192.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
@@ -66,7 +72,7 @@ size_flags_vertical = 3
 text = "Master"
 valign = 1
 
-[node name="LabelMusic" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="1"]
+[node name="LabelMusic" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" index="1"]
 margin_top = 42.0
 margin_right = 192.0
 margin_bottom = 80.0
@@ -75,7 +81,7 @@ size_flags_vertical = 3
 text = "Music"
 valign = 1
 
-[node name="LabelSFX" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer" index="2"]
+[node name="LabelSFX" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft" index="2"]
 margin_top = 84.0
 margin_right = 192.0
 margin_bottom = 122.0
@@ -84,16 +90,20 @@ size_flags_vertical = 3
 text = "Sound Effects"
 valign = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2" index="1"]
+[node name="VBoxContainerRight" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer" index="1"]
 margin_left = 267.0
 margin_right = 884.0
 margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VolumeControllerMaster" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="0" instance=ExtResource( 2 )]
+[node name="VolumeControllerMaster" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight" index="0" instance=ExtResource( 2 )]
 margin_right = 617.0
 margin_bottom = 38.0
+focus_neighbour_top = NodePath("../../../FullscreenController/CheckButton")
+focus_neighbour_bottom = NodePath("../VolumeControllerMusic")
+focus_next = NodePath("../VolumeControllerMusic")
+focus_previous = NodePath("../../../FullscreenController/CheckButton")
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -101,10 +111,14 @@ __meta__ = {
 }
 audio_bus_name = "Master"
 
-[node name="VolumeControllerMusic" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="1" instance=ExtResource( 2 )]
+[node name="VolumeControllerMusic" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight" index="1" instance=ExtResource( 2 )]
 margin_top = 42.0
 margin_right = 617.0
 margin_bottom = 80.0
+focus_neighbour_top = NodePath("../VolumeControllerMaster")
+focus_neighbour_bottom = NodePath("../VolumeControllerSFX")
+focus_next = NodePath("../VolumeControllerSFX")
+focus_previous = NodePath("../VolumeControllerMaster")
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -112,10 +126,14 @@ __meta__ = {
 }
 audio_bus_name = "Music"
 
-[node name="VolumeControllerSFX" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" index="2" instance=ExtResource( 2 )]
+[node name="VolumeControllerSFX" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight" index="2" instance=ExtResource( 2 )]
 margin_top = 84.0
 margin_right = 617.0
 margin_bottom = 122.0
+focus_neighbour_top = NodePath("../VolumeControllerMusic")
+focus_neighbour_bottom = NodePath("../../../../../../BackButton")
+focus_next = NodePath("../../../../../../BackButton")
+focus_previous = NodePath("../VolumeControllerMusic")
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -123,4 +141,12 @@ __meta__ = {
 }
 audio_bus_name = "SFX"
 
-[editable path="Control/ScrollContainer/VBoxContainer/FullscreenController2"]
+[node name="BackButton" parent="." index="3"]
+focus_neighbour_left = NodePath("../Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VolumeControllerSFX")
+focus_neighbour_top = NodePath("../Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VolumeControllerSFX")
+focus_neighbour_right = NodePath("../Control/ScrollContainer/VBoxContainer/FullscreenController/CheckButton")
+focus_neighbour_bottom = NodePath("../Control/ScrollContainer/VBoxContainer/FullscreenController/CheckButton")
+focus_next = NodePath("../Control/ScrollContainer/VBoxContainer/FullscreenController/CheckButton")
+focus_previous = NodePath("../Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VolumeControllerSFX")
+
+[editable path="Control/ScrollContainer/VBoxContainer/FullscreenController"]

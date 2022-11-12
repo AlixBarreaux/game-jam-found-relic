@@ -11,4 +11,15 @@ onready var first_button_to_focus: Button = get_node(first_button_to_focus_node_
 
 # ---------------------- RUN CODE ---------------------
 
+
+func _ready() -> void:
+	self._initialize()
+	return
+
+
 # ----------------- DECLARE FUNCTIONS -----------------
+
+
+func _initialize() -> void:
+	first_button_to_focus.grab_focus()
+	return
