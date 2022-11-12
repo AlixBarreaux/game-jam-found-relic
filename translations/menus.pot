@@ -16,6 +16,9 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
+msgid "Fullscreen"
+msgstr ""
+
 msgid "Graphist:"
 msgstr ""
 
@@ -23,6 +26,12 @@ msgid "Lead Developer / Programmer:"
 msgstr ""
 
 msgid "Made with"
+msgstr ""
+
+msgid "Master"
+msgstr ""
+
+msgid "Music"
 msgstr ""
 
 msgid "Menu"
@@ -46,6 +55,9 @@ msgstr ""
 msgid "Resume"
 msgstr ""
 
+msgid "Sound Effects"
+msgstr ""
+
 msgid "Sound Effects / Music:"
 msgstr ""
 
@@ -53,4 +65,7 @@ msgid "That's a \nMatch!"
 msgstr ""
 
 msgid "Version"
+msgstr ""
+
+msgid "Volume"
 msgstr ""
