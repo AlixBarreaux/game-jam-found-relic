@@ -4,7 +4,7 @@ extends Control
 
 # ----------------- DECLARE VARIABLES -----------------
 
-
+export var is_visibility_manager: bool = false
 export var scene_to_load_path: String = ""
 
 
@@ -13,6 +13,9 @@ export var scene_to_load_path: String = ""
 
 func _ready() -> void:
 	initialize_asserts()
+	
+	if is_visibility_manager:
+		self.disconnect("pressed", self, "_on_pressed")
 	return
 
 
@@ -21,6 +24,8 @@ func _ready() -> void:
 
 func initialize_asserts() -> void:
 	if scene_to_load_path == "":
+		if is_visibility_manager:
+			return
 		printerr("scene_to_load_path is empty! Please add a correct one.")
 	return
 

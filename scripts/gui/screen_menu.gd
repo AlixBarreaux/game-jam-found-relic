@@ -23,3 +23,15 @@ func _ready() -> void:
 func _initialize() -> void:
 	first_button_to_focus.grab_focus()
 	return
+
+
+func _on_BackButton_pressed() -> void:
+	if $BackButton.is_visibility_manager:
+		self.visible = false
+	return
+
+
+func _on_ScreenMenuOptions_visibility_changed() -> void:
+	if self.visible:
+		$BackButton.grab_focus()
+	return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/sprites/cogwheel_icon_active.png" type="Texture" id=6]
 [ext_resource path="res://scripts/gui/pause_menu.gd" type="Script" id=7]
 [ext_resource path="res://assets/sprites/cogwheel_icon.png" type="Texture" id=8]
+[ext_resource path="res://scenes/gui/screen-menus/ScreenMenuOptions.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
@@ -168,5 +169,16 @@ text = "Menu"
 align = 1
 valign = 1
 
+[node name="ScreenMenuOptions" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="BackButton" parent="ScreenMenuOptions" index="3"]
+is_visibility_manager = true
+
 [connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
 [connection signal="pressed" from="IconsContainer/CenterContainer/ResumeTextureButton" to="." method="_on_ResumeTextureButton_pressed"]
+[connection signal="pressed" from="IconsContainer/CenterContainer2/OptionsTextureButton" to="." method="_on_OptionsTextureButton_pressed"]
+[connection signal="visibility_changed" from="ScreenMenuOptions" to="." method="_on_ScreenMenuOptions_visibility_changed"]
+
+[editable path="ScreenMenuOptions"]
+[editable path="ScreenMenuOptions/Control/ScrollContainer/VBoxContainer/FullscreenController"]
