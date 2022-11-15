@@ -20,7 +20,7 @@
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/sprites/Petals.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=24]

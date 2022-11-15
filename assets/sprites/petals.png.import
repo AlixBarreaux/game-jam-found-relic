@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Glass.png-eb02b4c4f56781945ea285094f33144e.stex"
+path="res://.import/petals.png-e4b68cc6032d1e433f490fb48353a256.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Glass.png"
-dest_files=[ "res://.import/Glass.png-eb02b4c4f56781945ea285094f33144e.stex" ]
+source_file="res://assets/sprites/petals.png"
+dest_files=[ "res://.import/petals.png-e4b68cc6032d1e433f490fb48353a256.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Font.png-ace2a6d9af8eab57bdc27bb47c13f554.stex"
+path="res://.import/gamepad.png-914ef04544426fad81f98c0d44cbebaf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Font.png"
-dest_files=[ "res://.import/Font.png-ace2a6d9af8eab57bdc27bb47c13f554.stex" ]
+source_file="res://assets/sprites/keyboard-gamepad-keys/gamepad.png"
+dest_files=[ "res://.import/gamepad.png-914ef04544426fad81f98c0d44cbebaf.stex" ]
 
 [params]
 

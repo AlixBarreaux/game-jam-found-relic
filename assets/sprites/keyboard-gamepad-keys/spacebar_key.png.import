@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gamepad_key_triangle.png-a8cb475ced47307a34ffdb277ef32a1d.stex"
+path="res://.import/spacebar_key.png-0b3d7325ca7fddfc39ec76119af09572.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/keyboard_gamepad_keys/gamepad_key_triangle.png"
-dest_files=[ "res://.import/gamepad_key_triangle.png-a8cb475ced47307a34ffdb277ef32a1d.stex" ]
+source_file="res://assets/sprites/keyboard-gamepad-keys/spacebar_key.png"
+dest_files=[ "res://.import/spacebar_key.png-0b3d7325ca7fddfc39ec76119af09572.stex" ]
 
 [params]
 

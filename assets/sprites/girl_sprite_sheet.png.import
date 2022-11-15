@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GirlSpreetSheet.png-60ff40798e9a8dcae163e4c16d3cfb64.stex"
+path="res://.import/girl_sprite_sheet.png-efb17e209a0644687b0e1adf4f1fb4b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/GirlSpreetSheet.png"
-dest_files=[ "res://.import/GirlSpreetSheet.png-60ff40798e9a8dcae163e4c16d3cfb64.stex" ]
+source_file="res://assets/sprites/girl_sprite_sheet.png"
+dest_files=[ "res://.import/girl_sprite_sheet.png-efb17e209a0644687b0e1adf4f1fb4b8.stex" ]
 
 [params]
 

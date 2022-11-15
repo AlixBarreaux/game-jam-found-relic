@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keyboard_arrows_spritesheet.png-4d0ffd60c443d1e3c709defe521b1c8e.stex"
+path="res://.import/monitor.png-310753117952e08c3cbeb0e05c35271d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/keyboard_gamepad_keys/keyboard_arrows_spritesheet.png"
-dest_files=[ "res://.import/keyboard_arrows_spritesheet.png-4d0ffd60c443d1e3c709defe521b1c8e.stex" ]
+source_file="res://assets/sprites/monitor.png"
+dest_files=[ "res://.import/monitor.png-310753117952e08c3cbeb0e05c35271d.stex" ]
 
 [params]
 

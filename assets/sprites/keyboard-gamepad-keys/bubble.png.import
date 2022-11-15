@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pc.png-317d79bb8ca44acad4ef15c94d2e9fa1.stex"
+path="res://.import/bubble.png-34e3a5a37165a62f77680ef13d19957c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Pc.png"
-dest_files=[ "res://.import/Pc.png-317d79bb8ca44acad4ef15c94d2e9fa1.stex" ]
+source_file="res://assets/sprites/keyboard-gamepad-keys/bubble.png"
+dest_files=[ "res://.import/bubble.png-34e3a5a37165a62f77680ef13d19957c.stex" ]
 
 [params]
 

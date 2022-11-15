@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gamepad_key_cross.png-fe9ccef15e2b6fdb2cb3c0874469901c.stex"
+path="res://.import/boy_sprite_sheet.png-6c4958df9022f92fbf7644570ca0f207.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/keyboard_gamepad_keys/gamepad_key_cross.png"
-dest_files=[ "res://.import/gamepad_key_cross.png-fe9ccef15e2b6fdb2cb3c0874469901c.stex" ]
+source_file="res://assets/sprites/boy_sprite_sheet.png"
+dest_files=[ "res://.import/boy_sprite_sheet.png-6c4958df9022f92fbf7644570ca0f207.stex" ]
 
 [params]
 
