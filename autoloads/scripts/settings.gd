@@ -4,7 +4,7 @@ extends Node
 
 # ----------------- DECLARE VARIABLES -----------------
 
-
+var is_dialogue_system_enabled: bool = true
 
 # ----------------- RUN CODE -----------------
 

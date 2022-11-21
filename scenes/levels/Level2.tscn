@@ -22,7 +22,7 @@
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/sprites/petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
-[ext_resource path="res://DialogueManager.tscn" type="PackedScene" id=23]
+[ext_resource path="res://test/dialogues/DialogueManagerTest.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -1390,7 +1390,7 @@ script = ExtResource( 7 )
 [node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
 position = Vector2( -1062, -189 )
 
-[node name="DialogueManager" parent="YSort/NoteBlocksManager/NoteBlock" index="0" instance=ExtResource( 23 )]
+[node name="DialogueManagerTest" parent="YSort/NoteBlocksManager/NoteBlock" index="0" instance=ExtResource( 23 )]
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
 self_modulate = Color( 0, 0.807843, 0.0117647, 1 )
@@ -1446,7 +1446,6 @@ position = Vector2( 671, 650 )
 speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
-[connection signal="interactable_enabled" from="YSort/NoteBlocksManager/NoteBlock" to="YSort/NoteBlocksManager/NoteBlock/DialogueManager" method="send_dialogue"]
 
 [editable path="SequenceOrderSpirtesFeedback"]
 [editable path="SequenceOrderSpirtesFeedback/Sprites/SequenceOrderFeedbackSprite"]

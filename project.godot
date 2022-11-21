@@ -37,12 +37,12 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "DialogueGUI",
 "language": "GDScript",
-"path": "res://dialogue_gui.gd"
+"path": "res://test/dialogue_gui.gd"
 }, {
 "base": "Node",
 "class": "DialogueManager",
 "language": "GDScript",
-"path": "res://dialogue_manager.gd"
+"path": "res://test/dialogues/dialogue_manager.gd"
 }, {
 "base": "HBoxContainer",
 "class": "FullScreenController",
