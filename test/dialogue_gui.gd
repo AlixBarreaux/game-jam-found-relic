@@ -14,7 +14,7 @@ onready var speaker_texture: TextureRect = $SpeakerTexture
 
 
 func _ready() -> void:
-#	self._initialize()
+	self._initialize()
 	return
 
 

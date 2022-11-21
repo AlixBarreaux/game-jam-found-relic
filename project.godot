@@ -235,7 +235,6 @@ run/main_scene="res://scenes/levels/Level2.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"
-config/version="0.1"
 
 [audio]
 
@@ -258,7 +257,7 @@ window/stretch/aspect="keep"
 
 [global]
 
-version=""
+version="0.2.0"
 
 [importer_defaults]
 

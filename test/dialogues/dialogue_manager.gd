@@ -40,6 +40,11 @@ func _initialize() -> void:
 	return
 
 
+func initialize_asserts() -> void:
+	assert(data != [])
+	return
+
+
 func send_dialogue(_arguments: Dictionary) -> void:
 	get_node("%DialogueGUI").receive_dialog(data)
 	return
