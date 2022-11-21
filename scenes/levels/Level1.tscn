@@ -884,9 +884,6 @@ position = Vector2( 456, -1967 )
 [node name="Candle7" parent="Decorations" index="14" instance=ExtResource( 27 )]
 position = Vector2( 2099, -1262 )
 
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
 collision_layer = 8

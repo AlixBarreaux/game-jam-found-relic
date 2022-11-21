@@ -18,7 +18,7 @@ func _ready() -> void:
 #		return
 		
 		
-	OS.set_window_fullscreen(true)
+	OS.set_window_fullscreen(false)
 	TranslationServer.set_locale(OS.get_locale())
 	return
 

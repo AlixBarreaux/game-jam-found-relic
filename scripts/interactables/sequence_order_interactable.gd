@@ -39,12 +39,12 @@ func initialize_signals() -> void:
 func _receive_interaction() -> void:
 	animation_player.play("Press")
 	self.set_enabled(false)
-	self.emit_signal("interactable_enabled", self.id)
-
+	self.emit_signal("interactable_enabled", {"id": self.id} )
 	return
 
+
 func reset() -> void:
-	print(self.name + ": reset() !")
+#	print(self.name + ": reset() !")
 	animation_player.play("Unpress")
 	set_enabled(true)
 

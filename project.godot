@@ -34,6 +34,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/cinematic_menu.gd"
 }, {
+"base": "Control",
+"class": "DialogueGUI",
+"language": "GDScript",
+"path": "res://dialogue_gui.gd"
+}, {
+"base": "Node",
+"class": "DialogueManager",
+"language": "GDScript",
+"path": "res://dialogue_manager.gd"
+}, {
 "base": "HBoxContainer",
 "class": "FullScreenController",
 "language": "GDScript",
@@ -185,6 +195,8 @@ _global_script_class_icons={
 "AudioManagerLevel3": "",
 "BrowserLinkButton": "",
 "CinematicMenu": "",
+"DialogueGUI": "",
+"DialogueManager": "",
 "FullScreenController": "",
 "GameTitleLabel": "",
 "Hero": "",
