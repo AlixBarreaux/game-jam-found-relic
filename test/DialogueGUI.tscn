@@ -9,13 +9,13 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SpeakerTexture" type="TextureRect" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -316.0
 margin_right = 316.0
 
-[node name="LabelMessage" type="Label" parent="."]
+[node name="MessageRichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -23,6 +23,6 @@ anchor_bottom = 1.0
 margin_left = -411.0
 margin_top = -499.0
 margin_right = 411.0
-text = "Override this text please."
-align = 1
-valign = 1
+bbcode_enabled = true
+bbcode_text = "Please [shake]override[/shake] this message."
+text = "Please override this message."

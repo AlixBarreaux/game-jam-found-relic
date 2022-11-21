@@ -13,7 +13,7 @@ class_name DialogueManager
 # This dictionary is base structure you'll see in the Godot editor.
 export var data: Array = [
 	{
-		"message": "Example Message 1",
+		"message": "Example [rainbow][shake]Message[/shake][/rainbow] 1",
 		"sound_file_path": "res://example_sound.ogg",
 		"texture_file_path": "res://assets/sprites/glass.png"
 	}

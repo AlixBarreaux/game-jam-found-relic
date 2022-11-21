@@ -4,10 +4,17 @@ class_name DialogueGUI
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
+# Node References:
+onready var message_rich_text_label: RichTextLabel = $MessageRichTextLabel
+onready var speaker_texture: TextureRect = $SpeakerTexture
+
+
 # ---------------------- RUN CODE ---------------------
 
+
 func _ready() -> void:
-	self._initialize()
+#	self._initialize()
 	return
 
 
@@ -19,33 +26,27 @@ func _initialize() -> void:
 	toggle_enabled(false)
 	return
 
-func _unhandled_input(event: InputEvent) -> void:
-	print(self.name, " Input detected")
-	if event is InputEventMouse:
-		if event is InputEventMouseButton:
-			play_next_speech()
-			get_tree().set_input_as_handled()
-			self.set_process_unhandled_input(false)
+
+func _input(event: InputEvent) -> void:
+	# No idea why this event is registered bellow, so
+	# have to explicitly say no to exclude it
+	if event is InputEventMouseMotion:
 		return
 	
+	
+	
+	
 	if event is InputEventKey or InputEventJoypadButton:
-		if not Input.is_action_just_pressed("ui_select"):
-			return
-		
-#		elif not Input.is_action_just_pressed("ui_accept"):
-#			return
-		
-		elif not Input.is_action_just_pressed("ui_down"):
-			return
-		
-		elif not Input.is_action_just_pressed("move_down"):
-			return
-		
-		elif not event is InputEventMouseButton:
-			return
+		if Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("move_down"):
+			print(self.name, ": Input accepted!")
+			play_next_speech()
+			get_tree().set_input_as_handled()
+			
+	return
 		
 		
-		play_next_speech()
+		
+		
 #		get_tree().set_input_as_handled()
 #		self.set_process_unhandled_input(false)
 	return
@@ -56,9 +57,10 @@ func _unhandled_input(event: InputEvent) -> void:
 var dialogue: Array = []
 var speech_index: int = 0
 
+
 func play_next_speech() -> void:
-	$LabelMessage.text = dialogue[speech_index].message
-	$TextureRect.texture = load(dialogue[speech_index].texture_file_path)
+	message_rich_text_label.bbcode_text = dialogue[speech_index].message
+	speaker_texture.texture = load(dialogue[speech_index].texture_file_path)
 	
 	if speech_index == ( dialogue.size() -1 ):
 		self.stop()
@@ -77,12 +79,9 @@ func stop() -> void:
 
 
 func receive_dialog(data: Array) -> void:
-	print(data)
 	dialogue = data
-	
 	toggle_enabled(true)
 	play_next_speech()
-	
 	
 	return
 
@@ -90,7 +89,7 @@ func receive_dialog(data: Array) -> void:
 func toggle_enabled(enabled: bool) -> void:
 	if enabled:
 		self.show()
-		self.set_process_unhandled_input(true)
+		self.set_process_input(true)
 	else:
 		self.hide()
-		self.set_process_unhandled_input(false)
+		self.set_process_input(false)
