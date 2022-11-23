@@ -10,6 +10,10 @@ onready var message_rich_text_label: RichTextLabel = $MessageRichTextLabel
 onready var speaker_texture: TextureRect = $SpeakerTexture
 
 
+var dialogue: Array = []
+var speech_index: int = 0
+
+
 # ---------------------- RUN CODE ---------------------
 
 
@@ -27,35 +31,34 @@ func _initialize() -> void:
 	return
 
 
-func _input(event: InputEvent) -> void:
-	# No idea why this event is registered bellow, so
-	# have to explicitly say no to exclude it
-	if event is InputEventMouseMotion:
-		return
-	
-	
-	
-	
-	if event is InputEventKey or InputEventJoypadButton:
-		if Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("move_down"):
-			print(self.name, ": Input accepted!")
+var first_input_triggered_once: bool = false
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if (event.get_button_index() == 1) or (event.get_button_index() == 2):
+			if not event.pressed:
+				if not first_input_triggered_once:
+					first_input_triggered_once = true
+					return
+				
+				play_next_speech()
+				self.accept_event()
+	return
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if (event is InputEventKey) or (event is InputEventJoypadButton):
+		if not event.pressed:
+			if not first_input_triggered_once:
+				first_input_triggered_once = true
+				return
+			
 			play_next_speech()
 			get_tree().set_input_as_handled()
-			
-	return
-		
-		
-		
-		
-#		get_tree().set_input_as_handled()
-#		self.set_process_unhandled_input(false)
 	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
-
-var dialogue: Array = []
-var speech_index: int = 0
 
 
 func play_next_speech() -> void:
@@ -67,13 +70,11 @@ func play_next_speech() -> void:
 		return
 	
 	speech_index += 1
-#	yield(get_tree().create_timer(2.0), "timeout")
-#	play_next_speech()
 	return
 
 
 func stop() -> void:
-	print(self.name, ": STOOOOOOOOOOOOOOOOOOOOP!")
+	print(self.name, ": The dialog has stopped, all speech lines have been played!")
 	toggle_enabled(false)
 	return
 
@@ -89,7 +90,9 @@ func receive_dialog(data: Array) -> void:
 func toggle_enabled(enabled: bool) -> void:
 	if enabled:
 		self.show()
-		self.set_process_input(true)
+		self.set_process_unhandled_input(true)
 	else:
 		self.hide()
-		self.set_process_input(false)
+		self.set_process_unhandled_input(false)
+	
+	return

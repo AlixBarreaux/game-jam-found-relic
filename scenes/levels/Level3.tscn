@@ -276,10 +276,6 @@ texture = ExtResource( 11 )
 [node name="AnimationTree" parent="MemoryCardsManager/Group8/MemoryCard" index="4"]
 parameters/playback = SubResource( 17 )
 
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
-self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
 
