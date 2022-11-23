@@ -6,8 +6,11 @@ class_name DialogueGUI
 
 
 # Node References:
-onready var message_rich_text_label: RichTextLabel = $MessageRichTextLabel
-onready var speaker_texture: TextureRect = $SpeakerTexture
+export var speaker_texture_node_path: NodePath = NodePath("")
+export var message_rich_text_label_node_path: NodePath = NodePath("")
+
+onready var speaker_texture: TextureRect = get_node(speaker_texture_node_path)
+onready var message_rich_text_label: RichTextLabel = get_node(message_rich_text_label_node_path)
 
 
 var dialogue: Array = []
