@@ -8,11 +8,15 @@ class_name DialogueGUI
 # Node References:
 export var speaker_texture_node_path: NodePath = NodePath("")
 export var message_rich_text_label_node_path: NodePath = NodePath("")
+export var animation_tree_node_path: NodePath = NodePath("")
 
 onready var speaker_texture: TextureRect = get_node(speaker_texture_node_path)
 onready var message_rich_text_label: RichTextLabel = get_node(message_rich_text_label_node_path)
+onready var animation_tree = get_node(animation_tree_node_path)
+onready var animation_tree_anim_node_state_machine_playback = get_node(animation_tree.get_path()).get("parameters/playback")
 
 
+# Variables
 var dialogue: Array = []
 var speech_index: int = 0
 
@@ -31,6 +35,7 @@ func _initialize() -> void:
 		return
 	
 	toggle_enabled(false)
+	animation_tree.set_active(true)
 	return
 
 
@@ -94,8 +99,10 @@ func toggle_enabled(enabled: bool) -> void:
 	if enabled:
 		self.show()
 		self.set_process_unhandled_input(true)
+		animation_tree_anim_node_state_machine_playback.start("Start")
 	else:
 		self.hide()
 		self.set_process_unhandled_input(false)
+		animation_tree_anim_node_state_machine_playback.travel("End")
 	
 	return

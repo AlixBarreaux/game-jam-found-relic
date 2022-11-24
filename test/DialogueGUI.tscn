@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://test/dialogue_gui.gd" type="Script" id=2]
@@ -7,6 +7,26 @@
 [sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 3 )
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "End"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/End/node = SubResource( 5 )
+states/End/position = Vector2( 668, 59 )
+states/Start/node = SubResource( 6 )
+states/Start/position = Vector2( 412, 59 )
+transitions = [ "Start", "End", SubResource( 9 ) ]
+start_node = "Start"
+end_node = "End"
+graph_offset = Vector2( -35, -2 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "End"
@@ -37,6 +57,7 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 speaker_texture_node_path = NodePath("Panel/SpeakerTexture")
 message_rich_text_label_node_path = NodePath("Panel/MessageRichTextLabel")
+animation_tree_node_path = NodePath("AnimationTree")
 
 [node name="Panel" type="Panel" parent="."]
 anchor_top = 1.0
@@ -66,7 +87,9 @@ bbcode_text = "Please [shake]override[/shake] this message."
 text = "Please override this message."
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 1 )
