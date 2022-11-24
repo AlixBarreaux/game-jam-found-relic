@@ -919,97 +919,95 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Petals" type="Sprite" parent="Decorations" index="0"]
-position = Vector2( 1617, -2423 )
-texture = ExtResource( 21 )
-
-[node name="Petals7" type="Sprite" parent="Decorations" index="1"]
-position = Vector2( 1617, -2423 )
-texture = ExtResource( 21 )
-
-[node name="CandleMelted" parent="Decorations" index="2" instance=ExtResource( 20 )]
-position = Vector2( 971, -286 )
-
-[node name="Candle" parent="Decorations" index="3" instance=ExtResource( 22 )]
+[node name="Candle" parent="Decorations" index="0" instance=ExtResource( 22 )]
 position = Vector2( -96, 247 )
 
-[node name="Candle2" parent="Decorations" index="4" instance=ExtResource( 22 )]
+[node name="Candle2" parent="Decorations" index="1" instance=ExtResource( 22 )]
 position = Vector2( -1129, -349 )
 
-[node name="Petals2" type="Sprite" parent="Decorations" index="5"]
+[node name="Candle3" parent="Decorations" index="2" instance=ExtResource( 22 )]
+position = Vector2( 1762, -1126 )
+
+[node name="Candle4" parent="Decorations" index="3" instance=ExtResource( 22 )]
+position = Vector2( 1600, -3006 )
+
+[node name="Candle5" parent="Decorations" index="4" instance=ExtResource( 22 )]
+position = Vector2( 1868, -450 )
+
+[node name="Candle6" parent="Decorations" index="5" instance=ExtResource( 22 )]
+position = Vector2( 2658, -1796 )
+
+[node name="Candle7" parent="Decorations" index="6" instance=ExtResource( 22 )]
+position = Vector2( -555, -731 )
+
+[node name="Candle8" parent="Decorations" index="7" instance=ExtResource( 22 )]
+position = Vector2( -941, -1906 )
+
+[node name="CandleMelted" parent="Decorations" index="8" instance=ExtResource( 20 )]
+position = Vector2( 971, -286 )
+
+[node name="CandleMelted2" parent="Decorations" index="9" instance=ExtResource( 20 )]
+position = Vector2( 1305, -2207 )
+
+[node name="CandleMelted3" parent="Decorations" index="10" instance=ExtResource( 20 )]
+position = Vector2( 2748, -208 )
+
+[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 20 )]
+position = Vector2( 1709, -1765 )
+
+[node name="CandleMelted5" parent="Decorations" index="12" instance=ExtResource( 20 )]
+position = Vector2( -1101, -2769 )
+
+[node name="CandleMelted6" parent="Decorations" index="13" instance=ExtResource( 20 )]
+position = Vector2( 632, 266 )
+
+[node name="CandleMelted7" parent="Decorations" index="14" instance=ExtResource( 20 )]
+position = Vector2( 2862, -1167 )
+
+[node name="CandleMelted8" parent="Decorations" index="15" instance=ExtResource( 20 )]
+position = Vector2( 8, -3092 )
+
+[node name="CandleMelted9" parent="Decorations" index="16" instance=ExtResource( 20 )]
+position = Vector2( 399, -2425 )
+
+[node name="CandleMelted10" parent="Decorations" index="17" instance=ExtResource( 20 )]
+position = Vector2( 847, -1360 )
+
+[node name="CandleMelted11" parent="Decorations" index="18" instance=ExtResource( 20 )]
+position = Vector2( -178, -1379 )
+
+[node name="CandleMelted12" parent="Decorations" index="19" instance=ExtResource( 20 )]
+position = Vector2( -919, -3415 )
+
+[node name="Petals" type="Sprite" parent="Decorations" index="20"]
+position = Vector2( 1617, -2423 )
+texture = ExtResource( 21 )
+
+[node name="Petals2" type="Sprite" parent="Decorations" index="21"]
 position = Vector2( 2283, -722 )
 texture = ExtResource( 21 )
 
-[node name="Candle3" parent="Decorations" index="6" instance=ExtResource( 22 )]
-position = Vector2( 1762, -1126 )
-
-[node name="Candle4" parent="Decorations" index="7" instance=ExtResource( 22 )]
-position = Vector2( 1600, -3006 )
-
-[node name="CandleMelted2" parent="Decorations" index="8" instance=ExtResource( 20 )]
-position = Vector2( 1305, -2207 )
-
-[node name="Candle5" parent="Decorations" index="9" instance=ExtResource( 22 )]
-position = Vector2( 1868, -450 )
-
-[node name="Candle6" parent="Decorations" index="10" instance=ExtResource( 22 )]
-position = Vector2( 2658, -1796 )
-
-[node name="CandleMelted3" parent="Decorations" index="11" instance=ExtResource( 20 )]
-position = Vector2( 2748, -208 )
-
-[node name="CandleMelted7" parent="Decorations" index="12" instance=ExtResource( 20 )]
-position = Vector2( 2862, -1167 )
-
-[node name="CandleMelted4" parent="Decorations" index="13" instance=ExtResource( 20 )]
-position = Vector2( 1709, -1765 )
-
-[node name="CandleMelted10" parent="Decorations" index="14" instance=ExtResource( 20 )]
-position = Vector2( 847, -1360 )
-
-[node name="Petals3" type="Sprite" parent="Decorations" index="15"]
+[node name="Petals3" type="Sprite" parent="Decorations" index="22"]
 position = Vector2( 1870.21, -3057.82 )
-rotation = -6.28318
 texture = ExtResource( 21 )
 offset = Vector2( -2726.21, 866.844 )
 
-[node name="Petals6" type="Sprite" parent="Decorations" index="16"]
-position = Vector2( 2134, -4232 )
-rotation = -6.28318
-texture = ExtResource( 21 )
-offset = Vector2( -2726.21, 866.844 )
-
-[node name="CandleMelted5" parent="Decorations" index="17" instance=ExtResource( 20 )]
-position = Vector2( -1101, -2769 )
-
-[node name="CandleMelted12" parent="Decorations" index="18" instance=ExtResource( 20 )]
-position = Vector2( -919, -3415 )
-
-[node name="CandleMelted8" parent="Decorations" index="19" instance=ExtResource( 20 )]
-position = Vector2( 8, -3092 )
-
-[node name="CandleMelted9" parent="Decorations" index="20" instance=ExtResource( 20 )]
-position = Vector2( 399, -2425 )
-
-[node name="CandleMelted11" parent="Decorations" index="21" instance=ExtResource( 20 )]
-position = Vector2( -178, -1379 )
-
-[node name="Candle7" parent="Decorations" index="22" instance=ExtResource( 22 )]
-position = Vector2( -555, -731 )
-
-[node name="Candle8" parent="Decorations" index="23" instance=ExtResource( 22 )]
-position = Vector2( -941, -1906 )
-
-[node name="Petals4" type="Sprite" parent="Decorations" index="24"]
+[node name="Petals4" type="Sprite" parent="Decorations" index="23"]
 position = Vector2( 911, -1489 )
 texture = ExtResource( 21 )
 
-[node name="Petals5" type="Sprite" parent="Decorations" index="25"]
+[node name="Petals5" type="Sprite" parent="Decorations" index="24"]
 position = Vector2( 389, -2600 )
 texture = ExtResource( 21 )
 
-[node name="CandleMelted6" parent="Decorations" index="26" instance=ExtResource( 20 )]
-position = Vector2( 632, 266 )
+[node name="Petals6" type="Sprite" parent="Decorations" index="25"]
+position = Vector2( 2134, -4232 )
+texture = ExtResource( 21 )
+offset = Vector2( -2726.21, 866.844 )
+
+[node name="Petals7" type="Sprite" parent="Decorations" index="26"]
+position = Vector2( 1617, -2423 )
+texture = ExtResource( 21 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
 
