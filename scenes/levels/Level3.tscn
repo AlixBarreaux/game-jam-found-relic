@@ -65,6 +65,7 @@ extents = Vector2( 86, 1331 )
 extents = Vector2( 233.5, 458.125 )
 
 [node name="Level3" instance=ExtResource( 1 )]
+self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
 next_level_to_load_path = "res://scenes/gui/EndCinematicMenu.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]

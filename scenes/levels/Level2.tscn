@@ -1140,6 +1140,9 @@ anims/Enable = SubResource( 53 )
 anims/Spawn = SubResource( 54 )
 anims/Win = SubResource( 55 )
 
+[node name="Panel" parent="CanvasLayerLevel" index="0"]
+self_modulate = Color( 0, 0.247059, 0.160784, 1 )
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="MapBoundaries" index="0"]
 collision_layer = 8
 
