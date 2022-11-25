@@ -22,7 +22,7 @@
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/sprites/petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
-[ext_resource path="res://test/dialogues/DialogueManagerTest.tscn" type="PackedScene" id=23]
+[ext_resource path="res://test/dialogues/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -1393,7 +1393,24 @@ script = ExtResource( 7 )
 [node name="NoteBlock" parent="YSort/NoteBlocksManager" index="0" instance=ExtResource( 3 )]
 position = Vector2( -1062, -189 )
 
-[node name="DialogueManagerTest" parent="YSort/NoteBlocksManager/NoteBlock" index="0" instance=ExtResource( 23 )]
+[node name="DialogueManagerInteractableEnabled" parent="YSort/NoteBlocksManager/NoteBlock" index="0" instance=ExtResource( 23 )]
+data = [ {
+"message": "Example Message 1",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+}, {
+"message": "Example Message 2",
+"sound_file_path": "res://mickey_mouse_metal.wav",
+"texture_file_path": "res://assets/sprites/buzzer_body.png"
+}, {
+"message": "Example Message 3",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+}, {
+"message": "Example Message 4",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+} ]
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
 self_modulate = Color( 0, 0.807843, 0.0117647, 1 )

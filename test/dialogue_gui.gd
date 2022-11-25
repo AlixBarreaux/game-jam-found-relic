@@ -18,7 +18,7 @@ onready var animation_tree_anim_node_state_machine_playback = get_node(animation
 
 # Variables
 var dialogue: Array = []
-var speech_index: int = 0
+var speech_index_increment: int = 0
 
 
 # ---------------------- RUN CODE ---------------------
@@ -49,6 +49,10 @@ func _gui_input(event: InputEvent) -> void:
 					first_input_triggered_once = true
 					return
 				
+				if is_last_speech:
+					animation_tree_anim_node_state_machine_playback.travel("End")
+					return
+				
 				play_next_speech()
 				self.accept_event()
 	return
@@ -60,6 +64,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			if not first_input_triggered_once:
 				first_input_triggered_once = true
 				return
+				
+			if is_last_speech:
+				animation_tree_anim_node_state_machine_playback.travel("End")
+				return
 			
 			play_next_speech()
 			get_tree().set_input_as_handled()
@@ -68,17 +76,36 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
+# This helps knowing which animation to play when ending the dialogue
+var is_last_speech: bool = false
 
 func play_next_speech() -> void:
-	message_rich_text_label.bbcode_text = dialogue[speech_index].message
-	speaker_texture.texture = load(dialogue[speech_index].texture_file_path)
+	message_rich_text_label.bbcode_text = dialogue[speech_index_increment].message
+	speaker_texture.texture = load(dialogue[speech_index_increment].texture_file_path)
 	
-	if speech_index == ( dialogue.size() -1 ):
-		self.stop()
+	if is_last_speech:
+		self.play_speech_at_index( dialogue.size() -1 )
+		speech_index_increment = 0
 		return
 	
-	speech_index += 1
+	if speech_index_increment == ( dialogue.size() -1 ):
+		is_last_speech = true
+		self.play_next_speech()
+		return
+	
+	speech_index_increment += 1
 	return
+
+
+func play_speech_at_index(speech_to_play_index: int) -> void:
+	message_rich_text_label.bbcode_text = dialogue[speech_to_play_index].message
+	speaker_texture.texture = load(dialogue[speech_to_play_index].texture_file_path)
+
+
+#func play_last_speech() -> void:
+#	play_speech_at_index( dialogue.size() -1 )
+#	return
+	
 
 
 func stop() -> void:

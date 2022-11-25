@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://test/dialogues/dialogue_manager_timer.gd" type="Script" id=1]
+
+[node name="DialogueManagerTimer" type="Node"]
+script = ExtResource( 1 )
+data = [ {
+"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 1",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+}, {
+"message": "Oh wow timers are... [rainbow][shake]AMAZING![/shake][/rainbow] 1",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+}, {
+"message": "Sempai Le Roi Lion Help me! Too many people sing this music! :(",
+"sound_file_path": "res://example_sound.ogg",
+"texture_file_path": "res://assets/sprites/glass.png"
+} ]

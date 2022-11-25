@@ -28,15 +28,15 @@ onready var dialogue_gui: Control = self.get_node("%DialogueGUI")
 
 
 func _ready() -> void:
-	self._initialize()
+	self._initialize_signals()
 	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
-func _initialize() -> void:
-	parent_node.connect("interactable_enabled", self, "send_dialogue")
+func _initialize_signals() -> void:
+#	parent_node.connect("signal_with_dictionary_argument", self, "send_dialogue_without_arguments")
 	return
 
 
@@ -45,6 +45,11 @@ func initialize_asserts() -> void:
 	return
 
 
-func send_dialogue(_arguments: Dictionary) -> void:
+func _send_dialogue_without_arguments() -> void:
+	get_node("%DialogueGUI").receive_dialog(data)
+	return
+
+
+func _send_dialogue_with_arguments(_arguments: Dictionary) -> void:
 	get_node("%DialogueGUI").receive_dialog(data)
 	return

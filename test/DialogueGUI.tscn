@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://test/dialogue_gui.gd" type="Script" id=2]
@@ -10,6 +10,35 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "End"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "RESET"
 
 [sub_resource type="Animation" id=2]
 resource_name = "Shake"
@@ -88,6 +117,7 @@ text = "Please override this message."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 1 )
+anims/RESET = SubResource( 10 )
 anims/Shake = SubResource( 2 )
 anims/Start = SubResource( 3 )
 
