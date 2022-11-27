@@ -10,6 +10,7 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "End"
+length = 2.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -17,7 +18,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -65,17 +66,17 @@ animation = "End"
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Start"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
 [sub_resource type="AnimationNodeStateMachine" id=7]
 states/End/node = SubResource( 5 )
-states/End/position = Vector2( 668, 59 )
+states/End/position = Vector2( 669, 59 )
 states/Start/node = SubResource( 6 )
 states/Start/position = Vector2( 412, 59 )
-transitions = [ "Start", "End", SubResource( 9 ) ]
+transitions = [ "Start", "End", SubResource( 11 ) ]
 start_node = "Start"
 end_node = "End"
-graph_offset = Vector2( -34, 15 )
+graph_offset = Vector2( -21, -9 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 

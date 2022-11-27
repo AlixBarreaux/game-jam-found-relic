@@ -130,6 +130,6 @@ func toggle_enabled(enabled: bool) -> void:
 	else:
 		self.hide()
 		self.set_process_unhandled_input(false)
-		animation_tree_anim_node_state_machine_playback.travel("End")
+#		animation_tree_anim_node_state_machine_playback.travel("End")
 	
 	return
