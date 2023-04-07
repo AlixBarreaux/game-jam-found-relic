@@ -4,7 +4,7 @@ extends Area2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
-export var can_receive_interaction_from_raycast: bool = true
+export var can_receive_interaction_from_area_2d: bool = true
 
 signal interaction_received
 

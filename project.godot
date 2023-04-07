@@ -79,10 +79,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/creatures/heroes/hero_camera.gd"
 }, {
-"base": "RayCast2D",
-"class": "InteractRaycast2D",
+"base": "Area2D",
+"class": "InteractArea2D",
 "language": "GDScript",
-"path": "res://scripts/interact_raycast_2d.gd"
+"path": "res://scripts/interact_area_2d.gd"
 }, {
 "base": "AudioStreamPlayer",
 "class": "InteractableSoundPlayer",
@@ -219,7 +219,7 @@ _global_script_class_icons={
 "GameTitleLabel": "",
 "Hero": "",
 "HeroCamera": "",
-"InteractRaycast2D": "",
+"InteractArea2D": "",
 "InteractableSoundPlayer": "",
 "InteractionReceiver": "",
 "Level": "",
