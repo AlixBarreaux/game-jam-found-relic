@@ -1512,6 +1512,12 @@ texture = ExtResource( 24 )
 [node name="CollisionShape2D" parent="YSort/HeroMan" index="3"]
 shape = SubResource( 66 )
 
+[node name="Position2D" parent="YSort/HeroMan" index="5"]
+position = Vector2( 0, 50 )
+
+[node name="InteractRayCast2D" parent="YSort/HeroMan/Position2D" index="0"]
+position = Vector2( 0, -50 )
+
 [node name="AnimationPlayer" parent="YSort/HeroMan" index="6"]
 anims/CelebrateVictory = SubResource( 67 )
 "anims/Idle Down" = SubResource( 68 )

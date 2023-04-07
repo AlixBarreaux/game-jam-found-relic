@@ -64,6 +64,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle Left"
@@ -91,6 +103,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -120,6 +144,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=22]
 resource_name = "Idle Up"
@@ -148,13 +184,25 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Move Down"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Position2D/InteractRayCast2D:rotation_degrees")
+tracks/0/path = NodePath("InteractArea2DRotator/InteractArea2D:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -189,13 +237,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Move Left"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Position2D/InteractRayCast2D:rotation_degrees")
+tracks/0/path = NodePath("InteractArea2DRotator/InteractArea2D:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -230,13 +290,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Move Right"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Position2D/InteractRayCast2D:rotation_degrees")
+tracks/0/path = NodePath("InteractArea2DRotator/InteractArea2D:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -271,13 +343,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Move Up"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Position2D/InteractRayCast2D:rotation_degrees")
+tracks/0/path = NodePath("InteractArea2DRotator/InteractArea2D:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -311,6 +395,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("InteractArea2DRotator:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=17]
@@ -411,12 +507,12 @@ __meta__ = {
 
 [node name="PlayerController" parent="." instance=ExtResource( 1 )]
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="InteractArea2DRotator" type="Position2D" parent="."]
 position = Vector2( 0, 50 )
+rotation = 3.14159
 
-[node name="InteractRayCast2D" parent="Position2D" instance=ExtResource( 2 )]
+[node name="InteractArea2D" parent="InteractArea2DRotator" instance=ExtResource( 2 )]
 position = Vector2( 0, -50 )
-collision_mask = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CelebrateVictory = SubResource( 16 )
