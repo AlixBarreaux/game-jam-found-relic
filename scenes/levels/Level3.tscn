@@ -380,8 +380,7 @@ volume_db = -5.0
 bus = "SFX"
 
 [node name="HeroMan" parent="YSort" index="0"]
-position = Vector2( -103, 1074 )
-speed = 330.0
+position = Vector2( -115, 1074 )
 
 [node name="HeroWoman" parent="YSort" index="1"]
 position = Vector2( 1975, 1074 )
