@@ -52,7 +52,7 @@ script = ExtResource( 2 )
 
 [node name="InteractionReceiverArea2D" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionReceiverArea2D"]
