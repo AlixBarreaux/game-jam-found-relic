@@ -334,50 +334,42 @@ bus = "SFX"
 stream = ExtResource( 15 )
 volume_db = -5.0
 autoplay = true
-bus = "SFX"
 first_track_to_play_on_start = true
 is_looped = true
 
 [node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 16 )]
 stream = ExtResource( 20 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 16 )]
 stream = ExtResource( 18 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 16 )]
 stream = ExtResource( 19 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 16 )]
 stream = ExtResource( 4 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track5" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 16 )]
 stream = ExtResource( 21 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track6" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 16 )]
 stream = ExtResource( 14 )
 volume_db = -5.0
-bus = "SFX"
 is_looped = true
 
 [node name="WinTrack" parent="AudioManager/GeneralTracks" index="7" instance=ExtResource( 16 )]
 stream = ExtResource( 13 )
 volume_db = -5.0
-bus = "SFX"
 
 [node name="HeroMan" parent="YSort" index="0"]
 position = Vector2( -115, 1074 )

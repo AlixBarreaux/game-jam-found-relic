@@ -1334,56 +1334,47 @@ bus = "SFX"
 stream = ExtResource( 12 )
 volume_db = -9.0
 autoplay = true
-bus = "SFX"
 first_track_to_play_on_start = true
 is_looped = true
 
 [node name="Plate1Track1" parent="AudioManager/GeneralTracks" index="1" instance=ExtResource( 13 )]
 stream = ExtResource( 6 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track2" parent="AudioManager/GeneralTracks" index="2" instance=ExtResource( 13 )]
 stream = ExtResource( 11 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track3" parent="AudioManager/GeneralTracks" index="3" instance=ExtResource( 13 )]
 stream = ExtResource( 9 )
 volume_db = -10.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track4" parent="AudioManager/GeneralTracks" index="4" instance=ExtResource( 13 )]
 stream = ExtResource( 8 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track5" parent="AudioManager/GeneralTracks" index="5" instance=ExtResource( 13 )]
 stream = ExtResource( 14 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track6" parent="AudioManager/GeneralTracks" index="6" instance=ExtResource( 13 )]
 stream = ExtResource( 15 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="Plate1Track7" parent="AudioManager/GeneralTracks" index="7" instance=ExtResource( 13 )]
 stream = ExtResource( 16 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="WinTrack" parent="AudioManager/GeneralTracks" index="8" instance=ExtResource( 13 )]
 stream = ExtResource( 10 )
 volume_db = -7.0
-bus = "SFX"
 is_looped = true
 
 [node name="NoteBlocksManager" parent="YSort" index="0" instance=ExtResource( 2 )]
