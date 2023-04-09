@@ -15,7 +15,12 @@ export var data: Array = [
 	{
 		"message": "Example [rainbow][shake]Message[/shake][/rainbow] 1",
 		"sound_file_path": "res://example_sound.ogg",
-		"texture_file_path": "res://assets/sprites/glass.png"
+		"texture_file_path": "res://assets/sprites/my_image.png"
+	},
+	{
+		"message": "Example [b][i]Message[/i][/b] 2",
+		"sound_file_path": "res://example_sound_two.ogg",
+		"texture_file_path": "res://assets/sprites/my_image_two.png"
 	}
 ]
 
@@ -28,6 +33,7 @@ onready var dialogue_gui: Control = self.get_node("%DialogueGUI")
 
 
 func _ready() -> void:
+	self._initialize_asserts()
 	self._initialize_signals()
 	return
 
@@ -36,20 +42,16 @@ func _ready() -> void:
 
 
 func _initialize_signals() -> void:
+#	Example implementation to override this method
 #	parent_node.connect("signal_with_dictionary_argument", self, "send_dialogue_without_arguments")
 	return
 
 
-func initialize_asserts() -> void:
+func _initialize_asserts() -> void:
 	assert(data != [])
-	return
 
 
-func _send_dialogue_without_arguments() -> void:
+# The _arguments are not actually used: Game jam code architecture bottleneck.
+# It's only an argument which prevents a signal error.
+func _send_dialogue(_arguments: Dictionary = {} ) -> void:
 	get_node("%DialogueGUI").receive_dialog(data)
-	return
-
-
-func _send_dialogue_with_arguments(_arguments: Dictionary) -> void:
-	get_node("%DialogueGUI").receive_dialog(data)
-	return
