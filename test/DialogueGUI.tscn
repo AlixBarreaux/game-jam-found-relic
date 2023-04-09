@@ -117,6 +117,8 @@ bbcode_enabled = true
 bbcode_text = "Please [shake]override[/shake] this message."
 text = "Please override this message."
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 1 )
 anims/RESET = SubResource( 10 )

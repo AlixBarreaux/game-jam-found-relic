@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://test/dialogues/dialogue_manager.gd" type="Script" id=1]
+[ext_resource path="res://test/speech-resources/candle/dialogue_data.tres" type="Resource" id=2]
+
+[node name="Test" type="Node2D"]
+script = ExtResource( 1 )
+dialogue_data_resource = ExtResource( 2 )

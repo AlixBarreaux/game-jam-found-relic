@@ -4,16 +4,3 @@
 
 [node name="DialogueManagerTimer" type="Node"]
 script = ExtResource( 1 )
-data = [ {
-"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 1",
-"sound_file_path": "res://example_sound.ogg",
-"texture_file_path": "res://assets/sprites/glass.png"
-}, {
-"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 2",
-"sound_file_path": "res://example_sound.ogg",
-"texture_file_path": "res://assets/sprites/glass.png"
-}, {
-"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 3",
-"sound_file_path": "res://example_sound.ogg",
-"texture_file_path": "res://assets/sprites/glass.png"
-} ]

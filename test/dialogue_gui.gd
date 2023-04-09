@@ -17,7 +17,7 @@ onready var animation_tree_anim_node_state_machine_playback = get_node(animation
 
 
 # Variables
-var dialogue: Array = []
+var dialogue: Resource = null
 var speech_index_increment: int = 0
 
 
@@ -80,46 +80,44 @@ func _unhandled_input(event: InputEvent) -> void:
 var is_last_speech: bool = false
 
 func play_next_speech() -> void:
-	message_rich_text_label.bbcode_text = dialogue[speech_index_increment].message
-	speaker_texture.texture = load(dialogue[speech_index_increment].texture_file_path)
+	if dialogue.data[speech_index_increment].message != "":
+		message_rich_text_label.bbcode_text = dialogue.data[speech_index_increment].message
+
+
+	if dialogue.data[speech_index_increment].texture_file_path != "":
+		speaker_texture.texture = load(dialogue.data[speech_index_increment].texture_file_path)
 	
+#	if dialogue.data[speech_index_increment].sound_file_path != "":
+#
+
+
 	if is_last_speech:
-		self.play_speech_at_index( dialogue.size() -1 )
+		self.play_speech_at_index( dialogue.data.size() -1 )
 		speech_index_increment = 0
-		return
+		pass
 	
-	if speech_index_increment == ( dialogue.size() -1 ):
+	if speech_index_increment == ( dialogue.data.size() -1 ):
 		is_last_speech = true
 		self.play_next_speech()
-		return
+		pass
 	
 	speech_index_increment += 1
-	return
 
 
 func play_speech_at_index(speech_to_play_index: int) -> void:
-	message_rich_text_label.bbcode_text = dialogue[speech_to_play_index].message
-	speaker_texture.texture = load(dialogue[speech_to_play_index].texture_file_path)
-
-
-#func play_last_speech() -> void:
-#	play_speech_at_index( dialogue.size() -1 )
-#	return
-	
+	message_rich_text_label.bbcode_text = dialogue.data[speech_to_play_index].message
+#	$Panel/SpeakerTexture.texture = dialogue.data[speech_to_play_index].texture_file_path
 
 
 func stop() -> void:
 	print(self.name, ": The dialog has stopped, all speech lines have been played!")
 	toggle_enabled(false)
-	return
 
 
-func receive_dialog(data: Array) -> void:
+func receive_dialog(data: Resource) -> void:
 	dialogue = data
 	toggle_enabled(true)
 	play_next_speech()
-	
-	return
 
 
 func toggle_enabled(enabled: bool) -> void:

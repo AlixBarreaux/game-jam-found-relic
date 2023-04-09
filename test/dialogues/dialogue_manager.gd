@@ -9,20 +9,27 @@ class_name DialogueManager
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
+
 # The dictionaries must share the same structure for their data.
 # This dictionary is base structure you'll see in the Godot editor.
-export var data: Array = [
-	{
-		"message": "Example [rainbow][shake]Message[/shake][/rainbow] 1",
-		"sound_file_path": "res://example_sound.ogg",
-		"texture_file_path": "res://assets/sprites/my_image.png"
-	},
-	{
-		"message": "Example [b][i]Message[/i][/b] 2",
-		"sound_file_path": "res://example_sound_two.ogg",
-		"texture_file_path": "res://assets/sprites/my_image_two.png"
-	}
-]
+#var data: Array = [
+##	{
+##		"message": "Example [rainbow][shake]Message[/shake][/rainbow] 1",
+##		"texture_file_path": "res://assets/sprites/my_image.png",
+##		"sound_file_path": "res://example_sound.ogg"
+##	},
+##	{
+##		"message": "Example [b][i]Message[/i][/b] 2",
+##		"texture_file_path": "",
+##		"sound_file_path": ""
+##	},
+##	{
+##		"message": "Example [b][i]Message[/i][/b] 2",
+##		"texture_file_path": "res://assets/sprites/my_image_two.png",
+##		"sound_file_path": "res://example_sound_two.ogg"
+##	}
+#]
 
 # Node References
 onready var parent_node: Node = self.get_parent()
@@ -33,11 +40,11 @@ onready var dialogue_gui: DialogueGUI = get_node(self.dialogue_gui_node_path)
 
 # ---------------------- RUN CODE ---------------------
 
+export var dialogue_data_resource: Resource = null
 
 func _ready() -> void:
 	self._initialize_asserts()
 	self._initialize_signals()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -51,10 +58,11 @@ func _initialize_signals() -> void:
 
 func _initialize_asserts() -> void:
 	assert(self.dialogue_gui_node_path != "")
-	assert(data != [])
+	assert(self.dialogue_data_resource != null)
+#	assert(dialogue_data_resource.data != [])
 
 
 # The _arguments are not actually used: Game jam code architecture bottleneck.
 # It's only an argument which prevents a signal error.
 func _send_dialogue(_arguments) -> void:
-	dialogue_gui.receive_dialog(data)
+	dialogue_gui.receive_dialog(dialogue_data_resource)

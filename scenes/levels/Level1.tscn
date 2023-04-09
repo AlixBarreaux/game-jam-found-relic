@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
 [ext_resource path="res://test/dialogues/DialogueManagerTimer.tscn" type="PackedScene" id=28]
+[ext_resource path="res://test/speech-resources/candle/dialogue_data.tres" type="Resource" id=29]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -856,6 +857,7 @@ collision_layer = 0
 
 [node name="DialogueManagerArea2DBodyEntered" parent="SpaceBarTutorialArea2D" index="1" instance=ExtResource( 23 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 29 )
 
 [node name="CandleMeltedDialogueTrigger" parent="Decorations" index="0" instance=ExtResource( 24 )]
 position = Vector2( 498, 1172 )
@@ -865,6 +867,7 @@ anims/Flicker = SubResource( 67 )
 
 [node name="DialogueManagerArea2DBodyEntered" parent="Decorations/CandleMeltedDialogueTrigger/Area2DTrigger" index="1"]
 dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 29 )
 
 [node name="Petals" type="Sprite" parent="Decorations" index="1"]
 position = Vector2( -12, -1188 )
@@ -1163,11 +1166,11 @@ position = Vector2( 72, 0 )
 position = Vector2( 1866, 435 )
 
 [node name="Timer" type="Timer" parent="." index="11"]
-wait_time = 5.0
-autostart = true
+wait_time = 15.0
 
 [node name="DialogueManagerTimer" parent="Timer" index="0" instance=ExtResource( 28 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 29 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
