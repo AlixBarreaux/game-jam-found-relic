@@ -55,11 +55,6 @@ _global_script_classes=[ {
 "path": "res://test/dialogues/dialogue_manager_interactable_enabled.gd"
 }, {
 "base": "DialogueManager",
-"class": "DialogueManagerTest",
-"language": "GDScript",
-"path": "res://test/dialogues/dialogue_manager_test.gd"
-}, {
-"base": "DialogueManager",
 "class": "DialogueManagerTimer",
 "language": "GDScript",
 "path": "res://test/dialogues/dialogue_manager_timer.gd"
@@ -219,7 +214,6 @@ _global_script_class_icons={
 "DialogueManager": "",
 "DialogueManagerArea2DBodyEntered": "",
 "DialogueManagerInteractableEnabled": "",
-"DialogueManagerTest": "",
 "DialogueManagerTimer": "",
 "FullScreenController": "",
 "GameTitleLabel": "",
