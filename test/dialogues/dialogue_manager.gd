@@ -45,7 +45,7 @@ func _ready() -> void:
 
 func _initialize_signals() -> void:
 #	Example implementation to override this method
-#	parent_node.connect("signal_with_dictionary_argument", self, "send_dialogue_without_arguments")
+#	parent_node.connect("signal_with_dictionary_argument", self, "_send_dialogue")
 	return
 
 

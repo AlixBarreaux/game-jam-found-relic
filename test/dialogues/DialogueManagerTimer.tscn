@@ -9,11 +9,11 @@ data = [ {
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 }, {
-"message": "Oh wow timers are... [rainbow][shake]AMAZING![/shake][/rainbow] 1",
+"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 2",
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 }, {
-"message": "Sempai Le Roi Lion Help me! Too many people sing this music! :(",
+"message": "Timer [rainbow][shake]timed out![/shake][/rainbow] 3",
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 } ]
