@@ -1402,6 +1402,7 @@ data = [ {
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 } ]
+dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
 
 [node name="SpriteBody" parent="YSort/NoteBlocksManager/NoteBlock/Sprites" index="0"]
 self_modulate = Color( 0, 0.807843, 0.0117647, 1 )

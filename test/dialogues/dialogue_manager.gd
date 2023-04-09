@@ -26,7 +26,9 @@ export var data: Array = [
 
 # Node References
 onready var parent_node: Node = self.get_parent()
-onready var dialogue_gui: Control = self.get_node("%DialogueGUI")
+
+export var dialogue_gui_node_path: NodePath = ""
+onready var dialogue_gui: DialogueGUI = get_node(self.dialogue_gui_node_path)
 
 
 # ---------------------- RUN CODE ---------------------
@@ -48,10 +50,11 @@ func _initialize_signals() -> void:
 
 
 func _initialize_asserts() -> void:
+	assert(self.dialogue_gui_node_path != "")
 	assert(data != [])
 
 
 # The _arguments are not actually used: Game jam code architecture bottleneck.
 # It's only an argument which prevents a signal error.
 func _send_dialogue(_arguments) -> void:
-	get_node("%DialogueGUI").receive_dialog(data)
+	dialogue_gui.receive_dialog(data)

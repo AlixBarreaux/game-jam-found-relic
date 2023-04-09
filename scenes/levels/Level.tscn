@@ -28,7 +28,6 @@ custom_styles/panel = SubResource( 2 )
 [node name="CanvasLayerGUI" type="CanvasLayer" parent="."]
 
 [node name="DialogueGUI" parent="CanvasLayerGUI" instance=ExtResource( 5 )]
-unique_name_in_owner = true
 visible = false
 
 [node name="PauseMenu" parent="CanvasLayerGUI" instance=ExtResource( 4 )]

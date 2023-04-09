@@ -40,7 +40,6 @@ func initialize_signals() -> void:
 var is_scene_load_requested_already_asked: bool = false
 
 func on_next_scene_load_requested() -> void:
-	print(self.name, ": Scene load requested!")
 	if is_scene_load_requested_already_asked:
 		return
 	is_scene_load_requested_already_asked = true

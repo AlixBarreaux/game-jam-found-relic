@@ -10,12 +10,11 @@ class_name DialogueManagerTimer
 
 
 func _initialize_signals() -> void:
-	parent_node.connect("timeout", self, "_send_dialogue_without_arguments")
+	parent_node.connect("timeout", self, "_send_dialogue")
 	return
 
 
 func send_dialogue_without_arguments() -> void:
 	# Disable timer timeout signal if timer spams it
-	parent_node.disconnect("timeout", self, "_send_dialogue_without_arguments")
-	get_node("%DialogueGUI").receive_dialog(data)
-	return
+	parent_node.disconnect("timeout", self, "_send_dialogue")
+	self.dialogue_gui.receive_dialog(data)
