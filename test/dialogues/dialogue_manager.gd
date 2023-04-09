@@ -53,5 +53,5 @@ func _initialize_asserts() -> void:
 
 # The _arguments are not actually used: Game jam code architecture bottleneck.
 # It's only an argument which prevents a signal error.
-func _send_dialogue(_arguments: Dictionary = {} ) -> void:
+func _send_dialogue(_arguments) -> void:
 	get_node("%DialogueGUI").receive_dialog(data)

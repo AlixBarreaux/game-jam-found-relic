@@ -1386,19 +1386,19 @@ position = Vector2( -1062, -189 )
 
 [node name="DialogueManagerInteractableEnabled" parent="YSort/NoteBlocksManager/NoteBlock" index="0" instance=ExtResource( 23 )]
 data = [ {
-"message": "Example Message 1",
+"message": "Note Block Speech 1",
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 }, {
-"message": "Example Message 2",
+"message": "Note Block Speech 2",
 "sound_file_path": "res://mickey_mouse_metal.wav",
 "texture_file_path": "res://assets/sprites/buzzer_body.png"
 }, {
-"message": "Example Message 3",
+"message": "Note Block Speech 3",
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 }, {
-"message": "Example Message 4",
+"message": "Note Block Speech 4",
 "sound_file_path": "res://example_sound.ogg",
 "texture_file_path": "res://assets/sprites/glass.png"
 } ]
