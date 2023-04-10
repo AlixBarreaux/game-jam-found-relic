@@ -499,6 +499,7 @@ vframes = 3
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+self_modulate = Color( 1, 0, 0.843137, 1 )
 position = Vector2( 0, 50 )
 shape = SubResource( 1 )
 __meta__ = {
@@ -512,6 +513,7 @@ position = Vector2( 0, 50 )
 rotation = 3.14159
 
 [node name="InteractArea2D" parent="InteractArea2DRotator" instance=ExtResource( 2 )]
+modulate = Color( 0.992157, 1, 0, 1 )
 position = Vector2( -4.28372e-06, -99 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

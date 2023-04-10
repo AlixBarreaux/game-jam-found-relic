@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
 [ext_resource path="res://test/dialogues/DialogueManagerTimer.tscn" type="PackedScene" id=28]
 [ext_resource path="res://test/speech-resources/candle/dialogue_data.tres" type="Resource" id=29]
+[ext_resource path="res://test/speech-resources/switch-characters/dialogue_data.tres" type="Resource" id=30]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -648,6 +649,24 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=68]
+resource_name = "Flicker"
+length = 0.3
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 242, 1198 )
 
@@ -857,7 +876,7 @@ collision_layer = 0
 
 [node name="DialogueManagerArea2DBodyEntered" parent="SpaceBarTutorialArea2D" index="1" instance=ExtResource( 23 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
-dialogue_data_resource = ExtResource( 29 )
+dialogue_data_resource = ExtResource( 30 )
 
 [node name="CandleMeltedDialogueTrigger" parent="Decorations" index="0" instance=ExtResource( 24 )]
 position = Vector2( 498, 1172 )
@@ -869,53 +888,63 @@ anims/Flicker = SubResource( 67 )
 dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 29 )
 
-[node name="Petals" type="Sprite" parent="Decorations" index="1"]
+[node name="CandleMeltedDialogueTrigger2" parent="Decorations" index="1" instance=ExtResource( 24 )]
+position = Vector2( 498, 917 )
+
+[node name="AnimationPlayer" parent="Decorations/CandleMeltedDialogueTrigger2" index="1"]
+anims/Flicker = SubResource( 68 )
+
+[node name="DialogueManagerArea2DBodyEntered" parent="Decorations/CandleMeltedDialogueTrigger2/Area2DTrigger" index="1"]
+dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 30 )
+
+[node name="Petals" type="Sprite" parent="Decorations" index="2"]
 position = Vector2( -12, -1188 )
 texture = ExtResource( 25 )
 
-[node name="CandleMelted" parent="Decorations" index="2" instance=ExtResource( 26 )]
+[node name="CandleMelted" parent="Decorations" index="3" instance=ExtResource( 26 )]
 position = Vector2( -743, -973 )
 
-[node name="Candle" parent="Decorations" index="3" instance=ExtResource( 27 )]
+[node name="Candle" parent="Decorations" index="4" instance=ExtResource( 27 )]
 position = Vector2( -617, -1701 )
 
-[node name="Candle2" parent="Decorations" index="4" instance=ExtResource( 27 )]
+[node name="Candle2" parent="Decorations" index="5" instance=ExtResource( 27 )]
 position = Vector2( 396, -2879 )
 
-[node name="Petals2" type="Sprite" parent="Decorations" index="5"]
+[node name="Petals2" type="Sprite" parent="Decorations" index="6"]
 position = Vector2( 2933, -1441 )
 texture = ExtResource( 25 )
 
-[node name="Candle3" parent="Decorations" index="6" instance=ExtResource( 27 )]
+[node name="Candle3" parent="Decorations" index="7" instance=ExtResource( 27 )]
 position = Vector2( 1000, -2226 )
 
-[node name="Candle4" parent="Decorations" index="7" instance=ExtResource( 27 )]
+[node name="Candle4" parent="Decorations" index="8" instance=ExtResource( 27 )]
 position = Vector2( 1337, -2226 )
 
-[node name="CandleMelted2" parent="Decorations" index="8" instance=ExtResource( 26 )]
+[node name="CandleMelted2" parent="Decorations" index="9" instance=ExtResource( 26 )]
 position = Vector2( 550, 534 )
 
-[node name="Candle5" parent="Decorations" index="9" instance=ExtResource( 27 )]
+[node name="Candle5" parent="Decorations" index="10" instance=ExtResource( 27 )]
 position = Vector2( 1762, 48 )
 
-[node name="CandleMelted3" parent="Decorations" index="10" instance=ExtResource( 26 )]
+[node name="CandleMelted3" parent="Decorations" index="11" instance=ExtResource( 26 )]
 position = Vector2( 3020, -669 )
 
-[node name="Candle6" parent="Decorations" index="11" instance=ExtResource( 27 )]
+[node name="Candle6" parent="Decorations" index="12" instance=ExtResource( 27 )]
 position = Vector2( 2803, -1586 )
 
-[node name="CandleMelted4" parent="Decorations" index="12" instance=ExtResource( 26 )]
+[node name="CandleMelted4" parent="Decorations" index="13" instance=ExtResource( 26 )]
 position = Vector2( 2036, -2357 )
 
-[node name="Petals3" type="Sprite" parent="Decorations" index="13"]
+[node name="Petals3" type="Sprite" parent="Decorations" index="14"]
 position = Vector2( -274, -2659 )
 rotation = -6.28318
 texture = ExtResource( 25 )
 
-[node name="CandleMelted5" parent="Decorations" index="14" instance=ExtResource( 26 )]
+[node name="CandleMelted5" parent="Decorations" index="15" instance=ExtResource( 26 )]
 position = Vector2( 456, -1967 )
 
-[node name="Candle7" parent="Decorations" index="15" instance=ExtResource( 27 )]
+[node name="Candle7" parent="Decorations" index="16" instance=ExtResource( 27 )]
 position = Vector2( 2099, -1262 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
@@ -1152,6 +1181,12 @@ shape = SubResource( 65 )
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( 489, 1345 )
 
+[node name="CollisionShape2D" parent="YSort/HeroMan" index="2"]
+self_modulate = Color( 1, 1, 1, 1 )
+
+[node name="InteractArea2D" parent="YSort/HeroMan/InteractArea2DRotator" index="0"]
+modulate = Color( 1, 1, 1, 1 )
+
 [node name="AnimationTree" parent="YSort/HeroMan" index="6"]
 parameters/playback = SubResource( 66 )
 
@@ -1166,11 +1201,19 @@ position = Vector2( 72, 0 )
 position = Vector2( 1866, 435 )
 
 [node name="Timer" type="Timer" parent="." index="11"]
-wait_time = 15.0
+one_shot = true
 
 [node name="DialogueManagerTimer" parent="Timer" index="0" instance=ExtResource( 28 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
-dialogue_data_resource = ExtResource( 29 )
+dialogue_data_resource = ExtResource( 30 )
+
+[node name="Timer2" type="Timer" parent="." index="12"]
+wait_time = 5.0
+one_shot = true
+
+[node name="DialogueManagerTimer" parent="Timer2" index="0" instance=ExtResource( 28 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 30 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
@@ -1178,6 +1221,7 @@ dialogue_data_resource = ExtResource( 29 )
 [editable path="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite"]
 [editable path="SpaceBarTutorialArea2D"]
 [editable path="Decorations/CandleMeltedDialogueTrigger"]
+[editable path="Decorations/CandleMeltedDialogueTrigger2"]
 [editable path="YSort/PlatesManager"]
 [editable path="YSort/PlatesManager/Plate"]
 [editable path="YSort/PlatesManager/Plate2"]

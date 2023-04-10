@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name DialogueLine
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var message: String = \"\"
+export var texture_file_path: String = \"\"
+export var sound_file_path: String = \"\"
+
+
+# ---------------------- RUN CODE ---------------------
+
+# ----------------- DECLARE FUNCTIONS -----------------
+"
+
+[resource]
+script = SubResource( 1 )
+message = "Switch Message 1"
+texture_file_path = ""
+sound_file_path = ""

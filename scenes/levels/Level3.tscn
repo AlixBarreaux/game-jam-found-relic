@@ -25,7 +25,7 @@
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 [ext_resource path="res://test/DialogueTriggersTests/CandleMeltedDialogueTrigger.tscn" type="PackedScene" id=25]
-[ext_resource path="res://test/speech-resources/candle/dialogue_data.tres" type="Resource" id=26]
+[ext_resource path="res://test/speech-resources/switch-characters/dialogue_data.tres" type="Resource" id=26]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -69,13 +69,6 @@ extents = Vector2( 233.5, 458.125 )
 [node name="Level3" instance=ExtResource( 1 )]
 self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
 next_level_to_load_path = "res://scenes/gui/EndCinematicMenu.tscn"
-
-[node name="CandleMeltedDialogueTrigger" parent="." index="0" instance=ExtResource( 25 )]
-position = Vector2( 68, 1090 )
-
-[node name="DialogueManagerArea2DBodyEntered" parent="CandleMeltedDialogueTrigger/Area2DTrigger" index="1"]
-dialogue_gui_node_path = NodePath("../../../CanvasLayerGUI/DialogueGUI")
-dialogue_data_resource = ExtResource( 26 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
 polygon = PoolVector2Array( 870, 1202, -214, 1202, -214, 971, 700, 971, 700, 504, -214, 504, -213, -1361, 2115, -1362, 2113, 504, 1227, 504, 1227, 971, 2113, 971, 2114, 1202, 1042, 1202, 1039, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )
@@ -138,7 +131,7 @@ position = Vector2( 1674, -843 )
 [node name="Candle5" parent="Decorations" index="16" instance=ExtResource( 23 )]
 position = Vector2( -58, -1274 )
 
-[node name="MemoryCardsManager" parent="." index="3" instance=ExtResource( 3 )]
+[node name="MemoryCardsManager" parent="." index="2" instance=ExtResource( 3 )]
 is_lone_card_present = true
 
 [node name="Group1" type="Node2D" parent="MemoryCardsManager" index="0"]
@@ -324,10 +317,10 @@ position = Vector2( 1685, 737.5 )
 rotation = 1.57079
 shape = SubResource( 21 )
 
-[node name="LevelLoadingTransitionTimer" parent="." index="7"]
+[node name="LevelLoadingTransitionTimer" parent="." index="6"]
 wait_time = 8.0
 
-[node name="AudioManager" type="Node" parent="." index="8"]
+[node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 17 )
 
 [node name="Ambient" type="Node" parent="AudioManager" index="0"]
@@ -387,9 +380,15 @@ position = Vector2( -115, 1074 )
 position = Vector2( 1975, 1074 )
 speed = 330.0
 
+[node name="CandleMeltedDialogueTrigger" parent="." index="9" instance=ExtResource( 25 )]
+position = Vector2( 124, 1089 )
+
+[node name="DialogueManagerArea2DBodyEntered" parent="CandleMeltedDialogueTrigger/Area2DTrigger" index="1"]
+dialogue_gui_node_path = NodePath("../../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 26 )
+
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
-[editable path="CandleMeltedDialogueTrigger"]
 [editable path="MemoryCardsManager"]
 [editable path="MemoryCardsManager/Group1/MemoryCard"]
 [editable path="MemoryCardsManager/Group1/MemoryCard2"]
@@ -406,3 +405,4 @@ speed = 330.0
 [editable path="MemoryCardsManager/Group7/MemoryCard"]
 [editable path="MemoryCardsManager/Group7/MemoryCard2"]
 [editable path="MemoryCardsManager/Group8/MemoryCard"]
+[editable path="CandleMeltedDialogueTrigger"]
