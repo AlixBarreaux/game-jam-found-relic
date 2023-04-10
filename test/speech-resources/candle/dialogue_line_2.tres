@@ -5,5 +5,3 @@
 [resource]
 script = ExtResource( 1 )
 message = "Candle Message 2"
-texture_file_path = ""
-sound_file_path = ""

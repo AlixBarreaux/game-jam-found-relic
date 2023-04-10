@@ -6,8 +6,8 @@ class_name DialogueLine
 
 
 export var message: String = ""
-export var texture_file_path: String = ""
-export var sound_file_path: String = ""
+export var texture: StreamTexture = null
+export var sound_file: AudioStream = null
 
 
 # ---------------------- RUN CODE ---------------------

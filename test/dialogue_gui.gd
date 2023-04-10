@@ -6,12 +6,14 @@ class_name DialogueGUI
 
 
 # Node References:
-export var speaker_texture_node_path: NodePath = NodePath("")
-export var message_rich_text_label_node_path: NodePath = NodePath("")
+export var speech_texture_node_path: NodePath = NodePath("")
+export var speech_message_rich_text_label_node_path: NodePath = NodePath("")
+export var speech_sound_player_node_path: NodePath = NodePath("")
 export var animation_tree_node_path: NodePath = NodePath("")
 
-onready var speaker_texture: TextureRect = get_node(speaker_texture_node_path)
-onready var message_rich_text_label: RichTextLabel = get_node(message_rich_text_label_node_path)
+onready var speech_texture: TextureRect = get_node(speech_texture_node_path)
+onready var speech_message_rich_text_label: RichTextLabel = get_node(speech_message_rich_text_label_node_path)
+onready var speech_sound_player: AudioStreamPlayer = get_node(speech_sound_player_node_path)
 onready var animation_tree = get_node(animation_tree_node_path)
 onready var animation_tree_anim_node_state_machine_playback = get_node(animation_tree.get_path()).get("parameters/playback")
 
@@ -25,8 +27,14 @@ var speech_index_increment: int = 0
 
 
 func _ready() -> void:
+	self._initialize_asserts()
 	self._initialize()
-	return
+
+
+func _initialize_asserts () -> void:
+	assert(speech_texture_node_path != "")
+	assert(speech_message_rich_text_label_node_path != "")
+	assert(speech_sound_player_node_path != "")
 
 
 func _initialize() -> void:
@@ -38,8 +46,6 @@ func _initialize() -> void:
 	animation_tree.set_active(true)
 	return
 
-
-var first_input_triggered_once: bool = false
 
 #func _gui_input(event: InputEvent) -> void:
 #	if event is InputEventMouseButton:
@@ -59,66 +65,52 @@ var first_input_triggered_once: bool = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_released("ui_confirm_dialogue"): 
-		if not event.pressed:
-			if not first_input_triggered_once:
-				first_input_triggered_once = true
-				return
-			
-			if is_last_speech:
-				animation_tree_anim_node_state_machine_playback.travel("End")
-				return
-			
-			play_next_speech()
-			get_tree().set_input_as_handled()
-	return
+	if Input.is_action_just_released("ui_confirm_dialogue"):
+		if is_last_speech:
+			animation_tree_anim_node_state_machine_playback.travel("End")
+			return
+		
+		play_next_speech()
+		get_tree().set_input_as_handled()
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
+
+
+func unload_active_speech_line_data() -> void:
+	speech_message_rich_text_label.bbcode_text = ""
+	speech_texture = null
+	speech_sound_player.stop()
+	speech_sound_player.stream = null
 
 
 # This helps knowing which animation to play when ending the dialogue
 var is_last_speech: bool = false
 
 func play_next_speech() -> void:
-#	if dialogue.data[speech_index_increment].message != "":
-#		message_rich_text_label.bbcode_text = dialogue.data[speech_index_increment].message
-#
-#
-#	if dialogue.data[speech_index_increment].texture_file_path != "":
-#		speaker_texture.texture = load(dialogue.data[speech_index_increment].texture_file_path)
-	
-#	if dialogue.data[speech_index_increment].sound_file_path != "":
-
-
-	
-#
 	if speech_index_increment == ( dialogue.data.size() -1 ):
 		is_last_speech = true
-#		self.play_next_speech()
-		print("Last speech detected, index: ", speech_index_increment)
 		play_speech_at_index(speech_index_increment)
 		speech_index_increment = 0
 		return
 	
-#	if is_last_speech:
-#		speech_index_increment = 0
-#		self.play_speech_at_index( dialogue.data.size() -1 )
-#		return
-
-	print("NOT last speech, playing at index: ", speech_index_increment)
 	play_speech_at_index(speech_index_increment)
 	speech_index_increment += 1
 
 
 func play_speech_at_index(speech_to_play_index: int) -> void:
-	print(self.name, ": Playing speech at index: ", speech_to_play_index)
-	message_rich_text_label.bbcode_text = dialogue.data[speech_to_play_index].message
-#	$Panel/SpeakerTexture.texture = dialogue.data[speech_to_play_index].texture_file_path
+	speech_message_rich_text_label.bbcode_text = dialogue.data[speech_to_play_index].message
+	
+	print(self.name, ": if dialogue.data[speech_index_increment].texture: ", dialogue.data[speech_index_increment].texture)
+	if dialogue.data[speech_index_increment].texture != null:
+		speech_texture.texture = dialogue.data[speech_index_increment].texture
+	
+	if dialogue.data[speech_index_increment].sound_file != null:
+		speech_sound_player.stream = dialogue.data[speech_index_increment].sound_file
+		speech_sound_player.play()
 
 
 func stop() -> void:
-	print(self.name, ": The dialog has stopped, all speech lines have been played!")
 	is_last_speech = false
 	toggle_enabled(false)
 
