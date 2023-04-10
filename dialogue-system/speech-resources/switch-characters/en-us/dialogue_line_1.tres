@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://test/speech-resources/dialogue_line.gd" type="Script" id=1]
+[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/godot_icon.png" type="Texture" id=2]
 
 [resource]

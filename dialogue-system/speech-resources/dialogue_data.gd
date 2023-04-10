@@ -2,6 +2,10 @@ extends Resource
 class_name DialogueData
 
 
+# Script loaded by resource file: dialogue_data.tres
+# Each entry in the data array is fed by a dialogue_line_x.tres file
+
+
 # ----------------- DECLARE VARIABLES -----------------
 
 

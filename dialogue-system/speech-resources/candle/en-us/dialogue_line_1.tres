@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://test/speech-resources/dialogue_line.gd" type="Script" id=1]
+[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/key_note.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound/levels/good.ogg" type="AudioStream" id=3]
 

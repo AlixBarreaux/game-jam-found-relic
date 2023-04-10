@@ -19,7 +19,7 @@ onready var animation_tree_anim_node_state_machine_playback = get_node(animation
 
 
 # Variables
-var dialogue: Resource = null
+onready var dialogue: Resource = null
 var speech_index_increment: int = 0
 
 
@@ -87,7 +87,7 @@ func unload_active_speech_line_data() -> void:
 # This helps knowing which animation to play when ending the dialogue
 var is_last_speech: bool = false
 
-func play_next_speech() -> void:
+func play_next_speech() -> void:	
 	if speech_index_increment == ( dialogue.data.size() -1 ):
 		is_last_speech = true
 		play_speech_at_index(speech_index_increment)

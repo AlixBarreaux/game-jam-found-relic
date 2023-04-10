@@ -37,37 +37,37 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "DialogueData",
 "language": "GDScript",
-"path": "res://test/speech-resources/dialogue_data.gd"
+"path": "res://dialogue-system/speech-resources/dialogue_data.gd"
 }, {
 "base": "Control",
 "class": "DialogueGUI",
 "language": "GDScript",
-"path": "res://test/dialogue_gui.gd"
+"path": "res://dialogue-system/dialogue_gui.gd"
 }, {
 "base": "Resource",
 "class": "DialogueLine",
 "language": "GDScript",
-"path": "res://test/speech-resources/dialogue_line.gd"
+"path": "res://dialogue-system/speech-resources/dialogue_line.gd"
 }, {
 "base": "Node",
 "class": "DialogueManager",
 "language": "GDScript",
-"path": "res://test/dialogues/dialogue_manager.gd"
+"path": "res://dialogue-system/dialogue-managers/dialogue_manager.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerArea2DBodyEntered",
 "language": "GDScript",
-"path": "res://test/dialogues/dialogue_manager_area2d_body_entered.gd"
+"path": "res://dialogue-system/dialogue-managers/dialogue_manager_area2d_body_entered.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
 "language": "GDScript",
-"path": "res://test/dialogues/dialogue_manager_interactable_enabled.gd"
+"path": "res://dialogue-system/dialogue-managers/dialogue_manager_interactable_enabled.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerTimer",
 "language": "GDScript",
-"path": "res://test/dialogues/dialogue_manager_timer.gd"
+"path": "res://dialogue-system/dialogue-managers/dialogue_manager_timer.gd"
 }, {
 "base": "HBoxContainer",
 "class": "FullScreenController",
@@ -353,6 +353,8 @@ ui_confirm_dialogue={
 [locale]
 
 translations=PoolStringArray( "res://translations/fr/menus_fr.po" )
+translation_remaps={
+}
 
 [physics]
 
