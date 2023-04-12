@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://dialogue-system/dialogue-managers/DialogueManagerArea2DBodyEntered.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dialogue-system/dialogue-managers/area2d-body-entered/DialogueManagerArea2DBodyEntered.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=1]

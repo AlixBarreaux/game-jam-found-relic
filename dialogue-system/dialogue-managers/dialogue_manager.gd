@@ -45,6 +45,7 @@ export var dialogue_data_resource: Resource = null
 func _ready() -> void:
 	self._initialize_asserts()
 	self._initialize_signals()
+	self._custom_on_ready()
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -62,7 +63,14 @@ func _initialize_asserts() -> void:
 #	assert(dialogue_data_resource.data != [])
 
 
+# Override to do something on ready rather than overriding ready and not 
+# executing the _ready() function
+func _custom_on_ready() -> void:
+	return
+
+
 # The _arguments are not actually used: Game jam code architecture bottleneck.
 # It's only an argument which prevents a signal error.
+# Just provide 0 as an argument if you want to call this method directly.
 func _send_dialogue(_arguments) -> void:
 	dialogue_gui.receive_dialog(dialogue_data_resource)

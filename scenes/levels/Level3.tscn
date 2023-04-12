@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
@@ -25,7 +25,9 @@
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 [ext_resource path="res://dialogue-system/dialogue-trigger-scenes/CandleMeltedDialogueTrigger.tscn" type="PackedScene" id=25]
-[ext_resource path="res://dialogue-system/speech-resources/switch-characters/en-us/dialogue_data.tres" type="Resource" id=26]
+[ext_resource path="res://dialogue-system/speech-resources/switch-characters/underwear/en-us/dialogue_data.tres" type="Resource" id=26]
+[ext_resource path="res://dialogue-system/speech-resources/flip-card/underwear/en-us/dialogue_data.tres" type="Resource" id=27]
+[ext_resource path="res://dialogue-system/dialogue-managers/interact/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=28]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -273,10 +275,14 @@ parameters/playback = SubResource( 16 )
 [node name="MemoryCard" parent="MemoryCardsManager/Group8" index="0" instance=ExtResource( 2 )]
 position = Vector2( 38, -625 )
 
+[node name="DialogueManagerInteractableEnabled" parent="MemoryCardsManager/Group8/MemoryCard" index="0" instance=ExtResource( 28 )]
+dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 27 )
+
 [node name="HeadsSprite" parent="MemoryCardsManager/Group8/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 11 )
 
-[node name="AnimationTree" parent="MemoryCardsManager/Group8/MemoryCard" index="4"]
+[node name="AnimationTree" parent="MemoryCardsManager/Group8/MemoryCard" index="5"]
 parameters/playback = SubResource( 17 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
