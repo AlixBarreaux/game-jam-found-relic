@@ -1,6 +1,9 @@
 extends Resource
 class_name DialogueLine
 
+# Base script for the resource dialogue_line.tres
+# The data fed in this resource file is the data which will be played in the 
+# DialogueGUI by triggering a DialogueManager
 
 # ----------------- DECLARE VARIABLES -----------------
 
