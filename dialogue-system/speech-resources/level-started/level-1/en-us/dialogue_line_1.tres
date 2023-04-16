@@ -20,4 +20,4 @@ export var sound_file: AudioStream = null
 
 [resource]
 script = SubResource( 1 )
-message = "Underwear Message 1"
+message = "Level 1 Started Message 1"

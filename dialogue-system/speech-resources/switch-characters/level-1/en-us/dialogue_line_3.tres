@@ -1,6 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://assets/sprites/play_icon_active.png" type="Texture" id=1]
+[gd_resource type="Resource" load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
@@ -22,5 +20,4 @@ export var sound_file: AudioStream = null
 
 [resource]
 script = SubResource( 1 )
-message = "Underwear Message 3"
-texture = ExtResource( 1 )
+message = "Switch Characters Level 1 Message 3"

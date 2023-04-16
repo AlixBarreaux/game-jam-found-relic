@@ -60,6 +60,11 @@ _global_script_classes=[ {
 "path": "res://dialogue-system/dialogue-managers/area2d-body-entered/dialogue_manager_area2d_body_entered.gd"
 }, {
 "base": "DialogueManager",
+"class": "DialogueManagerHeroSwitchedOnce",
+"language": "GDScript",
+"path": "res://dialogue-system/dialogue-managers/hero-switched-once/dialogue_manager_hero_switched_once.gd"
+}, {
+"base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
 "language": "GDScript",
 "path": "res://dialogue-system/dialogue-managers/interact/dialogue_manager_interactable_enabled.gd"
@@ -230,6 +235,7 @@ _global_script_class_icons={
 "DialogueLine": "",
 "DialogueManager": "",
 "DialogueManagerArea2DBodyEntered": "",
+"DialogueManagerHeroSwitchedOnce": "",
 "DialogueManagerInteractableEnabled": "",
 "DialogueManagerLevelStart": "",
 "DialogueManagerTimer": "",

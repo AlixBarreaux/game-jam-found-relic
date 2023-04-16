@@ -20,4 +20,4 @@ export var sound_file: AudioStream = null
 
 [resource]
 script = SubResource( 1 )
-message = "Underwear Message 4"
+message = "NoteBlock Enabled Message 2"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -29,8 +29,12 @@
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
 [ext_resource path="res://dialogue-system/dialogue-managers/timer/DialogueManagerTimer.tscn" type="PackedScene" id=28]
 [ext_resource path="res://dialogue-system/speech-resources/candle/en-us/dialogue_data.tres" type="Resource" id=29]
-[ext_resource path="res://dialogue-system/speech-resources/switch-characters/underwear/en-us/dialogue_data.tres" type="Resource" id=30]
+[ext_resource path="res://dialogue-system/speech-resources/switch-characters/level-1/en-us/dialogue_data.tres" type="Resource" id=30]
 [ext_resource path="res://dialogue-system/dialogue-managers/level-start/DialogueManagerLevelStart.tscn" type="PackedScene" id=31]
+[ext_resource path="res://dialogue-system/speech-resources/level-started/level-1/en-us/dialogue_data.tres" type="Resource" id=32]
+[ext_resource path="res://dialogue-system/dialogue-managers/interact/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=33]
+[ext_resource path="res://dialogue-system/speech-resources/flip-card/en-us/dialogue_data.tres" type="Resource" id=34]
+[ext_resource path="res://dialogue-system/dialogue-managers/hero-switched-once/dialogue_manager_hero_switched_once.gd" type="Script" id=35]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -1140,6 +1144,10 @@ self_modulate = Color( 0.862745, 0, 0, 1 )
 [node name="CollisionShape2D" parent="YSort/PlatesManager/Plate/InteractionReceiverArea2D" index="0"]
 position = Vector2( 0, 0 )
 
+[node name="DialogueManagerInteractableEnabled" parent="YSort/PlatesManager/Plate" index="3" instance=ExtResource( 33 )]
+dialogue_gui_node_path = NodePath("../../../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 34 )
+
 [node name="Plate2" parent="YSort/PlatesManager" index="1" instance=ExtResource( 2 )]
 position = Vector2( 1880, -652 )
 
@@ -1201,24 +1209,22 @@ position = Vector2( 72, 0 )
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )
 
+[node name="DialogueManagerHeroSwitchedOnce" type="Node" parent="YSort" index="3"]
+script = ExtResource( 35 )
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 30 )
+
 [node name="Timer" type="Timer" parent="." index="11"]
+wait_time = 3.0
 one_shot = true
 
 [node name="DialogueManagerTimer" parent="Timer" index="0" instance=ExtResource( 28 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 30 )
 
-[node name="Timer2" type="Timer" parent="." index="12"]
-wait_time = 5.0
-one_shot = true
-
-[node name="DialogueManagerTimer" parent="Timer2" index="0" instance=ExtResource( 28 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
-dialogue_data_resource = ExtResource( 30 )
-
-[node name="DialogueManagerLevelStart" parent="." index="13" instance=ExtResource( 31 )]
+[node name="DialogueManagerLevelStart" parent="." index="12" instance=ExtResource( 31 )]
 dialogue_gui_node_path = NodePath("../CanvasLayerGUI/DialogueGUI")
-dialogue_data_resource = ExtResource( 30 )
+dialogue_data_resource = ExtResource( 32 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

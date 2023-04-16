@@ -25,8 +25,8 @@
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 [ext_resource path="res://dialogue-system/dialogue-trigger-scenes/CandleMeltedDialogueTrigger.tscn" type="PackedScene" id=25]
-[ext_resource path="res://dialogue-system/speech-resources/switch-characters/underwear/en-us/dialogue_data.tres" type="Resource" id=26]
-[ext_resource path="res://dialogue-system/speech-resources/flip-card/underwear/en-us/dialogue_data.tres" type="Resource" id=27]
+[ext_resource path="res://dialogue-system/speech-resources/switch-characters/level-1/en-us/dialogue_data.tres" type="Resource" id=26]
+[ext_resource path="res://dialogue-system/speech-resources/flip-card/en-us/dialogue_data.tres" type="Resource" id=27]
 [ext_resource path="res://dialogue-system/dialogue-managers/interact/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=28]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]

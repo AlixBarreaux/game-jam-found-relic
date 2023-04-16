@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name DialogueLine
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var message: String = \"\"
+export var texture: StreamTexture = null
+export var sound_file: AudioStream = null
+
+
+# ---------------------- RUN CODE ---------------------
+
+# ----------------- DECLARE FUNCTIONS -----------------
+"
+
+[resource]
+script = SubResource( 1 )
+message = "Switch Characters Level 1 Message 2"

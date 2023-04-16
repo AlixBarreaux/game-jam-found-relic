@@ -23,7 +23,7 @@
 [ext_resource path="res://assets/sprites/petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
 [ext_resource path="res://dialogue-system/dialogue-managers/interact/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=23]
-[ext_resource path="res://dialogue-system/speech-resources/switch-characters/underwear/en-us/dialogue_data.tres" type="Resource" id=24]
+[ext_resource path="res://dialogue-system/speech-resources/switch-characters/level-1/en-us/dialogue_data.tres" type="Resource" id=24]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
