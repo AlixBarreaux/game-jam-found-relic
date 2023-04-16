@@ -124,6 +124,7 @@ func receive_dialog(data: Resource) -> void:
 
 func toggle_enabled(enabled: bool) -> void:
 	if enabled:
+		Events.emit_signal("dialogue_gui_enabled")
 		self.show()
 		self.set_process_unhandled_input(true)
 		animation_tree_anim_node_state_machine_playback.start("Start")
@@ -131,4 +132,5 @@ func toggle_enabled(enabled: bool) -> void:
 		self.hide()
 		self.set_process_unhandled_input(false)
 #		animation_tree_anim_node_state_machine_playback.travel("End")
+		Events.emit_signal("dialogue_gui_disabled")
 

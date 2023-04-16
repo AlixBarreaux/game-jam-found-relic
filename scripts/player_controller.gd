@@ -19,7 +19,6 @@ onready var hero: KinematicBody2D = self.get_parent()
 func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
-	return
 
 
 func _physics_process(_delta: float) -> void:
@@ -48,24 +47,30 @@ func initialize_asserts() -> void:
 func initialize_signals() -> void:
 	Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched")
 	Events.connect("level_completed", self, "on_level_completed")
-	return
+	
+	Events.connect("dialogue_gui_disabled", self, "enable")
+	Events.connect("dialogue_gui_enabled", self, "disable")
+
+func disable() -> void:
+	self.set_process_unhandled_input(false)
+	hero.velocity = Vector2(0.0, 0.0)
+
+func enable() -> void:
+	self.set_process_unhandled_input(true)
 
 
 func on_controlled_hero_switched() -> void:
 	self.toggle_enabled()
-	return
 
 
 func on_level_completed() -> void:
 	print(self.name, ": Level completed, disabling!")
 	self.set_enabled(false)
-	return
 
 
 func get_all_inputs() -> void:
 	get_switch_characters_input()
 	get_movement_input()
-	return
 
 
 func get_movement_input() -> void:
@@ -82,7 +87,6 @@ func get_movement_input() -> void:
 		hero.direction.y = 1
 
 	hero.velocity = hero.direction.normalized() * hero.speed
-	return
 
 
 func get_switch_characters_input() -> void:
@@ -94,10 +98,8 @@ func get_switch_characters_input() -> void:
 func set_enabled(enabled: bool) -> void:
 	hero.is_controlled = enabled
 	self.set_process_unhandled_input(enabled)
-	return
 
 
 func toggle_enabled() -> void:
 	hero.is_controlled = !hero.is_controlled
 	self.set_process_unhandled_input(hero.is_controlled)
-	return
