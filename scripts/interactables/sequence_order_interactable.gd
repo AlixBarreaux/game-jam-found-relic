@@ -24,7 +24,6 @@ signal interactable_enabled
 
 func _ready() -> void:
 	self.initialize_signals()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -33,18 +32,15 @@ func _ready() -> void:
 func initialize_signals() -> void:
 	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
 	self.parent_manager.connect("invalid_sequence_order_given", self, "reset")
-	return
 
 
 func _receive_interaction() -> void:
 	animation_player.play("Press")
 	self.set_enabled(false)
 	self.emit_signal("interactable_enabled", {"id": self.id} )
-	return
 
 
 func reset() -> void:
-#	print(self.name + ": reset() !")
 	animation_player.play("Unpress")
 	set_enabled(true)
 
@@ -54,5 +50,3 @@ func set_enabled(enabled: bool) -> void:
 		collision_shape_2d.set_deferred("disabled", false)
 	else:
 		collision_shape_2d.set_deferred("disabled", true)
-		
-	return

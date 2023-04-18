@@ -44,7 +44,6 @@ func _initialize() -> void:
 	
 	toggle_enabled(false)
 	animation_tree.set_active(true)
-	return
 
 
 #func _gui_input(event: InputEvent) -> void:

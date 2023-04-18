@@ -8,9 +8,9 @@ extends Node
 # ----------------- DECLARE VARIABLES -----------------
 
 
-
-
 onready var hero: KinematicBody2D = self.get_parent()
+
+signal interaction_input_pressed
 
 
 # ----------------- RUN CODE -----------------
@@ -26,13 +26,11 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	hero.velocity = hero.move_and_slide(hero.velocity)
-	return
 
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if hero.is_controlled:
 		self.get_all_inputs()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -41,7 +39,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 func initialize_asserts() -> void:
 	# The parent node must be a Hero! (Verified by name, change it if needed)
 	assert(hero is Hero)
-	return
 
 
 func initialize_signals() -> void:
@@ -51,9 +48,11 @@ func initialize_signals() -> void:
 	Events.connect("dialogue_gui_disabled", self, "enable")
 	Events.connect("dialogue_gui_enabled", self, "disable")
 
+
 func disable() -> void:
 	self.set_process_unhandled_input(false)
 	hero.velocity = Vector2(0.0, 0.0)
+
 
 func enable() -> void:
 	self.set_process_unhandled_input(true)
@@ -94,8 +93,6 @@ func get_switch_characters_input() -> void:
 	if Input.is_action_just_pressed("switch_characters"):
 		Events.emit_signal("controlled_hero_switched")
 
-
-signal interaction_input_pressed
 
 func get_interaction_input() -> void:
 	if Input.is_action_just_pressed("interact"):
