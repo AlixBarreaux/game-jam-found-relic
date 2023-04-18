@@ -1190,12 +1190,6 @@ shape = SubResource( 65 )
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( 489, 1345 )
 
-[node name="CollisionShape2D" parent="YSort/HeroMan" index="2"]
-self_modulate = Color( 1, 1, 1, 1 )
-
-[node name="InteractArea2D" parent="YSort/HeroMan/InteractArea2DRotator" index="0"]
-modulate = Color( 1, 1, 1, 1 )
-
 [node name="AnimationTree" parent="YSort/HeroMan" index="6"]
 parameters/playback = SubResource( 66 )
 

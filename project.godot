@@ -273,7 +273,7 @@ _global_script_class_icons={
 [application]
 
 config/name="O Key Cupid"
-run/main_scene="res://scenes/levels/Level1.tscn"
+run/main_scene="res://scenes/levels/Level2.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"

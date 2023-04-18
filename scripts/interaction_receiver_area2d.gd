@@ -14,9 +14,9 @@ signal interaction_received
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
+
 func _receive_interaction() -> void:
 	self.emit_signal("interaction_received")
-	return
 
 
 func _on_InteractionReceiverArea2D_body_entered(_body: PhysicsBody2D) -> void:

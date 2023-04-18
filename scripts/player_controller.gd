@@ -69,8 +69,9 @@ func on_level_completed() -> void:
 
 
 func get_all_inputs() -> void:
-	get_switch_characters_input()
 	get_movement_input()
+	get_switch_characters_input()
+	get_interaction_input()
 
 
 func get_movement_input() -> void:
@@ -92,7 +93,13 @@ func get_movement_input() -> void:
 func get_switch_characters_input() -> void:
 	if Input.is_action_just_pressed("switch_characters"):
 		Events.emit_signal("controlled_hero_switched")
-	return
+
+
+signal interaction_input_pressed
+
+func get_interaction_input() -> void:
+	if Input.is_action_just_pressed("interact"):
+		self.emit_signal("interaction_input_pressed")
 
 
 func set_enabled(enabled: bool) -> void:
