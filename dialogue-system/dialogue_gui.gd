@@ -116,7 +116,7 @@ func stop() -> void:
 	toggle_enabled(false)
 
 
-func receive_dialog(data: Resource) -> void:
+func receive_dialogue(data: Resource) -> void:
 	dialogue = data
 	toggle_enabled(true)
 	play_next_speech()

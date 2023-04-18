@@ -4,7 +4,7 @@ class_name DialogueManager
 # 
 
 # If a new entry is added in the base dictionary structure,
-# update it in all the existing dialogs!
+# update it in all the existing dialogues!
 # Remember to translate the data fed here into the .po files!
 
 # ----------------- DECLARE VARIABLES -----------------
@@ -73,4 +73,4 @@ func _custom_on_ready() -> void:
 # It's only an argument which prevents a signal error.
 # Just provide 0 as an argument if you want to call this method directly.
 func _send_dialogue(_arguments) -> void:
-	dialogue_gui.receive_dialog(dialogue_data_resource)
+	dialogue_gui.receive_dialogue(dialogue_data_resource)

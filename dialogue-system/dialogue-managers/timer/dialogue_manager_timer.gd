@@ -16,4 +16,4 @@ func _initialize_signals() -> void:
 #func send_dialogue_without_arguments() -> void:
 #	# Disable timer timeout signal if timer spams it
 #	parent_node.disconnect("timeout", self, "_send_dialogue")
-#	self.dialogue_gui.receive_dialog(data)
+#	self.dialogue_gui.receive_dialogue(data)
