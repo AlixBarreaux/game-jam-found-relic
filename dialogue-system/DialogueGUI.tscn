@@ -95,10 +95,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -400.0
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_bottom = 1.0
 margin_right = 516.0
+mouse_filter = 2
 alignment = 1
 
 [node name="SpeechTexture" type="TextureRect" parent="Panel"]
@@ -107,11 +109,13 @@ margin_top = 52.0
 margin_right = 362.0
 margin_bottom = 352.0
 rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
 
 [node name="SpeechMessage" type="RichTextLabel" parent="Panel"]
 margin_left = 410.0
 margin_right = 1860.0
 margin_bottom = 400.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
 bbcode_text = "Please [shake]override[/shake] this message."

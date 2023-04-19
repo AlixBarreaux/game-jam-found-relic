@@ -31,6 +31,22 @@ func _ready() -> void:
 	self._initialize()
 
 
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if (event.get_button_index() == 1) or (event.get_button_index() == 2):
+			if not event.is_pressed():
+				on_input_triggered()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_released("ui_confirm_dialogue"):
+		self.on_input_triggered()
+
+
+
+# ----------------- DECLARE FUNCTIONS -----------------
+
+
 func _initialize_asserts () -> void:
 	assert(speech_texture_rect_node_path != "")
 	assert(speech_message_rich_text_label_node_path != "")
@@ -46,34 +62,13 @@ func _initialize() -> void:
 	animation_tree.set_active(true)
 
 
-#func _gui_input(event: InputEvent) -> void:
-#	if event is InputEventMouseButton:
-#		if (event.get_button_index() == 1) or (event.get_button_index() == 2):
-#			if not event.pressed:
-#				if not first_input_triggered_once:
-#					first_input_triggered_once = true
-#					return
-#
-#				if is_last_speech:
-#					animation_tree_anim_node_state_machine_playback.travel("End")
-#					return
-#
-#				play_next_speech()
-#				self.accept_event()
-#	return
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_released("ui_confirm_dialogue"):
-		if is_last_speech:
+func on_input_triggered() -> void:
+	if is_last_speech:
 			animation_tree_anim_node_state_machine_playback.travel("End")
 			return
 		
-		play_next_speech()
-		get_tree().set_input_as_handled()
-
-
-# ----------------- DECLARE FUNCTIONS -----------------
+	play_next_speech()
+	get_tree().set_input_as_handled()
 
 
 func unload_active_speech_line_data() -> void:
