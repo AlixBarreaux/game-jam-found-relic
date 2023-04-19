@@ -60,11 +60,6 @@ _global_script_classes=[ {
 "path": "res://dialogue-system/dialogue-managers/area2d-body-entered/dialogue_manager_area2d_body_entered.gd"
 }, {
 "base": "DialogueManager",
-"class": "DialogueManagerHeroSwitchedOnce",
-"language": "GDScript",
-"path": "res://dialogue-system/dialogue-managers/hero-switched-once/dialogue_manager_hero_switched_once.gd"
-}, {
-"base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
 "language": "GDScript",
 "path": "res://dialogue-system/dialogue-managers/interact/dialogue_manager_interactable_enabled.gd"
@@ -235,7 +230,6 @@ _global_script_class_icons={
 "DialogueLine": "",
 "DialogueManager": "",
 "DialogueManagerArea2DBodyEntered": "",
-"DialogueManagerHeroSwitchedOnce": "",
 "DialogueManagerInteractableEnabled": "",
 "DialogueManagerLevelStart": "",
 "DialogueManagerTimer": "",
@@ -273,7 +267,7 @@ _global_script_class_icons={
 [application]
 
 config/name="O Key Cupid"
-run/main_scene="res://scenes/levels/Level2.tscn"
+run/main_scene="res://scenes/gui/SplashScreen.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"
