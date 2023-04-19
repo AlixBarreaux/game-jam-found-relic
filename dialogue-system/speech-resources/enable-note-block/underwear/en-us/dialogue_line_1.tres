@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/godot_icon.png" type="Texture" id=2]
-
-[resource]
-script = ExtResource( 1 )
-message = "Switch Character Message 1"
-texture = ExtResource( 2 )

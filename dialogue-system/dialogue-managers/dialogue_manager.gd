@@ -1,35 +1,14 @@
 extends Node
 class_name DialogueManager
 
-# 
+# This is the node "sending" the dialogue data to the DialogueGUI present in the
+# Level derived scene. (EG: Level1.tscn)
+# It takes in a dialogue_data resource file.
+# GUI node = DialogueGUI in the Level scene.
 
-# If a new entry is added in the base dictionary structure,
-# update it in all the existing dialogues!
-# Remember to translate the data fed here into the .po files!
 
 # ----------------- DECLARE VARIABLES -----------------
 
-
-
-# The dictionaries must share the same structure for their data.
-# This dictionary is base structure you'll see in the Godot editor.
-#var data: Array = [
-##	{
-##		"message": "Example [rainbow][shake]Message[/shake][/rainbow] 1",
-##		"texture_file_path": "res://assets/sprites/my_image.png",
-##		"sound_file_path": "res://example_sound.ogg"
-##	},
-##	{
-##		"message": "Example [b][i]Message[/i][/b] 2",
-##		"texture_file_path": "",
-##		"sound_file_path": ""
-##	},
-##	{
-##		"message": "Example [b][i]Message[/i][/b] 2",
-##		"texture_file_path": "res://assets/sprites/my_image_two.png",
-##		"sound_file_path": "res://example_sound_two.ogg"
-##	}
-#]
 
 # Node References
 onready var parent_node: Node = self.get_parent()
@@ -60,7 +39,7 @@ func _initialize_signals() -> void:
 func _initialize_asserts() -> void:
 	assert(self.dialogue_gui_node_path != "")
 	assert(self.dialogue_data_resource != null)
-#	assert(dialogue_data_resource.data != [])
+	assert(self.dialogue_data_resource.data != [])
 
 
 # Override to do something on ready rather than overriding ready and not 
