@@ -157,6 +157,7 @@ focus_neighbour_right = NodePath("../Control/ScrollContainer/VBoxContainer/Fulls
 focus_neighbour_bottom = NodePath("../Control/ScrollContainer/VBoxContainer/FullscreenController/CheckButton")
 focus_next = NodePath("../Control/ScrollContainer/VBoxContainer/FullscreenController/CheckButton")
 focus_previous = NodePath("../Control/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VolumeControllerSFX")
+text = "Back"
 
 [connection signal="visibility_changed" from="." to="." method="_on_ScreenMenuOptions_visibility_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
