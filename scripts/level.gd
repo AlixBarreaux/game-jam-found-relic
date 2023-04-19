@@ -19,7 +19,6 @@ onready var level_loading_transition_timer: Timer = $LevelLoadingTransitionTimer
 func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -28,24 +27,20 @@ func _ready() -> void:
 func initialize_asserts() -> void:
 	if next_level_to_load_path == "":
 		printerr(self.name + " next_level_to_load_path is not set in the inspector!")
-	return
 
 
 func initialize_signals() -> void:
 	Events.connect("next_scene_load_requested", self, "on_next_scene_load_requested")
-	return
 
 
 # Avoid triggering the method twice since both characters call it
 var is_scene_load_requested_already_asked: bool = false
 
 func on_next_scene_load_requested() -> void:
-	print(self.name, ": Scene load requested!")
 	if is_scene_load_requested_already_asked:
 		return
 	is_scene_load_requested_already_asked = true
 	level_loading_transition_timer.start()
-	return
 
 
 func _on_LevelLoadingTransitionTimer_timeout() -> void:
@@ -53,4 +48,3 @@ func _on_LevelLoadingTransitionTimer_timeout() -> void:
 
 	if _scene_loading_error != OK:
 		printerr("(!) ERROR:" + self.name + ": The scene could not be loaded!")
-	return

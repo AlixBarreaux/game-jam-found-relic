@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -22,8 +22,6 @@
 [ext_resource path="res://scenes/SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=22]
-[ext_resource path="res://assets/sprites/keyboard-gamepad-keys/spacebar_key.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/keyboard-gamepad-keys/gamepad_key_triangle.png" type="Texture" id=24]
 [ext_resource path="res://assets/sprites/petals.png" type="Texture" id=25]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
@@ -719,7 +717,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 65, 17.5 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=66]
 
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
@@ -882,9 +880,6 @@ texture = ExtResource( 25 )
 [node name="Petals3" type="Sprite" parent="Decorations" index="14"]
 position = Vector2( -274, -2659 )
 texture = ExtResource( 25 )
-
-[node name="Panel" parent="CanvasLayer2" index="0"]
-visible = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
@@ -1118,21 +1113,17 @@ self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 shape = SubResource( 65 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( 496, 1344 )
+position = Vector2( 489, 1345 )
 
-[node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="2" instance=ExtResource( 18 )]
+[node name="AnimationTree" parent="YSort/HeroMan" index="6"]
+parameters/playback = SubResource( 66 )
+
+[node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="7" instance=ExtResource( 18 )]
 position = Vector2( 0, -150 )
-
-[node name="KeyKeyboard" parent="YSort/HeroMan/TutorialSpaceBarSprite" index="0"]
-texture = ExtResource( 23 )
 
 [node name="KeyGamepad" parent="YSort/HeroMan/TutorialSpaceBarSprite" index="1"]
 visible = false
 position = Vector2( 72, 0 )
-texture = ExtResource( 24 )
-
-[node name="AnimationTree" parent="YSort/HeroMan" index="7"]
-parameters/playback = SubResource( 22 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )

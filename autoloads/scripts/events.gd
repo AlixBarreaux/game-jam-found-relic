@@ -16,6 +16,10 @@ signal level_completed
 # warning-ignore: unused_signal
 signal next_scene_load_requested
 
+# warning-ignore: unused_signal
+signal dialogue_gui_disabled
+# warning-ignore: unused_signal
+signal dialogue_gui_enabled
 
 # warning-ignore: unused_signal
 signal good_interaction_sent

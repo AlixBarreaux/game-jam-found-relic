@@ -46,18 +46,19 @@ func initialize() -> void:
 
 # Check if the interactable order is right when a interactable is enabled
 # Overriden in its extended classes
-func on_interactable_enabled(interactable_order_id: int) -> void:
-	if interactable_order_id == last_interactable_order_id + 1:
+func on_interactable_enabled(signal_args: Dictionary) -> void:
+	var _interactable_order_id: int = signal_args.id
+	if _interactable_order_id == last_interactable_order_id + 1:
 		print("Good sequence:")
-		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
-		last_interactable_order_id = interactable_order_id
+		print("Received interactable ID: ", _interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
+		last_interactable_order_id = _interactable_order_id
 		
-		if interactable_order_id == self.get_child_count():
+		if _interactable_order_id == self.get_child_count():
 			Events.emit_signal("level_completed")
 		
 	else:
 		print("Wrong sequence:")
-		print("Received interactable ID: ", interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
+		print("Received interactable ID: ", _interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
 		self.reset_all_interactables()
 	return
 
