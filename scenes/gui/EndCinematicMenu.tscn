@@ -120,7 +120,7 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 1920, 721 )
 theme = ExtResource( 5 )
 script = ExtResource( 1 )
-scene_to_load_path = "res://scenes/gui/CreditsMenu.tscn"
+scene_to_load_path = "res://scenes/gui/screen-menus/ScreenMenuCredits.tscn"
 is_end_scene = true
 
 [node name="Panel" type="Panel" parent="."]

@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/gui/screen-menus/ScreenMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gui/BrowserLinkButton.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.282353, 0.333333, 1 )
+
+[node name="ScreenMenuCredits" instance=ExtResource( 1 )]
+first_button_to_focus_node_path = NodePath("BackButton")
+
+[node name="LightPanel" parent="Panel" index="2"]
+self_modulate = Color( 0.941176, 0.611765, 0.611765, 1 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="WineGlass" parent="Panel/WineGlasses" index="0"]
+margin_left = 498.0
+margin_top = 1124.0
+margin_right = 749.0
+margin_bottom = 1570.0
+rect_rotation = -74.9999
+flip_h = true
+
+[node name="WineGlass2" parent="Panel/WineGlasses" index="1"]
+margin_left = 790.0
+margin_top = 1090.0
+margin_right = 1041.0
+margin_bottom = 1536.0
+rect_rotation = -71.9662
+flip_h = true
+
+[node name="Light2D" parent="Panel" index="5"]
+color = Color( 0.980392, 0.356863, 0.356863, 1 )
+
+[node name="Title" parent="." index="1"]
+text = "Credits"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -58.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="LeadDeveloper" type="VBoxContainer" parent="Control/VBoxContainer" index="0"]
+margin_right = 884.0
+margin_bottom = 80.0
+
+[node name="RoleLabel" type="Label" parent="Control/VBoxContainer/LeadDeveloper" index="0"]
+margin_right = 884.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
+text = "Lead Developer / Programmer:"
+align = 1
+valign = 1
+
+[node name="VboxContainer" type="HBoxContainer" parent="Control/VBoxContainer/LeadDeveloper" index="1"]
+margin_top = 42.0
+margin_right = 884.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="Control/VBoxContainer/LeadDeveloper/VboxContainer" index="0" instance=ExtResource( 2 )]
+margin_left = 371.0
+margin_right = 513.0
+focus_neighbour_left = NodePath("../../../../../BackButton")
+focus_neighbour_top = NodePath("../../../../../BackButton")
+focus_neighbour_right = NodePath("../../../SoundDesigners/SavePoint/BrowserLinkButton")
+focus_neighbour_bottom = NodePath("../../../SoundDesigners/SavePoint/BrowserLinkButton")
+focus_next = NodePath("../../../SoundDesigners/SavePoint/BrowserLinkButton")
+focus_previous = NodePath("../../../../../BackButton")
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
+text = "CTN Phaco"
+url = "https://ctn-phaco.itch.io/"
+
+[node name="SoundDesigners" type="VBoxContainer" parent="Control/VBoxContainer" index="1"]
+margin_top = 120.0
+margin_right = 884.0
+margin_bottom = 284.0
+
+[node name="RoleLabel" type="Label" parent="Control/VBoxContainer/SoundDesigners" index="0"]
+margin_right = 884.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Sound Effects / Music:"
+align = 1
+valign = 1
+
+[node name="SavePoint" type="HBoxContainer" parent="Control/VBoxContainer/SoundDesigners" index="1"]
+margin_top = 42.0
+margin_right = 884.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="Control/VBoxContainer/SoundDesigners/SavePoint" index="0" instance=ExtResource( 2 )]
+margin_left = 309.0
+margin_right = 574.0
+focus_neighbour_left = NodePath("../../../LeadDeveloper/VboxContainer/BrowserLinkButton")
+focus_neighbour_top = NodePath("../../../LeadDeveloper/VboxContainer/BrowserLinkButton")
+focus_neighbour_right = NodePath("../../Gesuardo/BrowserLinkButton")
+focus_neighbour_bottom = NodePath("../../Gesuardo/BrowserLinkButton")
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
+text = "Point de Sauvegarde"
+url = "https://linktr.ee/Point_de_Sauvegarde"
+
+[node name="Gesuardo" type="HBoxContainer" parent="Control/VBoxContainer/SoundDesigners" index="2"]
+margin_top = 84.0
+margin_right = 884.0
+margin_bottom = 122.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="Control/VBoxContainer/SoundDesigners/Gesuardo" index="0" instance=ExtResource( 2 )]
+margin_left = 382.0
+margin_right = 502.0
+focus_neighbour_left = NodePath("../../SavePoint/BrowserLinkButton")
+focus_neighbour_top = NodePath("../../SavePoint/BrowserLinkButton")
+focus_neighbour_right = NodePath("../../MathieuFret/BrowserLinkButton")
+focus_neighbour_bottom = NodePath("../../MathieuFret/BrowserLinkButton")
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
+text = "Gesuardo"
+url = "https://soundcloud.com/gesuardo"
+
+[node name="MathieuFret" type="HBoxContainer" parent="Control/VBoxContainer/SoundDesigners" index="3"]
+margin_top = 126.0
+margin_right = 884.0
+margin_bottom = 164.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="Control/VBoxContainer/SoundDesigners/MathieuFret" index="0" instance=ExtResource( 2 )]
+margin_left = 357.0
+margin_right = 526.0
+focus_neighbour_left = NodePath("../../Gesuardo/BrowserLinkButton")
+focus_neighbour_top = NodePath("../../Gesuardo/BrowserLinkButton")
+focus_neighbour_right = NodePath("../../../Graphist/VboxContainer/BrowserLinkButton")
+focus_neighbour_bottom = NodePath("../../../Graphist/VboxContainer/BrowserLinkButton")
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
+text = "Mathieu Fret"
+url = "https://itch.io/profile/hellsnake-sfx"
+
+[node name="Graphist" type="VBoxContainer" parent="Control/VBoxContainer" index="2"]
+margin_top = 324.0
+margin_right = 884.0
+margin_bottom = 404.0
+
+[node name="RoleLabel" type="Label" parent="Control/VBoxContainer/Graphist" index="0"]
+margin_right = 884.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
+text = "Graphist:"
+align = 1
+valign = 1
+
+[node name="VboxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Graphist" index="1"]
+margin_top = 42.0
+margin_right = 884.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="BrowserLinkButton" parent="Control/VBoxContainer/Graphist/VboxContainer" index="0" instance=ExtResource( 2 )]
+margin_left = 419.0
+margin_right = 465.0
+focus_neighbour_left = NodePath("../../../SoundDesigners/MathieuFret/BrowserLinkButton")
+focus_neighbour_top = NodePath("../../../SoundDesigners/MathieuFret/BrowserLinkButton")
+focus_neighbour_right = NodePath("../../../../../BackButton")
+focus_neighbour_bottom = NodePath("../../../../../BackButton")
+custom_colors/font_color = Color( 0.772549, 0.772549, 0.772549, 1 )
+text = "Ibuu"
+url = "https://www.artstation.com/ibuu"
+
+[node name="LicenseLabel" type="Label" parent="Control" index="1"]
+margin_left = 137.0
+margin_top = 425.0
+margin_right = 773.0
+margin_bottom = 463.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
+text = "License: Creative Commons Zero (CC0)"
+align = 1
+valign = 1
+
+[node name="BackButton" parent="." index="3"]
+focus_neighbour_left = NodePath("../Control/VBoxContainer/Graphist/VboxContainer/BrowserLinkButton")
+focus_neighbour_top = NodePath("../Control/VBoxContainer/Graphist/VboxContainer/BrowserLinkButton")
+focus_neighbour_right = NodePath("../Control/VBoxContainer/LeadDeveloper/VboxContainer/BrowserLinkButton")
+focus_neighbour_bottom = NodePath("../Control/VBoxContainer/LeadDeveloper/VboxContainer/BrowserLinkButton")
+focus_next = NodePath("../Control/VBoxContainer/LeadDeveloper/VboxContainer/BrowserLinkButton")
+focus_previous = NodePath("../Control/VBoxContainer/Graphist/VboxContainer/BrowserLinkButton")

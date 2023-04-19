@@ -1,13 +1,81 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=23 format=2]
 
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/check_button_checked.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/check_button_unchecked.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing_size = 3.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.584314, 0.584314, 0.584314, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.341176, 0.341176, 0.341176, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.443137, 0.443137, 0.443137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.858824, 0.858824, 0.858824, 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -19,6 +87,23 @@ font_data = ExtResource( 1 )
 
 [resource]
 Button/fonts/font = SubResource( 2 )
-Button/styles/normal = SubResource( 1 )
+Button/styles/disabled = SubResource( 7 )
+Button/styles/focus = SubResource( 8 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 10 )
+Button/styles/pressed = SubResource( 24 )
+CheckBox/styles/disabled = SubResource( 12 )
+CheckBox/styles/focus = SubResource( 13 )
+CheckBox/styles/hover = SubResource( 14 )
+CheckBox/styles/hover_pressed = SubResource( 15 )
+CheckBox/styles/normal = SubResource( 16 )
+CheckBox/styles/pressed = SubResource( 17 )
+CheckButton/icons/off = ExtResource( 3 )
+CheckButton/icons/on = ExtResource( 2 )
+CheckButton/styles/hover_pressed = SubResource( 26 )
+CheckButton/styles/normal = SubResource( 25 )
+CheckButton/styles/pressed = SubResource( 27 )
+HSlider/styles/grabber_area = SubResource( 5 )
+HSlider/styles/grabber_area_highlight = SubResource( 6 )
 Label/fonts/font = SubResource( 3 )
 LinkButton/fonts/font = SubResource( 4 )

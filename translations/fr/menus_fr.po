@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ki Squad Studio\n"
 "POT-Creation-Date: 2022-10-22 11:00+0200\n"
-"PO-Revision-Date: 2022-06-19 15:27+0200\n"
+"PO-Revision-Date: 2022-11-12 03:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: Ki Squad Studio <none@none.com>\n"
 "Language: fr\n"
@@ -10,13 +10,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 msgid "Back to Main Menu"
 msgstr "Retour au Menu Principal"
 
 msgid "Credits"
 msgstr "Crédits"
+
+msgid "Fullscreen"
+msgstr "Plein Ecran"
 
 msgid "Graphist:"
 msgstr "Graphiste:"
@@ -27,8 +30,17 @@ msgstr "Lead Développeur / Programmeur:"
 msgid "Made with"
 msgstr "Créé avec"
 
+msgid "Master"
+msgstr "Master"
+
+msgid "Music"
+msgstr "Musique"
+
 msgid "Menu"
 msgstr "Menu"
+
+msgid "Options"
+msgstr "Options"
 
 msgid "Pause"
 msgstr "Pause"
@@ -50,6 +62,9 @@ msgstr "Retour vers le Bureau"
 msgid "Resume"
 msgstr "Continuer"
 
+msgid "Sound Effects"
+msgstr "Effets Sonores"
+
 msgid "Sound Effects / Music:"
 msgstr "Effets Sonores / Musique:"
 
@@ -60,6 +75,9 @@ msgstr "C'est un Match!"
 
 msgid "Version"
 msgstr "Version"
+
+msgid "Volume"
+msgstr "Volume"
 
 #~ msgid "play"
 #~ msgstr "Jouer"

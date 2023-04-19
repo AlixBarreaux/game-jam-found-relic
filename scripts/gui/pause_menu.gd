@@ -21,8 +21,9 @@ func _ready() -> void:
 
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("pause_menu"):
+	if Input.is_action_just_released("pause_menu"):
 		self.visible = !visible
+		get_tree().set_input_as_handled()
 	return
 
 
@@ -69,3 +70,13 @@ func _on_PauseMenu_visibility_changed() -> void:
 		set_paused(true)
 	else:
 		set_paused(false)
+
+
+func _on_OptionsTextureButton_pressed() -> void:
+	$ScreenMenuOptions.show()
+	return
+
+
+func _on_ScreenMenuOptions_visibility_changed() -> void:
+	$IconsContainer/CenterContainer2/OptionsTextureButton.grab_focus()
+	return

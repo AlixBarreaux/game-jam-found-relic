@@ -27,7 +27,6 @@ func _ready() -> void:
 	
 	self.animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
 	self.animation_tree_node_sm_playback.travel("Idle")
-	return
 
 
 # Used to set the Idle blend position with the AnimationTree
@@ -49,7 +48,6 @@ func _physics_process(_delta: float) -> void:
 	else:
 		self.animation_tree.set("parameters/Idle/blend_position", self.last_velocity)
 		self.animation_tree_node_sm_playback.travel("Idle")
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -57,21 +55,17 @@ func _physics_process(_delta: float) -> void:
 
 func initialize_signals() -> void:
 	Events.connect("level_completed", self, "on_level_completed")
-	return
 
 
 func initialize() -> void:
 	animation_tree.active = true
-	return
 
 
 func on_level_completed() -> void:
 	print(self.name, ": Level completed!")
 #	animation_tree_node_sm_playback.travel("CelebrateVictory")
 	animation_player.play("CelebrateVictory")
-	return
 
 
 func call_event_singleton_signal_next_scene_load_requested() -> void:
 	Events.emit_signal("next_scene_load_requested")
-	return

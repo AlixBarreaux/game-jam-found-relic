@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/sprites/play_icon_enabled.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/play_icon_active.png" type="Texture" id=3]
 [ext_resource path="res://scenes/gui/PauseMenuQuitToMainMenuTextureButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/play_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/cogwheel_icon_active.png" type="Texture" id=6]
 [ext_resource path="res://scripts/gui/pause_menu.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/cogwheel_icon.png" type="Texture" id=8]
+[ext_resource path="res://scenes/gui/screen-menus/ScreenMenuOptions.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
@@ -24,9 +27,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 7 )
-first_button_to_focus_node_path = NodePath("ResumeTextureButton")
+first_button_to_focus_node_path = NodePath("IconsContainer/CenterContainer/ResumeTextureButton")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 self_modulate = Color( 0, 0, 0, 0.658824 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,41 +45,140 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="QuitToMainMenuTextureButton" parent="." instance=ExtResource( 4 )]
+[node name="IconsContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -125.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
 
-[node name="BackToMenuLabel" type="Label" parent="."]
-margin_left = 512.0
-margin_top = 782.0
-margin_right = 709.0
-margin_bottom = 887.0
-custom_fonts/font = SubResource( 5 )
-text = "Menu"
-align = 1
-valign = 1
+[node name="CenterContainer" type="CenterContainer" parent="IconsContainer"]
+margin_right = 637.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ResumeTextureButton" type="TextureButton" parent="."]
-margin_left = 1175.0
-margin_top = 400.0
-margin_right = 1386.0
-margin_bottom = 611.0
+[node name="ResumeTextureButton" type="TextureButton" parent="IconsContainer/CenterContainer"]
+margin_left = 213.0
+margin_top = 19.0
+margin_right = 424.0
+margin_bottom = 230.0
 rect_pivot_offset = Vector2( 52, 72 )
-focus_neighbour_left = NodePath("../QuitToMainMenuTextureButton")
-focus_neighbour_top = NodePath("../QuitToMainMenuTextureButton")
-focus_neighbour_right = NodePath("../QuitToMainMenuTextureButton")
-focus_neighbour_bottom = NodePath("../QuitToMainMenuTextureButton")
+focus_neighbour_left = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+focus_neighbour_top = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+focus_neighbour_right = NodePath("../../CenterContainer2/OptionsTextureButton")
+focus_neighbour_bottom = NodePath("../../CenterContainer2/OptionsTextureButton")
+focus_next = NodePath("../../CenterContainer2/OptionsTextureButton")
+focus_previous = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 3 )
 texture_focused = ExtResource( 3 )
 
-[node name="ResumeLabel" type="Label" parent="."]
-margin_left = 1133.0
-margin_top = 782.0
-margin_right = 1414.0
-margin_bottom = 887.0
+[node name="CenterContainer2" type="CenterContainer" parent="IconsContainer"]
+margin_left = 641.0
+margin_right = 1278.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionsTextureButton" type="TextureButton" parent="IconsContainer/CenterContainer2"]
+margin_left = 208.0
+margin_top = 14.0
+margin_right = 429.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 52, 72 )
+focus_neighbour_left = NodePath("../../CenterContainer/ResumeTextureButton")
+focus_neighbour_top = NodePath("../../CenterContainer/ResumeTextureButton")
+focus_neighbour_right = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+focus_neighbour_bottom = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+focus_next = NodePath("../../CenterContainer3/QuitToMainMenuTextureButton")
+focus_previous = NodePath("../../CenterContainer/ResumeTextureButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+
+[node name="CenterContainer3" type="CenterContainer" parent="IconsContainer"]
+margin_left = 1282.0
+margin_right = 1920.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="QuitToMainMenuTextureButton" parent="IconsContainer/CenterContainer3" instance=ExtResource( 4 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 208.0
+margin_top = 0.0
+margin_right = 429.0
+margin_bottom = 250.0
+focus_neighbour_left = NodePath("../../CenterContainer2/OptionsTextureButton")
+focus_neighbour_top = NodePath("../../CenterContainer2/OptionsTextureButton")
+focus_neighbour_right = NodePath("../../CenterContainer/ResumeTextureButton")
+focus_neighbour_bottom = NodePath("../../CenterContainer/ResumeTextureButton")
+focus_next = NodePath("../../CenterContainer/ResumeTextureButton")
+focus_previous = NodePath("../../CenterContainer2/OptionsTextureButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelsContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -318.0
+margin_bottom = -72.0
+
+[node name="ResumeLabel" type="Label" parent="LabelsContainer"]
+margin_top = 70.0
+margin_right = 637.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
 custom_fonts/font = SubResource( 5 )
 text = "Resume"
 align = 1
 valign = 1
 
+[node name="OptionsLabel" type="Label" parent="LabelsContainer"]
+margin_left = 641.0
+margin_top = 70.0
+margin_right = 1278.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 5 )
+text = "Options"
+align = 1
+valign = 1
+
+[node name="BackToMenuLabel" type="Label" parent="LabelsContainer"]
+margin_left = 1282.0
+margin_top = 70.0
+margin_right = 1920.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 5 )
+text = "Menu"
+align = 1
+valign = 1
+
+[node name="ScreenMenuOptions" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="BackButton" parent="ScreenMenuOptions" index="3"]
+is_visibility_manager = true
+
 [connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
-[connection signal="pressed" from="ResumeTextureButton" to="." method="_on_ResumeTextureButton_pressed"]
+[connection signal="pressed" from="IconsContainer/CenterContainer/ResumeTextureButton" to="." method="_on_ResumeTextureButton_pressed"]
+[connection signal="pressed" from="IconsContainer/CenterContainer2/OptionsTextureButton" to="." method="_on_OptionsTextureButton_pressed"]
+[connection signal="visibility_changed" from="ScreenMenuOptions" to="." method="_on_ScreenMenuOptions_visibility_changed"]
+
+[editable path="ScreenMenuOptions"]
+[editable path="ScreenMenuOptions/Control/ScrollContainer/VBoxContainer/FullscreenController"]

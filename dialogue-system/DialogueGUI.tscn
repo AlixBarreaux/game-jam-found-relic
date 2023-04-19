@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://dialogue-system/dialogue_gui.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "End"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "RESET"
+
+[sub_resource type="Animation" id=2]
+resource_name = "Shake"
+
+[sub_resource type="Animation" id=3]
+resource_name = "Start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "End"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/End/node = SubResource( 5 )
+states/End/position = Vector2( 669, 59 )
+states/Start/node = SubResource( 6 )
+states/Start/position = Vector2( 412, 59 )
+transitions = [ "Start", "End", SubResource( 11 ) ]
+start_node = "Start"
+end_node = "End"
+graph_offset = Vector2( -21, -9 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+
+[node name="DialogueGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+speech_texture_rect_node_path = NodePath("Panel/SpeechTexture")
+speech_message_rich_text_label_node_path = NodePath("Panel/SpeechMessage")
+speech_sound_player_node_path = NodePath("Panel/SpeechSoundPlayer")
+animation_tree_node_path = NodePath("AnimationTree")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -400.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_bottom = 1.0
+margin_right = 516.0
+mouse_filter = 2
+alignment = 1
+
+[node name="SpeechTexture" type="TextureRect" parent="Panel"]
+margin_left = 62.0
+margin_top = 52.0
+margin_right = 362.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+
+[node name="SpeechMessage" type="RichTextLabel" parent="Panel"]
+margin_left = 410.0
+margin_right = 1860.0
+margin_bottom = 400.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Please [shake]override[/shake] this message."
+text = "Please override this message."
+
+[node name="SpeechSoundPlayer" type="AudioStreamPlayer" parent="Panel"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/End = SubResource( 1 )
+anims/RESET = SubResource( 10 )
+anims/Shake = SubResource( 2 )
+anims/Start = SubResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 7 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 8 )

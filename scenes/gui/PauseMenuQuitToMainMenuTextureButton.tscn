@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/gui/pause_menu_quit_to_main_menu_texture_button.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/power_button.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/power_button_enabled.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/power_button_active.png" type="Texture" id=3]
 
 [node name="QuitToMainMenuTextureButton" type="TextureButton"]
 anchor_top = 0.5
