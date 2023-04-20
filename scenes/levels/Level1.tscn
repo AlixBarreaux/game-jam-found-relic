@@ -1120,6 +1120,7 @@ shape = SubResource( 65 )
 
 [node name="HeroMan" parent="YSort" index="1"]
 position = Vector2( 489, 1345 )
+speed = 500.0
 
 [node name="AnimationTree" parent="YSort/HeroMan" index="6"]
 parameters/playback = SubResource( 66 )
@@ -1133,6 +1134,7 @@ position = Vector2( 72, 0 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )
+speed = 500.0
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

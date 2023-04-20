@@ -373,10 +373,11 @@ volume_db = -5.0
 
 [node name="HeroMan" parent="YSort" index="0"]
 position = Vector2( -115, 1074 )
+speed = 500.0
 
 [node name="HeroWoman" parent="YSort" index="1"]
 position = Vector2( 1975, 1074 )
-speed = 330.0
+speed = 500.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 
