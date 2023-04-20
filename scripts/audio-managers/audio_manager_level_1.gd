@@ -34,13 +34,13 @@ func initialize_asserts() -> void:
 			_first_track_count +=1
 	if _first_track_count != _max_first_track_count:
 		printerr("(!) ERROR: In " + self.name + ": Only ONE track must be the starting track!")
-	return
 
 
 func initialize_signals() -> void:
-	Events.connect("good_interaction_sent", self, "on_good_interaction_sent")
-	Events.connect("wrong_interaction_sent", self, "on_wrong_interaction_sent")
-	return
+	if Events.connect("good_interaction_sent", self, "on_good_interaction_sent") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'good_interaction_sent' error.")
+	if Events.connect("wrong_interaction_sent", self, "on_wrong_interaction_sent") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'wrong_interaction_sent' error.")
 
 
 func on_good_interaction_sent() -> void:

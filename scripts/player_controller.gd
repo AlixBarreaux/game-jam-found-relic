@@ -42,11 +42,15 @@ func initialize_asserts() -> void:
 
 
 func initialize_signals() -> void:
-	Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched")
-	Events.connect("level_completed", self, "on_level_completed")
+	if Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'controlled_hero_switched' error.")
+	if Events.connect("level_completed", self, "on_level_completed") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'level_completed' error.")
 	
-	Events.connect("dialogue_gui_disabled", self, "enable")
-	Events.connect("dialogue_gui_enabled", self, "disable")
+	if Events.connect("dialogue_gui_disabled", self, "enable") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'dialogue_gui_disabled' error.")
+	if Events.connect("dialogue_gui_enabled", self, "disable") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'dialogue_gui_enabled' error.")
 
 
 func disable() -> void:

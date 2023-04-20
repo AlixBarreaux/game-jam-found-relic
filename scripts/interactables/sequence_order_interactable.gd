@@ -30,8 +30,10 @@ func _ready() -> void:
 
 
 func initialize_signals() -> void:
-	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
-	self.parent_manager.connect("invalid_sequence_order_given", self, "reset")
+	if interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'interaction_received' error.")
+	if self.parent_manager.connect("invalid_sequence_order_given", self, "reset") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'invalid_sequence_order_given' error.")
 
 
 func _receive_interaction() -> void:

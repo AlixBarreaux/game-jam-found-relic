@@ -38,7 +38,7 @@ func _gui_input(event: InputEvent) -> void:
 				on_input_triggered()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_confirm_dialogue"):
 		self.on_input_triggered()
 

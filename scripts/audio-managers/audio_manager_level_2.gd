@@ -20,7 +20,6 @@ onready var wrong_track: AudioStreamPlayer = $WrongTrack
 func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -33,15 +32,16 @@ func initialize_asserts() -> void:
 	for track in general_tracks_list.get_children():
 		if track.first_track_to_play_on_start:
 			_first_track_count +=1
+	
 	if _first_track_count != _max_first_track_count:
 		printerr("(!) ERROR: In " + self.name + ": Only ONE track must be the starting track!")
-	return
 
 
 func initialize_signals() -> void:
-	Events.connect("good_interaction_sent", self, "on_good_interaction_sent")
-	Events.connect("wrong_interaction_sent", self, "on_wrong_interaction_sent")
-	return
+	if Events.connect("good_interaction_sent", self, "on_good_interaction_sent") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'good_interaction_sent' error.")
+	if Events.connect("wrong_interaction_sent", self, "on_wrong_interaction_sent") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'wrong_interaction_sent' error.")
 
 
 func on_good_interaction_sent() -> void:
@@ -59,7 +59,6 @@ func on_good_interaction_sent() -> void:
 	if current_playing_track_index == general_tracks_list.get_child_count() -1:
 #		ambient_track.stop()
 		print(self.name, "No more track to play!")
-	return
 
 
 func on_wrong_interaction_sent() -> void:
@@ -72,8 +71,6 @@ func on_wrong_interaction_sent() -> void:
 #	general_tracks_list.get_child(current_playing_track_index).set_muted(false)
 
 	wrong_track.play()
-	
-	return
 
 
 func _on_WrongTrack_finished() -> void:
@@ -81,4 +78,3 @@ func _on_WrongTrack_finished() -> void:
 		if track.is_playing():
 			return
 	general_tracks_list.get_child(0).play()
-	return
