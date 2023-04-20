@@ -14,17 +14,15 @@ onready var hero: KinematicBody2D = self.get_parent()
 func _ready() -> void:
 	self.initialize_signals()
 	current = hero.is_controlled
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
 func initialize_signals() -> void:
-	Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched")
-	return
+	if Events.connect("controlled_hero_switched", self, "on_controlled_hero_switched") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'controlled_hero_switched' error.")
 
 
 func on_controlled_hero_switched() -> void:
 	current = !hero.is_controlled
-	return

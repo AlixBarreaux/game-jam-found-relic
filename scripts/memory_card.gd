@@ -29,32 +29,28 @@ onready var animation_tree_node_sm_playback = animation_tree.get("parameters/pla
 func _ready() -> void:
 	self.initialize_signals()
 	self.initialize()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
 func initialize_signals() -> void:
-	interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction")
-	return
+	if interaction_receiver_area_2d.connect("interaction_received", self, "_receive_interaction") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'interaction_received' error.")
 
 
 func initialize() -> void:
 	animation_tree.active = true
-	return
 
 
 func _receive_interaction() -> void:
 	self.set_enabled(false)
 	animation_tree_node_sm_playback.travel("ShowHeads")
-	return
 
 
 # Special function used as method track for AnimationPlayer: "ShowHeads"
 func emit_signal_interactable_enabled() -> void:
 	self.emit_signal("interactable_enabled", self)
-	return
 
 
 func reset() -> void:
@@ -68,16 +64,12 @@ func set_enabled(enabled: bool) -> void:
 		collision_shape_2d.set_deferred("disabled", false)
 	else:
 		collision_shape_2d.set_deferred("disabled", true)
-		
-	return
 
 
 func finish_life_cycle() -> void:
 	animation_tree_node_sm_playback.travel("ShowValidCombination")
-	return
 
 
 # Special function used as method track for AnimationPlayer: "ShowValidCombination"
 func emit_signal_life_cycle_finished() -> void:
 	emit_signal("life_cycle_finished")
-	return

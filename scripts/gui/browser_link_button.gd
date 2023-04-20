@@ -26,5 +26,5 @@ func initialize_asserts() -> void:
 
 
 func _on_pressed() -> void:
-	OS.shell_open(url)
-	return
+	if OS.shell_open(url) != OK:
+		printerr("(!) ERROR: In " + self.name + ": OS.shell_open() error")

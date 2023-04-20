@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_6.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/sound/levels/level-2/lvl2_7.ogg" type="AudioStream" id=16]
-[ext_resource path="res://scenes/SequenceOrderSpirtesFeedback.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/SequenceOrderFeedbackManager.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
@@ -830,7 +830,7 @@ extents = Vector2( 97, 441.5 )
 extents = Vector2( 97, 1127 )
 
 [sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 329, 214 )
+extents = Vector2( 330, 216.5 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 329, 306 )
@@ -896,11 +896,11 @@ next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 polygon = PoolVector2Array( 4, 820, -3, 2199, -4076, 2138, -4228, -5932, 769, -5853, 736, -3184, -234, -3185, -234, -3611, -1038, -3612, -1039, -2994, -1318, -2992, -1317, 72, -486, 72, -487, 819 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( -234, -1916, -234, -2845, -40, -2845, -39, -2314, 737, -2312, 735, -3216, 967, -3206, 967, -1917, 454, -1917, 455, -387, 454, 820, 866, 820, 866, -44, 2923, -44, 2922, -1937, 1933, -1939, 1932, -3184, 735, -3185, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, 3, 819, 4, -388, 2, -1917 )
+polygon = PoolVector2Array( -234, -1916, -234, -2845, -40, -2845, -40, -2314, 735, -2314, 735, -3216, 967, -3216, 967, -1917, 454, -1917, 454, 820, 866, 820, 866, -44, 2922, -44, 2922, -1936, 1932, -1936, 1932, -3184, 735, -3184, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, 3, 819, 4, -388, 2, -1917 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 position = Vector2( -1089, 219 )
-polygon = PoolVector2Array( 1920, -1290, 1918, -679, 2576, -680, 2575, -1289 )
+polygon = PoolVector2Array( 1920, -1290, 1920, -680, 2575, -680, 2575, -1289 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -914,7 +914,7 @@ __meta__ = {
 
 [node name="Polygon2D4" type="Polygon2D" parent="Polygons2D" index="4"]
 position = Vector2( 75, -181 )
-polygon = PoolVector2Array( 1920, -1290, 1923, -864, 2578, -861, 2575, -1289 )
+polygon = PoolVector2Array( 1920, -1290, 1920, -860, 2580, -860, 2580, -1290 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1159,7 +1159,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
-position = Vector2( 2326, -1257 )
+position = Vector2( 2325, -1254.5 )
 shape = SubResource( 56 )
 __meta__ = {
 "_editor_description_": ""
@@ -1427,11 +1427,10 @@ position = Vector2( 213, -2802 )
 self_modulate = Color( 1, 0.47451, 0.992157, 1 )
 
 [node name="HeroMan" parent="YSort" index="1"]
-position = Vector2( -176, 0 )
+position = Vector2( -252, 650 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 671, 650 )
-speed = 330.0
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 

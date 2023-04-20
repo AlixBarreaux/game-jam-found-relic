@@ -30,7 +30,8 @@ func initialize_asserts() -> void:
 
 
 func initialize_signals() -> void:
-	Events.connect("next_scene_load_requested", self, "on_next_scene_load_requested")
+	if Events.connect("next_scene_load_requested", self, "on_next_scene_load_requested") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'next_scene_load_requested' error.")
 
 
 # Avoid triggering the method twice since both characters call it

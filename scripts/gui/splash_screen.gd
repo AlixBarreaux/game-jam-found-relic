@@ -20,7 +20,6 @@ func _ready() -> void:
 func initialize_asserts() -> void:
 	if next_scene_to_load_path == "":
 		printerr("(!) ERROR: In " + self.name + ": The next scene to load path can't be empty!")
-	return
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -28,7 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey or InputEventJoypadButton:
 		self.load_next_scene()
-	return
 
 
 func load_next_scene() -> void:
@@ -36,9 +34,7 @@ func load_next_scene() -> void:
 
 	if _scene_loading_error != OK:
 		printerr("(!) ERROR:" + self.name + ": The scene could not be loaded!")
-	return
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	self.load_next_scene()
-	return

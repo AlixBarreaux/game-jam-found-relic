@@ -6,7 +6,7 @@ extends KinematicBody2D
 
 export var is_controlled: bool = true
 
-export var speed: float = 400.0
+export var speed: float = 600.0
 
 var direction: Vector2 = Vector2(0.0, 0.0)
 var velocity: Vector2 = Vector2(0.0, 0.0)
@@ -54,7 +54,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func initialize_signals() -> void:
-	Events.connect("level_completed", self, "on_level_completed")
+	if Events.connect("level_completed", self, "on_level_completed") != OK:
+		printerr("(!) ERROR: In " + self.name + ": Connection to signal 'level_completed' error.")
 
 
 func initialize() -> void:
