@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -626,14 +626,14 @@ tracks/2/keys = {
 "values": [ Color( 0, 0.14902, 0.819608, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 242, 1198 )
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 243, 1198 )
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 97, 1728 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 240, 1148.5 )
+extents = Vector2( 254, 1148.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 240, 641.5 )
@@ -653,20 +653,26 @@ extents = Vector2( 162, 343 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 164.5, 239 )
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 232, 1198 )
+
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 97, 1371.75 )
+extents = Vector2( 99, 1371.75 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 181.5, 607 )
+extents = Vector2( 182.25, 607 )
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 240, 640.25 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 240, 750.5 )
+extents = Vector2( 245, 750.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 162, 166 )
+extents = Vector2( 158.5, 166 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 102, 370.75 )
+extents = Vector2( 99, 370.75 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 240, 661.504 )
@@ -675,7 +681,7 @@ extents = Vector2( 240, 661.504 )
 extents = Vector2( 240, 369 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 264, 135.499 )
+extents = Vector2( 264, 134 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 160.499, 379.742 )
@@ -726,13 +732,13 @@ next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 position = Vector2( 1094, 353 )
 rotation = 0.00221612
 color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -4640, -5717, 5684, -5669, 5741, 1707, 894, 1677, 894, -828, 2186, -828, 2179.48, -2043.83, 1054, -2043, 1038, -2785, -487, -2782, -487, -3505, -2005, -3504, -2005, -2824, -1050, -2824, -1050, -2500, -2005, -2500, -2005, -1771, -1547, -1771, -1547, -1447, -2007.21, -1447.56, -2006.67, -1204.56, -721.678, -1207.4, -716.317, 1662.59, -4676, 1646 )
+polygon = PoolVector2Array( -4640, -5710, 5680, -5710, 5680, 1700, 900, 1700, 900, -828, 2186, -828, 2186, -2043.83, 1035, -2043, 1035, -2785, -487, -2782, -487, -3505, -2005, -3504, -2005, -2824, -1050, -2824, -1050, -2500, -2005, -2500, -2005, -1771, -1547, -1771, -1547, -1448, -2007, -1448, -2006.67, -1204.56, -721.678, -1207.4, -716.317, 1693.58, -4676, 1699.39 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( 369, 2014, 1990, 2010, 1990, 566, 1738, 566, 1738, -1973, 1311, -1973, 1314, -2445, 1043, -2447, 1043, -1972, 603, -1973, 604, -1756, -77, -1755, -79, -1433, 606, -1433, 604, 1473, 370, 1473 )
+polygon = PoolVector2Array( 370, 2060, 1990, 2060, 1990, 566, 1738, 566, 1738, -1973, 1310, -1973, 1310, -2445, 1043, -2445, 1043, -1972, 604, -1972, 604, -1755, -80, -1755, -80, -1433, 606, -1433, 606, 1473, 370, 1473 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
-polygon = PoolVector2Array( 2352, -1037, 2367, -1351, 2687, -1329, 2680, -1037 )
+polygon = PoolVector2Array( 2350, -1035, 2350, -1350, 2680, -1350, 2680, -1035 )
 
 [node name="SequenceOrderFeedbackManager" parent="." index="1" instance=ExtResource( 20 )]
 position = Vector2( 1131, -243 )
@@ -887,7 +893,7 @@ collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="0"]
 position = Vector2( -4, -58 )
-shape = SubResource( 1 )
+shape = SubResource( 68 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="1"]
 position = Vector2( 564, -645 )
@@ -913,7 +919,7 @@ rotation = 1.57079
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
-position = Vector2( -576.5, -2709 )
+position = Vector2( -569, -2713 )
 rotation = 1.57079
 shape = SubResource( 7 )
 
@@ -941,13 +947,13 @@ position = Vector2( 581, -1381.25 )
 shape = SubResource( 19 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="2"]
-position = Vector2( -1236, -1860 )
+position = Vector2( -1235.25, -1860 )
 shape = SubResource( 21 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="3"]
-position = Vector2( -853, -1013 )
+position = Vector2( -868.25, -1013 )
 rotation = 1.57079
-shape = SubResource( 4 )
+shape = SubResource( 67 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="4"]
 position = Vector2( -663.999, -2708 )
@@ -960,12 +966,12 @@ rotation = 1.57079
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="6"]
-position = Vector2( -299.005, -1963 )
+position = Vector2( -293.01, -1972 )
 rotation = 1.57079
 shape = SubResource( 10 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D2" index="7"]
-position = Vector2( 1512, -3579.75 )
+position = Vector2( 1509, -3579.75 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 shape = SubResource( 14 )

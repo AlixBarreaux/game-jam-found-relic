@@ -59,20 +59,20 @@
 extents = Vector2( 91.5, 1284 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 86, 1331 )
+extents = Vector2( 88, 1331 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 233.5, 458.125 )
+extents = Vector2( 240.5, 460.562 )
 
 [node name="Level3" instance=ExtResource( 1 )]
 self_modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
 next_level_to_load_path = "res://scenes/gui/EndCinematicMenu.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
-polygon = PoolVector2Array( 870, 1202, -214, 1202, -214, 971, 700, 971, 700, 504, -214, 504, -213, -1361, 2115, -1362, 2113, 504, 1227, 504, 1227, 971, 2113, 971, 2114, 1202, 1042, 1202, 1039, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )
+polygon = PoolVector2Array( 870, 1200, -214, 1200, -214, 970, 700, 970, 700, 500, -214, 500, -214, -1360, 2115, -1360, 2115, 500, 1225, 500, 1225, 970, 2114, 970, 2114, 1200, 1040, 1200, 1040, 2277, 3280, 2253, 3304, -2583, -1745, -2603, -1743, 2258, 889, 2283 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
-polygon = PoolVector2Array( 863, 2284, 871, -1454, 1051, -1442, 1053, 2284 )
+polygon = PoolVector2Array( 870, 2284, 870, -1454, 1050, -1454, 1050, 2284 )
 
 [node name="Candle" parent="Decorations" index="0" instance=ExtResource( 23 )]
 position = Vector2( -96, 247 )
@@ -311,7 +311,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="MapBoundaries/StaticBody2D" index="6"]
-position = Vector2( 1685, 737.5 )
+position = Vector2( 1682.56, 737.5 )
 rotation = 1.57079
 shape = SubResource( 21 )
 
