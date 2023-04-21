@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/sprites/petals.png" type="Texture" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=24]
@@ -978,36 +977,6 @@ position = Vector2( -178, -1379 )
 
 [node name="CandleMelted12" parent="Decorations" index="19" instance=ExtResource( 20 )]
 position = Vector2( -919, -3415 )
-
-[node name="Petals" type="Sprite" parent="Decorations" index="20"]
-position = Vector2( 1617, -2423 )
-texture = ExtResource( 21 )
-
-[node name="Petals2" type="Sprite" parent="Decorations" index="21"]
-position = Vector2( 2283, -722 )
-texture = ExtResource( 21 )
-
-[node name="Petals3" type="Sprite" parent="Decorations" index="22"]
-position = Vector2( 1870.21, -3057.82 )
-texture = ExtResource( 21 )
-offset = Vector2( -2726.21, 866.844 )
-
-[node name="Petals4" type="Sprite" parent="Decorations" index="23"]
-position = Vector2( 911, -1489 )
-texture = ExtResource( 21 )
-
-[node name="Petals5" type="Sprite" parent="Decorations" index="24"]
-position = Vector2( 389, -2600 )
-texture = ExtResource( 21 )
-
-[node name="Petals6" type="Sprite" parent="Decorations" index="25"]
-position = Vector2( 2134, -4232 )
-texture = ExtResource( 21 )
-offset = Vector2( -2726.21, 866.844 )
-
-[node name="Petals7" type="Sprite" parent="Decorations" index="26"]
-position = Vector2( 1617, -2423 )
-texture = ExtResource( 21 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
 

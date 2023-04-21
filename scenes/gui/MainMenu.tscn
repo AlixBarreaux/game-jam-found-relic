@@ -5,12 +5,12 @@
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://scenes/gui/QuitToDesktopButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gui/VersionLabel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/monitor.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/gui-elements/monitor.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/glass.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/light.png" type="Texture" id=10]
 [ext_resource path="res://scripts/gui/main_menu.gd" type="Script" id=11]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://assets/sprites/background_spritesheet.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/gui-elements/background_spritesheet.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=8]
 resource_name = "Flicker"
