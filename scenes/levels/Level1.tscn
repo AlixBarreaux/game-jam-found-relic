@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -42,83 +42,6 @@
 [ext_resource path="res://assets/sprites/decorations/petals/Petals6.png" type="Texture" id=41]
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
-[ext_resource path="res://assets/sprites/tilesets/Tile2.png" type="Texture" id=44]
-[ext_resource path="res://assets/sprites/tilesets/Tile3.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprites/tilesets/Tile5.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprites/tilesets/Tile4.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/tilesets/Tile1.png" type="Texture" id=48]
-
-[sub_resource type="TileSet" id=69]
-4/name = "Tile2.png 4"
-4/texture = ExtResource( 44 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 200, 200 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "Tile3.png 5"
-5/texture = ExtResource( 45 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 200, 200 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
-6/name = "Tile4.png 6"
-6/texture = ExtResource( 47 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 0, 0, 200, 200 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
-6/z_index = 0
-7/name = "Tile1.png 7"
-7/texture = ExtResource( 48 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 200, 200 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
-7/z_index = 0
-8/name = "Tile5.png 8"
-8/texture = ExtResource( 46 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 0, 0, 200, 200 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
-8/z_index = 0
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -822,23 +745,19 @@ extents = Vector2( 65, 17.5 )
 [node name="Level1" instance=ExtResource( 1 )]
 next_level_to_load_path = "res://scenes/levels/Level2.tscn"
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
-show_behind_parent = true
-tile_set = SubResource( 69 )
-cell_size = Vector2( 200, 200 )
-format = 1
-tile_data = PoolIntArray( -1048581, 7, 0, -1048580, 7, 0, -1048579, 7, 0, -1048578, 7, 0, -1048577, 7, 0, -1114112, 7, 0, -1114111, 7, 0, -1114110, 7, 0, -1114109, 7, 0, -983045, 7, 0, -983044, 536870918, 0, -983043, 7, 0, -983042, 7, 0, -983041, 7, 0, -1048576, 7, 0, -1048575, 7, 0, -1048574, 536870919, 0, -1048573, 7, 0, -917509, 7, 0, -917508, 7, 0, -917507, 7, 0, -917506, 5, 0, -917505, 7, 0, -983040, 7, 0, -983039, 7, 0, -983038, 536870918, 0, -983037, 7, 0, -851973, 536870917, 0, -851972, 536870919, 0, -851971, 7, 0, -851970, 7, 0, -851969, 7, 0, -917504, 7, 0, -917503, 7, 0, -917502, 536870919, 0, -917501, 7, 0, -786437, 7, 0, -786436, 7, 0, -786435, 536870917, 0, -786434, 7, 0, -786433, 536870918, 0, -851968, 7, 0, -851967, 536870919, 0, -851966, 536870919, 0, -851965, 7, 0, -851964, 7, 0, -851963, 7, 0, -851962, 7, 0, -851961, 7, 0, -851960, 7, 0, -851959, 7, 0, -851958, 7, 0, -851957, 7, 0, -720902, 7, 0, -720901, 7, 0, -720900, 7, 0, -720899, 7, 0, -720898, 7, 0, -720897, 7, 0, -786432, 7, 0, -786431, 8, 0, -786430, 536870919, 0, -786429, 536870917, 0, -786428, 7, 0, -786427, 7, 0, -786426, 7, 0, -786425, 8, 0, -786424, 7, 0, -786423, 7, 0, -786422, 4, 0, -786421, 7, 0, -655366, 7, 0, -655365, 7, 0, -655364, 7, 0, -655363, 8, 0, -655362, 7, 0, -655361, 536870919, 0, -720896, 7, 0, -720895, 7, 0, -720894, 7, 0, -720893, 7, 0, -720892, 536870920, 0, -720891, 7, 0, -720890, 7, 0, -720889, 5, 0, -720888, 7, 0, -720887, 7, 0, -720886, 7, 0, -720885, 7, 0, -589830, 7, 0, -589829, 536870917, 0, -589828, 7, 0, -589827, 7, 0, -589826, 7, 0, -589825, 7, 0, -655360, 536870920, 0, -655359, 536870917, 0, -655358, 7, 0, -655357, 7, 0, -655356, 7, 0, -655355, 7, 0, -655354, 7, 0, -655353, 7, 0, -655352, 7, 0, -655351, 536870917, 0, -655350, 7, 0, -655349, 7, 0, -524294, 7, 0, -524293, 7, 0, -524292, 536870920, 0, -524291, 536870917, 0, -524290, 7, 0, -524289, 7, 0, -589824, 7, 0, -589823, 7, 0, -589822, 7, 0, -589821, 7, 0, -589816, 7, 0, -589815, 7, 0, -589814, 536870918, 0, -589813, 7, 0, -589812, 7, 0, -589811, 7, 0, -589810, 7, 0, -589809, 7, 0, -589808, 7, 0, -458758, 7, 0, -458757, 7, 0, -458756, 7, 0, -458755, 536870919, 0, -458754, 7, 0, -458753, 6, 0, -524288, 7, 0, -524287, 7, 0, -524286, 7, 0, -524285, 7, 0, -524280, 7, 0, -524279, 7, 0, -524278, 7, 0, -524277, 7, 0, -524276, 7, 0, -524275, 7, 0, -524274, 7, 0, -524273, 5, 0, -524272, 7, 0, -393222, 7, 0, -393221, 7, 0, -393220, 7, 0, -393219, 536870918, 0, -393218, 7, 0, -393217, 7, 0, -458752, 7, 0, -458751, 5, 0, -458750, 7, 0, -458749, 7, 0, -458744, 7, 0, -458743, 8, 0, -458742, 7, 0, -458741, 7, 0, -458740, 7, 0, -458739, 536870917, 0, -458738, 7, 0, -458737, 7, 0, -458736, 7, 0, -327686, 7, 0, -327685, 7, 0, -327684, 536870917, 0, -327683, 7, 0, -327682, 7, 0, -327681, 7, 0, -393216, 536870920, 0, -393215, 7, 0, -393214, 7, 0, -393213, 7, 0, -393209, 0, 0, -393208, 7, 0, -393207, 7, 0, -393206, 7, 0, -393205, 536870916, 0, -393204, 7, 0, -393203, 7, 0, -393202, 7, 0, -393201, 7, 0, -393200, 6, 0, -262150, 7, 0, -262149, 536870917, 0, -262148, 7, 0, -262147, 7, 0, -262146, 5, 0, -262145, 7, 0, -327680, 7, 0, -327679, 5, 0, -327678, 7, 0, -327677, 7, 0, -327672, 7, 0, -327671, 7, 0, -327670, 7, 0, -327669, 536870919, 0, -327668, 7, 0, -327667, 536870918, 0, -327666, 7, 0, -327665, 7, 0, -327664, 7, 0, -196614, 7, 0, -196613, 7, 0, -196612, 7, 0, -196611, 7, 0, -196610, 7, 0, -196609, 7, 0, -262144, 7, 0, -262143, 7, 0, -262142, 5, 0, -262141, 7, 0, -262136, 7, 0, -262135, 536870920, 0, -262134, 7, 0, -262133, 7, 0, -262132, 7, 0, -262131, 7, 0, -262130, 7, 0, -262129, 536870917, 0, -262128, 7, 0, -196607, 7, 0, -196606, 7, 0, -196605, 7, 0, -196600, 7, 0, -196599, 7, 0, -196598, 536870917, 0, -196597, 7, 0, -196596, 7, 0, -196595, 7, 0, -196594, 536870916, 0, -196593, 7, 0, -196592, 7, 0, -131071, 7, 0, -131070, 6, 0, -131069, 7, 0, -131064, 536870917, 0, -131063, 8, 0, -131062, 7, 0, -65535, 7, 0, -65534, 5, 0, -65533, 7, 0, -65528, 7, 0, -65527, 5, 0, -65526, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 65537, 7, 0, 65538, 536870917, 0, 65539, 7, 0, 65544, 7, 0, 65545, 6, 0, 65546, 7, 0, 131073, 7, 0, 131074, 7, 0, 131075, 7, 0, 131080, 8, 0, 131081, 7, 0, 131082, 7, 0, 196609, 7, 0, 196610, 536870918, 0, 196611, 7, 0, 196616, 7, 0, 196617, 7, 0, 196618, 7, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 327681, 7, 0, 327682, 5, 0, 327683, 7, 0, 393217, 7, 0, 393218, 536870920, 0, 393219, 7, 0, 458753, 7, 0, 458754, 7, 0, 458755, 7, 0 )
-
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
 position = Vector2( 1094, 353 )
 rotation = 0.00221612
 color = Color( 0, 0, 0, 1 )
+antialiased = true
 polygon = PoolVector2Array( -4640, -5710, 5680, -5710, 5680, 1700, 900, 1700, 900, -828, 2186, -828, 2186, -2043.83, 1035, -2043, 1035, -2785, -487, -2782, -487, -3505, -2005, -3504, -2005, -2824, -1050, -2824, -1050, -2500, -2005, -2500, -2005, -1771, -1547, -1771, -1547, -1448, -2007, -1448, -2006.67, -1204.56, -721.678, -1207.4, -716.317, 1693.58, -4676, 1699.39 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
+antialiased = true
 polygon = PoolVector2Array( 370, 2060, 1990, 2060, 1990, 566, 1738, 566, 1738, -1973, 1310, -1973, 1310, -2445, 1043, -2445, 1043, -1972, 604, -1972, 604, -1755, -80, -1755, -80, -1433, 606, -1433, 606, 1473, 370, 1473 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
+antialiased = true
 polygon = PoolVector2Array( 2350, -1035, 2350, -1350, 2680, -1350, 2680, -1035 )
 
 [node name="SequenceOrderFeedbackManager" parent="." index="2" instance=ExtResource( 20 )]
@@ -1044,30 +963,35 @@ texture = ExtResource( 40 )
 position = Vector2( 1176, -64.3159 )
 rotation = 1.5708
 scale = Vector2( 2.86398, 0.827277 )
+antialiased = true
 polygon = PoolVector2Array( 8.49019, 116.043, -832.038, 116.043, -832.038, 125.8, -832.038, 135.384, 8.49019, 135.384 )
 
 [node name="Polygon2D2Cord" type="Polygon2D" parent="Decorations" index="23"]
 position = Vector2( 1247.91, -64.2444 )
 rotation = 1.5708
 scale = Vector2( 2.82384, 0.827288 )
+antialiased = true
 polygon = PoolVector2Array( 8.49019, 116.043, -832.868, 115.934, -832.964, 125.714, -832.868, 135.274, 8.49019, 135.384 )
 
 [node name="Polygon2D3Cord" type="Polygon2D" parent="Decorations" index="24"]
 position = Vector2( 1328.08, -64.2296 )
 rotation = 1.5708
 scale = Vector2( 2.82223, 0.827288 )
+antialiased = true
 polygon = PoolVector2Array( 8.49019, 116.043, -832.608, 116.136, -832.868, 125.806, -832.608, 135.476, 8.49019, 135.384 )
 
 [node name="Polygon2D4Cord" type="Polygon2D" parent="Decorations" index="25"]
 position = Vector2( 1392, -64.3749 )
 rotation = 1.5708
 scale = Vector2( 2.87093, 0.827277 )
+antialiased = true
 polygon = PoolVector2Array( 8.49019, 116.043, -832.038, 116.043, -832.038, 125.73, -832.038, 135.384, 8.49019, 135.384 )
 
 [node name="Polygon2DCord" type="Polygon2D" parent="Decorations" index="26"]
 position = Vector2( 1177.47, -70.3163 )
 rotation = 1.5708
 scale = Vector2( 2.76141, 0.808143 )
+antialiased = true
 polygon = PoolVector2Array( 8.58388, 144.553, 8.58388, -150.678, 16.0483, -162.756, 25.7516, -150.678, 25.7516, 144.553, 16.7729, 157.732 )
 
 [node name="Painting1" type="Sprite" parent="Decorations" index="27"]

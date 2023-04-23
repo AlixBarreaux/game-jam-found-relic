@@ -892,13 +892,16 @@ extents = Vector2( 197.625, 410 )
 next_level_to_load_path = "res://scenes/levels/Level3.tscn"
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygons2D" index="0"]
+antialiased = true
 polygon = PoolVector2Array( 4, 820, -3, 2199, -4076, 2138, -4228, -5932, 769, -5853, 736, -3184, -234, -3185, -234, -3611, -1038, -3612, -1039, -2994, -1318, -2992, -1317, 72, -486, 72, -487, 819 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygons2D" index="1"]
+antialiased = true
 polygon = PoolVector2Array( -234, -1916, -234, -2845, -40, -2845, -40, -2314, 735, -2314, 735, -3216, 967, -3216, 967, -1917, 454, -1917, 454, 820, 866, 820, 866, -44, 2922, -44, 2922, -1936, 1932, -1936, 1932, -3184, 735, -3184, 748, -5863, 4851, -5854, 4770, 2163, -48, 2214, 3, 819, 4, -388, 2, -1917 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Polygons2D" index="2"]
 position = Vector2( -1089, 219 )
+antialiased = true
 polygon = PoolVector2Array( 1920, -1290, 1920, -680, 2575, -680, 2575, -1289 )
 __meta__ = {
 "_editor_description_": ""
@@ -906,6 +909,7 @@ __meta__ = {
 
 [node name="Polygon2D5" type="Polygon2D" parent="Polygons2D" index="3"]
 position = Vector2( -3241, -448 )
+antialiased = true
 polygon = PoolVector2Array( 1922, -1154, 1918, -679, 2576, -680, 2578, -1154 )
 __meta__ = {
 "_editor_description_": ""
@@ -913,70 +917,11 @@ __meta__ = {
 
 [node name="Polygon2D4" type="Polygon2D" parent="Polygons2D" index="4"]
 position = Vector2( 75, -181 )
+antialiased = true
 polygon = PoolVector2Array( 1920, -1290, 1920, -860, 2580, -860, 2580, -1290 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Candle" parent="Decorations" index="0" instance=ExtResource( 22 )]
-position = Vector2( -96, 247 )
-
-[node name="Candle2" parent="Decorations" index="1" instance=ExtResource( 22 )]
-position = Vector2( -1129, -349 )
-
-[node name="Candle3" parent="Decorations" index="2" instance=ExtResource( 22 )]
-position = Vector2( 1762, -1126 )
-
-[node name="Candle4" parent="Decorations" index="3" instance=ExtResource( 22 )]
-position = Vector2( 1600, -3006 )
-
-[node name="Candle5" parent="Decorations" index="4" instance=ExtResource( 22 )]
-position = Vector2( 1868, -450 )
-
-[node name="Candle6" parent="Decorations" index="5" instance=ExtResource( 22 )]
-position = Vector2( 2658, -1796 )
-
-[node name="Candle7" parent="Decorations" index="6" instance=ExtResource( 22 )]
-position = Vector2( -555, -731 )
-
-[node name="Candle8" parent="Decorations" index="7" instance=ExtResource( 22 )]
-position = Vector2( -941, -1906 )
-
-[node name="CandleMelted" parent="Decorations" index="8" instance=ExtResource( 20 )]
-position = Vector2( 971, -286 )
-
-[node name="CandleMelted2" parent="Decorations" index="9" instance=ExtResource( 20 )]
-position = Vector2( 1305, -2207 )
-
-[node name="CandleMelted3" parent="Decorations" index="10" instance=ExtResource( 20 )]
-position = Vector2( 2748, -208 )
-
-[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 20 )]
-position = Vector2( 1709, -1765 )
-
-[node name="CandleMelted5" parent="Decorations" index="12" instance=ExtResource( 20 )]
-position = Vector2( -1101, -2769 )
-
-[node name="CandleMelted6" parent="Decorations" index="13" instance=ExtResource( 20 )]
-position = Vector2( 632, 266 )
-
-[node name="CandleMelted7" parent="Decorations" index="14" instance=ExtResource( 20 )]
-position = Vector2( 2862, -1167 )
-
-[node name="CandleMelted8" parent="Decorations" index="15" instance=ExtResource( 20 )]
-position = Vector2( 8, -3092 )
-
-[node name="CandleMelted9" parent="Decorations" index="16" instance=ExtResource( 20 )]
-position = Vector2( 399, -2425 )
-
-[node name="CandleMelted10" parent="Decorations" index="17" instance=ExtResource( 20 )]
-position = Vector2( 847, -1360 )
-
-[node name="CandleMelted11" parent="Decorations" index="18" instance=ExtResource( 20 )]
-position = Vector2( -178, -1379 )
-
-[node name="CandleMelted12" parent="Decorations" index="19" instance=ExtResource( 20 )]
-position = Vector2( -919, -3415 )
 
 [node name="SequenceOrderSpirtesFeedback" parent="." index="2" instance=ExtResource( 17 )]
 
@@ -1105,6 +1050,66 @@ anims/Disable = SubResource( 52 )
 anims/Enable = SubResource( 53 )
 anims/Spawn = SubResource( 54 )
 anims/Win = SubResource( 55 )
+
+[node name="Candle" parent="Decorations" index="0" instance=ExtResource( 22 )]
+position = Vector2( -96, 247 )
+
+[node name="Candle2" parent="Decorations" index="1" instance=ExtResource( 22 )]
+position = Vector2( -1129, -349 )
+
+[node name="Candle3" parent="Decorations" index="2" instance=ExtResource( 22 )]
+position = Vector2( 1762, -1126 )
+
+[node name="Candle4" parent="Decorations" index="3" instance=ExtResource( 22 )]
+position = Vector2( 1600, -3006 )
+
+[node name="Candle5" parent="Decorations" index="4" instance=ExtResource( 22 )]
+position = Vector2( 1868, -450 )
+
+[node name="Candle6" parent="Decorations" index="5" instance=ExtResource( 22 )]
+position = Vector2( 2658, -1796 )
+
+[node name="Candle7" parent="Decorations" index="6" instance=ExtResource( 22 )]
+position = Vector2( -555, -731 )
+
+[node name="Candle8" parent="Decorations" index="7" instance=ExtResource( 22 )]
+position = Vector2( -941, -1906 )
+
+[node name="CandleMelted" parent="Decorations" index="8" instance=ExtResource( 20 )]
+position = Vector2( 971, -286 )
+
+[node name="CandleMelted2" parent="Decorations" index="9" instance=ExtResource( 20 )]
+position = Vector2( 1305, -2207 )
+
+[node name="CandleMelted3" parent="Decorations" index="10" instance=ExtResource( 20 )]
+position = Vector2( 2748, -208 )
+
+[node name="CandleMelted4" parent="Decorations" index="11" instance=ExtResource( 20 )]
+position = Vector2( 1709, -1765 )
+
+[node name="CandleMelted5" parent="Decorations" index="12" instance=ExtResource( 20 )]
+position = Vector2( -1101, -2769 )
+
+[node name="CandleMelted6" parent="Decorations" index="13" instance=ExtResource( 20 )]
+position = Vector2( 632, 266 )
+
+[node name="CandleMelted7" parent="Decorations" index="14" instance=ExtResource( 20 )]
+position = Vector2( 2862, -1167 )
+
+[node name="CandleMelted8" parent="Decorations" index="15" instance=ExtResource( 20 )]
+position = Vector2( 8, -3092 )
+
+[node name="CandleMelted9" parent="Decorations" index="16" instance=ExtResource( 20 )]
+position = Vector2( 399, -2425 )
+
+[node name="CandleMelted10" parent="Decorations" index="17" instance=ExtResource( 20 )]
+position = Vector2( 847, -1360 )
+
+[node name="CandleMelted11" parent="Decorations" index="18" instance=ExtResource( 20 )]
+position = Vector2( -178, -1379 )
+
+[node name="CandleMelted12" parent="Decorations" index="19" instance=ExtResource( 20 )]
+position = Vector2( -919, -3415 )
 
 [node name="Panel" parent="CanvasLayerLevel" index="0"]
 self_modulate = Color( 0, 0.247059, 0.160784, 1 )
@@ -1281,9 +1286,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="LevelLoadingTransitionTimer" parent="." index="6"]
-wait_time = 9.0
-
 [node name="AudioManager" type="Node" parent="." index="7"]
 script = ExtResource( 5 )
 
@@ -1342,6 +1344,9 @@ is_looped = true
 stream = ExtResource( 10 )
 volume_db = -7.0
 is_looped = true
+
+[node name="LevelLoadingTransitionTimer" parent="." index="8"]
+wait_time = 9.0
 
 [node name="NoteBlocksManager" parent="YSort" index="0" instance=ExtResource( 2 )]
 position = Vector2( 881, 0 )
