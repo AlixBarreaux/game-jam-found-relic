@@ -9,7 +9,8 @@ class_name DialogueLine
 
 
 export var message: String = ""
-export var texture: StreamTexture = null
+export var texture_left: StreamTexture = null
+export var texture_right: StreamTexture = null
 export var sound_file: AudioStream = null
 
 

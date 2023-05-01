@@ -6,12 +6,14 @@ class_name DialogueGUI
 
 
 # Node References:
-export var speech_texture_rect_node_path: NodePath = NodePath("")
+export var speech_texture_left_rect_node_path: NodePath = NodePath("")
+export var speech_texture_right_rect_node_path: NodePath = NodePath("")
 export var speech_message_rich_text_label_node_path: NodePath = NodePath("")
 export var speech_sound_player_node_path: NodePath = NodePath("")
 export var animation_tree_node_path: NodePath = NodePath("")
 
-onready var speech_texture_rect: TextureRect = get_node(speech_texture_rect_node_path)
+onready var speech_texture_left_rect: TextureRect = get_node(speech_texture_left_rect_node_path)
+onready var speech_texture_right_rect: TextureRect = get_node(speech_texture_right_rect_node_path)
 onready var speech_message_rich_text_label: RichTextLabel = get_node(speech_message_rich_text_label_node_path)
 onready var speech_sound_player: AudioStreamPlayer = get_node(speech_sound_player_node_path)
 onready var animation_tree = get_node(animation_tree_node_path)
@@ -48,7 +50,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _initialize_asserts () -> void:
-	assert(speech_texture_rect_node_path != "")
+#	assert(speech_texture_left_rect_node_path != "" or speech_texture_right_rect_node_path != "")
 	assert(speech_message_rich_text_label_node_path != "")
 	assert(speech_sound_player_node_path != "")
 
@@ -64,8 +66,8 @@ func _initialize() -> void:
 
 func on_input_triggered() -> void:
 	if is_last_speech:
-			animation_tree_anim_node_state_machine_playback.travel("End")
-			return
+		animation_tree_anim_node_state_machine_playback.travel("End")
+		return
 		
 	play_next_speech()
 	get_tree().set_input_as_handled()
@@ -73,7 +75,8 @@ func on_input_triggered() -> void:
 
 func unload_active_speech_line_data() -> void:
 	speech_message_rich_text_label.bbcode_text = ""
-	speech_texture_rect.texture = null
+	speech_texture_left_rect.texture = null
+	speech_texture_right_rect.texture = null
 	speech_sound_player.stop()
 	speech_sound_player.stream = null
 
@@ -97,8 +100,13 @@ func play_speech_at_index(speech_to_play_index: int) -> void:
 	
 	speech_message_rich_text_label.bbcode_text = dialogue.data[speech_to_play_index].message
 	
-	if dialogue.data[speech_index_increment].texture != null:
-		speech_texture_rect.texture = dialogue.data[speech_index_increment].texture
+	# Texture Left
+	if dialogue.data[speech_index_increment].texture_left != null:
+		speech_texture_left_rect.texture = dialogue.data[speech_index_increment].texture_left
+	
+	# Texture Right
+	if dialogue.data[speech_index_increment].texture_right != null:
+		speech_texture_right_rect.texture = dialogue.data[speech_index_increment].texture_right
 	
 	if dialogue.data[speech_index_increment].sound_file != null:
 		speech_sound_player.stream = dialogue.data[speech_index_increment].sound_file

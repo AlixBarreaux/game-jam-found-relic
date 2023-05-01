@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals3.png" type="Texture" id=23]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals4.png" type="Texture" id=24]
+[ext_resource path="res://dialogue-system/speech-resources/candle/en-us/dialogue_data.tres" type="Resource" id=25]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals1.png" type="Texture" id=28]
@@ -42,6 +43,7 @@
 [ext_resource path="res://assets/sprites/decorations/petals/Petals6.png" type="Texture" id=41]
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
+[ext_resource path="res://dialogue-system/dialogue-managers/timer/dialogue_manager_timer.gd" type="Script" id=44]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -1388,10 +1390,10 @@ speed = 500.0
 [node name="AnimationTree" parent="YSort/HeroMan" index="6"]
 parameters/playback = SubResource( 66 )
 
-[node name="TutorialSpaceBarSprite" parent="YSort/HeroMan" index="7" instance=ExtResource( 18 )]
+[node name="BubbleWithInputKeys" parent="YSort/HeroMan" index="7" instance=ExtResource( 18 )]
 position = Vector2( 0, -150 )
 
-[node name="KeyGamepad" parent="YSort/HeroMan/TutorialSpaceBarSprite" index="1"]
+[node name="KeyGamepad" parent="YSort/HeroMan/BubbleWithInputKeys" index="1"]
 visible = false
 position = Vector2( 72, 0 )
 
@@ -1399,7 +1401,16 @@ position = Vector2( 72, 0 )
 position = Vector2( 1866, 435 )
 speed = 500.0
 
-[connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/TutorialSpaceBarSprite" method="_on_SpaceBarTutorialArea2D_body_entered"]
+[node name="Timer" type="Timer" parent="." index="12"]
+one_shot = true
+autostart = true
+
+[node name="DialogueManagerTimer" type="Node" parent="Timer" index="0"]
+script = ExtResource( 44 )
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 25 )
+
+[connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
 [editable path="SequenceOrderFeedbackManager"]
 [editable path="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite"]
@@ -1412,4 +1423,4 @@ speed = 500.0
 [editable path="YSort/PlatesManager/Plate5"]
 [editable path="YSort/PlatesManager/Plate6"]
 [editable path="YSort/HeroMan"]
-[editable path="YSort/HeroMan/TutorialSpaceBarSprite"]
+[editable path="YSort/HeroMan/BubbleWithInputKeys"]

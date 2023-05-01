@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource( 1 )
 message = "Candle Message 1"
-texture = ExtResource( 2 )
+texture_left = ExtResource( 2 )
 sound_file = ExtResource( 3 )
