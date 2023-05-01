@@ -64,8 +64,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
-speech_texture_left_rect_node_path = NodePath("NinePatchRect/TESTTextureRect")
-speech_texture_right_rect_node_path = NodePath("NinePatchRect/TESTTextureRect2")
+speech_texture_left_rect_node_path = NodePath("NinePatchRect/TextureRectLeft")
+speech_texture_right_rect_node_path = NodePath("NinePatchRect/TextureRectRight")
 speech_message_rich_text_label_node_path = NodePath("NinePatchRect/SpeechMessage")
 speech_sound_player_node_path = NodePath("NinePatchRect/SpeechSoundPlayer")
 animation_tree_node_path = NodePath("AnimationTree")
@@ -84,7 +84,7 @@ texture = ExtResource( 6 )
 patch_margin_left = 55
 patch_margin_right = 55
 
-[node name="TESTTextureRect" type="TextureRect" parent="NinePatchRect"]
+[node name="TextureRectLeft" type="TextureRect" parent="NinePatchRect"]
 margin_left = 1591.0
 margin_top = 42.0
 margin_right = 1859.0
@@ -92,7 +92,7 @@ margin_bottom = 453.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 
-[node name="TESTTextureRect2" type="TextureRect" parent="NinePatchRect"]
+[node name="TextureRectRight" type="TextureRect" parent="NinePatchRect"]
 margin_left = 63.0
 margin_top = 41.0
 margin_right = 331.0
