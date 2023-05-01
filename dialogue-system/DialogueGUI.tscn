@@ -3,9 +3,9 @@
 [ext_resource path="res://dialogue-system/dialogue_gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=3]
-[ext_resource path="res://ProfilGirl.png" type="Texture" id=4]
-[ext_resource path="res://ProfilBoy.png" type="Texture" id=5]
-[ext_resource path="res://DialogBox.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/ProfilGirl.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ProfilBoy.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/gui-elements/DialogBox.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40

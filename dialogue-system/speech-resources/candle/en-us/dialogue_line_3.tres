@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
-[ext_resource path="res://ProfilGirl.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/ProfilGirl.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound/levels/switch.ogg" type="AudioStream" id=3]
-[ext_resource path="res://ProfilBoy.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ProfilBoy.png" type="Texture" id=4]
 
 [resource]
 script = ExtResource( 1 )
