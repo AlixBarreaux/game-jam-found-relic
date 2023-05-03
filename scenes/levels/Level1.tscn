@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
 [ext_resource path="res://dialogue-system/dialogue-managers/timer/dialogue_manager_timer.gd" type="Script" id=44]
+[ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=45]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -645,6 +646,128 @@ tracks/2/keys = {
 "values": [ Color( 0, 0.14902, 0.819608, 1 ) ]
 }
 
+[sub_resource type="StyleBoxFlat" id=69]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="DynamicFont" id=70]
+size = 40
+font_data = ExtResource( 45 )
+
+[sub_resource type="DynamicFont" id=71]
+size = 40
+font_data = ExtResource( 45 )
+
+[sub_resource type="Animation" id=75]
+resource_name = "Hide"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0, 181.547, -0.25, 0, 0.25, 0, -200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1.2 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 645, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "Show"
+length = 1.15
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0, 181.547, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.75, 1.15 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 243, 1198 )
 
@@ -1152,6 +1275,66 @@ position = Vector2( 2036, -2357 )
 [node name="CandleMelted5" parent="Decorations/Old" index="11" instance=ExtResource( 26 )]
 position = Vector2( 456, -1967 )
 
+[node name="Control" type="Control" parent="CanvasLayerGUI" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="CanvasLayerGUI/Control" index="0"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -315.0
+margin_top = -200.0
+margin_right = 315.0
+margin_bottom = 1.00031
+custom_styles/panel = SubResource( 69 )
+
+[node name="SpeechMessage" type="RichTextLabel" parent="CanvasLayerGUI/Control/Panel" index="0"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -492.0
+margin_top = 37.0
+margin_right = 267.0
+margin_bottom = 108.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 70 )
+bbcode_enabled = true
+bbcode_text = "Stretch your  [shake][rainbow]legs[/rainbow][/shake] lil' fella!"
+text = "Stretch your  legs lil' fella!"
+scroll_active = false
+
+[node name="SpeechMessage2" type="RichTextLabel" parent="CanvasLayerGUI/Control/Panel" index="1"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -492.0
+margin_top = 130.0
+margin_right = 267.0
+margin_bottom = 201.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+custom_colors/default_color = Color( 1, 0.407843, 0.517647, 1 )
+custom_fonts/normal_font = SubResource( 71 )
+bbcode_enabled = true
+bbcode_text = "Stretch your  [shake][rainbow]legs[/rainbow][/shake] lil' fella!"
+text = "Stretch your  legs lil' fella!"
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerGUI/Control/Panel" index="2"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -596.0
+margin_top = 69.0
+margin_right = -449.0
+margin_bottom = 177.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayerGUI/Control" index="1"]
+anims/Hide = SubResource( 75 )
+anims/RESET = SubResource( 73 )
+anims/Show = SubResource( 74 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
 collision_layer = 8
@@ -1403,7 +1586,6 @@ speed = 500.0
 
 [node name="Timer" type="Timer" parent="." index="12"]
 one_shot = true
-autostart = true
 
 [node name="DialogueManagerTimer" type="Node" parent="Timer" index="0"]
 script = ExtResource( 44 )
