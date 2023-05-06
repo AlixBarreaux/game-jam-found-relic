@@ -24,4 +24,4 @@ export var sound_file: AudioStream = null
 
 [resource]
 script = SubResource( 1 )
-message = "Ohhh I'm on [shake]FIRE[/shake] today!"
+message = "But we made it together, my dear. Because we were together."

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://dialogue-system/speech-resources/level-started/level-1/en-us/dialogue_line_1.tres" type="Resource" id=2]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-note-block/first-time/en-us/dialogue_line_1.tres" type="Resource" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
@@ -28,4 +28,4 @@ export var data: Array = []
 
 [resource]
 script = SubResource( 1 )
-data = [ ExtResource( 2 ) ]
+data = [ ExtResource( 1 ) ]

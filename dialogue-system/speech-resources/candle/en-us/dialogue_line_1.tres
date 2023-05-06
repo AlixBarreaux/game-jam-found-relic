@@ -1,11 +1,27 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/key_note.png" type="Texture" id=2]
-[ext_resource path="res://assets/sound/levels/good.ogg" type="AudioStream" id=3]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name DialogueLine
+
+# Base script for the resource dialogue_line.tres
+# The data fed in this resource file is the data which will be played in the 
+# DialogueGUI by triggering a DialogueManager
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var message: String = \"\"
+export var texture_left: StreamTexture = null
+export var texture_right: StreamTexture = null
+export var sound_file: AudioStream = null
+
+
+# ---------------------- RUN CODE ---------------------
+
+# ----------------- DECLARE FUNCTIONS -----------------
+"
 
 [resource]
-script = ExtResource( 1 )
-message = "Candle Message 1"
-texture_left = ExtResource( 2 )
-sound_file = ExtResource( 3 )
+script = SubResource( 1 )
+message = "Hmmm that's hot..."

@@ -2,22 +2,28 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
-class_name DialogueLine
+class_name DialogueData
+
+
+# Script loaded by resource file: dialogue_data.tres
+# Each entry in the data array is fed by a dialogue_line_x.tres file
 
 
 # ----------------- DECLARE VARIABLES -----------------
 
 
-export var message: String = \"\"
-export var texture: StreamTexture = null
-export var sound_file: AudioStream = null
+# dialogue_line_data resources must be fed in here
+export var data: Array = []
 
 
 # ---------------------- RUN CODE ---------------------
 
+
+
 # ----------------- DECLARE FUNCTIONS -----------------
+
 "
 
 [resource]
 script = SubResource( 1 )
-message = "We are almost there, my dear. We will finally be [b][wave][rainbow]together![/rainbow][/wave][/b]"
+data = [  ]
