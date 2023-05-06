@@ -19,5 +19,9 @@ func _receive_interaction() -> void:
 	self.emit_signal("interaction_received")
 
 
-func _on_InteractionReceiverArea2D_body_entered(_body: PhysicsBody2D) -> void:
+#func _on_InteractionReceiverArea2D_body_entered(_body: PhysicsBody2D) -> void:
+#	self._receive_interaction()
+
+
+func _on_InteractionReceiverArea2D_area_entered(_area: Area2D) -> void:
 	self._receive_interaction()

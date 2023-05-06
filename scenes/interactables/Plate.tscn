@@ -45,8 +45,8 @@ hframes = 2
 frame = 1
 
 [node name="InteractionReceiverArea2D" parent="." index="1"]
-collision_mask = 3
-can_receive_interaction_from_raycast = false
+collision_layer = 0
+collision_mask = 1
 
 [node name="CollisionShape2D" parent="InteractionReceiverArea2D" index="0"]
 position = Vector2( 0, 3.5 )
@@ -56,4 +56,4 @@ autoplay = "Unpress"
 anims/Press = SubResource( 1 )
 anims/Unpress = SubResource( 2 )
 
-[connection signal="body_entered" from="InteractionReceiverArea2D" to="InteractionReceiverArea2D" method="_on_InteractionReceiverArea2D_body_entered"]
+[connection signal="area_entered" from="InteractionReceiverArea2D" to="InteractionReceiverArea2D" method="_on_InteractionReceiverArea2D_area_entered"]
