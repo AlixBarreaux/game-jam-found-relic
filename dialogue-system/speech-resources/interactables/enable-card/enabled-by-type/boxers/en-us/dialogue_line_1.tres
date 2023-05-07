@@ -1,23 +1,7 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Resource
-class_name DialogueLine
-
-
-# ----------------- DECLARE VARIABLES -----------------
-
-
-export var message: String = \"\"
-export var texture: StreamTexture = null
-export var sound_file: AudioStream = null
-
-
-# ---------------------- RUN CODE ---------------------
-
-# ----------------- DECLARE FUNCTIONS -----------------
-"
+[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
 
 [resource]
-script = SubResource( 1 )
+script = ExtResource( 1 )
 message = "..."

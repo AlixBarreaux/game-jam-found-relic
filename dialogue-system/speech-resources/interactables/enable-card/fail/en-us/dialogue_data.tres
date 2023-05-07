@@ -1,4 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/fail/en-us/dialogue_line_2.tres" type="Resource" id=1]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/fail/en-us/dialogue_line_1.tres" type="Resource" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
@@ -26,4 +29,4 @@ export var data: Array = []
 
 [resource]
 script = SubResource( 1 )
-data = [  ]
+data = [ ExtResource( 2 ), ExtResource( 1 ) ]

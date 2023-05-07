@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_line_1.tres" type="Resource" id=1]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_line_3.tres" type="Resource" id=2]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_line_2.tres" type="Resource" id=3]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_line_4.tres" type="Resource" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
@@ -30,4 +31,4 @@ export var data: Array = []
 
 [resource]
 script = SubResource( 1 )
-data = [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ]
+data = [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]

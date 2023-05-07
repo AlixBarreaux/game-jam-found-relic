@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-message = "Darn it! It must not be the right combination."
+message = "Snap! It must not be the right combination."
