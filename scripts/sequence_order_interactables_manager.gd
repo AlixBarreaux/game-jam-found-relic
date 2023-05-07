@@ -4,16 +4,18 @@ extends Node2D
 
 # ----------------- DECLARE VARIABLES -----------------
 
+
 var last_interactable_order_id: int = 0
 
 signal invalid_sequence_order_given
 
+
 # ----------------- RUN CODE -----------------
+
 
 func _ready() -> void:
 	self.initialize_signals()
 	self.initialize()
-	return
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -31,7 +33,6 @@ func initialize_asserts() -> void:
 func initialize_signals() -> void:
 	for interactable in self.get_children():
 		interactable.connect("interactable_enabled", self, "on_interactable_enabled")
-	return
 
 
 func initialize() -> void:
@@ -39,15 +40,13 @@ func initialize() -> void:
 	for interactable in self.get_children():
 		_interactable_id_increment += 1
 		interactable.id = _interactable_id_increment
-		
-		print(self.name, " Generated interactable order ID: ", interactable.id)
-	return
 
 
-# Check if the interactable order is right when a interactable is enabled
+# Check if the interactables are enabled in the right order
 # Overriden in its extended classes
 func on_interactable_enabled(signal_args: Dictionary) -> void:
 	var _interactable_order_id: int = signal_args.id
+	
 	if _interactable_order_id == last_interactable_order_id + 1:
 		print("Good sequence:")
 		print("Received interactable ID: ", _interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
@@ -60,10 +59,8 @@ func on_interactable_enabled(signal_args: Dictionary) -> void:
 		print("Wrong sequence:")
 		print("Received interactable ID: ", _interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
 		self.reset_all_interactables()
-	return
 
 
 func reset_all_interactables() -> void:
 	last_interactable_order_id = 0
 	self.emit_signal("invalid_sequence_order_given")
-	return
