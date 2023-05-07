@@ -1,12 +1,13 @@
 class_name SequenceOrderInteractablesManager
 extends Node2D
 
-
 # ----------------- DECLARE VARIABLES -----------------
 
 
 var last_interactable_order_id: int = 0
 
+# "valid" signal added just for DialogueManager s to know the sequence state
+signal valid_sequence_order_given
 signal invalid_sequence_order_given
 
 
@@ -37,6 +38,7 @@ func initialize_signals() -> void:
 
 func initialize() -> void:
 	var _interactable_id_increment: int = 0
+	
 	for interactable in self.get_children():
 		_interactable_id_increment += 1
 		interactable.id = _interactable_id_increment
@@ -51,6 +53,7 @@ func on_interactable_enabled(signal_args: Dictionary) -> void:
 		print("Good sequence:")
 		print("Received interactable ID: ", _interactable_order_id, " | Last interactable ID: ", last_interactable_order_id)
 		last_interactable_order_id = _interactable_order_id
+		self.emit_signal("valid_sequence_order_given")
 		
 		if _interactable_order_id == self.get_child_count():
 			Events.emit_signal("level_completed")

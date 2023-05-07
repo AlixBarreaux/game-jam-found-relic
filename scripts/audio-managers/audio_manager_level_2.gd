@@ -45,7 +45,7 @@ func initialize_signals() -> void:
 
 
 func on_good_interaction_sent() -> void:
-	print("Good interaction")
+	print(self.name, "Good interaction sent")
 	# Mute current track
 #	general_tracks_list.get_child(current_playing_track_index).set_muted(true)
 	general_tracks_list.get_child(current_playing_track_index).stop()

@@ -33,7 +33,8 @@ func send_trigger(_arguments) -> void:
 
 
 # Node References
-onready var parent_node: Node = self.get_parent()
+export var node_to_connect_to_node_path: NodePath = ""
+onready var node_to_connect_to: Node = get_node(self.node_to_connect_to_node_path) if node_to_connect_to_node_path != "" else null
 
 export var dialogue_gui_node_path: NodePath = ""
 onready var dialogue_gui: DialogueGUI = get_node(self.dialogue_gui_node_path)
@@ -54,11 +55,13 @@ func _ready() -> void:
 
 func _initialize_signals() -> void:
 #	Example implementation to override this method
-#	parent_node.connect("signal_with_dictionary_argument", self, "_send_dialogue")
+#	node_to_connect_to.connect("signal_with_dictionary_argument", self, "_send_dialogue")
 	return
 
 
 func _initialize_asserts() -> void:
+	# No asset for node_to_connect_to_node_path, can "connect to a script"
+	# instead (EG: Events autoload)
 	assert(self.dialogue_gui_node_path != "")
 	assert(self.dialogue_data_resource != null)
 	assert(self.dialogue_data_resource.data != [])

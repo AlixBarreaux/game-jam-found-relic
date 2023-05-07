@@ -10,4 +10,4 @@ class_name DialogueManagerInteractableEnabled
 
 
 func _initialize_signals() -> void:
-	parent_node.connect("interactable_enabled", self, "send_trigger")
+	node_to_connect_to.connect("interactable_enabled", self, "send_trigger")

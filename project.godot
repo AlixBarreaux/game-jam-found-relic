@@ -62,7 +62,12 @@ _global_script_classes=[ {
 "base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
 "language": "GDScript",
-"path": "res://dialogue-system/dialogue-managers/interact/dialogue_manager_interactable_enabled.gd"
+"path": "res://dialogue-system/dialogue-managers/specific-interaction/dialogue_manager_interactable_enabled.gd"
+}, {
+"base": "DialogueManager",
+"class": "DialogueManagerInteractableGoodSequence",
+"language": "GDScript",
+"path": "res://dialogue-system/dialogue-managers/interactable-good-sequence/dialogue_manager_interactable_good_sequence.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerLevelStart",
@@ -231,6 +236,7 @@ _global_script_class_icons={
 "DialogueManager": "",
 "DialogueManagerArea2DBodyEntered": "",
 "DialogueManagerInteractableEnabled": "",
+"DialogueManagerInteractableGoodSequence": "",
 "DialogueManagerLevelStart": "",
 "DialogueManagerTimer": "",
 "FullScreenController": "",
