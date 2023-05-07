@@ -12,8 +12,7 @@ extends Node2D
 
 func _ready() -> void:
 	self.initialize_signals()
-	self.initialize()
-	return
+	self._initialize()
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
@@ -34,10 +33,9 @@ func initialize_signals() -> void:
 		for memory_card in card_group_node.get_children():
 			memory_card.connect("interactable_enabled", self, "on_interactable_enabled")
 			memory_card.connect("life_cycle_finished", self, "on_card_life_cycle_finished")
-	return
 
 
-func initialize() -> void:
+func _initialize() -> void:
 	return
 
 
@@ -134,72 +132,4 @@ func on_card_life_cycle_finished() -> void:
 #func reset_all_interactables() -> void:
 ##	last_interactable_order_id = 0
 #	self.emit_signal("invalid_sequence_order_given")
-#	return
-
-
-
-# -----------------------------------------------------------------------------
-
-# THE NEXT LINES OF THIS SCRIPT ARE THE START OF A SYSTEM TO RANDOMLY GENERATE
-# GROUPS AND CARDS. IT IS STILL NOT FINISHED AT ALL!
-
-#export var groups_to_generate_count: int = 8
-#export var cards_by_group_count: int = 2
-
-
-#export var textures_to_load: Array = []
-
-
-#func initialize() -> void:
-#	var _increment_counter = 0
-#	var _interactable_id_increment: int = 0
-#
-#	var _card_group_node = null
-#
-#	for card_group in range(1, groups_to_generate_count +1):
-#		print("Card group: ", card_group)
-#		_card_group_node = self.add_group_node_to_scene_tree(card_group)
-#
-#		for card in range(1, cards_by_group_count +1):
-#			print("Card: ", card)
-#			self.add_memory_card_to_group(_card_group_node, card)
-	
-#	return
-
-
-
-
-#export var vertical_spacing_between_cards: float = 100.0
-#export var horizontal_spacing_between_cards: float = 100.0
-#
-#var last_vertical_global_position: float = 0.0
-#var last_horizontal_global_position: float = 0.0
-
-
-#func add_group_node_to_scene_tree(name_counter: int) -> Node:
-#	var _node = Node2D.new()
-#	_node.set_name("Group" + str(name_counter))
-#	self.add_child(_node)
-#
-#	# Generate the Y position for the groupo
-#	_node.global_position.y = last_vertical_global_position + vertical_spacing_between_cards
-#	last_vertical_global_position += vertical_spacing_between_cards
-##	print(_node.global_position)
-#
-#	return _node
-	
-
-#export var memory_card_scene: PackedScene = null
-#
-#func add_memory_card_to_group(assigned_group: Node, name_counter: int) -> void:
-#	var _memory_card_instance = self.memory_card_scene.instance()
-#	_memory_card_instance.set_name(_memory_card_instance.name + str(name_counter))
-#
-#	assigned_group.add_child(_memory_card_instance)
-#
-#	# Generate the X position for the card
-#	_memory_card_instance.global_position.x = horizontal_spacing_between_cards * name_counter
-##	last_horizontal_global_position += horizontal_spacing_between_cards
-#	print(_memory_card_instance.global_position.x)
-#
 #	return

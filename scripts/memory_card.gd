@@ -54,7 +54,6 @@ func emit_signal_interactable_enabled() -> void:
 
 
 func reset() -> void:
-	print(self.name + ": reset() !")
 	animation_tree_node_sm_playback.travel("ShowInvalidCombination")
 	set_enabled(true)
 
@@ -72,4 +71,4 @@ func finish_life_cycle() -> void:
 
 # Special function used as method track for AnimationPlayer: "ShowValidCombination"
 func emit_signal_life_cycle_finished() -> void:
-	emit_signal("life_cycle_finished")
+	self.emit_signal("life_cycle_finished")
