@@ -10,4 +10,4 @@ class_name DialogueManagerArea2DBodyEntered
 
 
 func _initialize_signals() -> void:
-	parent_node.connect("body_entered", self, "_send_dialogue")
+	parent_node.connect("body_entered", self, "send_trigger")

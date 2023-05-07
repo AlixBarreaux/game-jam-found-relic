@@ -10,7 +10,7 @@ class_name DialogueManagerTimer
 
 
 func _initialize_signals() -> void:
-	parent_node.connect("timeout", self, "_send_dialogue", [0])
+	parent_node.connect("timeout", self, "send_trigger", [0])
 
 
 #func send_dialogue_without_arguments() -> void:

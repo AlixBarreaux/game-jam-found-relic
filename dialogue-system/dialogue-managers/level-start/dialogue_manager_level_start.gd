@@ -9,7 +9,7 @@ class_name DialogueManagerLevelStart
 
 
 func _custom_on_ready() -> void:
-	self._send_dialogue(0)
+	self.send_trigger(0)
 
 
 # ----------------- DECLARE FUNCTIONS -----------------
