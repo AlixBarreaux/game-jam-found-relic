@@ -1288,9 +1288,9 @@ anchor_bottom = 1.0
 [node name="Panel" type="Panel" parent="CanvasLayerGUI/Control" index="0"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -315.0
+margin_left = 645.0
 margin_top = -200.0
-margin_right = 315.0
+margin_right = 1275.0
 margin_bottom = 1.0011
 custom_styles/panel = SubResource( 69 )
 

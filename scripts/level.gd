@@ -13,7 +13,6 @@ export var next_level_to_load_path: String = ""
 onready var level_loading_transition_timer: Timer = $LevelLoadingTransitionTimer
 
 
-# ----------------- RUN CODE -----------------
 
 
 func _ready() -> void:

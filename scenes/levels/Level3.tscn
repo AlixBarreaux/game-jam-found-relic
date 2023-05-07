@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
@@ -21,9 +21,14 @@
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_3.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_1.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_5.ogg" type="AudioStream" id=21]
+[ext_resource path="res://dialogue-system/speech-resources/level-started/level-3/en-us/dialogue_data.tres" type="Resource" id=22]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/sprites/tilesheets/level_1_-_tilesheet.png" type="Texture" id=25]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/on-ready/DialogueManagerOnReady.tscn" type="PackedScene" id=26]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/fail/en-us/dialogue_data.tres" type="Resource" id=27]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=28]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/specific-interaction/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=22]
 0/name = "level_1_-_tilesheet.png 0"
@@ -443,6 +448,17 @@ speed = 500.0
 [node name="HeroWoman" parent="YSort" index="1"]
 position = Vector2( 1975, 1074 )
 speed = 500.0
+
+[node name="DialogueManagerOnReady" parent="DialogueManagers" index="0" instance=ExtResource( 26 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 22 )
+
+[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagers" index="1" instance=ExtResource( 28 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 27 )
+
+[node name="DialogueManagerInteractableEnabled" parent="DialogueManagers" index="2" instance=ExtResource( 29 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 

@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "DialogueManager",
 "class": "DialogueManagerArea2DBodyEntered",
 "language": "GDScript",
-"path": "res://dialogue-system/dialogue-managers/base/area2d-body-entered/dialogue_manager_area2d_body_entered.gd"
+"path": "res://dialogue-system/dialogue-managers/base/area2d-body-entered/dialogue_manager_area2d_area_entered.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
