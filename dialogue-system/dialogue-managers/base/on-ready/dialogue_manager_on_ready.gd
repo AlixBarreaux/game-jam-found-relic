@@ -1,5 +1,5 @@
 extends DialogueManager
-class_name DialogueManagerLevelStart
+class_name DialogueManagerOnReady
 
 
 # ----------------- DECLARE VARIABLES -----------------

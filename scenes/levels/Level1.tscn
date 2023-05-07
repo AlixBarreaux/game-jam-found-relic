@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals3.png" type="Texture" id=23]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals4.png" type="Texture" id=24]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/on-ready/DialogueManagerOnReady.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=27]
 [ext_resource path="res://assets/sprites/decorations/petals/Petals1.png" type="Texture" id=28]
@@ -42,6 +43,7 @@
 [ext_resource path="res://assets/sprites/decorations/petals/Petals6.png" type="Texture" id=41]
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
+[ext_resource path="res://dialogue-system/speech-resources/level-started/level-3/en-us/dialogue_data.tres" type="Resource" id=44]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=45]
 
 [sub_resource type="Animation" id=23]
@@ -1584,6 +1586,10 @@ position = Vector2( 0, 67 )
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 1866, 435 )
 speed = 500.0
+
+[node name="DialogueManagerOnReady" parent="DialogueManagers" index="0" instance=ExtResource( 25 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 44 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

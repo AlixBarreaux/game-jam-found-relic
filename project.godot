@@ -75,9 +75,9 @@ _global_script_classes=[ {
 "path": "res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/dialogue_manager_wrong_sequence.gd"
 }, {
 "base": "DialogueManager",
-"class": "DialogueManagerLevelStart",
+"class": "DialogueManagerOnReady",
 "language": "GDScript",
-"path": "res://dialogue-system/dialogue-managers/base/level-start/dialogue_manager_level_start.gd"
+"path": "res://dialogue-system/dialogue-managers/base/on-ready/dialogue_manager_on_ready.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerTimer",
@@ -243,7 +243,7 @@ _global_script_class_icons={
 "DialogueManagerInteractableEnabled": "",
 "DialogueManagerInteractableGoodSequence": "",
 "DialogueManagerInteractableWrongSequence": "",
-"DialogueManagerLevelStart": "",
+"DialogueManagerOnReady": "",
 "DialogueManagerTimer": "",
 "FullScreenController": "",
 "GameTitleLabel": "",
