@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -43,8 +43,10 @@
 [ext_resource path="res://assets/sprites/decorations/petals/Petals6.png" type="Texture" id=41]
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
-[ext_resource path="res://dialogue-system/dialogue-managers/interactable-good-sequence/DialogueManagerGoodSequence.tscn" type="PackedScene" id=44]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-good-sequence/DialogueManagerGoodSequence.tscn" type="PackedScene" id=44]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=45]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=46]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/2/en-us/dialogue_data.tres" type="Resource" id=47]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -1589,9 +1591,15 @@ speed = 500.0
 
 [node name="DialogueManagers" type="Node" parent="." index="12"]
 
-[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagers" index="0" instance=ExtResource( 44 )]
+[node name="InteractableGoodSequence" parent="DialogueManagers" index="0" instance=ExtResource( 44 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 25 )
+
+[node name="InteractableWrongSequence" parent="DialogueManagers" index="1" instance=ExtResource( 46 )]
+enable_n_times_before_trigger = 2
+remaining_reenable_charges = 2
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 47 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
 

@@ -11,6 +11,7 @@ class_name DialogueManager
 
 
 export var enable_n_times_before_trigger: int = 0
+# Enter -1 for infinite charges
 export var remaining_reenable_charges: int = 0
 
 
@@ -23,7 +24,10 @@ func send_trigger(_arguments) -> void:
 	print("Send dialogue, n before triggers passed")
 	_send_dialogue(_arguments)
 	
-	if remaining_reenable_charges <= 0:
+	if remaining_reenable_charges == -1:
+		return
+	
+	if remaining_reenable_charges <= 1:
 		print("remaining_reenable_charges is: ", remaining_reenable_charges, " , queue_free() and return")
 		self.queue_free()
 		return
