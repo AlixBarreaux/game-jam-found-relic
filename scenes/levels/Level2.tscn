@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SequenceOrderInteractablesManager.tscn" type="PackedScene" id=2]
@@ -20,7 +20,9 @@
 [ext_resource path="res://scenes/SequenceOrderFeedbackLine2D.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/SequenceOrderFeedbackSprite.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=20]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_data.tres" type="Resource" id=21]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=22]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/on-ready/DialogueManagerOnReady.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
@@ -1405,6 +1407,10 @@ position = Vector2( -252, 650 )
 
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 671, 650 )
+
+[node name="DialogueManagerOnReady" parent="DialogueManagers" index="0" instance=ExtResource( 23 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 21 )
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 

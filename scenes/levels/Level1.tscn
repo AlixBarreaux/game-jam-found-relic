@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -43,8 +43,14 @@
 [ext_resource path="res://assets/sprites/decorations/petals/Petals6.png" type="Texture" id=41]
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
-[ext_resource path="res://dialogue-system/speech-resources/level-started/level-3/en-us/dialogue_data.tres" type="Resource" id=44]
+[ext_resource path="res://dialogue-system/speech-resources/level-started/level-1/en-us/dialogue_data.tres" type="Resource" id=44]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=45]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/first-time/en-us/dialogue_data.tres" type="Resource" id=46]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-good-sequence/DialogueManagerGoodSequence.tscn" type="PackedScene" id=47]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/1/en-us/dialogue_data.tres" type="Resource" id=48]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/2/en-us/dialogue_data.tres" type="Resource" id=49]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=50]
+[ext_resource path="res://LevelTransition.tscn" type="PackedScene" id=51]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -729,7 +735,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=74]
@@ -742,8 +748,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray(  ),
-"times": PoolRealArray(  )
+"points": PoolRealArray( 645, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("Panel:rect_position:y")
@@ -1276,7 +1282,6 @@ position = Vector2( 2036, -2357 )
 position = Vector2( 456, -1967 )
 
 [node name="Control" type="Control" parent="CanvasLayerGUI" index="2"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -1286,7 +1291,7 @@ anchor_right = 0.5
 margin_left = -315.0
 margin_top = -200.0
 margin_right = 315.0
-margin_bottom = 1.00061
+margin_bottom = 1.0011
 custom_styles/panel = SubResource( 69 )
 
 [node name="SpeechMessage" type="RichTextLabel" parent="CanvasLayerGUI/Control/Panel" index="0"]
@@ -1300,7 +1305,7 @@ rect_scale = Vector2( 0.6, 0.6 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 70 )
 bbcode_enabled = true
-bbcode_text = "Stretch your  [shake][rainbow]legs[/rainbow][/shake] lil' fella!"
+bbcode_text = "Stretch your  [shake]legs[/shake] lil' fella!"
 text = "Stretch your  legs lil' fella!"
 scroll_active = false
 
@@ -1316,7 +1321,7 @@ mouse_filter = 2
 custom_colors/default_color = Color( 1, 0.407843, 0.517647, 1 )
 custom_fonts/normal_font = SubResource( 71 )
 bbcode_enabled = true
-bbcode_text = "Stretch your  [shake][rainbow]legs[/rainbow][/shake] lil' fella!"
+bbcode_text = "Stretch your  [shake]legs[/shake] lil' fella!"
 text = "Stretch your  legs lil' fella!"
 scroll_active = false
 
@@ -1334,6 +1339,9 @@ texture = ExtResource( 16 )
 anims/Hide = SubResource( 75 )
 anims/RESET = SubResource( 73 )
 anims/Show = SubResource( 74 )
+
+[node name="LevelTransition" parent="CanvasLayerGUI" index="3" instance=ExtResource( 51 )]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
@@ -1590,6 +1598,19 @@ speed = 500.0
 [node name="DialogueManagerOnReady" parent="DialogueManagers" index="0" instance=ExtResource( 25 )]
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 44 )
+
+[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagers" index="1" instance=ExtResource( 47 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 46 )
+
+[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagers" index="2" instance=ExtResource( 50 )]
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 48 )
+
+[node name="DialogueManagerInteractableWrongSequence2" parent="DialogueManagers" index="3" instance=ExtResource( 50 )]
+enable_n_times_before_trigger = 1
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 49 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
