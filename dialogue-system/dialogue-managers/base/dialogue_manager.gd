@@ -13,6 +13,7 @@ class_name DialogueManager
 export var enable_n_times_before_trigger: int = 0
 # Enter -1 for infinite charges
 export var remaining_reenable_charges: int = 0
+export var dialogue_data_resource: Resource = null
 
 
 func send_trigger(_arguments) -> void:
@@ -40,15 +41,20 @@ func send_trigger(_arguments) -> void:
 export var node_to_connect_to_node_path: NodePath = ""
 onready var node_to_connect_to: Node = get_node(self.node_to_connect_to_node_path) if node_to_connect_to_node_path != "" else null
 
-export var dialogue_gui_node_path: NodePath = ""
-onready var dialogue_gui: DialogueGUI = get_node(self.dialogue_gui_node_path)
+onready var dialogue_gui: DialogueGUI = null
 
 
 # ---------------------- RUN CODE ---------------------
 
-export var dialogue_data_resource: Resource = null
+
+
 
 func _ready() -> void:
+	get_parent().connect("ready", self, "on_dialogue_managers_manager_ready")
+
+
+func on_dialogue_managers_manager_ready() -> void:
+	dialogue_gui = self.get_parent().dialogue_gui
 	self._initialize_asserts()
 	self._initialize_signals()
 	self._custom_on_ready()
@@ -66,7 +72,6 @@ func _initialize_signals() -> void:
 func _initialize_asserts() -> void:
 	# No asset for node_to_connect_to_node_path, can "connect to a script"
 	# instead (EG: Events autoload)
-	assert(self.dialogue_gui_node_path != "")
 	assert(self.dialogue_data_resource != null)
 	assert(self.dialogue_data_resource.data != [])
 

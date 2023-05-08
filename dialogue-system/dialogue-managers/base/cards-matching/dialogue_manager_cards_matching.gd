@@ -1,5 +1,5 @@
 extends DialogueManager
-class_name DialogueManagerInteractableEnabled
+class_name DialogueManagerCardsMatching
 
 
 # ----------------- DECLARE VARIABLES -----------------
@@ -10,4 +10,4 @@ class_name DialogueManagerInteractableEnabled
 
 
 func _initialize_signals() -> void:
-	node_to_connect_to.connect("interactable_enabled", self, "send_trigger")
+	node_to_connect_to.connect("life_cycle_finished", self, "send_trigger", [0])

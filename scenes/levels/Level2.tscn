@@ -1416,18 +1416,15 @@ position = Vector2( -252, 650 )
 [node name="HeroWoman" parent="YSort" index="2"]
 position = Vector2( 671, 650 )
 
-[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagers" index="0" instance=ExtResource( 21 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagersManager" index="0" instance=ExtResource( 21 )]
 dialogue_data_resource = ExtResource( 23 )
 
-[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagers" index="1" instance=ExtResource( 27 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagersManager" index="1" instance=ExtResource( 27 )]
 dialogue_data_resource = ExtResource( 28 )
 
-[node name="DialogueManagerArea2DAreaEntered" parent="DialogueManagers" index="2" instance=ExtResource( 25 )]
-node_to_connect_to_node_path = NodePath("../../Decorations/CandleWithDialogue/Area2D")
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerArea2DAreaEntered" parent="DialogueManagersManager" index="2" instance=ExtResource( 25 )]
 dialogue_data_resource = ExtResource( 26 )
+node_to_connect_to_node_path = NodePath("../../Decorations/CandleWithDialogue/Area2D")
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 

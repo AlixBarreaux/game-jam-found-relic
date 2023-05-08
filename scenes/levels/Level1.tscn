@@ -1595,21 +1595,17 @@ position = Vector2( 0, 67 )
 position = Vector2( 1866, 435 )
 speed = 500.0
 
-[node name="DialogueManagerOnReady" parent="DialogueManagers" index="0" instance=ExtResource( 25 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerOnReady" parent="DialogueManagersManager" index="0" instance=ExtResource( 25 )]
 dialogue_data_resource = ExtResource( 44 )
 
-[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagers" index="1" instance=ExtResource( 47 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerInteractableGoodSequence" parent="DialogueManagersManager" index="1" instance=ExtResource( 47 )]
 dialogue_data_resource = ExtResource( 46 )
 
-[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagers" index="2" instance=ExtResource( 50 )]
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+[node name="DialogueManagerInteractableWrongSequence" parent="DialogueManagersManager" index="2" instance=ExtResource( 50 )]
 dialogue_data_resource = ExtResource( 48 )
 
-[node name="DialogueManagerInteractableWrongSequence2" parent="DialogueManagers" index="3" instance=ExtResource( 50 )]
+[node name="DialogueManagerInteractableWrongSequence2" parent="DialogueManagersManager" index="3" instance=ExtResource( 50 )]
 enable_n_times_before_trigger = 1
-dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 49 )
 
 [connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
