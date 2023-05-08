@@ -60,7 +60,7 @@ func _initialize() -> void:
 		self.queue_free()
 		return
 	
-	toggle_enabled(false)
+#	toggle_enabled(false)
 	animation_tree.set_active(true)
 
 

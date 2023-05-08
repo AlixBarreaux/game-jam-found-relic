@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sprites/ProfilGirl.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/ProfilBoy.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/gui-elements/DialogBox.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/keyboard-gamepad-keys/left_stick.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -13,7 +14,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "End"
-length = 0.5
+length = 1.3
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -21,23 +22,64 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 1.3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "stop"
 } ]
 }
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NinePatchRect:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 673, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0, 1080, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 1.3 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NinePatchRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "RESET"
 
-[sub_resource type="Animation" id=2]
-resource_name = "Shake"
-
 [sub_resource type="Animation" id=3]
 resource_name = "Start"
-length = 0.5
+length = 1.1
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NinePatchRect:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1080, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0, 673, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 1.1 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NinePatchRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "End"
@@ -71,15 +113,15 @@ speech_sound_player_node_path = NodePath("NinePatchRect/SpeechSoundPlayer")
 animation_tree_node_path = NodePath("AnimationTree")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
 self_modulate = Color( 0.741176, 0.180392, 0.270588, 1 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -939.0
-margin_top = -396.0
-margin_right = 938.0
-margin_bottom = -18.0
+margin_left = -938.5
+margin_right = 938.5
+margin_bottom = 406.997
 texture = ExtResource( 6 )
 patch_margin_left = 55
 patch_margin_right = 55
@@ -123,9 +165,9 @@ mouse_filter = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 299.0
-margin_top = 111.0
+margin_top = 106.0
 margin_right = -299.0
-margin_bottom = -71.0
+margin_bottom = -128.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
@@ -135,10 +177,17 @@ scroll_active = false
 
 [node name="SpeechSoundPlayer" type="AudioStreamPlayer" parent="NinePatchRect"]
 
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+margin_left = 1457.5
+margin_top = 258.0
+margin_right = 1547.5
+margin_bottom = 348.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 1 )
 anims/RESET = SubResource( 10 )
-anims/Shake = SubResource( 2 )
 anims/Start = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
