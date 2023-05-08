@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://dialogue-system/dialogue-managers/base/specific-interaction/dialogue_manager_interactable_enabled.gd" type="Script" id=1]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/specific-interaction/dialogue_manager_cards_matching.gd" type="Script" id=1]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/DialogueManager.tscn" type="PackedScene" id=2]
 
 [node name="DialogueManagerInteractableEnabled" instance=ExtResource( 2 )]

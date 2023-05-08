@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/MemoryCard.tscn" type="PackedScene" id=2]
@@ -21,15 +21,17 @@
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_3.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_1.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/sound/levels/level-3/lvl_3_5.ogg" type="AudioStream" id=21]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/champagne/en-us/dialogue_data.tres" type="Resource" id=22]
 [ext_resource path="res://scenes/decorations/Candle.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/decorations/CandleMelted.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/sprites/tilesheets/level_1_-_tilesheet.png" type="Texture" id=25]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/on-ready/DialogueManagerOnReady.tscn" type="PackedScene" id=26]
 [ext_resource path="res://dialogue-system/speech-resources/level-started/level-3/en-us/dialogue_data.tres" type="Resource" id=27]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=28]
-[ext_resource path="res://dialogue-system/dialogue-managers/base/specific-interaction/DialogueManagerInteractableEnabled.tscn" type="PackedScene" id=29]
+[ext_resource path="res://dialogue-system/dialogue-managers/base/specific-interaction/DialogueManagerCardsMatching.tscn" type="PackedScene" id=29]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/fail/en-us/dialogue_data.tres" type="Resource" id=30]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/boxers/en-us/dialogue_data.tres" type="Resource" id=31]
+[ext_resource path="res://dialogue-system/speech-resources/interactables/enable-card/enabled-by-type/rose/en-us/dialogue_data.tres" type="Resource" id=32]
 
 [sub_resource type="TileSet" id=22]
 0/name = "level_1_-_tilesheet.png 0"
@@ -462,6 +464,16 @@ dialogue_data_resource = ExtResource( 30 )
 node_to_connect_to_node_path = NodePath("../../MemoryCardsManager/Group8/MemoryCard")
 dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
 dialogue_data_resource = ExtResource( 31 )
+
+[node name="DialogueManagerCardsMatching" parent="DialogueManagers" index="3" instance=ExtResource( 29 )]
+node_to_connect_to_node_path = NodePath("../../MemoryCardsManager/Group4/MemoryCard")
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 22 )
+
+[node name="DialogueManagerCardsMatching2" parent="DialogueManagers" index="4" instance=ExtResource( 29 )]
+node_to_connect_to_node_path = NodePath("../../MemoryCardsManager/Group7/MemoryCard")
+dialogue_gui_node_path = NodePath("../../CanvasLayerGUI/DialogueGUI")
+dialogue_data_resource = ExtResource( 32 )
 
 [connection signal="finished" from="AudioManager/WrongTrack" to="AudioManager" method="_on_WrongTrack_finished"]
 

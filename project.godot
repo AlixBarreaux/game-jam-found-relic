@@ -62,7 +62,7 @@ _global_script_classes=[ {
 "base": "DialogueManager",
 "class": "DialogueManagerInteractableEnabled",
 "language": "GDScript",
-"path": "res://dialogue-system/dialogue-managers/base/specific-interaction/dialogue_manager_interactable_enabled.gd"
+"path": "res://dialogue-system/dialogue-managers/base/specific-interaction/dialogue_manager_cards_matching.gd"
 }, {
 "base": "DialogueManager",
 "class": "DialogueManagerInteractableGoodSequence",
