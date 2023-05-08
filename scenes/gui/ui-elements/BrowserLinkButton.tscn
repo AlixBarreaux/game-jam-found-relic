@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/gui/browser_link_button.gd" type="Script" id=1]
+
+[node name="BrowserLinkButton" type="LinkButton"]
+margin_left = 260.0
+margin_right = 402.0
+margin_bottom = 38.0
+focus_mode = 2
+text = "Link Here"
+underline = 1
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

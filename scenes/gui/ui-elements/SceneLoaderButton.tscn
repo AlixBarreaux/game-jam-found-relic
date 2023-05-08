@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/gui/scene_loader_button.gd" type="Script" id=1]
+
+[node name="SceneLoaderButton" type="Button"]
+margin_right = 388.0
+margin_bottom = 20.0
+text = "Scene Loader Button"
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
