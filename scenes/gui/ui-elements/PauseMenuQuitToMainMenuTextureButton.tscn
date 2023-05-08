@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/gui/pause_menu_quit_to_main_menu_texture_button.gd" type="Script" id=1]
+[ext_resource path="res://scripts/gui/ui-elements/pause_menu_quit_to_main_menu_texture_button.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/gui-elements/power_button.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/gui-elements/power_button_active.png" type="Texture" id=3]
 
