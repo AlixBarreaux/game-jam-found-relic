@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/gui/screen-menus/ScreenMenu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/gui/VolumeController.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gui/ui-elements/VolumeController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gui/FullscreenController.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
