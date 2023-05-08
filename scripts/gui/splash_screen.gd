@@ -22,9 +22,14 @@ func initialize_asserts() -> void:
 		printerr("(!) ERROR: In " + self.name + ": The next scene to load path can't be empty!")
 
 
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if (event.get_button_index() == 1) or (event.get_button_index() == 2):
+			if not event.is_pressed():
+				self.load_next_scene()
+
+
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouse:
-		return
 	if event is InputEventKey or InputEventJoypadButton:
 		self.load_next_scene()
 

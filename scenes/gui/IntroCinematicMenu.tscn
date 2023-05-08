@@ -167,6 +167,7 @@ scene_to_load_path = "res://scenes/levels/Level1.tscn"
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 8 )
 
 [node name="GirlTextureRect" type="TextureRect" parent="."]
@@ -174,6 +175,7 @@ margin_left = -1167.0
 margin_top = -3.0
 margin_right = -1.0
 margin_bottom = 774.0
+mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="GuyTextureRect" type="TextureRect" parent="."]
@@ -185,6 +187,7 @@ margin_left = -1143.0
 margin_top = -728.0
 margin_right = 23.0
 margin_bottom = 49.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 
 [node name="EndMessageLabel" type="Label" parent="."]

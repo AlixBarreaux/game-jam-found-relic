@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/gui/screen-menus/ScreenMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/gui/ui-elements/VolumeController.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/gui/FullscreenController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/gui/ui-elements/FullscreenController.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.254902, 0.282353, 0.333333, 1 )
