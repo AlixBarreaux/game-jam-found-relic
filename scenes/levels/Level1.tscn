@@ -1281,9 +1281,10 @@ position = Vector2( 2036, -2357 )
 [node name="CandleMelted5" parent="Decorations/Old" index="11" instance=ExtResource( 26 )]
 position = Vector2( 456, -1967 )
 
-[node name="Control" type="Control" parent="CanvasLayerGUI" index="2"]
+[node name="Control" type="Control" parent="CanvasLayerGUI" index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayerGUI/Control" index="0"]
 anchor_left = 0.5
@@ -1340,7 +1341,7 @@ anims/Hide = SubResource( 75 )
 anims/RESET = SubResource( 73 )
 anims/Show = SubResource( 74 )
 
-[node name="LevelTransition" parent="CanvasLayerGUI" index="3" instance=ExtResource( 51 )]
+[node name="LevelTransition" parent="CanvasLayerGUI" index="2" instance=ExtResource( 51 )]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
