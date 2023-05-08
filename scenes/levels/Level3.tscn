@@ -181,7 +181,7 @@ parameters/playback = SubResource( 4 )
 [node name="Group2" type="Node2D" parent="MemoryCardsManager" index="1"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group2" index="0" instance=ExtResource( 2 )]
-position = Vector2( 1451, -839 )
+position = Vector2( 1488, -883 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group2/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 5 )
@@ -210,7 +210,7 @@ texture = ExtResource( 6 )
 parameters/playback = SubResource( 7 )
 
 [node name="MemoryCard2" parent="MemoryCardsManager/Group3" index="1" instance=ExtResource( 2 )]
-position = Vector2( 533, -839 )
+position = Vector2( 448, -904 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group3/MemoryCard2/Sprites" index="0"]
 texture = ExtResource( 6 )
@@ -221,7 +221,7 @@ parameters/playback = SubResource( 8 )
 [node name="Group4" type="Node2D" parent="MemoryCardsManager" index="3"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group4" index="0" instance=ExtResource( 2 )]
-position = Vector2( 216, -912 )
+position = Vector2( 98, -995 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group4/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 7 )
@@ -241,7 +241,7 @@ parameters/playback = SubResource( 10 )
 [node name="Group5" type="Node2D" parent="MemoryCardsManager" index="4"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group5" index="0" instance=ExtResource( 2 )]
-position = Vector2( 1805, -658 )
+position = Vector2( 1864, -722 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group5/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 8 )
@@ -261,7 +261,7 @@ parameters/playback = SubResource( 12 )
 [node name="Group6" type="Node2D" parent="MemoryCardsManager" index="5"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group6" index="0" instance=ExtResource( 2 )]
-position = Vector2( 161, -251 )
+position = Vector2( 67, -206 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group6/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 9 )
@@ -290,7 +290,7 @@ texture = ExtResource( 10 )
 parameters/playback = SubResource( 15 )
 
 [node name="MemoryCard2" parent="MemoryCardsManager/Group7" index="1" instance=ExtResource( 2 )]
-position = Vector2( 1685, -251 )
+position = Vector2( 1820, -288 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group7/MemoryCard2/Sprites" index="0"]
 texture = ExtResource( 10 )
@@ -301,7 +301,7 @@ parameters/playback = SubResource( 16 )
 [node name="Group8" type="Node2D" parent="MemoryCardsManager" index="7"]
 
 [node name="MemoryCard" parent="MemoryCardsManager/Group8" index="0" instance=ExtResource( 2 )]
-position = Vector2( 38, -625 )
+position = Vector2( -69, -609 )
 
 [node name="HeadsSprite" parent="MemoryCardsManager/Group8/MemoryCard/Sprites" index="0"]
 texture = ExtResource( 11 )
