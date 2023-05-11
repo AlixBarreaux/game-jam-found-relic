@@ -8,6 +8,8 @@ export var scene_to_load_path: String = ""
 export var is_end_scene: bool = false
 
 onready var animation_tree: AnimationTree = $AnimationTree
+onready var anim_node_sm_playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
+
 
 
 # ----------------- RUN CODE -----------------
@@ -17,7 +19,6 @@ func _ready() -> void:
 	self.initialize_asserts()
 	
 	animation_tree.active = true
-	return
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -41,10 +42,15 @@ func initialize_asserts() -> void:
 	
 
 func on_input_triggered() -> void:
+	print("input triggered")
 	if is_end_scene:
 		MenusMusic.play()
 		MenusMusic.has_been_played_at_least_once = true
 	
+	anim_node_sm_playback.travel("End")
+
+
+func load_next_scene() -> void:
 	var _scene_loading_error: int = get_tree().change_scene(self.scene_to_load_path)
 
 	if _scene_loading_error != OK:

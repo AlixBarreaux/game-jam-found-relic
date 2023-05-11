@@ -1344,6 +1344,9 @@ anims/Show = SubResource( 74 )
 [node name="LevelTransition" parent="CanvasLayerGUI" index="2" instance=ExtResource( 51 )]
 visible = false
 
+[node name="PauseMenu" parent="CanvasLayerGUI" index="3"]
+visible = false
+
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
 collision_layer = 8

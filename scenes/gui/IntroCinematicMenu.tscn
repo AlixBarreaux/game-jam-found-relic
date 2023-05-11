@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/gui/cinematic_menu.gd" type="Script" id=2]
@@ -34,6 +34,36 @@ tracks/0/keys = {
 "values": [ Color( 0.639216, 0.639216, 0.639216, 1 ), Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
 }
 
+[sub_resource type="Animation" id=18]
+resource_name = "End"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "load_next_scene"
+} ]
+}
+
 [sub_resource type="Animation" id=17]
 length = 0.001
 tracks/0/type = "value"
@@ -63,7 +93,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=16]
 resource_name = "Start"
-length = 5.0
+length = 4.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("GirlTextureRect:self_modulate")
 tracks/0/interp = 1
@@ -71,7 +101,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.4, 2 ),
+"times": PoolRealArray( 0, 1.5, 2.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -83,7 +113,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.4, 2 ),
+"times": PoolRealArray( 0, 1.5, 2.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -95,7 +125,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 3.9, 4.6 ),
+"times": PoolRealArray( 0, 3.7, 4.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 1.0 ]
@@ -107,7 +137,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.5 ),
+"times": PoolRealArray( 0, 2.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
@@ -119,7 +149,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2, 3.5 ),
+"times": PoolRealArray( 0, 2.1, 3.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1167, -3 ), Vector2( -1167, -3 ), Vector2( 0, -3 ) ]
@@ -131,14 +161,29 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2, 3.5 ),
+"times": PoolRealArray( 0, 2.1, 3.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1920, 352 ), Vector2( 1920, 352 ), Vector2( 777, 352 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Blink"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "End"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Start"
@@ -147,12 +192,18 @@ animation = "Start"
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
 [sub_resource type="AnimationNodeStateMachine" id=12]
 states/Blink/node = SubResource( 5 )
 states/Blink/position = Vector2( 647, 77 )
+states/End/node = SubResource( 19 )
+states/End/position = Vector2( 568, 176 )
 states/Start/node = SubResource( 6 )
 states/Start/position = Vector2( 491, 77 )
-transitions = [ "Start", "Blink", SubResource( 7 ) ]
+transitions = [ "Start", "Blink", SubResource( 7 ), "Start", "End", SubResource( 20 ), "Blink", "End", SubResource( 21 ) ]
 start_node = "Start"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=13]
@@ -183,10 +234,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 777.0
-margin_top = 352.0
-margin_right = 1943.0
-margin_bottom = 1129.0
+margin_left = -1143.0
+margin_top = -728.0
+margin_right = 22.989
+margin_bottom = 49.0
 mouse_filter = 2
 texture = ExtResource( 4 )
 
@@ -206,7 +257,7 @@ align = 1
 valign = 1
 
 [node name="Label" type="Label" parent="."]
-self_modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
+self_modulate = Color( 0.639216, 0.639216, 0.639216, 0.619046 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 2.0
@@ -221,6 +272,7 @@ valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Blink = SubResource( 15 )
+anims/End = SubResource( 18 )
 anims/RESET = SubResource( 17 )
 anims/Start = SubResource( 16 )
 
@@ -228,3 +280,9 @@ anims/Start = SubResource( 16 )
 tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 13 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )

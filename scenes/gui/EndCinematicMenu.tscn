@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/gui/cinematic_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
@@ -30,9 +30,39 @@ tracks/0/keys = {
 "values": [ Color( 0.639216, 0.639216, 0.639216, 1 ), Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "End"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "load_next_scene"
+} ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "Start"
-length = 4.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("GirlTextureRect:self_modulate")
 tracks/0/interp = 1
@@ -40,7 +70,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.4, 2 ),
+"times": PoolRealArray( 0, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -52,7 +82,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.4, 2 ),
+"times": PoolRealArray( 0, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -64,7 +94,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.5, 3.2 ),
+"times": PoolRealArray( 0, 4.8, 5.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 1.0 ]
@@ -76,10 +106,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.75 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 728.5, -451.5 ), Vector2( 728.5, 423.5 ) ]
+"values": [ Vector2( 728.5, -451.5 ), Vector2( 728.5, -451.5 ), Vector2( 728.5, 423.5 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Label:self_modulate")
@@ -88,7 +118,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2.5 ),
+"times": PoolRealArray( 0, 4.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.639216, 0.639216, 0.639216, 0 ), Color( 0.639216, 0.639216, 0.639216, 1 ) ]
@@ -100,14 +130,29 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2.5, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 4.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true, true ]
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Blink"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "End"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Start"
@@ -116,12 +161,18 @@ animation = "Start"
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
 [sub_resource type="AnimationNodeStateMachine" id=9]
 states/Blink/node = SubResource( 5 )
 states/Blink/position = Vector2( 647, 77 )
+states/End/node = SubResource( 12 )
+states/End/position = Vector2( 565, 176 )
 states/Start/node = SubResource( 6 )
 states/Start/position = Vector2( 491, 77 )
-transitions = [ "Start", "Blink", SubResource( 7 ) ]
+transitions = [ "Start", "Blink", SubResource( 7 ), "Start", "End", SubResource( 13 ), "Blink", "End", SubResource( 14 ) ]
 start_node = "Start"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
@@ -171,7 +222,7 @@ anchor_bottom = 0.5
 margin_left = -231.5
 margin_top = -116.5
 margin_right = 231.5
-margin_bottom = 66.5023
+margin_bottom = 66.5021
 custom_fonts/font = SubResource( 1 )
 text = "That's a 
 Match!"
@@ -179,7 +230,7 @@ align = 1
 valign = 1
 
 [node name="Label" type="Label" parent="."]
-self_modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
+self_modulate = Color( 0.639216, 0.639216, 0.639216, 0.952379 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -192,9 +243,19 @@ valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Blink = SubResource( 4 )
+anims/End = SubResource( 11 )
 anims/Start = SubResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 9 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
