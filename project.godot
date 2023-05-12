@@ -135,6 +135,11 @@ _global_script_classes=[ {
 "path": "res://scripts/level.gd"
 }, {
 "base": "Control",
+"class": "LevelTransition",
+"language": "GDScript",
+"path": "res://level_transition.gd"
+}, {
+"base": "Control",
 "class": "MainMenu",
 "language": "GDScript",
 "path": "res://scripts/gui/main_menu.gd"
@@ -265,6 +270,7 @@ _global_script_class_icons={
 "InteractableSoundPlayer": "",
 "InteractionReceiver": "",
 "Level": "",
+"LevelTransition": "",
 "MainMenu": "",
 "MemoryCard": "",
 "MemoryCardsManager": "",

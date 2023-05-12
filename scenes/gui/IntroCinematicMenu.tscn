@@ -234,10 +234,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1143.0
-margin_top = -728.0
-margin_right = 22.989
-margin_bottom = 49.0
+margin_left = 777.0
+margin_top = 352.0
+margin_right = 1942.99
+margin_bottom = 1129.0
 mouse_filter = 2
 texture = ExtResource( 4 )
 

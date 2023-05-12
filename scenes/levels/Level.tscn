@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/creatures/heroes/HeroWoman.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/gui/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://dialogue-system/DialogueGUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/DialogueManagersManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://LevelTransition.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
@@ -34,6 +35,8 @@ custom_styles/panel = SubResource( 2 )
 [node name="DialogueGUI" parent="CanvasLayerGUI" instance=ExtResource( 5 )]
 
 [node name="PauseMenu" parent="CanvasLayerGUI" instance=ExtResource( 4 )]
+
+[node name="LevelTransition" parent="CanvasLayerGUI" instance=ExtResource( 7 )]
 
 [node name="MapBoundaries" type="Node2D" parent="."]
 

@@ -18,6 +18,8 @@ onready var level_loading_transition_timer: Timer = $LevelLoadingTransitionTimer
 func _ready() -> void:
 	self.initialize_asserts()
 	self.initialize_signals()
+	
+	Events.emit_signal("level_started")
 
 
 # ----------------- DECLARE FUNCTIONS -----------------

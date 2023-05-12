@@ -12,6 +12,8 @@ extends Node
 # warning-ignore: unused_signal
 signal controlled_hero_switched
 # warning-ignore: unused_signal
+signal level_started
+# warning-ignore: unused_signal
 signal level_completed
 # warning-ignore: unused_signal
 signal next_scene_load_requested

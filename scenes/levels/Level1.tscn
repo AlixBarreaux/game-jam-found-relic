@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -50,7 +50,6 @@
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/1/en-us/dialogue_data.tres" type="Resource" id=48]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/2/en-us/dialogue_data.tres" type="Resource" id=49]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=50]
-[ext_resource path="res://LevelTransition.tscn" type="PackedScene" id=51]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -1341,10 +1340,7 @@ anims/Hide = SubResource( 75 )
 anims/RESET = SubResource( 73 )
 anims/Show = SubResource( 74 )
 
-[node name="LevelTransition" parent="CanvasLayerGUI" index="2" instance=ExtResource( 51 )]
-visible = false
-
-[node name="PauseMenu" parent="CanvasLayerGUI" index="3"]
+[node name="PauseMenu" parent="CanvasLayerGUI" index="2"]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
