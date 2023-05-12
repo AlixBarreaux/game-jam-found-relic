@@ -21,10 +21,8 @@ func _initialize_signals() -> void:
 
 
 func on_level_started() -> void:
-	print(self.name, ": Level started!")
 	animation_player.play("Reveal")
 
 
 func on_level_completed() -> void:
-	print(self.name, ": Level completed!")
 	animation_player.play("Hide")
