@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/keyboard-gamepad-keys/left_stick.png" type="Texture" id=2]
+[ext_resource path="res://notification_gui.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=69]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="DynamicFont" id=70]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=71]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=75]
+resource_name = "Hide"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0, 181.547, -0.25, 0, 0.25, 0, -200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1.2 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 645, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "Show"
+length = 1.15
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 645, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0, 181.547, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.75, 1.15 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="NotificationGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -315.0
+margin_top = -200.0
+margin_right = 315.0
+margin_bottom = 1.0011
+custom_styles/panel = SubResource( 69 )
+
+[node name="SpeechMessage" type="RichTextLabel" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -492.0
+margin_top = 37.0
+margin_right = 267.0
+margin_bottom = 108.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 70 )
+bbcode_enabled = true
+bbcode_text = "Stretch your  [shake]legs[/shake] lil' fella!"
+text = "Stretch your  legs lil' fella!"
+scroll_active = false
+
+[node name="SpeechMessage2" type="RichTextLabel" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -492.0
+margin_top = 130.0
+margin_right = 267.0
+margin_bottom = 201.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+custom_colors/default_color = Color( 1, 0.407843, 0.517647, 1 )
+custom_fonts/normal_font = SubResource( 71 )
+bbcode_enabled = true
+bbcode_text = "Stretch your  [shake]legs[/shake] lil' fella!"
+text = "Stretch your  legs lil' fella!"
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -596.0
+margin_top = 69.0
+margin_right = -449.0
+margin_bottom = 177.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hide = SubResource( 75 )
+anims/RESET = SubResource( 73 )
+anims/Show = SubResource( 74 )
