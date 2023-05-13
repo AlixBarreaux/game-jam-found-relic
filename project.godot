@@ -137,7 +137,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "LevelTransition",
 "language": "GDScript",
-"path": "res://level_transition.gd"
+"path": "res://scripts/gui/level_transition.gd"
 }, {
 "base": "Control",
 "class": "MainMenu",
