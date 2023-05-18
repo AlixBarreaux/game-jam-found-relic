@@ -133,10 +133,10 @@ script = ExtResource( 3 )
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 645.0
+margin_left = -315.0
 margin_top = -200.0
-margin_right = 1275.0
-margin_bottom = 1.00134
+margin_right = 315.0
+margin_bottom = 1.00125
 mouse_filter = 1
 custom_styles/panel = SubResource( 69 )
 
