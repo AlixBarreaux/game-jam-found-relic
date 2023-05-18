@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://zTEST-CONTROLLER-ASSETS-TO-LOAD/resource-scripts/dialogue_gui_device_assets.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/device-keys/key_xbox_y.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+skip_icon_texture = ExtResource( 2 )

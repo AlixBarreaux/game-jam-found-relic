@@ -5,23 +5,27 @@ class_name DialogueGUI
 # ----------------- DECLARE VARIABLES -----------------
 
 
-# Node References:
-export var speech_texture_left_rect_node_path: NodePath = NodePath("")
-export var speech_texture_right_rect_node_path: NodePath = NodePath("")
+# Node References
+export var speech_texture_left_node_path: NodePath = NodePath("")
+export var speech_texture_right_node_path: NodePath = NodePath("")
 export var speech_message_rich_text_label_node_path: NodePath = NodePath("")
 export var speech_sound_player_node_path: NodePath = NodePath("")
 export var animation_tree_node_path: NodePath = NodePath("")
 
-onready var speech_texture_left_rect: TextureRect = get_node(speech_texture_left_rect_node_path)
-onready var speech_texture_right_rect: TextureRect = get_node(speech_texture_right_rect_node_path)
+
+onready var speech_texture_left: TextureRect = get_node(speech_texture_left_node_path)
+onready var speech_texture_right: TextureRect = get_node(speech_texture_right_node_path)
 onready var speech_message_rich_text_label: RichTextLabel = get_node(speech_message_rich_text_label_node_path)
 onready var speech_sound_player: AudioStreamPlayer = get_node(speech_sound_player_node_path)
-onready var animation_tree = get_node(animation_tree_node_path)
-onready var animation_tree_anim_node_state_machine_playback = get_node(animation_tree.get_path()).get("parameters/playback")
+onready var animation_tree: AnimationTree = get_node(animation_tree_node_path)
+onready var animation_tree_anim_node_state_machine_playback: AnimationNodeStateMachinePlayback = get_node(animation_tree.get_path()).get("parameters/playback")
+
+
+onready var dialogue: Resource = null
+onready var skip_icon: TextureRect = $NinePatchRect/SkipIcon
 
 
 # Variables
-onready var dialogue: Resource = null
 var speech_index_increment: int = 0
 
 
@@ -50,7 +54,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _initialize_asserts () -> void:
-#	assert(speech_texture_left_rect_node_path != "" or speech_texture_right_rect_node_path != "")
+#	assert(speech_texture_left_node_path != "" or speech_texture_left_node_path != "")
 	assert(speech_message_rich_text_label_node_path != "")
 	assert(speech_sound_player_node_path != "")
 
@@ -59,6 +63,9 @@ func _initialize() -> void:
 	if not Settings.is_dialogue_system_enabled:
 		self.queue_free()
 		return
+	
+	speech_texture_left.texture = null
+	speech_texture_right.texture = null
 	
 	toggle_enabled(false)
 	animation_tree.set_active(true)
@@ -75,8 +82,8 @@ func on_input_triggered() -> void:
 
 func unload_active_speech_line_data() -> void:
 	speech_message_rich_text_label.bbcode_text = ""
-	speech_texture_left_rect.texture = null
-	speech_texture_right_rect.texture = null
+	speech_texture_left.texture = null
+	speech_texture_right.texture = null
 	speech_sound_player.stop()
 	speech_sound_player.stream = null
 
@@ -102,11 +109,11 @@ func play_speech_at_index(speech_to_play_index: int) -> void:
 	
 	# Texture Left
 	if dialogue.data[speech_index_increment].texture_left != null:
-		speech_texture_left_rect.texture = dialogue.data[speech_index_increment].texture_left
+		speech_texture_left.texture = dialogue.data[speech_index_increment].texture_left
 	
 	# Texture Right
 	if dialogue.data[speech_index_increment].texture_right != null:
-		speech_texture_right_rect.texture = dialogue.data[speech_index_increment].texture_right
+		speech_texture_right.texture = dialogue.data[speech_index_increment].texture_right
 	
 	if dialogue.data[speech_index_increment].sound_file != null:
 		speech_sound_player.stream = dialogue.data[speech_index_increment].sound_file

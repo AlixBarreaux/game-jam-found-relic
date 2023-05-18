@@ -3,10 +3,10 @@
 [ext_resource path="res://dialogue-system/dialogue_gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/augie.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/sprites/ProfilGirl.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/ProfilBoy.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/device-keys/key_xbox_y.png" type="Texture" id=4]
+[ext_resource path="res://dialogue_speaker_-_draft.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/gui-elements/DialogBox.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/keyboard-gamepad-keys/left_stick.png" type="Texture" id=7]
+[ext_resource path="res://zTEST-CONTROLLER-ASSETS-TO-LOAD/device-assets-loader/DeviceAssetsLoaderDialogueGUI.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -106,14 +106,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
-speech_texture_left_rect_node_path = NodePath("NinePatchRect/TextureRectLeft")
-speech_texture_right_rect_node_path = NodePath("NinePatchRect/TextureRectRight")
+speech_texture_left_node_path = NodePath("NinePatchRect/SpeechTextureLeft")
+speech_texture_right_node_path = NodePath("NinePatchRect/SpeechTextureRight")
 speech_message_rich_text_label_node_path = NodePath("NinePatchRect/SpeechMessage")
 speech_sound_player_node_path = NodePath("NinePatchRect/SpeechSoundPlayer")
 animation_tree_node_path = NodePath("AnimationTree")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
 self_modulate = Color( 0.741176, 0.180392, 0.270588, 1 )
 anchor_left = 0.5
 anchor_top = 1.0
@@ -126,40 +125,28 @@ texture = ExtResource( 6 )
 patch_margin_left = 55
 patch_margin_right = 55
 
-[node name="TextureRectLeft" type="TextureRect" parent="NinePatchRect"]
-margin_left = 1591.0
-margin_top = 42.0
-margin_right = 1859.0
-margin_bottom = 453.0
-rect_scale = Vector2( 0.8, 0.8 )
-mouse_filter = 2
-texture = ExtResource( 4 )
-
-[node name="TextureRectRight" type="TextureRect" parent="NinePatchRect"]
-margin_left = 63.0
-margin_top = 41.0
-margin_right = 331.0
-margin_bottom = 454.0
-rect_scale = Vector2( 0.8, 0.8 )
+[node name="SpeechTextureLeft" type="TextureRect" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -399.5
+margin_top = -362.499
+margin_right = -99.5001
+margin_bottom = -62.4985
+rect_scale = Vector2( 1.15, 1.15 )
 mouse_filter = 2
 texture = ExtResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
-anchor_bottom = 1.0
-margin_left = -21.0
-margin_top = -4.0
-margin_right = 495.0
-margin_bottom = -4.0
-mouse_filter = 2
-alignment = 1
-
-[node name="SpeechTexture" type="TextureRect" parent="NinePatchRect"]
+[node name="SpeechTextureRight" type="TextureRect" parent="NinePatchRect"]
 margin_left = 41.0
-margin_top = 48.0
+margin_top = -159.0
 margin_right = 341.0
-margin_bottom = 348.0
+margin_bottom = 141.0
 rect_min_size = Vector2( 300, 300 )
+rect_scale = Vector2( 1.15, 1.15 )
 mouse_filter = 2
+texture = ExtResource( 5 )
 
 [node name="SpeechMessage" type="RichTextLabel" parent="NinePatchRect"]
 anchor_right = 1.0
@@ -177,13 +164,13 @@ scroll_active = false
 
 [node name="SpeechSoundPlayer" type="AudioStreamPlayer" parent="NinePatchRect"]
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
-margin_left = 1457.5
+[node name="SkipIcon" type="TextureRect" parent="NinePatchRect"]
+margin_left = 1333.0
 margin_top = 258.0
-margin_right = 1547.5
-margin_bottom = 348.0
+margin_right = 1433.0
+margin_bottom = 358.0
 rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/End = SubResource( 1 )
@@ -194,3 +181,7 @@ anims/Start = SubResource( 3 )
 tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 8 )
+
+[node name="DeviceAssetsLoaderDialogueGUI" parent="." instance=ExtResource( 11 )]
+node_to_work_on_node_path = NodePath("..")
+skip_icon_node_path = NodePath("../NinePatchRect/SkipIcon")
