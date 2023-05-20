@@ -44,7 +44,7 @@
 [ext_resource path="res://assets/sprites/decorations/paintings/Painting7.png" type="Texture" id=42]
 [ext_resource path="res://assets/sprites/decorations/candles/Candle3.png" type="Texture" id=43]
 [ext_resource path="res://dialogue-system/speech-resources/level-started/level-1/en-us/dialogue_data.tres" type="Resource" id=44]
-[ext_resource path="res://NotificationGUI.tscn" type="PackedScene" id=45]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationGUI.tscn" type="PackedScene" id=45]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/first-time/en-us/dialogue_data.tres" type="Resource" id=46]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-good-sequence/DialogueManagerGoodSequence.tscn" type="PackedScene" id=47]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/1/en-us/dialogue_data.tres" type="Resource" id=48]
@@ -793,7 +793,7 @@ position = Vector2( 0, -577.5 )
 
 [node name="SequenceOrderFeedbackSprite" parent="SequenceOrderFeedbackManager/Sprites" index="0" instance=ExtResource( 21 )]
 self_modulate = Color( 0.862745, 0, 0, 0.352941 )
-position = Vector2( -58.5, 0 )
+position = Vector2( -21, 0 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite" index="0"]
@@ -805,7 +805,7 @@ anims/Win = SubResource( 26 )
 
 [node name="SequenceOrderFeedbackSprite2" parent="SequenceOrderFeedbackManager/Sprites" index="1" instance=ExtResource( 21 )]
 self_modulate = Color( 0.862745, 0, 0, 0.352941 )
-position = Vector2( -25.5, -127 )
+position = Vector2( 86.5, -127 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite2" index="0"]
@@ -817,7 +817,7 @@ anims/Win = SubResource( 50 )
 
 [node name="SequenceOrderFeedbackSprite3" parent="SequenceOrderFeedbackManager/Sprites" index="2" instance=ExtResource( 21 )]
 self_modulate = Color( 1, 0.913725, 0, 0.352941 )
-position = Vector2( 5.5, -251 )
+position = Vector2( -19.5, -251 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite3" index="0"]
@@ -829,7 +829,7 @@ anims/Win = SubResource( 34 )
 
 [node name="SequenceOrderFeedbackSprite4" parent="SequenceOrderFeedbackManager/Sprites" index="3" instance=ExtResource( 21 )]
 self_modulate = Color( 1, 0.913725, 0, 0.352941 )
-position = Vector2( 36.5, -360 )
+position = Vector2( 88, -360 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite4" index="0"]
@@ -841,7 +841,7 @@ anims/Win = SubResource( 62 )
 
 [node name="SequenceOrderFeedbackSprite5" parent="SequenceOrderFeedbackManager/Sprites" index="4" instance=ExtResource( 21 )]
 self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
-position = Vector2( 72.5, -467 )
+position = Vector2( 88.5, -467 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite5" index="0"]
@@ -853,7 +853,7 @@ anims/Win = SubResource( 42 )
 
 [node name="SequenceOrderFeedbackSprite6" parent="SequenceOrderFeedbackManager/Sprites" index="5" instance=ExtResource( 21 )]
 self_modulate = Color( 0, 0.14902, 0.819608, 0.352941 )
-position = Vector2( 99.5, -573.5 )
+position = Vector2( -21, -573.5 )
 rotation = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite6" index="0"]
@@ -1163,6 +1163,9 @@ position = Vector2( 456, -1967 )
 [node name="PauseMenu" parent="CanvasLayerGUI" index="2"]
 visible = false
 
+[node name="LevelTransition" parent="CanvasLayerGUI" index="3"]
+visible = false
+
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBoundaries" index="0"]
 position = Vector2( 137, 400 )
 collision_layer = 8
@@ -1365,13 +1368,13 @@ self_modulate = Color( 0.862745, 0, 0, 1 )
 self_modulate = Color( 0.862745, 0, 0, 1 )
 
 [node name="Plate3" parent="YSort/PlatesManager" index="2" instance=ExtResource( 2 )]
-position = Vector2( 2744, -761 )
+position = Vector2( -506, -2824 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate3/Sprites" index="0"]
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="Plate4" parent="YSort/PlatesManager" index="3" instance=ExtResource( 2 )]
-position = Vector2( -506, -2824 )
+position = Vector2( 2744, -761 )
 
 [node name="Sprites" parent="YSort/PlatesManager/Plate4" index="0"]
 self_modulate = Color( 1, 0.913725, 1, 1 )
@@ -1380,13 +1383,13 @@ self_modulate = Color( 1, 0.913725, 1, 1 )
 self_modulate = Color( 1, 0.913725, 0, 1 )
 
 [node name="Plate5" parent="YSort/PlatesManager" index="4" instance=ExtResource( 2 )]
-position = Vector2( 1442, -2198 )
+position = Vector2( 1523, -2211 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate5/Sprites" index="0"]
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
 
 [node name="Plate6" parent="YSort/PlatesManager" index="5" instance=ExtResource( 2 )]
-position = Vector2( 800, -2217 )
+position = Vector2( 800, -2211 )
 
 [node name="Sprite" parent="YSort/PlatesManager/Plate6/Sprites" index="0"]
 self_modulate = Color( 0, 0.14902, 0.819608, 1 )
