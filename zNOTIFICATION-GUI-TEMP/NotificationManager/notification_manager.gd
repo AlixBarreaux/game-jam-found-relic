@@ -46,5 +46,3 @@ func send_notification_data(index: int) -> void:
 func send_notification_deletion() -> void:
 	if notification_gui.current_index_in_data_set == self.data_index:
 		notification_gui.delete_notification()
-	
-#	self.queue_free()

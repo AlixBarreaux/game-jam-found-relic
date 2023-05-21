@@ -3,7 +3,7 @@
 [ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification_gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/device-keys/key_playstation_cross.png" type="Texture" id=2]
 [ext_resource path="res://zTEST-CONTROLLER-ASSETS-TO-LOAD/device-assets-loader/DeviceAssetsLoaderNotificationGUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/Assets To Load/pc/notifications_data_list_-_pc.tres" type="Resource" id=4]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/Assets To Load/pc/level-1/notifications_data_list_-_pc.tres" type="Resource" id=4]
 
 [sub_resource type="StyleBoxFlat" id=69]
 bg_color = Color( 0.00392157, 0, 0.0705882, 1 )
@@ -137,8 +137,8 @@ data_list_from_platform = ExtResource( 4 )
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -465.0
-margin_right = 443.0
+margin_left = 495.0
+margin_right = 1403.0
 margin_bottom = 234.0
 mouse_filter = 1
 custom_styles/panel = SubResource( 69 )

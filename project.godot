@@ -205,6 +205,11 @@ _global_script_classes=[ {
 "path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_-_tutorial_switch_characters.gd"
 }, {
 "base": "NotificationManager",
+"class": "NotificationManagerTutorialInteractions",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_tutorial_inreactions.gd"
+}, {
+"base": "NotificationManager",
 "class": "NotificationManagerTutorialMove",
 "language": "GDScript",
 "path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_tutorial_move.gd"
@@ -344,6 +349,7 @@ _global_script_class_icons={
 "NotificationGUIDeviceAssets": "",
 "NotificationManager": "",
 "NotificationManagerSwitchCharacters": "",
+"NotificationManagerTutorialInteractions": "",
 "NotificationManagerTutorialMove": "",
 "NotificationManagersManager": "",
 "PauseMenu": "",

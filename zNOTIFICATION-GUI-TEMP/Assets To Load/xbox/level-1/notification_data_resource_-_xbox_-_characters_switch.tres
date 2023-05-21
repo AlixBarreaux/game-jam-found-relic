@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/device-keys/key_xbox_.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name notification_data
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var texture: StreamTexture = null
+export var label_top_text: String = \"\"
+"
+
+[resource]
+resource_name = "Level 2 - Xbox - Characters Switch"
+script = SubResource( 1 )
+texture = ExtResource( 2 )
+label_top_text = "Xbox Switch Characters"
