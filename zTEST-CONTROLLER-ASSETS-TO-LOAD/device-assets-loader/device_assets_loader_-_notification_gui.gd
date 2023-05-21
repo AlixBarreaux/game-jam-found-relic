@@ -24,7 +24,9 @@ func _set_assets_from_resource(resource: Resource) -> void:
 	node_to_work_on.data_list_from_platform = resource
 	print(self.name, " data_list_from_platform AFTER CHANGE: ", node_to_work_on.data_list_from_platform)
 	
-	node_to_work_on.load_data_at_index(node_to_work_on.current_index_in_data_set)
+#	node_to_work_on.load_data_at_index(node_to_work_on.current_index_in_data_set)
+
+	node_to_work_on.set_data_list_from_platform(resource)
 
 
 # ----------------- DECLARE FUNCTIONS -----------------

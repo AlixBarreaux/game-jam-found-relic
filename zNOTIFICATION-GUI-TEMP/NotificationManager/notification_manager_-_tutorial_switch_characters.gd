@@ -30,9 +30,10 @@ func _custom_on_ready() -> void:
 
 func on_controlled_hero_switched() -> void:
 	self.send_notification_deletion()
-	print("NULL INSTANCE switch_characters_area2d_node: ", typeof(switch_characters_area2d_node))
+	
 	if is_instance_valid(switch_characters_area2d_node):
 		switch_characters_area2d_node.queue_free()
+	
 	self.queue_free()
 
 

@@ -45,19 +45,19 @@ func on_joypad_type_detected() -> void:
 func set_assets_adapted_to_joypad_type() -> void:
 	match(Settings.joypad_type):
 		Settings.JoypadTypes.NONE:
-			print(self.name, ": Keyboard / Mouse Assets")
+#			print(self.name, ": Keyboard / Mouse Assets")
 			_set_assets_from_resource(assets_to_load_pc)
 		Settings.JoypadTypes.UNKOWN:
-			print(self.name, ": Unkown joypad Assets")
+#			print(self.name, ": Unkown joypad Assets")
 			_set_assets_from_resource(assets_to_load_xbox)
 		Settings.JoypadTypes.XBOX:
-			print(self.name, ": Xbox Assets")
+#			print(self.name, ": Xbox Assets")
 			_set_assets_from_resource(assets_to_load_xbox)
 		Settings.JoypadTypes.PLAYSTATION:
-			print(self.name, ": Playstation Assets")
+#			print(self.name, ": Playstation Assets")
 			_set_assets_from_resource(assets_to_load_playstation)
 		Settings.JoypadTypes.NINTENDO_SWITCH:
-			print(self.name, ": Nintendo Assets")
+#			print(self.name, ": Nintendo Assets")
 			_set_assets_from_resource(assets_to_load_nintendo_switch)
 
 

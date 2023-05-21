@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
-top_label = "Press arrow keys to move"
+label_top_text = "XBox Switch Characters"

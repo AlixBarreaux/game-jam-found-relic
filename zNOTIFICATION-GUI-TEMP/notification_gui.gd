@@ -14,14 +14,29 @@ onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 export var data_list_from_platform: Resource = null
-var current_data: Resource = null
 
-# SET TO 0 WHEN DONE WITH TESTS
+var current_data: Resource = null
 var current_index_in_data_set: int = 0
 
 # Had problems accessing nested resources inside resource
 # so this variable was created
 onready var notifications_list = data_list_from_platform.notifications_list
+#var notifications_list = null
+
+
+func set_data_list_from_platform(resource: Resource):
+	data_list_from_platform = resource
+	notifications_list = data_list_from_platform.notifications_list
+	
+	load_data_at_index(current_index_in_data_set)
+	
+	print("----", self.name, " set_data_list_from_platform:")
+	print("data_list_from_platform, ", data_list_from_platform, "notifications_list", notifications_list, "----")
+
+
+#func _ready():
+#	set_data_list_from_platform()
+
 
 
 func receive_notification(index: int) -> void:
@@ -29,7 +44,7 @@ func receive_notification(index: int) -> void:
 	load_data_at_index(index)
 	animation_player.play("Show")
 	
-	print(self.name, ": Show Notification Panel!")
+#	print(self.name, ": Show Notification Panel!")
 
 
 func load_data_at_index(index: int) -> void:
