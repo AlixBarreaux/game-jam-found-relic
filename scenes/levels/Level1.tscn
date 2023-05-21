@@ -867,7 +867,7 @@ anims/Spawn = SubResource( 57 )
 anims/Win = SubResource( 58 )
 
 [node name="SwitchCharactersTutorialArea2D" parent="." index="3" instance=ExtResource( 17 )]
-position = Vector2( 424, -1006 )
+position = Vector2( 424, 951 )
 
 [node name="Petals1" type="Sprite" parent="Decorations" index="0"]
 show_behind_parent = true
