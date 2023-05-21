@@ -16,27 +16,6 @@ export var remaining_reenable_charges: int = 0
 export var dialogue_data_resource: Resource = null
 
 
-func send_trigger(_arguments) -> void:
-	if enable_n_times_before_trigger > 0:
-		print("enable_n_times_before_trigger is: ", enable_n_times_before_trigger, " , return")
-		enable_n_times_before_trigger -= 1
-		return
-#	print("enable_n_times_before_trigger decreased: ", enable_n_times_before_trigger)
-	print("Send dialogue, n before triggers passed")
-	_send_dialogue(_arguments)
-	
-	if remaining_reenable_charges == -1:
-		return
-	
-	if remaining_reenable_charges <= 1:
-		print("remaining_reenable_charges is: ", remaining_reenable_charges, " , queue_free() and return")
-		self.queue_free()
-		return
-	remaining_reenable_charges -= 1
-	print("remaining_reenable_charges decreased: ", remaining_reenable_charges)
-
-
-
 # Node References
 export var node_to_connect_to_node_path: NodePath = ""
 onready var node_to_connect_to: Node = get_node(self.node_to_connect_to_node_path) if node_to_connect_to_node_path != "" else null
@@ -45,8 +24,6 @@ onready var dialogue_gui: DialogueGUI = null
 
 
 # ---------------------- RUN CODE ---------------------
-
-
 
 
 func _ready() -> void:
@@ -80,6 +57,26 @@ func _initialize_asserts() -> void:
 # executing the _ready() function
 func _custom_on_ready() -> void:
 	return
+
+
+func send_trigger(_arguments) -> void:
+	if enable_n_times_before_trigger > 0:
+		print("enable_n_times_before_trigger is: ", enable_n_times_before_trigger, " , return")
+		enable_n_times_before_trigger -= 1
+		return
+#	print("enable_n_times_before_trigger decreased: ", enable_n_times_before_trigger)
+	print("Send dialogue, n before triggers passed")
+	_send_dialogue(_arguments)
+	
+	if remaining_reenable_charges == -1:
+		return
+	
+	if remaining_reenable_charges <= 1:
+		print("remaining_reenable_charges is: ", remaining_reenable_charges, " , queue_free() and return")
+		self.queue_free()
+		return
+	remaining_reenable_charges -= 1
+	print("remaining_reenable_charges decreased: ", remaining_reenable_charges)
 
 
 # The _arguments are not actually used: Game jam code architecture bottleneck.

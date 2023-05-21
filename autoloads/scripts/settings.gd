@@ -54,6 +54,7 @@ var joypad_names_nintendo_switch: PoolStringArray = ["switch"]
 
 
 func on_joy_connection_changed(device: int, connected: bool) -> void:
+	print("Gamepad #", device, " | Connected: ", connected)
 	self.detect_joypad_type(device, connected)
 
 

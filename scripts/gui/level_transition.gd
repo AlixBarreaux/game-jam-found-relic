@@ -13,6 +13,7 @@ onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	self._initialize_signals()
+	self.show()
 
 
 func _initialize_signals() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/interactables/Plate.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_5.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/sound/levels/level-1/lv_1_plate_6.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/sprites/device-keys/left_stick.png" type="Texture" id=16]
-[ext_resource path="res://scenes/SpaceBarTutorialArea2D.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/SwitchCharactersTutorialArea2D.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/BubbleWithKeys.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/sprites/device-keys/keyboard_arrows_spritesheet.png" type="Texture" id=19]
 [ext_resource path="res://scenes/SequenceOrderFeedbackManager.tscn" type="PackedScene" id=20]
@@ -50,6 +50,9 @@
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/1/en-us/dialogue_data.tres" type="Resource" id=48]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/2/en-us/dialogue_data.tres" type="Resource" id=49]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=50]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManagersManager.tscn" type="PackedScene" id=51]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/NotificationManagerTutorialMove.tscn" type="PackedScene" id=52]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/NotificationManagerTutorialSwitchCharacters.tscn" type="PackedScene" id=53]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
@@ -863,9 +866,8 @@ anims/Enable = SubResource( 56 )
 anims/Spawn = SubResource( 57 )
 anims/Win = SubResource( 58 )
 
-[node name="SpaceBarTutorialArea2D" parent="." index="3" instance=ExtResource( 17 )]
-position = Vector2( 421, -1000 )
-collision_layer = 0
+[node name="SwitchCharactersTutorialArea2D" parent="." index="3" instance=ExtResource( 17 )]
+position = Vector2( 424, -1006 )
 
 [node name="Petals1" type="Sprite" parent="Decorations" index="0"]
 show_behind_parent = true
@@ -1339,6 +1341,7 @@ anims/Start = SubResource( 63 )
 position = Vector2( 761, 1319 )
 
 [node name="Sprite" type="Sprite" parent="TutorialAnimatedSprites/TutorialKeyboardArrowsAnimatedSprite" index="0"]
+visible = false
 texture = ExtResource( 19 )
 hframes = 2
 
@@ -1431,11 +1434,21 @@ dialogue_data_resource = ExtResource( 48 )
 enable_n_times_before_trigger = 1
 dialogue_data_resource = ExtResource( 49 )
 
-[connection signal="body_entered" from="SpaceBarTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
+[node name="NotificationManagersManager" parent="." index="13" instance=ExtResource( 51 )]
+notification_gui_node_path = NodePath("../CanvasLayerGUI/NotificationGUI")
+
+[node name="NotificationManagerTutorialMove" parent="NotificationManagersManager" index="0" instance=ExtResource( 52 )]
+hero_man_node_node_path = NodePath("../../YSort/HeroMan")
+hero_woman_node_node_path = NodePath("../../YSort/HeroWoman")
+
+[node name="NotificationManagerTutorialSwitchCharacters" parent="NotificationManagersManager" index="1" instance=ExtResource( 53 )]
+switch_characters_area2d_node_node_path = NodePath("../../SwitchCharactersTutorialArea2D")
+
+[connection signal="body_entered" from="SwitchCharactersTutorialArea2D" to="YSort/HeroMan/BubbleWithInputKeys" method="_on_SpaceBarTutorialArea2D_body_entered"]
 
 [editable path="SequenceOrderFeedbackManager"]
 [editable path="SequenceOrderFeedbackManager/Sprites/SequenceOrderFeedbackSprite"]
-[editable path="SpaceBarTutorialArea2D"]
+[editable path="SwitchCharactersTutorialArea2D"]
 [editable path="YSort/PlatesManager"]
 [editable path="YSort/PlatesManager/Plate"]
 [editable path="YSort/PlatesManager/Plate2"]

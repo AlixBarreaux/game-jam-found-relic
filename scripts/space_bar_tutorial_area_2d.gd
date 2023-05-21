@@ -13,6 +13,5 @@ extends Area2D
 # ----------------- DECLARE FUNCTIONS -----------------
 
 
-func _on_body_entered(_body: PhysicsBody2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	self.queue_free()
-	return

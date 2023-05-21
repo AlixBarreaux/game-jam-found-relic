@@ -75,4 +75,3 @@ func _initialize_asserts () -> void:
 	assert(assets_to_load_xbox != null)
 	assert(assets_to_load_playstation != null)
 	assert(assets_to_load_nintendo_switch != null)
-

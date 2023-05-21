@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/Assets To Load/notifications_data_list.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+notifications_list = [ null, null ]

@@ -149,11 +149,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interaction_receiver_area2d.gd"
 }, {
-"base": "Node2D",
-"class": "Level",
-"language": "GDScript",
-"path": "res://scripts/level.gd"
-}, {
 "base": "Control",
 "class": "LevelTransition",
 "language": "GDScript",
@@ -187,12 +182,37 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "NotificationGUI",
 "language": "GDScript",
-"path": "res://notification_gui.gd"
+"path": "res://zNOTIFICATION-GUI-TEMP/notification_gui.gd"
+}, {
+"base": "Node",
+"class": "NotificationGUIAssetsList",
+"language": "GDScript",
+"path": "res://zTEST-CONTROLLER-ASSETS-TO-LOAD/resource-scripts/notification_gui_device_assets_-_list.gd"
 }, {
 "base": "Resource",
 "class": "NotificationGUIDeviceAssets",
 "language": "GDScript",
 "path": "res://zTEST-CONTROLLER-ASSETS-TO-LOAD/resource-scripts/notification_gui_device_assets.gd"
+}, {
+"base": "Node",
+"class": "NotificationManager",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager.gd"
+}, {
+"base": "NotificationManager",
+"class": "NotificationManagerSwitchCharacters",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_-_tutorial_switch_characters.gd"
+}, {
+"base": "NotificationManager",
+"class": "NotificationManagerTutorialMove",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_tutorial_move.gd"
+}, {
+"base": "Node",
+"class": "NotificationManagersManager",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/notification_managers_manager.gd"
 }, {
 "base": "Control",
 "class": "PauseMenu",
@@ -273,6 +293,16 @@ _global_script_classes=[ {
 "class": "VolumeController",
 "language": "GDScript",
 "path": "res://scripts/gui/ui-elements/volume_controller.gd"
+}, {
+"base": "Resource",
+"class": "notification_data",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/Assets To Load/notification_data.gd"
+}, {
+"base": "Resource",
+"class": "notifications_data_list",
+"language": "GDScript",
+"path": "res://zNOTIFICATION-GUI-TEMP/Assets To Load/notifications_data_list.gd"
 } ]
 _global_script_class_icons={
 "AudioManagerLevel1": "",
@@ -303,7 +333,6 @@ _global_script_class_icons={
 "InteractArea2D": "",
 "InteractableSoundPlayer": "",
 "InteractionReceiver": "",
-"Level": "",
 "LevelTransition": "",
 "MainMenu": "",
 "MemoryCard": "",
@@ -311,7 +340,12 @@ _global_script_class_icons={
 "NoteBlockTutorialArea2D": "",
 "NoteBlocksManager": "",
 "NotificationGUI": "",
+"NotificationGUIAssetsList": "",
 "NotificationGUIDeviceAssets": "",
+"NotificationManager": "",
+"NotificationManagerSwitchCharacters": "",
+"NotificationManagerTutorialMove": "",
+"NotificationManagersManager": "",
 "PauseMenu": "",
 "PlatesManager": "",
 "PlayerController": "",
@@ -327,13 +361,15 @@ _global_script_class_icons={
 "SplashScreen": "",
 "TutorialSpaceBarSprite": "",
 "VersionLabel": "",
-"VolumeController": ""
+"VolumeController": "",
+"notification_data": "",
+"notifications_data_list": ""
 }
 
 [application]
 
 config/name="O Key Cupid"
-run/main_scene="res://scenes/gui/SplashScreen.tscn"
+run/main_scene="res://scenes/levels/Level1.tscn"
 config/icon="res://miscellaneous/o_key_cupid_icon.png"
 config/macos_native_icon="res://miscellaneous/o_key_cupid_icon.icns"
 config/windows_native_icon="res://miscellaneous/o_key_cupid_icon.ico"

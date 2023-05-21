@@ -1,4 +1,3 @@
-class_name Level
 extends Node2D
 
 # Please note this script was copy pasted in level 1 and 2 because I didn't have
