@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/notification_manager_tutorial_move.gd" type="Script" id=1]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/NotificationManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification-managers/notification_manager_tutorial_move.gd" type="Script" id=1]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification-managers/NotificationManager.tscn" type="PackedScene" id=2]
 
 [node name="NotificationManagerTutorialMove" instance=ExtResource( 2 )]
 script = ExtResource( 1 )

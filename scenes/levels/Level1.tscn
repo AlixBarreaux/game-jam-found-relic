@@ -51,8 +51,8 @@
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-plate/fails/2/en-us/dialogue_data.tres" type="Resource" id=49]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=50]
 [ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManagersManager.tscn" type="PackedScene" id=51]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/NotificationManagerTutorialMove.tscn" type="PackedScene" id=52]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManager/NotificationManagerTutorialSwitchCharacters.tscn" type="PackedScene" id=53]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification-managers/NotificationManagerTutorialMove.tscn" type="PackedScene" id=52]
+[ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification-managers/NotificationManagerTutorialSwitchCharacters.tscn" type="PackedScene" id=53]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Disable"
