@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/Assets To Load/notification_data.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/device-keys/key_keyboard_space_bar.png" type="Texture" id=2]
-
-[resource]
-script = ExtResource( 1 )
-texture = ExtResource( 2 )
-label_top_text = "PC Character Switching"

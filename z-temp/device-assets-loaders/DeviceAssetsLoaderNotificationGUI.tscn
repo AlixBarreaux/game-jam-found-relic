@@ -1,0 +1,15 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://z-temp/device-assets-loaders/device_assets_loader_-_notification_gui.gd" type="Script" id=1]
+[ext_resource path="res://z-temp/zzzzzzresources-dialogue-gui/notification-gui/nintendo-switch/notification_gui_device_assets_nintendo_switch.tres" type="Resource" id=2]
+[ext_resource path="res://z-temp/device-assets-loaders/DeviceAssetsLoader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://z-temp/notifications-data/lists/pc/notifications_data_list.tres" type="Resource" id=4]
+[ext_resource path="res://z-temp/notifications-data/lists/xbox/notifications_data_list_-_level_1.tres" type="Resource" id=5]
+[ext_resource path="res://z-temp/zzzzzzresources-dialogue-gui/notification-gui/playstation/notification_gui_device_assets_playstation.tres" type="Resource" id=6]
+
+[node name="DeviceAssetsLoaderNotificationGUI" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+assets_to_load_pc = ExtResource( 4 )
+assets_to_load_xbox = ExtResource( 5 )
+assets_to_load_playstation = ExtResource( 6 )
+assets_to_load_nintendo_switch = ExtResource( 2 )

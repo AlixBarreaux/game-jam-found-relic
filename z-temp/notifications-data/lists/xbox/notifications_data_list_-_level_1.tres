@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://z-temp/notifications-data/elements-of-lists/xbox/notification_data_-_movement.tres" type="Resource" id=1]
+[ext_resource path="res://z-temp/notifications-data/elements-of-lists/xbox/notification_data_-_characters_switch.tres" type="Resource" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name notifications_data_list
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export (Array) var notifications_list = []
+"
+
+[resource]
+script = SubResource( 1 )
+notifications_list = [ ExtResource( 1 ), ExtResource( 2 ) ]

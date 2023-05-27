@@ -28,9 +28,9 @@
 [ext_resource path="res://dialogue-system/speech-resources/candle/en-us/dialogue_data.tres" type="Resource" id=26]
 [ext_resource path="res://dialogue-system/dialogue-managers/base/interactable-wrong-sequence/DialogueManagerInteractableWrongSequence.tscn" type="PackedScene" id=27]
 [ext_resource path="res://dialogue-system/speech-resources/interactables/enable-note-block/fail/en-us/dialogue_data.tres" type="Resource" id=28]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationManagersManager.tscn" type="PackedScene" id=29]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/notification-managers/NotificationManagerTutorialInteractions.tscn" type="PackedScene" id=30]
-[ext_resource path="res://zNOTIFICATION-GUI-TEMP/NotificationGUI.tscn" type="PackedScene" id=31]
+[ext_resource path="res://z-temp/notification-managers/notification-managers/NotificationManagersManager.tscn" type="PackedScene" id=29]
+[ext_resource path="res://z-temp/notification-managers/notification-managers/NotificationManagerTutorialInteractions.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/gui/NotificationGUI.tscn" type="PackedScene" id=31]
 
 [sub_resource type="Animation" id=24]
 resource_name = "Disable"
