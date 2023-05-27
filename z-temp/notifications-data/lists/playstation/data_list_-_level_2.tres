@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://z-temp/notifications-data/elements-of-lists/playstation/characters_interactions.tres" type="Resource" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name notifications_data_list
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export (Array) var notifications_list = []
+"
+
+[resource]
+script = SubResource( 1 )
+notifications_list = [ ExtResource( 1 ) ]

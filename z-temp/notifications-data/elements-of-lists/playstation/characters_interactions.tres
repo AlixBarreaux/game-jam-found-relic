@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/device-keys/key_playstation_square.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name notification_data
+
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var texture: StreamTexture = null
+export var label_top_text: String = \"\"
+"
+
+[resource]
+script = SubResource( 1 )
+texture = ExtResource( 1 )
+label_top_text = "Playstation Characters Interactions"
