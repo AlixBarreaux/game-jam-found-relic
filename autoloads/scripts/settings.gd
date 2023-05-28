@@ -63,6 +63,7 @@ func detect_joypad_type(device: int, _connected: bool) -> void:
 	
 	var _connected_joypad_name: String = Input.get_joy_name(device).to_lower()
 	print(self.name, ": Joypad connection changed!")
+	print(self.name, ": Joypad model name: ", _connected_joypad_name)
 	
 	if Input.get_connected_joypads() == []:
 		# PC Keyboard mouse
