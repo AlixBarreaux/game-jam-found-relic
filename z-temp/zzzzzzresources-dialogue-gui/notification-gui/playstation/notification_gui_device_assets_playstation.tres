@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://z-temp/notification_gui_device_assets.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/device-keys/key_playstation_cross.png" type="Texture" id=2]
-
-[resource]
-script = ExtResource( 1 )
-key_icon_texture = ExtResource( 2 )
-label_text = "Playstation Text"
