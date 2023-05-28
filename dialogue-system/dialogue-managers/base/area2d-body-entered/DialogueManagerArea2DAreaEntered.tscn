@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://dialogue-system/dialogue-managers/base/DialogueManager.tscn" type="PackedScene" id=1]
-[ext_resource path="res://dialogue-system/dialogue-managers/base/area2d-body-entered/dialogue_manager_area2d_area_entered.gd" type="Script" id=2]
-
-[node name="DialogueManagerArea2DAreaEntered" instance=ExtResource( 1 )]
-script = ExtResource( 2 )

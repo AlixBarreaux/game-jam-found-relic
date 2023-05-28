@@ -1,7 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=2]
-
-[ext_resource path="res://dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
-
-[resource]
-script = ExtResource( 1 )
-message = "Snap! It must not be the right combination."

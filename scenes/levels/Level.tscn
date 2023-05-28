@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/creatures/heroes/HeroWoman.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/creatures/heroes/HeroMan.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/gui/PauseMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://dialogue-system/DialogueGUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://systems/dialogue-system/DialogueGUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/DialogueManagersManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/gui/LevelTransition.tscn" type="PackedScene" id=7]
 

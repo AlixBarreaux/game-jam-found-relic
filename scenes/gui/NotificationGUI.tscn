@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scripts/gui/notification_gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/device-keys/key_playstation_cross.png" type="Texture" id=2]
-[ext_resource path="res://z-temp/device-assets-loaders/DeviceAssetsLoaderNotificationGUI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://z-temp/notifications-data/lists/pc/data_list_-_level_1.tres" type="Resource" id=4]
+[ext_resource path="res://systems/joypad-support/device-assets-loaders/DeviceAssetsLoaderNotificationGUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://systems/joypad-support/notifications-data/lists/pc/data_list_-_level_1.tres" type="Resource" id=4]
 
 [sub_resource type="StyleBoxFlat" id=69]
 bg_color = Color( 0.00392157, 0, 0.0705882, 1 )
