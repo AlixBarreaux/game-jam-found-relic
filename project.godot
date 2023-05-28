@@ -185,16 +185,6 @@ _global_script_classes=[ {
 "path": "res://scripts/gui/notification_gui.gd"
 }, {
 "base": "Node",
-"class": "NotificationGUIAssetsList",
-"language": "GDScript",
-"path": "res://systems/joypad-support/notification_gui_device_assets_-_list.gd"
-}, {
-"base": "Resource",
-"class": "NotificationGUIDeviceAssets",
-"language": "GDScript",
-"path": "res://systems/joypad-support/notification_gui_device_assets.gd"
-}, {
-"base": "Node",
 "class": "NotificationManager",
 "language": "GDScript",
 "path": "res://systems/joypad-support/notification-managers/notification-managers/notification_manager.gd"
@@ -340,8 +330,6 @@ _global_script_class_icons={
 "NoteBlockTutorialArea2D": "",
 "NoteBlocksManager": "",
 "NotificationGUI": "",
-"NotificationGUIAssetsList": "",
-"NotificationGUIDeviceAssets": "",
 "NotificationManager": "",
 "NotificationManagerSwitchCharacters": "",
 "NotificationManagerTutorialInteractions": "",
