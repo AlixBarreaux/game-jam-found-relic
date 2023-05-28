@@ -5,7 +5,7 @@ class_name DialogueGUIDeviceAssets
 # ----------------- DECLARE VARIABLES -----------------
 
 
-export var skip_icon_texture: StreamTexture = null
+export var skip_icon_texture: Texture = null
 
 
 # ---------------------- RUN CODE ---------------------

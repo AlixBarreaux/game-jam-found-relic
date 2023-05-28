@@ -277,17 +277,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "SpaceBarTutorialArea2D",
 "language": "GDScript",
-"path": "res://scripts/space_bar_tutorial_area_2d.gd"
+"path": "res://scripts/switch_characters_tutorial_area2d.gd"
 }, {
 "base": "Control",
 "class": "SplashScreen",
 "language": "GDScript",
 "path": "res://scripts/gui/splash_screen.gd"
-}, {
-"base": "Sprite",
-"class": "TutorialSpaceBarSprite",
-"language": "GDScript",
-"path": "res://scripts/tutorial_space_bar_sprite.gd"
 }, {
 "base": "Label",
 "class": "VersionLabel",
@@ -365,7 +360,6 @@ _global_script_class_icons={
 "SequenceOrderSpritesFeedbackManager": "",
 "SpaceBarTutorialArea2D": "",
 "SplashScreen": "",
-"TutorialSpaceBarSprite": "",
 "VersionLabel": "",
 "VolumeController": "",
 "notification_data": "",

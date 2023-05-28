@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/gui/notification_gui.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/device-keys/key_playstation_cross.png" type="Texture" id=2]
+[ext_resource path="res://resources/atlas-textures/device-keys/key_playstation_triangle.tres" type="Texture" id=2]
 [ext_resource path="res://systems/joypad-support/device-assets-loaders/DeviceAssetsLoaderNotificationGUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://systems/joypad-support/notifications-data/lists/pc/data_list_-_level_1.tres" type="Resource" id=4]
 
@@ -137,8 +137,8 @@ data_list_from_platform = ExtResource( 4 )
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 495.0
-margin_right = 1403.0
+margin_left = -465.0
+margin_right = 443.0
 margin_bottom = 234.0
 mouse_filter = 1
 custom_styles/panel = SubResource( 69 )

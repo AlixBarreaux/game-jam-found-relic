@@ -1,16 +1,16 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://assets/sprites/device-keys/key_nintendo_switch_y.png" type="Texture" id=1]
+[ext_resource path="res://resources/atlas-textures/device-keys/key_nintendo_switch_y.tres" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Resource
-class_name notification_data
+#class_name notification_data
 
 
 # ----------------- DECLARE VARIABLES -----------------
 
 
-export var texture: StreamTexture = null
+export var texture: Texture = null
 export var label_top_text: String = \"\"
 "
 
