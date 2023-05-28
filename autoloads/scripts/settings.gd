@@ -49,7 +49,7 @@ func _initialize_signals() -> void:
 
 
 var joypad_names_xbox: PoolStringArray = ["xbox"]
-var joypad_names_playstation: PoolStringArray = ["playstation", "dualshock"]
+var joypad_names_playstation: PoolStringArray = ["dualshock", "playstation", "ps", "ps1", "ps2", "ps3", "ps4"]
 var joypad_names_nintendo_switch: PoolStringArray = ["switch"]
 
 
