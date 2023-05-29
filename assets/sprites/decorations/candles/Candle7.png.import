@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Painting7.png-405a0de533b111819047ea128b4e4bdc.stex"
+path="res://.import/Candle7.png-b09be8f3e1e4b64e63a4b829ec98e467.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/decorations/paintings/Painting7.png"
-dest_files=[ "res://.import/Painting7.png-405a0de533b111819047ea128b4e4bdc.stex" ]
+source_file="res://assets/sprites/decorations/candles/Candle7.png"
+dest_files=[ "res://.import/Candle7.png-b09be8f3e1e4b64e63a4b829ec98e467.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Painting4.png-ab3aa1de8cd17df94734e2fd09594a19.stex"
+path="res://.import/Paint4.png-1154464369d26ff75e810f799f68b7ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/decorations/paintings/Painting4.png"
-dest_files=[ "res://.import/Painting4.png-ab3aa1de8cd17df94734e2fd09594a19.stex" ]
+source_file="res://assets/sprites/decorations/paintings/Paint4.png"
+dest_files=[ "res://.import/Paint4.png-1154464369d26ff75e810f799f68b7ff.stex" ]
 
 [params]
 
