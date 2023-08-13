@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dialogue_speaker_-_draft.png-a87d88cdda9d47edc120e7fd98debd54.stex"
+path="res://.import/character_expressions.png-c85edb180321b9e350686ac4b4ae6fad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialogue_speaker_-_draft.png"
-dest_files=[ "res://.import/dialogue_speaker_-_draft.png-a87d88cdda9d47edc120e7fd98debd54.stex" ]
+source_file="res://assets/sprites/character_expressions.png"
+dest_files=[ "res://.import/character_expressions.png-c85edb180321b9e350686ac4b4ae6fad.stex" ]
 
 [params]
 

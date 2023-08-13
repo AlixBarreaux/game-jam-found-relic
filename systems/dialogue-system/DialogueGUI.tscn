@@ -6,7 +6,7 @@
 [ext_resource path="res://resources/atlas-textures/device-keys/key_xbox_y.tres" type="Texture" id=4]
 [ext_resource path="res://systems/joypad-support/device-assets-loaders/DeviceAssetsLoaderDialogueGUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/gui-elements/DialogBox.png" type="Texture" id=6]
-[ext_resource path="res://dialogue_speaker_-_draft.png" type="Texture" id=7]
+[ext_resource path="res://resources/atlas-textures/character-expressions/male/smile_-_atlastexture.tres" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
