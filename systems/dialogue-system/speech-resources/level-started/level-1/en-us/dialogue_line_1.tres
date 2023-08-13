@@ -1,23 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Resource
-class_name DialogueLine
-
-
-# ----------------- DECLARE VARIABLES -----------------
-
-
-export var message: String = \"\"
-export var texture: StreamTexture = null
-export var sound_file: AudioStream = null
-
-
-# ---------------------- RUN CODE ---------------------
-
-# ----------------- DECLARE FUNCTIONS -----------------
-"
+[ext_resource path="res://systems/dialogue-system/speech-resources/dialogue_line.gd" type="Script" id=1]
+[ext_resource path="res://resources/atlas-textures/character-expressions/male/smile_-_atlastexture.tres" type="Texture" id=2]
 
 [resource]
-script = SubResource( 1 )
+script = ExtResource( 1 )
 message = "The adventure begins... I can't wait to find you, chosen one of my heart!"
+texture_left = ExtResource( 2 )

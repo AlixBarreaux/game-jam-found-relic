@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://resources/atlas-textures/character-expressions/female/shocked_-_atlastexture.tres" type="Texture" id=1]
+[ext_resource path="res://resources/atlas-textures/character-expressions/male/shocked_-_atlastexture.tres" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Resource
+class_name DialogueLine
+
+# Base script for the resource dialogue_line.tres
+# The data fed in this resource file is the data which will be played in the 
+# DialogueGUI by triggering a DialogueManager
+
+# ----------------- DECLARE VARIABLES -----------------
+
+
+export var message: String = \"\"
+export var texture_left: Texture = null
+export var texture_right: Texture = null
+export var sound_file: AudioStream = null
+
+
+# ---------------------- RUN CODE ---------------------
+
+# ----------------- DECLARE FUNCTIONS -----------------
+"
+
+[resource]
+script = SubResource( 1 )
+message = ""
+texture_left = ExtResource( 2 )
+texture_right = ExtResource( 1 )
