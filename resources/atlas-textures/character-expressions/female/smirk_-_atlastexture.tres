@@ -7,4 +7,4 @@ load_path = "res://.import/character_expressions.png-c85edb180321b9e350686ac4b4a
 [resource]
 flags = 4
 atlas = SubResource( 1 )
-region = Rect2( 1405, 0, 281, 225 )
+region = Rect2( 1405, 225, 281, 225 )
